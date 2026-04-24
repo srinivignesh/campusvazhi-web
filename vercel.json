@@ -16,7 +16,26 @@
     { "source": "/privacy", "destination": "/privacy.html" },
     { "source": "/terms", "destination": "/terms.html" },
     { "source": "/college-compare", "destination": "/CampusVazhi-College-Compare.html" },
-    { "source": "/404", "destination": "/404.html" }
+    { "source": "/404", "destination": "/404.html" },
+    { "source": "/atma", "destination": "/CampusVazhi-ATMA.html" },
+    { "source": "/ceeta-pg", "destination": "/CampusVazhi-CEETA-PG.html" },
+    { "source": "/cmat", "destination": "/CampusVazhi-CMAT.html" },
+    { "source": "/cuet-pg", "destination": "/CampusVazhi-CUET-PG.html" },
+    { "source": "/gate", "destination": "/CampusVazhi-GATE.html" },
+    { "source": "/ibps-clerk", "destination": "/CampusVazhi-IBPS-Clerk.html" },
+    { "source": "/ibps-po", "destination": "/CampusVazhi-IBPS-PO.html" },
+    { "source": "/iit-jam", "destination": "/CampusVazhi-IIT-JAM.html" },
+    { "source": "/mat", "destination": "/CampusVazhi-MAT.html" },
+    { "source": "/nimcet", "destination": "/CampusVazhi-NIMCET.html" },
+    { "source": "/rrb-ntpc", "destination": "/CampusVazhi-RRB-NTPC.html" },
+    { "source": "/sbi-clerk", "destination": "/CampusVazhi-SBI-Clerk.html" },
+    { "source": "/sbi-po", "destination": "/CampusVazhi-SBI-PO.html" },
+    { "source": "/snap", "destination": "/CampusVazhi-SNAP.html" },
+    { "source": "/ssc-cgl", "destination": "/CampusVazhi-SSC-CGL.html" },
+    { "source": "/tancet-mca", "destination": "/CampusVazhi-TANCET-MCA.html" },
+    { "source": "/tnpsc-group-2a", "destination": "/CampusVazhi-TNPSC-Group-2A.html" },
+    { "source": "/tnpsc-group-4", "destination": "/CampusVazhi-TNPSC-Group-4.html" },
+    { "source": "/xat", "destination": "/CampusVazhi-XAT.html" }
   ],
   "headers": [
     {
