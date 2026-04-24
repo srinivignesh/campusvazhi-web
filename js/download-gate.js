@@ -1,11 +1,17 @@
 // CampusVazhi — Download Course Picker
 // When user clicks any download/resource link, show a quick dropdown
 // asking UG / MBA / Others before proceeding. No sign-in required.
+// Signed-in users skip the picker entirely and get direct download.
 (function(){
   // Skip if preference already saved
   var savedPref = localStorage.getItem('cv_course_pref');
 
   function createPicker(downloadUrl, triggerEl) {
+    // Signed-in users: bypass picker, download immediately
+    if (localStorage.getItem('cv_signed_in') === '1') {
+      window.open(downloadUrl, '_blank');
+      return;
+    }
     // If already saved, just download
     if (savedPref) {
       // Track download
