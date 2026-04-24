@@ -1,0 +1,32 @@
+{
+  "rewrites": [
+    { "source": "/", "destination": "/campusvazhi-home-v2.html" },
+    { "source": "/home", "destination": "/campusvazhi-home-v2.html" },
+    { "source": "/tancet", "destination": "/CampusVazhi-TANCET-Resource-Hub.html" },
+    { "source": "/cat", "destination": "/CampusVazhi-CAT-2026.html" },
+    { "source": "/neet", "destination": "/CampusVazhi-NEET-Counselling.html" },
+    { "source": "/ms-usa", "destination": "/CampusVazhi-MS-USA.html" },
+    { "source": "/tnea", "destination": "/CampusVazhi-TNEA-Calculator.html" },
+    { "source": "/quiz", "destination": "/CampusVazhi-After12th-Quiz.html" },
+    { "source": "/counselling", "destination": "/CampusVazhi-Book-Counselling.html" },
+    { "source": "/tn-govt-exams", "destination": "/CampusVazhi-TN-Govt-Exams.html" },
+    { "source": "/resume", "destination": "/CampusVazhi-Resume.html" },
+    { "source": "/dashboard", "destination": "/CampusVazhi-Dashboard.html" },
+    { "source": "/login", "destination": "/CampusVazhi-Login.html" },
+    { "source": "/privacy", "destination": "/privacy.html" },
+    { "source": "/terms", "destination": "/terms.html" },
+    { "source": "/college-compare", "destination": "/CampusVazhi-College-Compare.html" },
+    { "source": "/404", "destination": "/404.html" }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Frame-Options", "value": "DENY" },
+        { "key": "X-Content-Type-Options", "value": "nosniff" }
+      ]
+    }
+  ],
+  "cleanUrls": true,
+  "trailingSlash": false
+}

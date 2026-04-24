@@ -1,0 +1,1316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style id="cv-sidebar-auth">
+.sidebar { display: none !important; }
+.page-wrap { margin-left: 0 !important; }
+body.logged-in .sidebar, .logged-in .sidebar { display: flex !important; }
+body.logged-in .page-wrap, .logged-in .page-wrap { margin-left: 68px !important; }
+@media (max-width: 768px) {
+  body.logged-in .page-wrap, .logged-in .page-wrap { margin-left: 0 !important; }
+}
+</style>
+<script>(function(){var s=localStorage.getItem('cv_signed_in')==='1';if(s)document.documentElement.classList.add('logged-in');document.addEventListener('DOMContentLoaded',function(){var sb=document.querySelector('.sidebar');var pw=document.querySelector('.page-wrap');if(s){document.body.classList.add('logged-in');if(sb)sb.style.setProperty('display','flex','important');if(pw)pw.style.setProperty('margin-left','68px','important')}else{if(sb)sb.style.setProperty('display','none','important');if(pw)pw.style.setProperty('margin-left','0','important')}});})()</script>
+
+
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Career Path Quiz - CampusVazhi</title>
+  <link rel="canonical" href="https://campusvazhi.com/quiz" />
+  <meta property="og:title" content="Career Path Quiz - CampusVazhi" />
+  <meta property="og:description" content="Take the CampusVazhi career path quiz to discover the best college and career options after 12th." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://campusvazhi.com/quiz" />
+  <meta property="og:image" content="https://campusvazhi.com/og-default.svg" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+Tamil:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --navy: #0F1B2D;
+      --navy-2: #1E3A5F;
+      --teal: #0D9488;
+      --teal-light: #14B8A6;
+      --teal-bg: #F0FDFA;
+      --gold: #F59E0B;
+      --white: #FFFFFF;
+      --g50: #F9FAFB;
+      --g100: #F3F4F6;
+      --g200: #E5E7EB;
+      --g500: #6B7280;
+      --g600: #4B5563;
+      --g700: #374151;
+      --g900: #111827;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', 'Noto Sans Tamil', sans-serif;
+      background-color: var(--g50);
+      color: var(--g900);
+      line-height: 1.6;
+      transition: all 0.3s ease;
+    }
+
+    body.lang-ta {
+      font-family: 'Noto Sans Tamil', 'Inter', sans-serif;
+    }
+
+    .hidden { display: none !important; }
+    .lang-en { display: inline; }
+    .lang-ta { display: none; }
+    body.lang-ta .lang-en { display: none; }
+    body.lang-ta .lang-ta { display: inline; }
+
+    /* Header */
+    header {
+      background: #fff;
+      border-bottom: 1px solid #F3F4F6;
+      padding: 18px 40px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--navy);
+    }
+
+    .lang-toggle {
+      display: flex;
+      gap: 0.5rem;
+      background: var(--g100);
+      padding: 0.25rem;
+      border-radius: 6px;
+    }
+
+    .lang-btn {
+      padding: 0.5rem 1rem;
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--g600);
+      border-radius: 4px;
+      transition: all 0.2s;
+    }
+
+    .lang-btn.active {
+      background: var(--white);
+      color: var(--navy);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+
+    /* Main Container */
+    main {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 0 1.5rem;
+      min-height: calc(100vh - 200px);
+    }
+
+    /* Progress Bar */
+    .progress-container {
+      margin-bottom: 2rem;
+    }
+
+    .progress-bar {
+      height: 6px;
+      background: var(--g200);
+      border-radius: 3px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--teal), var(--teal-light));
+      width: 0%;
+      transition: width 0.3s ease;
+    }
+
+    .progress-text {
+      font-size: 0.875rem;
+      color: var(--g600);
+      margin-top: 0.5rem;
+      text-align: right;
+    }
+
+    /* Quiz Card */
+    .quiz-card {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      margin-bottom: 2rem;
+    }
+
+    .question-text {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 1.5rem;
+      line-height: 1.3;
+    }
+
+    .options-grid {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .option-btn {
+      padding: 1.25rem;
+      border: 2px solid var(--g200);
+      background: var(--white);
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--g900);
+      text-align: left;
+      transition: all 0.2s;
+    }
+
+    .option-btn:hover {
+      border-color: var(--teal);
+      background: var(--teal-bg);
+    }
+
+    .option-btn.selected {
+      border-color: var(--teal);
+      background: var(--teal-bg);
+      color: var(--teal);
+      font-weight: 600;
+    }
+
+    /* Result Card */
+    .result-card {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .result-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .result-path {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 1rem;
+    }
+
+    .result-description {
+      font-size: 1rem;
+      color: var(--g700);
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+    }
+
+    /* Lead Capture Form */
+    .lead-form {
+      background: var(--teal-bg);
+      border: 2px solid var(--teal);
+      border-radius: 10px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .lead-form-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 1rem;
+    }
+
+    .form-group {
+      margin-bottom: 1rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--g700);
+      margin-bottom: 0.5rem;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid var(--g300);
+      border-radius: 6px;
+      font-size: 1rem;
+      font-family: inherit;
+      transition: border-color 0.2s;
+    }
+
+    .form-group input:focus {
+      outline: none;
+      border-color: var(--teal);
+      box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.1);
+    }
+
+    /* Buttons */
+    .btn {
+      padding: 0.875rem 1.5rem;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--teal), var(--teal-light));
+      color: var(--white);
+      width: 100%;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(13, 148, 136, 0.3);
+    }
+
+    .btn-secondary {
+      background: var(--g100);
+      color: var(--g900);
+    }
+
+    .btn-secondary:hover {
+      background: var(--g200);
+    }
+
+    .btn-nav {
+      display: flex;
+      gap: 1rem;
+      justify-content: space-between;
+      margin-top: 1.5rem;
+    }
+
+    .btn-nav button {
+      flex: 1;
+    }
+
+    /* Success Message */
+    .success-message {
+      background: linear-gradient(135deg, var(--teal), var(--teal-light));
+      color: var(--white);
+      padding: 2rem;
+      border-radius: 12px;
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .success-message h2 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .success-message p {
+      margin-bottom: 1rem;
+    }
+
+    .whatsapp-link {
+      display: inline-block;
+      background: var(--white);
+      color: var(--teal);
+      padding: 0.75rem 1.5rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.2s;
+    }
+
+    .whatsapp-link:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+
+    /* Footer */
+    footer {
+      background: var(--white);
+      border-top: 1px solid var(--g200);
+      padding: 2rem;
+      text-align: center;
+      margin-top: 3rem;
+    }
+
+    .footer-link {
+      color: var(--teal);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .footer-link:hover {
+      text-decoration: underline;
+    }
+
+    /* Responsive */
+    @media (max-width: 640px) {
+      header {
+        padding: 14px 16px;
+      }
+
+      .header-container {
+        gap: 10px;
+      }
+
+      main {
+        margin: 1rem auto;
+        padding: 0 1rem;
+      }
+
+      .quiz-card {
+        padding: 1.5rem;
+      }
+
+      .question-text {
+        font-size: 1.25rem;
+      }
+
+      .result-path {
+        font-size: 1.5rem;
+      }
+    }
+  
+    
+      .page-wrap { margin-left: 0; }
+
+      /* When sidebar is hovered on mobile, show overlay */
+      .sidebar:hover ~ .page-wrap::before {
+        content: '';
+        position: fixed;
+        inset: 0;
+        background: rgba(15,27,45,0.3);
+        z-index: 998;
+      }
+    }
+
+    
+
+    
+  
+    /* ============= SIDEBAR — always-visible icon rail ============= */
+    .page-wrap { margin-left: 68px; }
+
+    .sidebar {
+      display: flex;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 68px;
+      height: 100vh;
+      background: var(--navy);
+      z-index: 1000;
+      flex-direction: column;
+      overflow: hidden;
+      transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 2px 0 24px rgba(15,27,45,0.15);
+    }
+    .sidebar:hover { width: 260px; }
+
+    /* Text labels hidden when collapsed, shown when expanded */
+    .sidebar .sb-label,
+    .sidebar .sidebar-section-label,
+    .sidebar .sidebar-user-info,
+    .sidebar .sidebar-badge,
+    .sidebar .sb-signout-text {
+      opacity: 0;
+      white-space: nowrap;
+      transition: opacity 0.2s ease 0s;
+    }
+    .sidebar:hover .sb-label,
+    .sidebar:hover .sidebar-section-label,
+    .sidebar:hover .sidebar-user-info,
+    .sidebar:hover .sidebar-badge,
+    .sidebar:hover .sb-signout-text {
+      opacity: 1;
+      transition: opacity 0.2s ease 0.12s;
+    }
+
+    /* Sidebar header — avatar area */
+    .sidebar-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 20px 14px 16px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      flex-shrink: 0;
+      min-height: 72px;
+    }
+    .sidebar-avatar {
+      width: 40px;
+      height: 40px;
+      min-width: 40px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--teal), var(--teal-light));
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 17px;
+      font-weight: 800;
+      flex-shrink: 0;
+      box-shadow: 0 2px 8px rgba(13,148,136,0.35);
+    }
+    .sidebar-user-info {
+      overflow: hidden;
+    }
+    .sidebar-user-info h4 {
+      margin: 0;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--white);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .sidebar-user-info p {
+      margin: 2px 0 0;
+      font-size: 11px;
+      color: rgba(255,255,255,0.5);
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    /* Sidebar nav links */
+    .sidebar-nav {
+      flex: 1;
+      padding: 8px 0;
+      overflow-y: auto;
+      overflow-x: hidden;
+      scrollbar-width: none;
+    }
+    .sidebar-nav::-webkit-scrollbar { display: none; }
+
+    .sidebar-section-label {
+      font-size: 9px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: rgba(255,255,255,0.35);
+      padding: 14px 14px 4px 22px;
+      white-space: nowrap;
+    }
+
+    .sidebar-link {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 10px 14px 10px 20px;
+      font-size: 13px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+      transition: all 0.15s ease;
+      border-left: 3px solid transparent;
+      position: relative;
+      white-space: nowrap;
+    }
+    .sidebar-link:hover {
+      background: rgba(13,148,136,0.15);
+      color: var(--teal-light);
+      border-left-color: var(--teal-light);
+    }
+    .sidebar-link svg {
+      width: 20px;
+      height: 20px;
+      min-width: 20px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .sidebar-link .sidebar-badge {
+      margin-left: auto;
+      background: var(--teal);
+      color: var(--white);
+      font-size: 10px;
+      font-weight: 800;
+      padding: 2px 7px;
+      border-radius: 999px;
+    }
+
+    /* Collapsed: show tooltip on icon hover */
+    .sidebar:not(:hover) .sidebar-link[data-tip]:hover::after {
+      content: attr(data-tip);
+      position: absolute;
+      left: 64px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: var(--navy);
+      color: var(--white);
+      font-size: 12px;
+      font-weight: 600;
+      padding: 6px 12px;
+      border-radius: 6px;
+      white-space: nowrap;
+      z-index: 1001;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      pointer-events: none;
+    }
+
+    .sidebar-divider {
+      height: 1px;
+      background: rgba(255,255,255,0.06);
+      margin: 6px 14px;
+    }
+
+    /* Sidebar footer — sign out */
+    .sidebar-footer {
+      padding: 12px 14px 16px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      flex-shrink: 0;
+    }
+    .sidebar-signout {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      width: 100%;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: transparent;
+      padding: 10px 10px;
+      border-radius: 10px;
+      font-size: 13px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.5);
+      cursor: pointer;
+      font-family: inherit;
+      transition: all 0.15s ease;
+      white-space: nowrap;
+    }
+    .sidebar-signout:hover {
+      border-color: rgba(239,68,68,0.5);
+      background: rgba(239,68,68,0.08);
+      color: #FCA5A5;
+    }
+    .sidebar-signout svg {
+      width: 18px;
+      height: 18px;
+      min-width: 18px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* Page wrapper: shifts content right when sidebar visible */
+    .page-wrap {
+      transition: margin-left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* ============= SIDEBAR MOBILE ============= */
+    @media (max-width: 768px) {
+      .sidebar { width: 0; }
+      .sidebar:hover { width: 260px; }
+      .page-wrap { margin-left: 0; }
+
+      /* When sidebar is hovered on mobile, show overlay */
+      .sidebar:hover ~ .page-wrap::before {
+        content: '';
+        position: fixed;
+        inset: 0;
+        background: rgba(15,27,45,0.3);
+        z-index: 998;
+      }
+    }
+
+        .ta { display: none; }
+    body.lang-ta .ta { display: inline; }
+    body.lang-ta .en { display: none; }
+
+        body.cv-signed-in .nav-sign-in { display: none; }
+    body.cv-signed-in .user-pill { display: inline-flex; }
+  
+
+    
+  </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "After 12th Career Quiz — CampusVazhi",
+  "url": "https://campusvazhi.com/quiz",
+  "description": "Take this free quiz to discover the best career path after 12th based on your interests, strengths, and goals.",
+  "applicationCategory": "EducationalApplication",
+  "operatingSystem": "Web",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" },
+  "provider": { "@type": "EducationalOrganization", "name": "CampusVazhi", "url": "https://campusvazhi.com" }
+}
+</script>
+</head>
+<body>
+<!-- ================= SIDEBAR ================= -->
+<aside class="sidebar" id="sidebar">
+
+  <!-- Profile header -->
+  <div class="sidebar-header">
+    <div class="sidebar-avatar" id="sb-avatar"></div>
+    <div class="sidebar-user-info">
+      <h4 id="sb-name"></h4>
+      <p id="sb-exam">CAT 2026</p>
+    </div>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a href="./campusvazhi-home-v2.html" class="sidebar-link" data-tip="Home" style="margin-bottom:8px">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      <span class="sb-label"><span class="en">Home</span><span class="ta">முகப்பு</span></span>
+    </a>
+    <div class="sidebar-divider"></div>
+
+    <!-- Dashboard -->
+    <div class="sidebar-section-label"><span class="en">Dashboard</span><span class="ta">டாஷ்போர்டு</span></div>
+
+    <a href="./CampusVazhi-Dashboard.html" class="sidebar-link" data-tip="Dashboard">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+      <span class="sb-label"><span class="en">My Dashboard</span><span class="ta">என் டாஷ்போர்டு</span></span>
+    </a>
+    <a href="./CampusVazhi-College-Compare.html" class="sidebar-link" data-tip="Saved">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+      <span class="sb-label"><span class="en">Saved Resources</span><span class="ta">சேமித்த ஆதாரங்கள்</span></span>
+    </a>
+    <a href="./campusvazhi-home-v2.html#community" class="sidebar-link" data-tip="Groups">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      <span class="sb-label"><span class="en">My Groups</span><span class="ta">என் குழுக்கள்</span></span>
+      <span class="sidebar-badge">1</span>
+    </a>
+
+    <div class="sidebar-divider"></div>
+
+    <!-- Explore Pathways -->
+    <div class="sidebar-section-label"><span class="en">Explore Pathways</span><span class="ta">பாதைகளை ஆராயுங்கள்</span></div>
+
+    <a href="./CampusVazhi-CAT-2026.html" class="sidebar-link" data-tip="CAT 2026">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+      <span class="sb-label">CAT 2026</span>
+    </a>
+    <a href="./CampusVazhi-TANCET-Resource-Hub.html" class="sidebar-link" data-tip="TANCET Hub">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+      <span class="sb-label"><span class="en">TANCET Hub</span><span class="ta">TANCET மையம்</span></span>
+    </a>
+    <a href="./CampusVazhi-MS-USA.html" class="sidebar-link" data-tip="MS in USA">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+      <span class="sb-label"><span class="en">MS in USA</span><span class="ta">அமெரிக்காவில் MS</span></span>
+    </a>
+    <a href="./CampusVazhi-NEET-Counselling.html" class="sidebar-link" data-tip="NEET">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+      <span class="sb-label"><span class="en">NEET Counselling</span><span class="ta">NEET ஆலோசனை</span></span>
+    </a>
+    <a href="./CampusVazhi-After12th-Quiz.html" class="sidebar-link" data-tip="After 12th">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+      <span class="sb-label"><span class="en">After 12th Quiz</span><span class="ta">12ஆம் வகுப்புக்குப் பிறகு</span></span>
+    </a>
+    <a href="./CampusVazhi-TNEA-Calculator.html" class="sidebar-link" data-tip="TNEA Calc">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="10" y2="10"/><line x1="12" y1="10" x2="14" y2="10"/><line x1="8" y1="14" x2="10" y2="14"/><line x1="12" y1="14" x2="14" y2="14"/><line x1="8" y1="18" x2="16" y2="18"/></svg>
+      <span class="sb-label"><span class="en">TNEA Calculator</span><span class="ta">TNEA கால்குலேட்டர்</span></span>
+    </a>
+    <a href="./CampusVazhi-Resume.html" class="sidebar-link" data-tip="Resume">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+      <span class="sb-label"><span class="en">Resume Builder</span><span class="ta">ரெஸ்யூம் உருவாக்கி</span></span>
+    </a>
+
+    <div class="sidebar-divider"></div>
+
+    <!-- Support -->
+    <div class="sidebar-section-label"><span class="en">Support</span><span class="ta">ஆதரவு</span></div>
+
+    <a href="./CampusVazhi-Book-Counselling.html" class="sidebar-link" data-tip="Counselling">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      <span class="sb-label"><span class="en">Book a Free Call</span><span class="ta">ஆலோசனை முன்பதிவு</span></span>
+    </a>
+    <a href="https://wa.me/918939862211" target="_blank" class="sidebar-link" data-tip="WhatsApp">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      <span class="sb-label"><span class="en">WhatsApp Us</span><span class="ta">WhatsApp செய்யுங்கள்</span></span>
+    </a>
+
+    <div class="sidebar-divider"></div>
+
+    <!-- Profile & Settings -->
+    <div class="sidebar-section-label"><span class="en">Profile</span><span class="ta">சுயவிவரம்</span></div>
+
+    <a href="./CampusVazhi-Dashboard.html" class="sidebar-link" data-tip="Profile">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      <span class="sb-label"><span class="en">Edit Profile</span><span class="ta">சுயவிவரத்தை மாற்று</span></span>
+    </a>
+    <a href="./CampusVazhi-Dashboard.html" class="sidebar-link" data-tip="Settings">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+      <span class="sb-label"><span class="en">Settings</span><span class="ta">அமைப்புகள்</span></span>
+    </a>
+  </nav>
+
+  <div class="sidebar-footer">
+    <button class="sidebar-signout" onclick="signOut()">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+      <span class="sb-signout-text"><span class="en">Sign out</span><span class="ta">வெளியேறு</span></span>
+    </button>
+  </div>
+</aside>
+<div class="page-wrap">
+<header>
+    <div class="header-container">
+      <a href="./campusvazhi-home-v2.html" class="logo" style="text-decoration:none;display:flex;align-items:center;gap:10px">
+        <div style="width:36px;height:36px;border-radius:8px;background:linear-gradient(135deg,#0D9488,#0F1B2D);display:flex;align-items:center;justify-content:center">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+        </div>
+        <span style="font-size:20px;font-weight:800;color:#0F1B2D">Campus<span style="color:#0D9488">Vazhi</span></span>
+      </a>
+      <div style="display:flex;align-items:center;gap:12px">
+        <div class="lang-toggle">
+          <button class="lang-btn active" data-lang="en">
+            <span class="lang-en">English</span>
+            <span class="lang-ta">ஆங்கிலம்</span>
+          </button>
+          <button class="lang-btn" data-lang="ta">
+            <span class="lang-en">Tamil</span>
+            <span class="lang-ta">தமிழ்</span>
+          </button>
+        </div>
+        <a href="./CampusVazhi-Book-Counselling.html" style="background:#0D9488;color:#fff;border:none;border-radius:8px;padding:10px 20px;font-size:14px;font-weight:700;cursor:pointer;text-decoration:none;white-space:nowrap">Get Free Guide</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Quiz Section -->
+    <section id="quiz-section">
+      <div class="progress-container">
+        <div class="progress-bar">
+          <div class="progress-fill" id="progress-fill"></div>
+        </div>
+        <div class="progress-text"><span class="lang-en">Question <span id="current-q">1</span> of 5</span><span class="lang-ta"><span id="current-q-ta">1</span> இல் கேள்வி 5</span></div>
+      </div>
+
+      <div class="quiz-card" id="quiz-card">
+        <div class="question-text" id="question-text"></div>
+        <div class="options-grid" id="options-grid"></div>
+      </div>
+
+      <div class="btn-nav">
+        <button class="btn btn-secondary" id="btn-back" style="display: none;">
+          <span class="lang-en">← Back</span>
+          <span class="lang-ta">← பின்னோக்கு</span>
+        </button>
+        <button class="btn btn-primary" id="btn-next" style="display: none;">
+          <span class="lang-en">Next →</span>
+          <span class="lang-ta">அடுத்தது →</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- Result Section -->
+    <section id="result-section" class="hidden">
+      <div class="result-card">
+        <div class="result-icon" id="result-icon"></div>
+        <div class="result-path" id="result-path"></div>
+        <div class="result-description" id="result-description"></div>
+      </div>
+
+      <div class="lead-form">
+        <div class="lead-form-title">
+          <span class="lang-en">Get Your Personalised Roadmap</span>
+          <span class="lang-ta">உங்கள் தனிப்பயனாக்கப்பட்ட சாலை வரைபடத்தைப் பெறுங்கள்</span>
+        </div>
+        <form id="lead-form">
+          <div class="form-group">
+            <label for="name">
+              <span class="lang-en">Full Name</span>
+              <span class="lang-ta">முழு பெயர்</span>
+            </label>
+            <input type="text" id="name" name="name" required placeholder="e.g., Arjun Kumar">
+          </div>
+          <div class="form-group">
+            <label for="phone">
+              <span class="lang-en">Phone Number</span>
+              <span class="lang-ta">ஃபோன் எண்</span>
+            </label>
+            <input type="tel" id="phone" name="phone" required placeholder="+91 9876543210">
+          </div>
+          <button type="submit" class="btn btn-primary">
+            <span class="lang-en">Get Your Personalised Roadmap</span>
+            <span class="lang-ta">உங்கள் தனிப்பயனாக்கப்பட்ட சாலை வரைபடத்தைப் பெறுங்கள்</span>
+          </button>
+        </form>
+      </div>
+
+      <div style="text-align: center; margin-top: 1rem;">
+        <button class="btn btn-secondary" id="btn-retake">
+          <span class="lang-en">← Retake Quiz</span>
+          <span class="lang-ta">← வினாடி வினாவை மீண்டும் எடுக்கவும்</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- Success Section -->
+    <section id="success-section" class="hidden">
+      <div class="success-message">
+        <h2>
+          <span class="lang-en">🎉 You're All Set!</span>
+          <span class="lang-ta">🎉 நீங்கள் தயாராக உள்ளீர்கள்!</span>
+        </h2>
+        <p>
+          <span class="lang-en">We're sending your personalised roadmap. Connect with us on WhatsApp for instant support.</span>
+          <span class="lang-ta">நாங்கள் உங்கள் தனிப்பயனாக்கப்பட்ட சாலை வரைபடத்தை அனுப்பிக்கொண்டிருக்கிறோம். உடனடி ஆதரவுக்கு WhatsApp இல் எங்களுடன் இணைந்து கொள்ளுங்கள்.</span>
+        </p>
+        <a href="https://wa.me/918939862211?text=Hi%20CampusVazhi%2C%20I%20just%20completed%20the%20career%20quiz." target="_blank" class="whatsapp-link">
+          <span class="lang-en">💬 Chat on WhatsApp</span>
+          <span class="lang-ta">💬 WhatsApp இல் சாட் செய்யுங்கள்</span>
+        </a>
+      </div>
+
+      <div style="text-align: center;">
+        <button class="btn btn-secondary" id="btn-home">
+          <span class="lang-en">← Back to Home</span>
+          <span class="lang-ta">← முகப்புக்குத் திரும்புங்கள்</span>
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <footer style="background:#0F1B2D;padding:32px 24px;text-align:center">
+    <div style="display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:12px">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#14B8A6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+      <span style="font-size:16px;font-weight:700;color:#fff">Campus<span style="color:#14B8A6">Vazhi</span></span>
+    </div>
+    <p style="font-size:12px;color:#64748B;margin:0">Your trusted guide for career decisions after 12th & beyond</p>
+    <div style="margin:12px 0;display:flex;gap:8px;justify-content:center;flex-wrap:wrap;font-size:13px">
+      <a href="./campusvazhi-home-v2.html" style="color:#94A3B8;text-decoration:none">Home</a>·
+      <a href="./CampusVazhi-CAT-2026.html" style="color:#94A3B8;text-decoration:none">CAT 2026</a>·
+      <a href="./CampusVazhi-TANCET-Resource-Hub.html" style="color:#94A3B8;text-decoration:none">TANCET 2026</a>·
+      <a href="./CampusVazhi-MS-USA.html" style="color:#94A3B8;text-decoration:none">MS in USA</a>·
+      <a href="./CampusVazhi-NEET-Counselling.html" style="color:#94A3B8;text-decoration:none">NEET Counselling</a>·
+      <a href="./CampusVazhi-Resume.html" style="color:#94A3B8;text-decoration:none">Resume Builder</a>·
+      <a href="./CampusVazhi-Login.html" style="color:#94A3B8;text-decoration:none">Sign in</a>
+    </div>
+    <p style="font-size:11px;color:#475569;margin-top:8px">© 2026 CampusVazhi. All rights reserved.</p>
+  </footer>
+
+  <script>
+  // 5. Sidebar — populate user data
+  function populateSidebar() {
+    try {
+      var u = JSON.parse(localStorage.getItem('cv_user'));
+      if (u && u.name) {
+        document.getElementById('sb-avatar').textContent = u.name.charAt(0).toUpperCase();
+        document.getElementById('sb-name').textContent = u.name;
+        document.getElementById('sb-exam').textContent = u.exam || 'Student';
+      }
+    } catch(e) {}
+  }
+  populateSidebar();
+
+  function checkSignIn() {
+    try {
+      var u = JSON.parse(localStorage.getItem('cv_user'));
+      var signedIn = localStorage.getItem('cv_signed_in') === '1';
+      if ((u && u.name) || signedIn) {
+        document.body.classList.add('cv-signed-in');
+        document.body.classList.add('logged-in');
+        document.documentElement.classList.add('logged-in');
+        if (u && u.name) localStorage.setItem('cv_signed_in', '1');
+        var sb = document.querySelector('.sidebar');
+        var pw = document.querySelector('.page-wrap');
+        if (sb) sb.style.setProperty('display', 'flex', 'important');
+        if (pw) pw.style.setProperty('margin-left', '68px', 'important');
+        var pill = document.getElementById('user-pill');
+        if (pill && u && u.name) {
+          pill.querySelector('.user-initial').textContent = u.name.charAt(0).toUpperCase();
+          pill.querySelector('.user-name').textContent = 'Hi, ' + u.name.split(' ')[0];
+        }
+      }
+    } catch(e) {}
+  }
+  checkSignIn();
+
+  function signOut() {
+    document.body.classList.remove('logged-in', 'cv-signed-in');
+    document.documentElement.classList.remove('logged-in');
+    var sb = document.querySelector('.sidebar');
+    var pw = document.querySelector('.page-wrap');
+    if (sb) sb.style.setProperty('display', 'none', 'important');
+    if (pw) pw.style.setProperty('margin-left', '0', 'important');
+    localStorage.removeItem('cv_signed_in');
+    localStorage.removeItem('cv_user');
+    if (typeof cvAuth !== 'undefined' && typeof cvAuth.logout === 'function') {
+      cvAuth.logout();
+    } else {
+      window.location.href = './campusvazhi-home-v2.html';
+    }
+  }
+
+    // Quiz Data
+    const quizData = [
+      {
+        id: 1,
+        en: "What stream did you study in 12th?",
+        ta: "நீங்கள் 12வது வகுப்பில் எந்த நீரோட்டத்தைப் படித்தீர்கள்?",
+        options: [
+          { en: "Science (Maths)", ta: "அறிவியல் (கணிதம்)", value: "sci-maths" },
+          { en: "Science (Biology)", ta: "அறிவியல் (உயிரியல்)", value: "sci-bio" },
+          { en: "Commerce", ta: "வணிகம்", value: "commerce" },
+          { en: "Arts / Humanities", ta: "கலை / மানிதவியல்", value: "arts" }
+        ]
+      },
+      {
+        id: 2,
+        en: "What interests you more?",
+        ta: "உங்களைப் பெரும்பாலும் என்ன ஆர்வமாக உள்ளது?",
+        options: [
+          { en: "Technology & Engineering", ta: "தொழில்நுட்பம் மற்றும் பொறியியல்", value: "tech" },
+          { en: "Medicine & Healthcare", ta: "மருத்துவம் மற்றும் சுகாதாரம்", value: "medicine" },
+          { en: "Business & Management", ta: "வணிகம் மற்றும் நிர்வாகம்", value: "business" },
+          { en: "Creative & Design", ta: "படைப்பு மற்றும் வடிவமைப்பு", value: "creative" },
+          { en: "Government Jobs & Civil Services", ta: "அரசு வேலைகள் மற்றும் சிவில் சேவைகள்", value: "govt" }
+        ]
+      },
+      {
+        id: 3,
+        en: "Are you open to studying outside Tamil Nadu?",
+        ta: "தமிழ்நாட்டுக்கு வெளியே படிக்க நீங்கள் திறந்திருக்கிறீர்களா?",
+        options: [
+          { en: "Yes, anywhere in India", ta: "ஆம், இந்தியாவின் எங்கும்", value: "india-open" },
+          { en: "Only Tamil Nadu", ta: "தமிழ்நாட்டு மட்டும்", value: "tn-only" },
+          { en: "Open to abroad", ta: "வெளிநாட்டிற்கு திறந்திருக்கிறேன்", value: "abroad-open" }
+        ]
+      },
+      {
+        id: 4,
+        en: "What's your family's annual budget for education?",
+        ta: "உங்கள் குடும்பத்தின் கல்விக்கான வருடாந்த பட்ஜெட் என்ன?",
+        options: [
+          { en: "Under ₹1 lakh/year", ta: "₹1 லட்சத்திற்கு குறைவாக/வருடம்", value: "budget-1l" },
+          { en: "₹1–3 lakh/year", ta: "₹1–3 லட்சம்/வருடம்", value: "budget-3l" },
+          { en: "₹3–8 lakh/year", ta: "₹3–8 லட்சம்/வருடம்", value: "budget-8l" },
+          { en: "Budget is flexible", ta: "பட்ஜெட் நমनীயமாக உள்ளது", value: "budget-flex" }
+        ]
+      },
+      {
+        id: 5,
+        en: "Which entrance exam are you planning for (or open to)?",
+        ta: "நீங்கள் எந்த நுழைவுத் தேர்வுக்குத் திட்டமிடுகிறீர்கள் (அல்லது திறந்திருக்கிறீர்கள்)?",
+        options: [
+          { en: "JEE Main / Advanced", ta: "JEE Main / Advanced", value: "jee" },
+          { en: "NEET", ta: "NEET", value: "neet" },
+          { en: "TNEA (TN Engineering)", ta: "TNEA (தமிழ்நாடு பொறியியல்)", value: "tnea" },
+          { en: "CUET", ta: "CUET", value: "cuet" },
+          { en: "Not sure yet", ta: "இன்னும் உறுதியாக இல்லை", value: "unsure" }
+        ]
+      }
+    ];
+
+    // Result Paths
+    const resultPaths = {
+      engineering: {
+        en: "Engineering Path",
+        ta: "பொறியியல் பாதை",
+        icon: "🚀",
+        desc_en: "You're best suited for engineering. Our TNEA guide can help you through college options and placement opportunities.",
+        desc_ta: "நீங்கள் பொறியியலுக்கு ஏற்றவர். எங்கள் TNEA ஆலோசனை உங்களை கல்லூரி விருப்பங்கள் மற்றும் வேலை வாய்ப்புகள் மூலம் வழிநடத்த முடியும்।",
+        link: "./CampusVazhi-TNEA-Calculator.html",
+        cta_en: "Explore Engineering Colleges →",
+        cta_ta: "பொறியியல் கல்லூரிகளை ஆராயுங்கள் →"
+      },
+      medical: {
+        en: "Medical Path",
+        ta: "மருத்துவ பாதை",
+        icon: "⚕️",
+        desc_en: "NEET is your gateway to medicine. We'll help you navigate med school options, specialisations, and career prep.",
+        desc_ta: "NEET என்பது மருத்துவத்திற்கான உங்கள் நுழைவாயில். மெட் பள்ளி விருப்பங்கள், சிறப்பு மற்றும் நிலை தயாரிப்பு வழிநடத்த உதவுவோம்।",
+        link: "./CampusVazhi-NEET-Counselling.html",
+        cta_en: "Explore Medical Colleges →",
+        cta_ta: "மருத்துவ கல்லூரிகளை ஆராயுங்கள் →"
+      },
+      management: {
+        en: "Management / Business Path",
+        ta: "Management / வணிகப் பாதை",
+        icon: "💼",
+        desc_en: "Commerce leads to business. CAT 2026 & TANCET Management are your stepping stones to top business colleges.",
+        desc_ta: "வணிகம் வணிகத்திற்கு வழிவகை செய்கிறது. CAT 2026 மற்றும் TANCET Management உங்கள் சிறந்த வணிக கல்லூரிக்கு செல்ல உதவும்।",
+        link: "./CampusVazhi-CAT-2026.html",
+        cta_en: "Explore Management Path →",
+        cta_ta: "Management பாதையை ஆராயுங்கள் →"
+      },
+      abroad: {
+        en: "Study Abroad Path",
+        ta: "வெளிநாட்டில் படிக்கும் பாதை",
+        icon: "🌍",
+        desc_en: "Global opportunities await. MS in USA, Canada, or UK opens doors to world-class education and careers.",
+        desc_ta: "உலகளாவிய வாய்ப்புகள் காத்திருக்கின்றன. அமெரிக்கா, கனடா அல்லது இங்கிலாந்தில் MS உலக-தர கல்வி மற்றும் வேலைவாய்ப்பை திறக்கிறது।",
+        link: "./CampusVazhi-MS-USA.html",
+        cta_en: "Explore Study Abroad →",
+        cta_ta: "வெளிநாட்டில் படிக்க ஆராயுங்கள் →"
+      },
+      general: {
+        en: "Let's Find Your Path",
+        ta: "உங்கள் பாதையைக் கண்டுபிடிப்போம்",
+        icon: "🎯",
+        desc_en: "Not sure yet? That's okay! Book a free guidance call with our experts to explore all options.",
+        desc_ta: "இன்னும் உறுதியாக இல்லையா? சரியாக உள்ளது! எல்லா விருப்பங்களை ஆராய எங்கள் நிபுணர்களுடன் இலவச ஆலோசனை அழைப்பை முன்பதிவு செய்யுங்கள்।",
+        link: "./CampusVazhi-Book-Counselling.html",
+        cta_en: "Book Free Call →",
+        cta_ta: "இலவச ஆலோசனை முன்பதிவு செய்யுங்கள் →"
+      }
+    };
+
+    // State
+    let currentQuestion = 0;
+    let answers = {};
+    let currentLang = 'en';
+
+    // Initialize
+    function init() {
+      renderQuestion();
+      setupLanguageToggle();
+      setupFormSubmit();
+      setupButtons();
+    }
+
+    // Render Question
+    function renderQuestion() {
+      if (currentQuestion >= quizData.length) {
+        showResults();
+        return;
+      }
+
+      const question = quizData[currentQuestion];
+      const progressPercent = ((currentQuestion + 1) / quizData.length) * 100;
+
+      document.getElementById('progress-fill').style.width = progressPercent + '%';
+      document.getElementById('current-q').textContent = currentQuestion + 1;
+      document.getElementById('current-q-ta').textContent = currentQuestion + 1;
+
+      const questionText = document.getElementById('question-text');
+      questionText.innerHTML = `<span class="lang-en">${question.en}</span><span class="lang-ta">${question.ta}</span>`;
+
+      const optionsGrid = document.getElementById('options-grid');
+      optionsGrid.innerHTML = '';
+
+      question.options.forEach((option) => {
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'option-btn';
+        btn.innerHTML = `<span class="lang-en">${option.en}</span><span class="lang-ta">${option.ta}</span>`;
+
+        if (answers[currentQuestion] === option.value) {
+          btn.classList.add('selected');
+        }
+
+        btn.addEventListener('click', () => selectOption(option.value, btn));
+        optionsGrid.appendChild(btn);
+      });
+
+      updateNavButtons();
+    }
+
+    // Select Option
+    function selectOption(value, btn) {
+      answers[currentQuestion] = value;
+
+      document.querySelectorAll('.option-btn').forEach(b => {
+        b.classList.remove('selected');
+      });
+      btn.classList.add('selected');
+
+      updateNavButtons();
+    }
+
+    // Update Nav Buttons
+    function updateNavButtons() {
+      const backBtn = document.getElementById('btn-back');
+      const nextBtn = document.getElementById('btn-next');
+
+      backBtn.style.display = currentQuestion > 0 ? 'block' : 'none';
+      nextBtn.style.display = answers[currentQuestion] ? 'block' : 'none';
+      // Change button text on last question
+      var isLast = currentQuestion === quizData.length - 1;
+      nextBtn.innerHTML = isLast
+        ? '<span class="lang-en">See my result →</span><span class="lang-ta">எனது பாதையைக் காட்டு →</span>'
+        : '<span class="lang-en">Next →</span><span class="lang-ta">அடுத்து →</span>';
+    }
+
+    // Show Results
+    function showResults() {
+      const path = determinePath(answers);
+      const result = resultPaths[path];
+
+      document.getElementById('quiz-section').classList.add('hidden');
+      document.getElementById('result-section').classList.remove('hidden');
+
+      document.getElementById('result-icon').textContent = result.icon;
+      document.getElementById('result-path').innerHTML = `<span class="lang-en">${result.en}</span><span class="lang-ta">${result.ta}</span>`;
+      document.getElementById('result-description').innerHTML = `<span class="lang-en">${result.desc_en}</span><span class="lang-ta">${result.desc_ta}</span>`;
+
+      // Track quiz completion in GA4
+      if (typeof cvTrack === 'function') {
+        cvTrack('quiz_complete', { quiz_type: 'after_12th', result_path: path });
+      }
+
+      // Store path for later
+      localStorage.setItem('cv_current_path', path);
+      localStorage.setItem('cv_result_link', result.link);
+    }
+
+    // Determine Path Logic
+    function determinePath(answers) {
+      const stream = answers[0];
+      const interest = answers[1];
+      const location = answers[2];
+      const exam = answers[4];
+
+      if (location === 'abroad-open') {
+        return 'abroad';
+      }
+
+      if (stream === 'sci-maths' && interest === 'tech' && (exam === 'jee' || exam === 'tnea')) {
+        return 'engineering';
+      }
+
+      if (stream === 'sci-bio' && interest === 'medicine' && exam === 'neet') {
+        return 'medical';
+      }
+
+      if ((stream === 'commerce' || interest === 'business') && exam !== 'jee') {
+        return 'management';
+      }
+
+      return 'general';
+    }
+
+    // Setup Form Submit
+    function setupFormSubmit() {
+      document.getElementById('lead-form').addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const name = document.getElementById('name').value.trim();
+        const phone = document.getElementById('phone').value.trim();
+
+        if (!name || !phone) {
+          alert('Please fill in all fields');
+          return;
+        }
+
+        // Save to Supabase
+        try {
+          if (typeof cvLeads !== 'undefined' && cvLeads.saveQuizResult) {
+            cvLeads.saveQuizResult({
+              answers: answers,
+              result: localStorage.getItem('cv_current_path'),
+              score: null
+            });
+            cvUI.toast('Saved! Check your WhatsApp.');
+          }
+        } catch(e) {
+          console.error('Supabase save error:', e);
+        }
+
+        // Save to localStorage
+        const userData = {
+          name,
+          phone,
+          answers,
+          path: localStorage.getItem('cv_current_path'),
+          timestamp: new Date().toISOString()
+        };
+
+        localStorage.setItem('cv_user', JSON.stringify(userData));
+
+        // Show success
+        document.getElementById('result-section').classList.add('hidden');
+        document.getElementById('success-section').classList.remove('hidden');
+
+        // Update WhatsApp link
+        const whatsappLink = document.querySelector('.whatsapp-link');
+        const whatsappMsg = `Hi CampusVazhi, I just completed your career quiz. I'm ${name} and my path is ${localStorage.getItem('cv_current_path')}. Please send my personalised roadmap.`;
+        whatsappLink.href = `https://wa.me/918939862211?text=${encodeURIComponent(whatsappMsg)}`;
+      });
+    }
+
+    // Setup Buttons
+    function setupButtons() {
+      document.getElementById('btn-back').addEventListener('click', () => {
+        if (currentQuestion > 0) {
+          currentQuestion--;
+          renderQuestion();
+        }
+      });
+
+      document.getElementById('btn-next').addEventListener('click', () => {
+        if (answers[currentQuestion]) {
+          currentQuestion++;
+          renderQuestion(); // when currentQuestion >= quizData.length, this calls showResults()
+        }
+      });
+
+      document.getElementById('btn-retake').addEventListener('click', () => {
+        currentQuestion = 0;
+        answers = {};
+        document.getElementById('result-section').classList.add('hidden');
+        document.getElementById('quiz-section').classList.remove('hidden');
+        renderQuestion();
+      });
+
+      document.getElementById('btn-home').addEventListener('click', () => {
+        window.location.href = './campusvazhi-home-v2.html';
+      });
+    }
+
+    // Setup Language Toggle
+    function setupLanguageToggle() {
+      document.querySelectorAll('.lang-btn').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const lang = btn.dataset.lang;
+          currentLang = lang;
+
+          document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+
+          if (lang === 'ta') {
+            document.body.classList.add('lang-ta');
+          } else {
+            document.body.classList.remove('lang-ta');
+          }
+        });
+      });
+    }
+
+    // Start
+    document.addEventListener('DOMContentLoaded', init);
+  
+</script>
+</div>
+
+<script src="./js/config.js"></script>
+<script src="./js/analytics.js"></script>
+<script src="./js/cookie-consent.js"></script>
+<script src="./js/lead-popup.js"></script>
+<script src="./js/download-gate.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="./js/supabase-client.js"></script>
+</body>
+</html>

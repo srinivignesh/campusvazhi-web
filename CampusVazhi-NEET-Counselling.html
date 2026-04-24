@@ -1,0 +1,1222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style id="cv-sidebar-auth">
+.sidebar { display: none !important; }
+.page-wrap { margin-left: 0 !important; }
+body.logged-in .sidebar, .logged-in .sidebar { display: flex !important; }
+body.logged-in .page-wrap, .logged-in .page-wrap { margin-left: 68px !important; }
+@media (max-width: 768px) {
+  body.logged-in .page-wrap, .logged-in .page-wrap { margin-left: 0 !important; }
+}
+</style>
+<script>(function(){var s=localStorage.getItem('cv_signed_in')==='1';if(s)document.documentElement.classList.add('logged-in');document.addEventListener('DOMContentLoaded',function(){var sb=document.querySelector('.sidebar');var pw=document.querySelector('.page-wrap');if(s){document.body.classList.add('logged-in');if(sb)sb.style.setProperty('display','flex','important');if(pw)pw.style.setProperty('margin-left','68px','important')}else{if(sb)sb.style.setProperty('display','none','important');if(pw)pw.style.setProperty('margin-left','0','important')}});})()</script>
+
+
+<meta charset="UTF-8">
+<link rel="icon" type="image/svg+xml" href="./favicon.svg">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CampusVazhi — NEET 2026 Counselling Guide | Free College Predictor, Round Timelines, MBBS/BDS/AYUSH</title>
+<meta name="description" content="Free NEET 2026 counselling guide — NEET-to-College predictor, All India & Tamil Nadu round-by-round timelines, MBBS/BDS/AYUSH choice framework. For students and worried parents.">
+<link rel="canonical" href="https://campusvazhi.com/neet" />
+<meta property="og:title" content="CampusVazhi — NEET 2026 Counselling Guide | Free College Predictor, Round Timelines, MBBS/BDS/AYUSH" />
+<meta property="og:description" content="Free NEET 2026 counselling guide — NEET-to-College predictor, All India & Tamil Nadu round-by-round timelines, MBBS/BDS/AYUSH choice framework. For students and worried parents." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://campusvazhi.com/neet" />
+<meta property="og:image" content="https://campusvazhi.com/og-default.svg" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"What is the difference between All India Quota and State Quota in NEET counselling?","acceptedAnswer":{"@type":"Answer","text":"All India Quota (AIQ) covers 15% seats in government colleges and 100% of central institutes — conducted by MCC. State Quota covers 85% seats in state government colleges and is conducted by state counselling bodies like TNMCC for Tamil Nadu. You can participate in both simultaneously."}},
+    {"@type":"Question","name":"What NEET score is required for MBBS in a government college in Tamil Nadu?","acceptedAnswer":{"@type":"Answer","text":"For Tamil Nadu state quota MBBS in a government college, general category cutoffs typically sit at 620+ out of 720 (rank below 15,000 state-wise). BC/MBC/SC/ST students have lower cutoffs ranging from 550 to 600. Private colleges under state quota are accessible from 450+."}},
+    {"@type":"Question","name":"Should I choose MBBS in a low-tier college or BDS in a top college?","acceptedAnswer":{"@type":"Answer","text":"If your primary goal is clinical practice and PG options, MBBS in any college beats BDS in most cases because career breadth is higher. However, BDS in a top government college has better clinical exposure than MBBS in a remote private college with weak infrastructure. Consider internship quality, patient volume, and faculty strength — not just the degree name."}},
+    {"@type":"Question","name":"How many rounds of NEET counselling are there?","acceptedAnswer":{"@type":"Answer","text":"NEET UG counselling has 4 rounds: Round 1, Round 2, Mop-up Round, and Stray Vacancy Round. Both AIQ (MCC) and state counselling follow similar patterns. Round 1 typically begins 6-8 weeks after NEET results. Stray vacancy is your last chance for government seats."}},
+    {"@type":"Question","name":"Can I switch colleges between counselling rounds?","acceptedAnswer":{"@type":"Answer","text":"Yes, but with rules. If you get a seat in Round 1 and want to upgrade in Round 2, you can opt for 'upgrade' — this keeps you in your current seat if no better option comes, but you can move up if it does. 'Fresh allotment' means you give up your current seat entirely. Understand the choice carefully before clicking."}}
+  ]
+}
+</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--navy:#0F1B2D;--teal:#0D9488;--teal-light:#14B8A6;--teal-bg:#F0FDFA;--gold:#F59E0B;--white:#FFFFFF;--g50:#F9FAFB;--g100:#F3F4F6;--g200:#E5E7EB;--g500:#6B7280;--g700:#374151;--g900:#111827;--red:#EF4444;--green:#10B981;--pink:#EC4899}
+body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;color:var(--g900);background:var(--white);line-height:1.5}
+a{text-decoration:none}
+.badge{font-size:11px;font-weight:700;padding:2px 8px;border-radius:4px;letter-spacing:.5px;display:inline-block}
+.badge-teal{background:#0D948818;color:var(--teal)}
+.badge-gold{background:#F59E0B18;color:var(--gold)}
+.badge-green{background:#10B98118;color:var(--green)}
+.badge-purple{background:#8B5CF618;color:#8B5CF6}
+.badge-indigo{background:#6366F118;color:#6366F1}
+.badge-pink{background:#EC489918;color:var(--pink)}
+.badge-red{background:#EF444418;color:var(--red)}
+
+.top-bar{background:linear-gradient(135deg,var(--navy) 0%,#1E3A5F 100%);color:var(--white);padding:10px 16px;text-align:center;font-size:13px;font-weight:600;position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap}
+.top-bar-btn{background:var(--pink);color:var(--white);border:none;border-radius:4px;padding:4px 12px;font-size:12px;font-weight:700;cursor:pointer;margin-left:8px}
+.nav{display:flex;justify-content:space-between;align-items:center;padding:18px 40px;background:#fff;border-bottom:1px solid #F3F4F6}
+.nav-logo{display:flex;align-items:center;gap:10px}
+.nav-icon{width:36px;height:36px;border-radius:8px;background:linear-gradient(135deg,var(--teal),var(--navy));display:flex;align-items:center;justify-content:center}
+.nav-brand{font-size:20px;font-weight:800;color:#0F1B2D}
+.nav-brand span{color:var(--teal)}
+.nav-actions{display:flex;align-items:center;gap:12px}
+.btn-lang{background:var(--g100);border:none;border-radius:6px;padding:6px 12px;font-size:13px;font-weight:600;cursor:pointer;color:var(--g700);font-family:inherit}
+.btn-primary{background:var(--teal);color:var(--white);border:none;border-radius:8px;padding:10px 20px;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit;display:inline-flex;align-items:center;gap:6px}
+.btn-primary:hover{background:var(--teal-light)}
+.btn-primary-lg{padding:16px 32px;font-size:16px;border-radius:10px}
+.btn-secondary{background:rgba(255,255,255,.1);color:var(--white);border:1px solid rgba(255,255,255,.2);border-radius:10px;padding:16px 28px;font-size:16px;font-weight:600;cursor:pointer;font-family:inherit;display:inline-flex;align-items:center;gap:8px}
+.btn-gold{background:var(--gold);color:var(--navy);border:none;border-radius:8px;padding:10px 20px;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit}
+
+.breadcrumb{padding:12px 40px 0;font-size:12px;color:var(--g500)}
+.breadcrumb a{color:var(--teal);font-weight:600}
+.breadcrumb span{margin:0 6px;color:var(--g200)}
+
+.hero{background:linear-gradient(135deg,var(--navy) 0%,#1E3A5F 100%);padding:60px 24px 70px 92px;position:relative;overflow:hidden;margin-left:-68px;width:calc(100% + 68px)}
+.hero-circle-1{position:absolute;top:-40px;right:-40px;width:200px;height:200px;border-radius:50%;background:var(--pink);opacity:.1}
+.hero-circle-2{position:absolute;bottom:-60px;left:-20px;width:300px;height:300px;border-radius:50%;background:var(--teal);opacity:.07}
+.hero-inner{max-width:820px;margin:0 auto;text-align:center;position:relative;z-index:1}
+.hero h1{font-size:clamp(28px,5vw,42px);font-weight:800;color:var(--white);margin:20px 0 8px;line-height:1.2}
+.hero h1 span{color:var(--teal-light)}
+.hero p{font-size:17px;color:#94A3B8;max-width:600px;margin:16px auto 28px;line-height:1.7}
+.hero-buttons{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.trust-bar{display:flex;gap:24px;justify-content:center;margin-top:32px;flex-wrap:wrap}
+.trust-item{text-align:center}
+.trust-num{font-size:22px;font-weight:800;color:var(--teal-light)}
+.trust-label{font-size:12px;color:#94A3B8}
+
+.countdown-wrap{background:var(--white);padding:0 24px;transform:translateY(-28px);position:relative;z-index:10}
+.countdown-card{max-width:720px;margin:0 auto;background:var(--white);border-radius:14px;box-shadow:0 4px 24px rgba(0,0,0,.08);padding:20px 32px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
+.countdown-date{display:flex;align-items:center;gap:12px}
+.countdown-label{font-size:13px;font-weight:600;color:#374151 !important}
+.countdown-value{font-size:15px;font-weight:800;color:#111827 !important}
+.countdown-digits{display:flex;gap:8px;align-items:center}
+.countdown-digit{min-width:42px;height:48px;padding:0 6px;border-radius:8px;background:var(--navy);color:var(--teal-light);display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:800}
+.countdown-text{font-size:13px;font-weight:700;color:#374151 !important;margin-left:4px}
+
+/* Predictor */
+.predictor-section{padding:56px 24px;max-width:900px;margin:0 auto}
+.predictor-card{background:linear-gradient(135deg,#FCE7F3 0%,var(--teal-bg) 100%);border:1px solid var(--pink);border-radius:16px;padding:32px;position:relative;overflow:hidden}
+.predictor-card::before{content:"";position:absolute;top:-50px;right:-50px;width:200px;height:200px;border-radius:50%;background:var(--pink);opacity:.05}
+.predictor-head{display:flex;align-items:center;gap:12px;margin-bottom:20px;position:relative}
+.predictor-icon{width:48px;height:48px;border-radius:12px;background:var(--pink);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.predictor-head h3{font-size:20px;font-weight:800;color:#111827 !important}
+.predictor-head p{font-size:13px;color:#374151 !important;margin-top:2px}
+.predictor-inputs{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;position:relative}
+.predictor-field label{display:block;font-size:12px;font-weight:700;color:#374151 !important;margin-bottom:6px}
+.round-card span,.decision-card span,.predictor-card span{color:inherit !important}
+.predictor-field input,.predictor-field select{width:100%;padding:12px;border-radius:8px;border:1px solid var(--g200);font-size:14px;outline:none;font-family:inherit;background:var(--white)}
+.predictor-cta{margin-top:20px;display:flex;gap:12px;align-items:center;flex-wrap:wrap;position:relative}
+.predictor-result{margin-top:20px;background:var(--white);border-radius:10px;padding:20px;display:none;position:relative;box-shadow:0 2px 8px rgba(0,0,0,.04)}
+.predictor-result.active{display:block}
+.result-row{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px dashed var(--g200);font-size:14px}
+.result-row:last-child{border-bottom:none}
+
+/* Rounds timeline */
+.rounds-section{background:var(--g50);padding:56px 24px}
+.rounds-inner{max-width:900px;margin:0 auto}
+.rounds-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:28px}
+.round-card{background:var(--white);border-radius:14px;padding:22px;border:1px solid var(--g200);position:relative}
+.round-num{width:40px;height:40px;border-radius:10px;background:var(--teal-bg);color:var(--teal);display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:800;margin-bottom:12px}
+.round-card.critical .round-num{background:#FEE2E2;color:var(--red)}
+.round-title{font-size:16px;font-weight:800;color:#111827 !important}
+.round-dates{font-size:12px;color:#374151 !important;margin:4px 0 10px}
+.round-card p{font-size:13px;color:#374151 !important;line-height:1.6}
+.round-card ul{list-style:none;padding:0;margin:8px 0 0}
+.round-card li{font-size:12px;color:#374151 !important;padding-left:14px;position:relative;line-height:1.7}
+.round-card li::before{content:"•";position:absolute;left:0;color:var(--teal);font-weight:800}
+
+/* Decision tree */
+.decision-section{padding:56px 24px;max-width:900px;margin:0 auto}
+.decision-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:24px}
+.decision-card{background:var(--white);border:2px solid var(--g200);border-radius:14px;padding:22px;position:relative;transition:all .2s}
+.decision-card:hover{border-color:var(--teal);transform:translateY(-2px)}
+.decision-tag{display:inline-block;font-size:11px;font-weight:800;padding:3px 10px;border-radius:4px;background:var(--teal-bg);color:var(--teal);letter-spacing:.5px}
+.decision-card h3{font-size:18px;font-weight:800;color:#111827 !important;margin:10px 0 6px}
+.decision-card .meta{font-size:12px;color:#374151 !important;margin-bottom:12px}
+.pros-cons{display:flex;flex-direction:column;gap:10px;margin-top:12px}
+.pros,.cons{font-size:12px;line-height:1.6}
+.pros{color:var(--green)}
+.cons{color:var(--red)}
+.pros strong,.cons strong{display:block;margin-bottom:4px;text-transform:uppercase;letter-spacing:.5px;font-size:10px}
+.decision-card ul{list-style:none;padding:0;margin:0}
+.decision-card li{padding-left:12px;position:relative}
+.decision-card li::before{content:"→";position:absolute;left:0}
+
+/* Resources */
+.resources-section{padding:40px 24px 60px;max-width:1100px;margin:0 auto}
+.section-header{text-align:center;margin-bottom:36px}
+.section-header h2{font-size:clamp(24px,4vw,30px);font-weight:800;color:#111827 !important;margin:12px 0 8px}
+.section-header p{font-size:15px;color:#374151 !important;max-width:560px;margin:0 auto}
+.resources-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:16px;max-width:1020px;margin:0 auto}
+.resource-card{background:var(--white);border:1px solid var(--g200);border-radius:12px;padding:24px 20px;cursor:pointer;transition:all .2s;display:flex;gap:16px;align-items:flex-start}
+.resource-card:hover{box-shadow:0 4px 16px rgba(0,0,0,.06);border-color:var(--teal);transform:translateY(-2px)}
+.resource-icon{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.resource-content{flex:1}
+.resource-title-row{display:flex;align-items:center;gap:8px;margin-bottom:4px;flex-wrap:wrap}
+.resource-title{font-size:15px;font-weight:800;color:#111827 !important;margin:0}
+.resource-title span{color:#111827 !important}
+.resource-desc{font-size:13px;color:#374151 !important;margin:4px 0 0;line-height:1.5}
+.resource-desc span{color:#374151 !important}
+.resource-arrow{flex-shrink:0;margin-top:12px;color:#374151}
+
+/* Parent callout */
+.parent-callout{background:linear-gradient(135deg,#FEF3C7,#FDE68A);padding:40px 24px}
+.parent-inner{max-width:820px;margin:0 auto;text-align:center}
+.parent-callout .badge{background:var(--navy);color:var(--gold)}
+.parent-callout h2{font-size:26px;font-weight:800;color:var(--navy);margin:12px 0 8px}
+.parent-callout p{font-size:15px;color:#374151 !important;max-width:640px;margin:0 auto 20px;line-height:1.7}
+
+/* FAQs */
+.faq-section{background:var(--g50);padding:56px 24px}
+.faq-inner{max-width:780px;margin:0 auto}
+.faq-list{margin-top:24px;display:flex;flex-direction:column;gap:10px}
+.faq-item{background:var(--white);border:1px solid var(--g200);border-radius:10px;padding:18px 22px;cursor:pointer}
+.faq-q{display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:15px;font-weight:700;color:#111827 !important}
+.faq-q span{color:#111827 !important}
+.faq-q-icon{flex-shrink:0;color:var(--teal);font-size:18px}
+.faq-a{font-size:14px;color:#374151 !important;line-height:1.7;margin-top:12px;display:none}
+.faq-a span{color:#374151 !important}
+.faq-item.open .faq-a{display:block}
+.faq-item.open .faq-q-icon{transform:rotate(45deg)}
+
+.testimonials{background:var(--navy);padding:56px 24px}
+.testimonials-inner{max-width:900px;margin:0 auto;text-align:center}
+.testimonials h2{font-size:28px;font-weight:800;color:var(--white);margin:12px 0 28px}
+.test-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;text-align:left}
+.test-card{background:rgba(255,255,255,.06);border-radius:12px;padding:24px;border:1px solid rgba(255,255,255,.08)}
+.test-stars{display:flex;gap:4px;margin-bottom:12px}
+.test-quote{font-size:14px;color:#CBD5E1;line-height:1.7;margin:0 0 16px;font-style:italic}
+.test-footer{border-top:1px solid rgba(255,255,255,.08);padding-top:12px}
+.test-name{font-size:14px;font-weight:700;color:var(--white)}
+.test-detail{font-size:12px;color:var(--teal-light)}
+
+.wa-section{padding:56px 24px}
+.wa-card{max-width:700px;margin:0 auto;background:linear-gradient(135deg,#075E54,#128C7E);border-radius:16px;padding:40px 32px;text-align:center;position:relative;overflow:hidden}
+.wa-circle{position:absolute;top:-30px;right:-30px;width:120px;height:120px;border-radius:50%;background:rgba(255,255,255,.06)}
+.wa-card h2{font-size:clamp(20px,3.5vw,26px);font-weight:800;color:var(--white);margin:16px 0 8px}
+.wa-card p{font-size:15px;color:rgba(255,255,255,.85);margin:0 0 24px;line-height:1.6}
+.btn-wa{background:var(--white);color:#075E54;border:none;border-radius:10px;padding:14px 32px;font-size:16px;font-weight:700;cursor:pointer;font-family:inherit;display:inline-flex;align-items:center;gap:8px}
+
+.final-cta{background:var(--teal-bg);padding:48px 24px;text-align:center}
+.final-inner{max-width:620px;margin:0 auto}
+.final-cta h2{font-size:24px;font-weight:800;color:#111827 !important;margin:12px 0 8px}
+.final-cta p{font-size:15px;color:#374151 !important;margin:0 0 20px}
+
+.footer{background:var(--navy);padding:32px 24px;text-align:center}
+.footer-brand{display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:12px}
+.footer-brand span{font-size:16px;font-weight:700;color:var(--white)}
+.footer-brand span span{color:var(--teal-light)}
+.footer p{font-size:12px;color:#64748B}
+.footer .copy{font-size:11px;color:#475569;margin-top:8px}
+.footer-links{margin:8px 0;font-size:12px}
+.footer-links a{color:#94A3B8;margin:0 8px}
+
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:1000;display:none;align-items:center;justify-content:center;padding:16px}
+.modal-overlay.active{display:flex}
+.modal{background:var(--white);border-radius:16px;max-width:440px;width:100%;padding:32px;position:relative}
+.modal-close{position:absolute;top:12px;right:12px;background:none;border:none;cursor:pointer;font-size:20px;color:var(--g500);line-height:1}
+.modal-icon{width:56px;height:56px;border-radius:28px;background:var(--teal-bg);display:flex;align-items:center;justify-content:center;margin:0 auto 12px}
+.modal h3{font-size:20px;font-weight:700;color:#111827 !important;text-align:center;margin:0}
+.modal .subtitle{font-size:13px;color:#374151 !important;text-align:center;margin-top:6px}
+.modal-form{display:flex;flex-direction:column;gap:12px;margin-top:20px}
+.modal-form input,.modal-form select{padding:12px 14px;border-radius:8px;border:1px solid var(--g200);font-size:14px;outline:none;font-family:inherit;width:100%;box-sizing:border-box}
+.modal-form input:focus,.modal-form select:focus{border-color:var(--teal)}
+.modal-submit{background:var(--teal);color:var(--white);border:none;border-radius:8px;padding:14px 0;font-size:15px;font-weight:700;cursor:pointer;font-family:inherit;display:flex;align-items:center;justify-content:center;gap:8px;margin-top:4px;width:100%}
+.modal-privacy{font-size:11px;color:#374151 !important;text-align:center}
+.modal-success{text-align:center;padding:20px 0;display:none}
+.modal-success.active{display:block}
+.modal-form-wrap.hidden{display:none}
+.success-icon{width:64px;height:64px;border-radius:32px;background:#ECFDF5;display:flex;align-items:center;justify-content:center;margin:0 auto 16px}
+.success-wa{background:var(--teal-bg);border-radius:10px;padding:14px;margin:16px 0}
+.success-wa p{font-size:13px;color:var(--teal);font-weight:600;margin:0}
+
+@media(max-width:768px){.hero{margin-left:0;width:100%;padding-left:24px}}
+@media(max-width:640px){.resources-grid{grid-template-columns:1fr}.countdown-card{flex-direction:column;text-align:center;align-items:center}.nav{padding:12px 16px}.hero{padding:40px 16px 50px}}
+
+
+  
+    /* ============= SIDEBAR — always-visible icon rail ============= */
+    .page-wrap { margin-left: 68px; }
+
+    .sidebar {
+      display: flex;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 68px;
+      height: 100vh;
+      background: var(--navy);
+      z-index: 1000;
+      flex-direction: column;
+      overflow: hidden;
+      transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 2px 0 24px rgba(15,27,45,0.15);
+    }
+    .sidebar:hover { width: 260px; }
+
+    /* Text labels hidden when collapsed, shown when expanded */
+    .sidebar .sb-label,
+    .sidebar .sidebar-section-label,
+    .sidebar .sidebar-user-info,
+    .sidebar .sidebar-badge,
+    .sidebar .sb-signout-text {
+      opacity: 0;
+      white-space: nowrap;
+      transition: opacity 0.2s ease 0s;
+    }
+    .sidebar:hover .sb-label,
+    .sidebar:hover .sidebar-section-label,
+    .sidebar:hover .sidebar-user-info,
+    .sidebar:hover .sidebar-badge,
+    .sidebar:hover .sb-signout-text {
+      opacity: 1;
+      transition: opacity 0.2s ease 0.12s;
+    }
+
+    /* Sidebar header — avatar area */
+    .sidebar-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 20px 14px 16px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      flex-shrink: 0;
+      min-height: 72px;
+    }
+    .sidebar-avatar {
+      width: 40px;
+      height: 40px;
+      min-width: 40px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--teal), var(--teal-light));
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 17px;
+      font-weight: 800;
+      flex-shrink: 0;
+      box-shadow: 0 2px 8px rgba(13,148,136,0.35);
+    }
+    .sidebar-user-info {
+      overflow: hidden;
+    }
+    .sidebar-user-info h4 {
+      margin: 0;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--white);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .sidebar-user-info p {
+      margin: 2px 0 0;
+      font-size: 11px;
+      color: rgba(255,255,255,0.5);
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    /* Sidebar nav links */
+    .sidebar-nav {
+      flex: 1;
+      padding: 8px 0;
+      overflow-y: auto;
+      overflow-x: hidden;
+      scrollbar-width: none;
+    }
+    .sidebar-nav::-webkit-scrollbar { display: none; }
+
+    .sidebar-section-label {
+      font-size: 9px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: rgba(255,255,255,0.35);
+      padding: 14px 14px 4px 22px;
+      white-space: nowrap;
+    }
+
+    .sidebar-link {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 10px 14px 10px 20px;
+      font-size: 13px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+      transition: all 0.15s ease;
+      border-left: 3px solid transparent;
+      position: relative;
+      white-space: nowrap;
+    }
+    .sidebar-link:hover {
+      background: rgba(13,148,136,0.15);
+      color: var(--teal-light);
+      border-left-color: var(--teal-light);
+    }
+    .sidebar-link svg {
+      width: 20px;
+      height: 20px;
+      min-width: 20px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .sidebar-link .sidebar-badge {
+      margin-left: auto;
+      background: var(--teal);
+      color: var(--white);
+      font-size: 10px;
+      font-weight: 800;
+      padding: 2px 7px;
+      border-radius: 999px;
+    }
+
+    /* Collapsed: show tooltip on icon hover */
+    .sidebar:not(:hover) .sidebar-link[data-tip]:hover::after {
+      content: attr(data-tip);
+      position: absolute;
+      left: 64px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: var(--navy);
+      color: var(--white);
+      font-size: 12px;
+      font-weight: 600;
+      padding: 6px 12px;
+      border-radius: 6px;
+      white-space: nowrap;
+      z-index: 1001;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      pointer-events: none;
+    }
+
+    .sidebar-divider {
+      height: 1px;
+      background: rgba(255,255,255,0.06);
+      margin: 6px 14px;
+    }
+
+    /* Sidebar footer — sign out */
+    .sidebar-footer {
+      padding: 12px 14px 16px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      flex-shrink: 0;
+    }
+    .sidebar-signout {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      width: 100%;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: transparent;
+      padding: 10px 10px;
+      border-radius: 10px;
+      font-size: 13px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.5);
+      cursor: pointer;
+      font-family: inherit;
+      transition: all 0.15s ease;
+      white-space: nowrap;
+    }
+    .sidebar-signout:hover {
+      border-color: rgba(239,68,68,0.5);
+      background: rgba(239,68,68,0.08);
+      color: #FCA5A5;
+    }
+    .sidebar-signout svg {
+      width: 18px;
+      height: 18px;
+      min-width: 18px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* Page wrapper: shifts content right when sidebar visible */
+    .page-wrap {
+      transition: margin-left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* ============= SIDEBAR MOBILE ============= */
+    @media (max-width: 768px) {
+      .sidebar { width: 0; }
+      .sidebar:hover { width: 260px; }
+      .page-wrap { margin-left: 0; }
+
+      /* When sidebar is hovered on mobile, show overlay */
+      .sidebar:hover ~ .page-wrap::before {
+        content: '';
+        position: fixed;
+        inset: 0;
+        background: rgba(15,27,45,0.3);
+        z-index: 998;
+      }
+    }
+
+        .ta { display: none; }
+    body.lang-ta .ta { display: inline; }
+    body.lang-ta .en { display: none; }
+
+        body.cv-signed-in .nav-sign-in { display: none; }
+    body.cv-signed-in .user-pill { display: inline-flex; }
+  
+
+    
+  </style>
+</head>
+<body>
+<!-- ================= SIDEBAR ================= -->
+<aside class="sidebar" id="sidebar">
+
+  <!-- Profile header -->
+  <div class="sidebar-header">
+    <div class="sidebar-avatar" id="sb-avatar"></div>
+    <div class="sidebar-user-info">
+      <h4 id="sb-name"></h4>
+      <p id="sb-exam">CAT 2026</p>
+    </div>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a href="./campusvazhi-home-v2.html" class="sidebar-link" data-tip="Home" style="margin-bottom:8px">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      <span class="sb-label"><span class="en">Home</span><span class="ta">முகப்பு</span></span>
+    </a>
+    <div class="sidebar-divider"></div>
+
+    <!-- Dashboard -->
+    <div class="sidebar-section-label"><span class="en">Dashboard</span><span class="ta">டாஷ்போர்டு</span></div>
+
+    <a href="./CampusVazhi-Dashboard.html" class="sidebar-link" data-tip="Dashboard">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+      <span class="sb-label"><span class="en">My Dashboard</span><span class="ta">என் டாஷ்போர்டு</span></span>
+    </a>
+    <a href="./CampusVazhi-College-Compare.html" class="sidebar-link" data-tip="Saved">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+      <span class="sb-label"><span class="en">Saved Resources</span><span class="ta">சேமித்த ஆதாரங்கள்</span></span>
+    </a>
+    <a href="./campusvazhi-home-v2.html#community" class="sidebar-link" data-tip="Groups">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      <span class="sb-label"><span class="en">My Groups</span><span class="ta">என் குழுக்கள்</span></span>
+      <span class="sidebar-badge">1</span>
+    </a>
+
+    <div class="sidebar-divider"></div>
+
+    <!-- Explore Pathways -->
+    <div class="sidebar-section-label"><span class="en">Explore Pathways</span><span class="ta">பாதைகளை ஆராயுங்கள்</span></div>
+
+    <a href="./CampusVazhi-CAT-2026.html" class="sidebar-link" data-tip="CAT 2026">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+      <span class="sb-label">CAT 2026</span>
+    </a>
+    <a href="./CampusVazhi-TANCET-Resource-Hub.html" class="sidebar-link" data-tip="TANCET Hub">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+      <span class="sb-label"><span class="en">TANCET Hub</span><span class="ta">TANCET மையம்</span></span>
+    </a>
+    <a href="./CampusVazhi-MS-USA.html" class="sidebar-link" data-tip="MS in USA">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+      <span class="sb-label"><span class="en">MS in USA</span><span class="ta">அமெரிக்காவில் MS</span></span>
+    </a>
+    <a href="./CampusVazhi-NEET-Counselling.html" class="sidebar-link" data-tip="NEET">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+      <span class="sb-label"><span class="en">NEET Counselling</span><span class="ta">NEET ஆலோசனை</span></span>
+    </a>
+    <a href="./CampusVazhi-After12th-Quiz.html" class="sidebar-link" data-tip="After 12th">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+      <span class="sb-label"><span class="en">After 12th Quiz</span><span class="ta">12ஆம் வகுப்புக்குப் பிறகு</span></span>
+    </a>
+    <a href="./CampusVazhi-TNEA-Calculator.html" class="sidebar-link" data-tip="TNEA Calc">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="10" y2="10"/><line x1="12" y1="10" x2="14" y2="10"/><line x1="8" y1="14" x2="10" y2="14"/><line x1="12" y1="14" x2="14" y2="14"/><line x1="8" y1="18" x2="16" y2="18"/></svg>
+      <span class="sb-label"><span class="en">TNEA Calculator</span><span class="ta">TNEA கால்குலேட்டர்</span></span>
+    </a>
+    <a href="./CampusVazhi-Resume.html" class="sidebar-link" data-tip="Resume">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+      <span class="sb-label"><span class="en">Resume Builder</span><span class="ta">ரெஸ்யூம் உருவாக்கி</span></span>
+    </a>
+
+    <div class="sidebar-divider"></div>
+
+    <!-- Support -->
+    <div class="sidebar-section-label"><span class="en">Support</span><span class="ta">ஆதரவு</span></div>
+
+    <a href="./CampusVazhi-Book-Counselling.html" class="sidebar-link" data-tip="Counselling">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      <span class="sb-label"><span class="en">Book a Free Call</span><span class="ta">ஆலோசனை முன்பதிவு</span></span>
+    </a>
+    <a href="https://wa.me/918939862211" target="_blank" class="sidebar-link" data-tip="WhatsApp">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      <span class="sb-label"><span class="en">WhatsApp Us</span><span class="ta">WhatsApp செய்யுங்கள்</span></span>
+    </a>
+
+    <div class="sidebar-divider"></div>
+
+    <!-- Profile & Settings -->
+    <div class="sidebar-section-label"><span class="en">Profile</span><span class="ta">சுயவிவரம்</span></div>
+
+    <a href="./CampusVazhi-Dashboard.html" class="sidebar-link" data-tip="Profile">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      <span class="sb-label"><span class="en">Edit Profile</span><span class="ta">சுயவிவரத்தை மாற்று</span></span>
+    </a>
+    <a href="./CampusVazhi-Dashboard.html" class="sidebar-link" data-tip="Settings">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+      <span class="sb-label"><span class="en">Settings</span><span class="ta">அமைப்புகள்</span></span>
+    </a>
+  </nav>
+
+  <div class="sidebar-footer">
+    <button class="sidebar-signout" onclick="signOut()">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+      <span class="sb-signout-text"><span class="en">Sign out</span><span class="ta">வெளியேறு</span></span>
+    </button>
+  </div>
+</aside>
+<div class="page-wrap">
+<div class="top-bar">
+  <span>🩺</span>
+  <span>NEET UG 2026 counselling rounds start ~6 weeks after results. Understand the process now.</span>
+  <button class="top-bar-btn" onclick="openModal()">Get Free Guide →</button>
+</div>
+
+<nav class="nav">
+  <a href="./campusvazhi-home-v2.html" class="nav-logo" style="text-decoration:none">
+    <div class="nav-icon"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
+    <span class="nav-brand">Campus<span>Vazhi</span></span>
+  </a>
+  <div class="nav-actions">
+    <button class="btn-lang" onclick="toggleLang()" id="langBtn">தமிழ்</button>
+    <button class="btn-primary" onclick="openModal()">Get Free Guide</button>
+  </div>
+</nav>
+
+<div class="breadcrumb">
+  <a href="./campusvazhi-home-v2.html">Home</a><span>›</span>UG in India<span>›</span>NEET Counselling
+</div>
+
+<section class="hero">
+  <div class="hero-circle-1"></div>
+  <div class="hero-circle-2"></div>
+  <div class="hero-inner">
+    <span class="badge badge-pink">NEET UG 2026 · COUNSELLING GUIDE</span>
+    <h1>From NEET Score to<br><span>Medical Seat — Explained</span></span></h1>
+    <p>Free college predictor, round-by-round timelines for All India & Tamil Nadu, MBBS vs BDS vs AYUSH decision framework. Built for students and the parents who worry with them.</p>
+    <div class="hero-buttons">
+      <button class="btn-primary btn-primary-lg" onclick="scrollTo('predictor')">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        Predict My College
+      </button>
+      <button class="btn-secondary" onclick="openModal()">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Get Full Guide Free
+      </button>
+    </div>
+    <div class="trust-bar">
+      <div class="trust-item"><div class="trust-num">500+</div><div class="trust-label">Medical Colleges</div></div>
+      <div class="trust-item"><div class="trust-num">AIQ+TN</div><div class="trust-label">Both Quotas</div></div>
+      <div class="trust-item"><div class="trust-num">4 Rounds</div><div class="trust-label">Explained</div></div>
+      <div class="trust-item"><div class="trust-num">100%</div><div class="trust-label">Free</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="countdown-wrap">
+  <div class="countdown-card">
+    <div class="countdown-date">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+      <div>
+        <div class="countdown-label">NEET UG 2026 (expected)</div>
+        <div class="countdown-value">May 3, 2026</div>
+      </div>
+    </div>
+    <div class="countdown-digits">
+      <div class="countdown-digit" id="cd1">0</div>
+      <span class="countdown-text">days to exam</span>
+    </div>
+    <button class="btn-gold" onclick="openModal()">Get Counselling Kit →</button>
+  </div>
+</section>
+
+<!-- College Predictor -->
+<section class="predictor-section" id="predictor">
+  <div class="predictor-card">
+    <div class="predictor-head">
+      <div class="predictor-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+      </div>
+      <div>
+        <h3>NEET to Medical College Predictor</h3>
+        <p>Enter NEET score → see realistic MBBS/BDS/AYUSH options in All India & Tamil Nadu quota</p>
+      </div>
+    </div>
+    <div class="predictor-inputs">
+      <div class="predictor-field">
+        <label>NEET UG Score (out of 720)</label>
+        <input type="number" id="score" placeholder="e.g. 605" max="720" aria-label="NEET score">
+      </div>
+      <div class="predictor-field">
+        <label>Category</label>
+        <select id="category" aria-label="Category">
+          <option value="GEN">General / OC</option>
+          <option value="BC">BC</option>
+          <option value="MBC">MBC / BCM</option>
+          <option value="SC">SC</option>
+          <option value="ST">ST</option>
+        </select>
+      </div>
+      <div class="predictor-field">
+        <label>State Domicile</label>
+        <select id="domicile" aria-label="Domicile state">
+          <option value="TN">Tamil Nadu</option>
+          <option value="OTHER">Other state</option>
+        </select>
+      </div>
+      <div class="predictor-field">
+        <label>Preferred Course</label>
+        <select id="course" aria-label="Course preference">
+          <option value="MBBS">MBBS</option>
+          <option value="BDS">BDS</option>
+          <option value="AYUSH">AYUSH (BAMS/BHMS/BUMS)</option>
+          <option value="ANY">Any medical seat</option>
+        </select>
+      </div>
+    </div>
+    <div class="predictor-cta">
+      <button class="btn-primary" onclick="predictCollege()">
+        See My Options
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </button>
+      <span style="font-size:12px;color:#374151">Based on 2024-25 closing ranks from MCC &amp; TNMCC</span>
+    </div>
+    <div class="predictor-result" id="predictorResult"></div>
+  </div>
+</section>
+
+<!-- Rounds Timeline -->
+<section class="rounds-section">
+  <div class="rounds-inner">
+    <div class="section-header">
+      <span class="badge badge-purple">COUNSELLING ROUNDS</span>
+      <h2>The 4 Rounds, Explained Without Jargon</h2>
+      <p>Parents: read this twice. Each round has irreversible choices.</p>
+    </div>
+    <div class="rounds-grid">
+      <div class="round-card">
+        <div class="round-num">1</div>
+        <div class="round-title">Round 1</div>
+        <div class="round-dates">~6 weeks after NEET result</div>
+        <p>Register, fill choices (100+ allowed), lock. Allotment published. Accept, report to college, or opt for upgrade.</p>
+        <ul>
+          <li>Choice filling is the MOST important step</li>
+          <li>"Upgrade" keeps current seat + tries better</li>
+          <li>"Fresh" surrenders current seat entirely</li>
+        </ul>
+      </div>
+      <div class="round-card">
+        <div class="round-num">2</div>
+        <div class="round-title">Round 2</div>
+        <div class="round-dates">~2 weeks after Round 1</div>
+        <p>Vacant seats + upgraded seats. Second chance to improve. Can add or modify choices based on Round 1 cutoffs.</p>
+        <ul>
+          <li>Updated cutoffs published — study them</li>
+          <li>Resignation window closes after this</li>
+          <li>Seat matrix expands for new colleges</li>
+        </ul>
+      </div>
+      <div class="round-card critical">
+        <div class="round-num">3</div>
+        <div class="round-title">Mop-Up Round</div>
+        <div class="round-dates">~1 week after Round 2</div>
+        <p>Last round under MCC/state authority. Mostly private and deemed seats. High stakes, high confusion.</p>
+        <ul>
+          <li>Most deemed university seats open here</li>
+          <li>Financial commitment becomes real</li>
+          <li>Read fee structure carefully before locking</li>
+        </ul>
+      </div>
+      <div class="round-card critical">
+        <div class="round-num">4</div>
+        <div class="round-title">Stray Vacancy</div>
+        <div class="round-dates">~10 days after Mop-Up</div>
+        <p>College-level filling under state control. Absolute last chance for a medical seat in the cycle.</p>
+        <ul>
+          <li>College-level allocation, not centralized</li>
+          <li>Travel to college personally may be required</li>
+          <li>Fraud risk — verify agent intermediaries</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Decision Framework -->
+<section class="decision-section">
+  <div class="section-header">
+    <span class="badge badge-teal">DECISION FRAMEWORK</span>
+    <h2>MBBS vs BDS vs AYUSH — The Honest Tradeoffs</h2>
+    <p>Your score forces a choice. Here's what each path actually looks like 10 years out.</p>
+  </div>
+  <div class="decision-grid">
+    <div class="decision-card">
+      <span class="decision-tag">FIRST CHOICE</span>
+      <h3>MBBS</h3>
+      <div class="meta">5.5 years · Govt or private · NEET PG door</div>
+      <div class="pros-cons">
+        <div class="pros">
+          <strong>Why choose it</strong>
+          <ul>
+            <li>Widest practice scope</li>
+            <li>NEET PG gives 60+ specialty paths</li>
+            <li>Government jobs, rural service</li>
+            <li>Highest social trust</li>
+          </ul>
+        </div>
+        <div class="cons">
+          <strong>Tradeoffs</strong>
+          <ul>
+            <li>Private fees 10-80 lakhs/yr</li>
+            <li>Long hours, high stress</li>
+            <li>PG another 3-year grind</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="decision-card">
+      <span class="decision-tag">STRONG SECOND</span>
+      <h3>BDS</h3>
+      <div class="meta">5 years · Dental · Good private practice</div>
+      <div class="pros-cons">
+        <div class="pros">
+          <strong>Why choose it</strong>
+          <ul>
+            <li>Private clinic = own business</li>
+            <li>Shorter, clearer path</li>
+            <li>Work-life balance better than MBBS</li>
+            <li>Growing cosmetic dentistry market</li>
+          </ul>
+        </div>
+        <div class="cons">
+          <strong>Tradeoffs</strong>
+          <ul>
+            <li>Saturated in metros</li>
+            <li>Clinic setup ₹15-30 lakhs</li>
+            <li>Insurance doesn't cover most work</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="decision-card">
+      <span class="decision-tag">CONSIDER CAREFULLY</span>
+      <h3>AYUSH</h3>
+      <div class="meta">5.5 years · BAMS/BHMS/BUMS/BSMS</div>
+      <div class="pros-cons">
+        <div class="pros">
+          <strong>Why choose it</strong>
+          <ul>
+            <li>Lower fees at govt colleges</li>
+            <li>Integrated wellness is growing</li>
+            <li>Government AYUSH jobs available</li>
+            <li>MD AYUSH paths exist</li>
+          </ul>
+        </div>
+        <div class="cons">
+          <strong>Tradeoffs</strong>
+          <ul>
+            <li>Scope-of-practice debates</li>
+            <li>Lower social prestige vs MBBS</li>
+            <li>Private practice hardest to build</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Resources -->
+<section class="resources-section">
+  <div class="section-header">
+    <span class="badge badge-teal">100% FREE RESOURCES</span>
+    <h2>Counselling Toolkit</h2>
+    <p>Everything a good counsellor charges ₹10,000 for — yours free</p>
+  </div>
+  <div class="resources-grid" id="resourcesGrid"></div>
+
+  <!-- College Compare CTA -->
+  <a href="./CampusVazhi-College-Compare.html?category=neet" style="display:block;margin:32px auto 0;max-width:900px;text-decoration:none;background:linear-gradient(135deg,#0F1B2D 0%,#1E293B 100%);border-radius:16px;padding:28px 32px;color:#fff;position:relative;overflow:hidden;border:1px solid rgba(20,184,166,.3)">
+    <div style="display:flex;align-items:center;gap:20px;flex-wrap:wrap">
+      <div style="width:56px;height:56px;background:rgba(20,184,166,.15);border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#14B8A6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+      </div>
+      <div style="flex:1;min-width:220px">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px"><span style="background:#14B8A6;color:#fff;font-size:10px;font-weight:700;padding:3px 8px;border-radius:4px;letter-spacing:.5px">NEW TOOL</span><span style="color:#94A3B8;font-size:12px">Free · Sign-in required</span></div>
+        <h3 style="font-size:20px;font-weight:700;margin:0 0 4px">Compare TN Medical Colleges</h3>
+        <p style="font-size:14px;color:#CBD5E1;margin:0">MMC · SMC · KMC · CMC Vellore · Private deemed — cutoffs, fees, bond, beds, seats</p>
+      </div>
+      <div style="background:#14B8A6;color:#fff;padding:12px 20px;border-radius:8px;font-weight:600;font-size:14px;white-space:nowrap">Open Compare Tool →</div>
+    </div>
+  </a>
+</section>
+
+<!-- Parent callout -->
+<section class="parent-callout">
+  <div class="parent-inner">
+    <span class="badge">FOR PARENTS</span>
+    <h2>The Parent's Counselling Checklist</h2>
+    <p>A calm, step-by-step WhatsApp guide — in English and Tamil — sent to your phone so you can follow along during each round. Dates, documents, red flags, fee traps, verification steps. Built for parents who want to help without making it worse.</p>
+    <button class="btn-primary btn-primary-lg" onclick="openModal()">Send Me the Parent Checklist →</button>
+  </div>
+</section>
+
+<!-- FAQs -->
+<section class="faq-section">
+  <div class="faq-inner">
+    <div class="section-header">
+      <span class="badge badge-teal">FREQUENTLY ASKED</span>
+      <h2>NEET Counselling FAQs</h2>
+    </div>
+    <div class="faq-list" id="faqList"></div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section class="testimonials">
+  <div class="testimonials-inner">
+    <span class="badge badge-gold">SUCCESS STORIES</span>
+    <h2>Seats Secured, Lives Begun</h2>
+    <div class="test-grid" id="testGrid"></div>
+  </div>
+</section>
+
+<section class="wa-section">
+  <div class="wa-card">
+    <div class="wa-circle"></div>
+    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+    <h2>Join NEET 2026 Counselling WhatsApp</h2>
+    <p>Live cutoff updates · Round-day alerts · Parents in Tamil · Expert Q&A during every round</p>
+    <button class="btn-wa" onclick="openModal()">Join Free — Students & Parents Welcome</button>
+  </div>
+</section>
+
+<section class="final-cta">
+  <div class="final-inner">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0D9488" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+    <h2>Don't Let Counselling Confusion Cost a Seat</h2>
+    <p>Predictor + timeline + decision framework + parent checklist. All free. All yours.</p>
+    <button class="btn-primary btn-primary-lg" onclick="openModal()">Get Full Counselling Kit →</button>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-brand">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#14B8A6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+    <span>Campus<span>Vazhi</span></span>
+  </div>
+  <p>Your trusted guide for admissions in Tamil Nadu & beyond</p>
+  <div class="footer-links">
+    <a href="./campusvazhi-home-v2.html">Home</a>·
+    <a href="./CampusVazhi-CAT-2026.html">CAT 2026</a>·
+    <a href="./CampusVazhi-TANCET-Resource-Hub.html">TANCET 2026</a>·
+    <a href="./CampusVazhi-MS-USA.html">MS in USA</a>·
+    <a href="./CampusVazhi-Resume.html">Resume Builder</a>·
+    <a href="./CampusVazhi-Login.html">Sign in</a>
+  </div>
+  <p class="copy">© 2026 CampusVazhi. All rights reserved.</p>
+</footer>
+
+<!-- Modal -->
+<div class="modal-overlay" id="modal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div class="modal-form-wrap" id="modalForm">
+      <div class="modal-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0D9488" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      </div>
+      <h3>Get the Full Counselling Kit</h3>
+      <p class="subtitle">Predictor + round timelines + parent checklist + Tamil guide</p>
+      <div class="modal-form">
+        <input type="text" placeholder="Your name / பெயர்" id="fname" aria-label="Your name">
+        <input type="tel" placeholder="WhatsApp number" id="fmobile" aria-label="WhatsApp number">
+        <input type="email" placeholder="Email (optional)" id="femail" aria-label="Email">
+        <select id="fstatus" aria-label="Current status">
+          <option value="">Who is this for?</option>
+          <option>Student (NEET aspirant)</option>
+          <option>Parent / Guardian</option>
+          <option>NEET repeater</option>
+          <option>Teacher / Counsellor</option>
+        </select>
+        <button class="modal-submit" onclick="submitForm()">
+          Send Me the Kit
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </button>
+        <p class="modal-privacy">🔒 We respect your privacy. No spam.</p>
+      </div>
+    </div>
+    <div class="modal-success" id="modalSuccess">
+      <div class="success-icon">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+      </div>
+      <h3>You're all set! 🎉</h3>
+      <p style="font-size:14px;color:#374151;line-height:1.6;margin-top:8px">Check WhatsApp &amp; email. Counselling kit on the way.</p>
+      <div class="success-wa"><p>📱 Join our NEET 2026 WhatsApp for round-day live help</p></div>
+      <button class="btn-primary" onclick="closeModal()">Close</button>
+    </div>
+  </div>
+
+<script>
+  // 5. Sidebar — populate user data
+  function populateSidebar() {
+    try {
+      var u = JSON.parse(localStorage.getItem('cv_user'));
+      if (u && u.name) {
+        document.getElementById('sb-avatar').textContent = u.name.charAt(0).toUpperCase();
+        document.getElementById('sb-name').textContent = u.name;
+        document.getElementById('sb-exam').textContent = u.exam || 'Student';
+      }
+    } catch(e) {}
+  }
+  populateSidebar();
+
+  function checkSignIn() {
+    try {
+      var u = JSON.parse(localStorage.getItem('cv_user'));
+      var signedIn = localStorage.getItem('cv_signed_in') === '1';
+      if ((u && u.name) || signedIn) {
+        document.body.classList.add('cv-signed-in');
+        document.body.classList.add('logged-in');
+        document.documentElement.classList.add('logged-in');
+        if (u && u.name) localStorage.setItem('cv_signed_in', '1');
+        var sb = document.querySelector('.sidebar');
+        var pw = document.querySelector('.page-wrap');
+        if (sb) sb.style.setProperty('display', 'flex', 'important');
+        if (pw) pw.style.setProperty('margin-left', '68px', 'important');
+        var pill = document.getElementById('user-pill');
+        if (pill && u && u.name) {
+          pill.querySelector('.user-initial').textContent = u.name.charAt(0).toUpperCase();
+          pill.querySelector('.user-name').textContent = 'Hi, ' + u.name.split(' ')[0];
+        }
+      }
+    } catch(e) {}
+  }
+  checkSignIn();
+
+  function signOut() {
+    document.body.classList.remove('logged-in', 'cv-signed-in');
+    document.documentElement.classList.remove('logged-in');
+    var sb = document.querySelector('.sidebar');
+    var pw = document.querySelector('.page-wrap');
+    if (sb) sb.style.setProperty('display', 'none', 'important');
+    if (pw) pw.style.setProperty('margin-left', '0', 'important');
+    localStorage.removeItem('cv_signed_in');
+    localStorage.removeItem('cv_user');
+    if (typeof cvAuth !== 'undefined' && typeof cvAuth.logout === 'function') {
+      cvAuth.logout();
+    } else {
+      window.location.href = './campusvazhi-home-v2.html';
+    }
+  }
+
+// Countdown to NEET 2026 (May 3, 2026)
+const examDate = new Date('2026-05-03T14:00:00+05:30');
+const daysLeft = Math.max(0, Math.floor((examDate - new Date()) / 86400000));
+document.getElementById('cd1').textContent = daysLeft;
+
+const resources = [
+  { title: "<span class=\"en\">NEET College Predictor</span><span class=\"ta\">NEET கல்லூரி முன்னறிவிப்பான்</span>", desc: "<span class=\"en\">Score → realistic MBBS/BDS/AYUSH seat options</span><span class=\"ta\">மதிப்பெண் → யதார்த்தமான MBBS/BDS/AYUSH இருக்கை விருப்பங்கள்</span>", tag: "TOOL", color: "#EC4899", iconPath: '<circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>' },
+  { title: "<span class=\"en\">Round-by-Round Dates Sheet</span><span class=\"ta\">வருண்டு-பிறகு-வருண்டு தேதிகள் தாள்</span>", desc: "<span class=\"en\">All 4 rounds for AIQ (MCC) + Tamil Nadu (TNMCC)</span><span class=\"ta\">AIQ (MCC) + தமிழ்நாடு (TNMCC) க்கான அனைத்து 4 வருண்டுகள்</span>", tag: "FREE", color: "#0D9488", iconPath: '<rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/>' },
+  { title: "<span class=\"en\">Tamil Nadu Cutoff 2020-25</span><span class=\"ta\">தமிழ்நாடு கட்ஆஃப் 2020-25</span>", desc: "<span class=\"en\">5-year closing ranks for all 38 TN medical colleges</span><span class=\"ta\">38 TN மருத்துவ கல்லூரிகளுக்கான 5 வருட அடைப்பு தரவரிசைகள்</span>", tag: "FREE", color: "#6366F1", iconPath: '<path d="M3 3v18h18"/><polyline points="17 9 11 15 7 11 3 15"/>' },
+  { title: "<span class=\"en\">Choice Filling Strategy PDF</span><span class=\"ta\">விருப்பங்களை நிரப்பு வியூக PDF</span>", desc: "<span class=\"en\">How to rank 100+ colleges without wasting a slot</span><span class=\"ta\">ஒரு இடத்தை வீணாக்காமல் 100+ கல்லூரிகளை உபयோதம் செய்ப்பது எப்படி</span>", tag: "FREE", color: "#F59E0B", iconPath: '<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/>' },
+  { title: "<span class=\"en\">Fee Structure Decoder</span><span class=\"ta\">கட்டண அமைப்பு டிகোডர்</span>", desc: "<span class=\"en\">Government vs deemed vs private — real 5-year totals</span><span class=\"ta\">அரசு vs ஆக்கப்பட்டவை vs தனிப்பட்டவை — உண்மையான 5 வருட மொத்தங்கள்</span>", tag: "FREE", color: "#8B5CF6", iconPath: '<line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>' },
+  { title: "<span class=\"en\">Document Checklist</span><span class=\"ta\">ஆவணங்கள் சரிபார்ப்பு பட்டியல்</span>", desc: "<span class=\"en\">Everything to scan, keep ready, carry to college</span><span class=\"ta\">எல்லாவற்றையும் ஸ்கேன் செய்ய, தயாராக வைக்க, கல்லூரிக்கு எடுத்துச் செல்ல</span>", tag: "FREE", color: "#10B981", iconPath: '<path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>' },
+  { title: "<span class=\"en\">Parent Checklist (Tamil + Eng)</span><span class=\"ta\">பெற்றோர் சரிபார்ப்பு பட்டியல் (தமிழ் + ஆங்கிலம்)</span>", desc: "<span class=\"en\">WhatsApp-style guide sent during each round</span><span class=\"ta\">ஒவ்வொரு வருண்டின் போதும் அனுப்பப்பட்ட WhatsApp-நடை வழிகாட்டி</span>", tag: "FREE", color: "#F97316", iconPath: '<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/>' },
+  { title: "<span class=\"en\">MBBS / BDS / AYUSH Compare</span><span class=\"ta\">MBBS / BDS / AYUSH ஒப்பீடு</span>", desc: "<span class=\"en\">Honest tradeoffs, 10-year outlook, ROI reality</span><span class=\"ta\">நேர்மையான ট్रेडఆఫ్లు, 10 வருட பார்வை, ROI யதார்த்தம்</span>", tag: "FREE", color: "#14B8A6", iconPath: '<path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/>' }
+];
+
+const testimonials = [
+  { name: "Kavya & family", score: "598 / GEN", college: "Stanley Medical, Chennai", quote: "<span class=\"en\">Round 1 we nearly locked a private seat. The choice filling strategy saved us — upgraded to Stanley in Round 2.</span><span class=\"ta\">வருண்டு 1 இல் நாங்கள் ஏறக்குறைய தனிப்பட்ட இருக்கையை பூட்டி விட்டோம். விருப்பங்களை நிரப்பும் உபயோதம் எங்களை சேமித்து விட்டது — வருண்டு 2 இல் Stanley ஆக மேம்பட்டோம்.</span>" },
+  { name: "Ramesh (parent)", score: "632 / BC", college: "Madras Medical, Chennai", quote: "<span class=\"en\">As a parent I had no clue what 'mop-up' meant. The Tamil parent checklist walked us through every single step.</span><span class=\"ta\">பெற்றோராக, '청소' என்றால் என்ன என்பதற்கு எனக்கு எந்த கருத்தும் இல்லை. தமிழ் பெற்றோர் சரிபார்ப்பு பட்டியல் எங்களை ஒவ்வொரு ஒক்க பদிநாளாக நடத்திச் சென்றது.</span>" },
+  { name: "Sneha T.", score: "567 / MBC", college: "Govt Tiruvarur Medical", quote: "<span class=\"en\">Score wasn't great. The predictor showed me government college was still possible. It was.</span><span class=\"ta\">மதிப்பெண் சிறந்ததாக இல்லை. முன்னறிவிப்பான் அரசு கல்லூரி இன்னும் சாத்தியம் என்பதைக் காட்டிக் கொடுத்தது. அது ஆகிவிட்டது.</span>" }
+];
+
+const faqs = [
+  { q: "<span class=\"en\">What is the difference between All India Quota and State Quota in NEET counselling?</span><span class=\"ta\">NEET கவுன்சலிங்ல் All India Quota மற்றும் State Quota க்கு இடையே என்ன வேறுபாடு உள்ளது?</span>", a: "<span class=\"en\">All India Quota (AIQ) covers 15% seats in government colleges and 100% of central institutes — conducted by MCC. State Quota covers 85% seats in state government colleges and is conducted by state counselling bodies like TNMCC for Tamil Nadu. You can participate in both simultaneously.</span><span class=\"ta\">All India Quota (AIQ) அரசு கல்லூரிகளில் 15% இருக்கைகள் மற்றும் மத்திய நிறுவனங்களின் 100% நடத்த்தும் MCC மூலம் நடத்தப்படுகிறது. State Quota மாநில அரசு கல்லூரிகளில் 85% இருக்கைகளை நடத்த்தும் மாநிலக் கவுன்சலிங் நிகழ்ச்சிகள் தமிழ்நாடுக்கு TNMCC இல் நடத்தப்படுகிறது. நீங்கள் இரண்டுமே ஒரே சமயத்தில் பங்கு பெறலாம்.</span>" },
+  { q: "<span class=\"en\">What NEET score is required for MBBS in a government college in Tamil Nadu?</span><span class=\"ta\">தமிழ்நாடு அரசு கல்லூரியில் MBBS க்குத் தேவையான NEET மதிப்பெண் என்ன?</span>", a: "<span class=\"en\">For Tamil Nadu state quota MBBS in a government college, general category cutoffs typically sit at 620+ out of 720 (rank below 15,000 state-wise). BC/MBC/SC/ST students have lower cutoffs ranging from 550 to 600. Private colleges under state quota are accessible from 450+.</span><span class=\"ta\">தமிழ்நாடு மாநிலக் குவோட்டா MBBS அரசு கல்லூரியில், பொதுவான வகுப்பு கட்ஆஃப்கள் பொதுவாக 720 க்கு மேல் 620+ க்கு அமர்ந்துள்ளன (மாநிலவாரியாக 15,000 க்குக் கீழே தரவரிசை). BC/MBC/SC/ST மாணவர்கள் 550 முதல் 600 வரை குறைந்த கட்ஆஃப்களைக் கொண்டுள்ளனர். மாநிலக் குவோட்டாவில் தனிப்பட்ட கல்லூரிகள் 450+ இலிருந்து அணுகக்கூடியவை.</span>" },
+  { q: "<span class=\"en\">Should I choose MBBS in a low-tier college or BDS in a top college?</span><span class=\"ta\">நான் குறைந்த-நிலை கல்லூரியில் MBBS அல்லது शीर्ष கल्लूरी में BDS தேர்ந்தெடுக்க வேண்டுமா?</span>", a: "<span class=\"en\">If your primary goal is clinical practice and PG options, MBBS in any college beats BDS in most cases because career breadth is higher. However, BDS in a top government college has better clinical exposure than MBBS in a remote private college with weak infrastructure. Consider internship quality, patient volume, and faculty strength — not just the degree name.</span><span class=\"ta\">உங்கள் முதன்மைக் குறிக்கோள் ক்లினிக்கல் நடைமுறை மற்றும் PG விருப்பங்கள் என்றால், எந்த கல்லூரியிலும் MBBS BDS ஐ வெல்கிறது ஏனெனில் வாழ்க்கை பரந்தாக்கம் அதிகமாக உள்ளது. இருப்பினும், शीर্ष அரசு कол्लूरी में BDS দুर्বল அবसंरचना உள्ള偏้обний निजी कॉल्लेज में MBBS से बेहतर क्लिनिकल एक्सपोजर है। ইন्টার्নশিप गुणवत्ता, रोगی वॉल्यूम, और संकाय शक्ति विचार करें — केवल डिग्री नाम नहीं।</span>" },
+  { q: "<span class=\"en\">How many rounds of NEET counselling are there?</span><span class=\"ta\">NEET கவுன்சலிங்ங்கு எத்தனை வருண்டுகள் உள்ளன?</span>", a: "<span class=\"en\">NEET UG counselling has 4 rounds: Round 1, Round 2, Mop-up Round, and Stray Vacancy Round. Both AIQ (MCC) and state counselling follow similar patterns. Round 1 typically begins 6-8 weeks after NEET results. Stray vacancy is your last chance for government seats.</span><span class=\"ta\">NEET UG கவுன்சலிங்ங்கு 4 வருண்டுகள் உள்ளன: வருண்டு 1, வருண்டு 2,청소 வருண்டு, மற்றும் வழிதவறிய வெற்றிடம் வருண்டு। AIQ (MCC) மற்றும் மாநிலக் கவுன்சலிங் இரண்டும் ஒத்த வடிவங்களைப் பின்பற்றுகின்றன। வருண்டு 1 பொதுவாக NEET முடிவுகள் வெளியான 6-8 வாரங்களுக்குப் பிறகு தொடங்குகிறது। வழிதவறிய வெற்றிடம் அரசு இருக்கைகளுக்கான உங்கள் கடைசி வாய்ப்பு.</span>" },
+  { q: "<span class=\"en\">Can I switch colleges between counselling rounds?</span><span class=\"ta\">கவுன்சலிங் வருண்டுகள் இடையே நான் கல்லூரிகளை மாற்ற முடியுமா?</span>", a: "<span class=\"en\">Yes, but with rules. If you get a seat in Round 1 and want to upgrade in Round 2, you can opt for 'upgrade' — this keeps you in your current seat if no better option comes, but you can move up if it does. 'Fresh allotment' means you give up your current seat entirely. Understand the choice carefully before clicking.</span><span class=\"ta\">ஆமாம், ஆனால் விதிகளுடன். நீங்கள் வருண்டு 1 இல் ஒரு இருக்கையைப் பெறுகிறீர்கள் மற்றும் வருண்டு 2 இல் மேம்படுத்த விரும்பினால், நீங்கள் 'மேம்பாடு' தேர்ந்தெடுக்கலாம் — இது உங்கள் தற்போதைய இருக்கையை சிறந்த விருப்பம் வராத பட்சத்தில் வைத்திருக்கிறது, ஆனால் அது வந்தால் நீங்கள் மேலே செல்லலாம். 'புதிய ஒதுக்கம்' என்றால் நீங்கள் உங்கள் தற்போதைய இருக்கையை முழுமையாக விட்டுவிடுகிறீர்கள். கிளிக் செய்வதற்கு முன்பு விருப்பத்தைக் கவனமாக புரிந்து கொள்ளுங்கள்.</span>" }
+];
+
+// Render
+document.getElementById('resourcesGrid').innerHTML = resources.map(r => `
+  <div class="resource-card" onclick="openModal()">
+    <div class="resource-icon" style="background:${r.color}12">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="${r.color}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${r.iconPath}</svg>
+    </div>
+    <div class="resource-content">
+      <div class="resource-title-row">
+        <h3 class="resource-title">${r.title}</h3>
+        <span class="badge ${r.tag === 'TOOL' ? 'badge-purple' : 'badge-green'}">${r.tag}</span>
+      </div>
+      <p class="resource-desc">${r.desc}</p>
+    </div>
+    <svg class="resource-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#374151" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+  </div>
+`).join('');
+
+const starSvg = '<svg width="14" height="14" viewBox="0 0 24 24" fill="#F59E0B" stroke="#F59E0B" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>';
+document.getElementById('testGrid').innerHTML = testimonials.map(t => `
+  <div class="test-card">
+    <div class="test-stars">${starSvg.repeat(5)}</div>
+    <p class="test-quote">"${t.quote}"</p>
+    <div class="test-footer">
+      <div class="test-name">${t.name}</div>
+      <div class="test-detail">${t.score} · ${t.college}</div>
+    </div>
+  </div>
+`).join('');
+
+document.getElementById('faqList').innerHTML = faqs.map((f, i) => `
+  <div class="faq-item" onclick="toggleFaq(${i})">
+    <div class="faq-q"><span>${f.q}</span><span class="faq-q-icon">+</span></div>
+    <div class="faq-a">${f.a}</div>
+  </div>
+`).join('');
+
+function toggleFaq(i) { document.querySelectorAll('.faq-item')[i].classList.toggle('open'); }
+
+// NEET predictor
+function predictCollege() {
+  const score = parseInt(document.getElementById('score').value) || 0;
+  const cat = document.getElementById('category').value;
+  const dom = document.getElementById('domicile').value;
+  const course = document.getElementById('course').value;
+  if (score === 0) { alert('Please enter your NEET score'); return; }
+
+  // Category boost (reduces effective cutoff)
+  const catBoost = { GEN: 0, BC: 30, MBC: 45, SC: 70, ST: 85 }[cat];
+  const effective = score + catBoost;
+
+  let mbbsGovt = "", mbbsPvt = "", bds = "", ayush = "";
+  if (effective >= 650) {
+    mbbsGovt = dom === 'TN' ? "Madras Medical · Stanley Medical · Kilpauk · Tirunelveli" : "AIIMS Delhi · JIPMER · Maulana Azad · Grant Medical";
+    mbbsPvt = "SRM · Saveetha · Sri Ramachandra (deemed)";
+    bds = "Ragas Dental · Tagore Dental · Govt Dental College Chennai";
+    ayush = "Govt Siddha · Govt Homoeopathy (any college)";
+  } else if (effective >= 600) {
+    mbbsGovt = dom === 'TN' ? "Coimbatore · Madurai · Salem · Theni Govt Medical" : "Central University medical colleges (AIQ)";
+    mbbsPvt = "PSG · Vinayaka · Chettinad (deemed)";
+    bds = "Most Tamil Nadu govt & top private dental colleges";
+    ayush = "Govt AYUSH colleges across India";
+  } else if (effective >= 550) {
+    mbbsGovt = dom === 'TN' ? "Tier-2 TN govt medical: Villupuram, Tiruvarur, Dharmapuri" : "State quota govt colleges in own state";
+    mbbsPvt = "Self-financing seats in TN private colleges";
+    bds = "Most private & some govt BDS seats";
+    ayush = "Comfortable range for all AYUSH courses";
+  } else if (effective >= 450) {
+    mbbsGovt = "Tight — some stray vacancy possible";
+    mbbsPvt = "Management quota MBBS (deemed, ₹1-1.5 Cr total)";
+    bds = "Private BDS colleges across India";
+    ayush = "Government + private AYUSH colleges";
+  } else {
+    mbbsGovt = "Unlikely under state/AIQ";
+    mbbsPvt = "Only management quota — expensive";
+    bds = "Private BDS possible in lower-tier colleges";
+    ayush = "Possible — explore BAMS/BHMS/BUMS";
+  }
+
+  const results = {
+    MBBS: { govt: mbbsGovt, pvt: mbbsPvt },
+    BDS: { bds },
+    AYUSH: { ayush },
+    ANY: { govt: mbbsGovt, pvt: mbbsPvt, bds, ayush }
+  };
+
+  let html = `<div class="result-row"><span>Your effective score (score + category boost)</span><strong>${effective}</strong></div>`;
+  if (course === 'MBBS' || course === 'ANY') {
+    html += `<div class="result-row"><span>MBBS Govt range</span><strong>${mbbsGovt}</strong></div>`;
+    html += `<div class="result-row"><span>MBBS Private/Deemed</span><strong>${mbbsPvt}</strong></div>`;
+  }
+  if (course === 'BDS' || course === 'ANY') {
+    html += `<div class="result-row"><span>BDS options</span><strong>${bds}</strong></div>`;
+  }
+  if (course === 'AYUSH' || course === 'ANY') {
+    html += `<div class="result-row"><span>AYUSH options</span><strong>${ayush}</strong></div>`;
+  }
+  html += `<div style="margin-top:14px;padding:12px;background:#FCE7F3;border-radius:8px;font-size:13px;color:#EC4899;font-weight:600;text-align:center">Estimates based on 2024-25 closing ranks. Final cutoffs vary each year. → <a style="color:#EC4899;text-decoration:underline;cursor:pointer" onclick="openModal()">Get exact 5-year cutoff PDF</a></div>`;
+  document.getElementById('predictorResult').innerHTML = html;
+  document.getElementById('predictorResult').classList.add('active');
+}
+
+function scrollTo(id) { document.getElementById(id).scrollIntoView({ behavior: 'smooth' }); }
+
+// Modal
+function openModal() {
+  document.getElementById('modal').classList.add('active');
+  document.getElementById('modalForm').classList.remove('hidden');
+  document.getElementById('modalSuccess').classList.remove('active');
+}
+function closeModal() { document.getElementById('modal').classList.remove('active'); }
+function submitForm() {
+  const name = document.getElementById('fname').value;
+  const mobile = document.getElementById('fmobile').value;
+  const email = document.getElementById('femail').value;
+  if (!name || !mobile) { alert('Please enter your name and mobile number'); return; }
+  console.log('Lead captured:', { name, mobile, page: 'NEET-Counselling' });
+
+  // Save to Supabase
+  try {
+    if (typeof cvLeads !== 'undefined' && cvLeads.saveCTALead) {
+      cvLeads.saveCTALead({
+        name: name,
+        phone: mobile,
+        email: email,
+        cta_type: 'free_guide'
+      });
+      cvUI.toast('Saved! Check your WhatsApp.');
+    }
+  } catch(e) {
+    console.error('Supabase save error:', e);
+  }
+
+  document.getElementById('modalForm').classList.add('hidden');
+  document.getElementById('modalSuccess').classList.add('active');
+}
+document.getElementById('modal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+
+// Language toggle
+var lang = 'en';
+function toggleLang() {
+  lang = lang === 'en' ? 'ta' : 'en';
+  if (lang === 'ta') {
+    document.body.classList.add('lang-ta');
+    document.getElementById('langBtn').textContent = 'English';
+  } else {
+    document.body.classList.remove('lang-ta');
+    document.getElementById('langBtn').textContent = 'தமிழ்';
+  }
+}
+
+</script>
+</div>
+</div>
+</div>
+
+<script src="./js/config.js"></script>
+<script src="./js/analytics.js"></script>
+<script src="./js/cookie-consent.js"></script>
+<script src="./js/lead-popup.js"></script>
+<script src="./js/download-gate.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="./js/supabase-client.js"></script>
+</body>
+</html>

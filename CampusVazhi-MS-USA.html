@@ -1,0 +1,1287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style id="cv-sidebar-auth">
+.sidebar { display: none !important; }
+.page-wrap { margin-left: 0 !important; }
+body.logged-in .sidebar, .logged-in .sidebar { display: flex !important; }
+body.logged-in .page-wrap, .logged-in .page-wrap { margin-left: 68px !important; }
+@media (max-width: 768px) {
+  body.logged-in .page-wrap, .logged-in .page-wrap { margin-left: 0 !important; }
+}
+</style>
+<script>(function(){var s=localStorage.getItem('cv_signed_in')==='1';if(s)document.documentElement.classList.add('logged-in');document.addEventListener('DOMContentLoaded',function(){var sb=document.querySelector('.sidebar');var pw=document.querySelector('.page-wrap');if(s){document.body.classList.add('logged-in');if(sb)sb.style.setProperty('display','flex','important');if(pw)pw.style.setProperty('margin-left','68px','important')}else{if(sb)sb.style.setProperty('display','none','important');if(pw)pw.style.setProperty('margin-left','0','important')}});})()</script>
+
+
+<meta charset="UTF-8">
+<link rel="icon" type="image/svg+xml" href="./favicon.svg">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CampusVazhi — MS in USA Fall 2027 | Free University Shortlister, Cost Calculator, SOP Teardowns</title>
+<meta name="description" content="Free MS in USA 2027 roadmap — GRE-to-university shortlister, ₹ cost calculator, SOP teardowns, scholarship database, visa prep. Built by Indian MS grads at top US universities.">
+<link rel="canonical" href="https://campusvazhi.com/ms-usa" />
+<meta property="og:title" content="CampusVazhi — MS in USA Fall 2027 | Free University Shortlister, Cost Calculator, SOP Teardowns" />
+<meta property="og:description" content="Free MS in USA 2027 roadmap — GRE-to-university shortlister, ₹ cost calculator, SOP teardowns, scholarship database, visa prep. Built by Indian MS grads at top US universities." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://campusvazhi.com/ms-usa" />
+<meta property="og:image" content="https://campusvazhi.com/og-default.svg" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+    try {
+      var u = JSON.parse(localStorage.getItem('cv_user'));
+      if (u && u.name) {
+        document.getElementById('sb-avatar').textContent = u.name.charAt(0).toUpperCase();
+        document.getElementById('sb-name').textContent = u.name;
+        document.getElementById('sb-exam').textContent = u.exam || 'Student';
+      }
+    } catch(e) {}
+  }
+  populateSidebar();
+
+  function checkSignIn() {
+    try {
+      var u = JSON.parse(localStorage.getItem('cv_user'));
+      var signedIn = localStorage.getItem('cv_signed_in') === '1';
+      if ((u && u.name) || signedIn) {
+        document.body.classList.add('cv-signed-in');
+        document.body.classList.add('logged-in');
+        document.documentElement.classList.add('logged-in');
+        if (u && u.name) localStorage.setItem('cv_signed_in', '1');
+        var sb = document.querySelector('.sidebar');
+        var pw = document.querySelector('.page-wrap');
+        if (sb) sb.style.setProperty('display', 'flex', 'important');
+        if (pw) pw.style.setProperty('margin-left', '68px', 'important');
+        var pill = document.getElementById('user-pill');
+        if (pill && u && u.name) {
+          pill.querySelector('.user-initial').textContent = u.name.charAt(0).toUpperCase();
+          pill.querySelector('.user-name').textContent = 'Hi, ' + u.name.split(' ')[0];
+        }
+      }
+    } catch(e) {}
+  }
+  checkSignIn();
+
+  function signOut() {
+    document.body.classList.remove('logged-in', 'cv-signed-in');
+    document.documentElement.classList.remove('logged-in');
+    var sb = document.querySelector('.sidebar');
+    var pw = document.querySelector('.page-wrap');
+    if (sb) sb.style.setProperty('display', 'none', 'important');
+    if (pw) pw.style.setProperty('margin-left', '0', 'important');
+    localStorage.removeItem('cv_signed_in');
+    localStorage.removeItem('cv_user');
+    if (typeof cvAuth !== 'undefined' && typeof cvAuth.logout === 'function') {
+      cvAuth.logout();
+    } else {
+      window.location.href = './campusvazhi-home-v2.html';
+    }
+  }
+
+{
+  "@context":"https://schema.org","@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"What GRE score do I need for top MS programs in USA?","acceptedAnswer":{"@type":"Answer","text":"Top 10 programs typically expect 325+ with 165+ in Quant. Top 30 programs are comfortable with 315+. Top 50 accept 305+. But GRE is only 20% of your application — GPA, research, projects, and SOP weigh more at US admissions committees."}},
+    {"@type":"Question","name":"How much does MS in USA cost for Indian students?","acceptedAnswer":{"@type":"Answer","text":"Budget ₹45-65 lakhs total for 2 years: ₹25-40L tuition, ₹12-18L living expenses, ₹1.5L flights, ₹2L application fees and visa. Scholarships and TA/RA positions can cut this by 30-60%. State universities are 40% cheaper than private ones."}},
+    {"@type":"Question","name":"When should I start applying for Fall 2027 MS?","acceptedAnswer":{"@type":"Answer","text":"Start GRE prep by May 2026, take GRE by August, finalize shortlist by September, write SOPs in October, submit applications between November 2026 and January 2027. Deadlines at top universities are as early as December 1."}},
+    {"@type":"Question","name":"Is MS in USA still worth it in 2027?","acceptedAnswer":{"@type":"Answer","text":"Yes, if you target CS, Data Science, ECE, or specialized engineering at universities with strong industry connections. US STEM OPT gives 3 years of work authorization. ROI depends heavily on target company salaries vs your loan amount. Choose state schools and scholarships to improve ROI significantly."}},
+    {"@type":"Question","name":"What is the difference between Fall and Spring intake?","acceptedAnswer":{"@type":"Answer","text":"Fall (August) is the primary intake — 90% of students join then, most funding available, full course selection. Spring (January) has limited seats, fewer TA positions, but lets you start 6 months earlier if you missed Fall. Avoid Summer intake for degree programs."}}
+  ]
+}
+</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--navy:#0F1B2D;--teal:#0D9488;--teal-light:#14B8A6;--teal-bg:#F0FDFA;--gold:#F59E0B;--white:#FFFFFF;--g50:#F9FAFB;--g100:#F3F4F6;--g200:#E5E7EB;--g500:#6B7280;--g700:#374151;--g900:#111827;--red:#EF4444;--green:#10B981;--blue:#2563EB}
+body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;color:#111827 !important;background:var(--white);line-height:1.5}
+a{text-decoration:none}
+.badge{font-size:11px;font-weight:700;padding:2px 8px;border-radius:4px;letter-spacing:.5px;display:inline-block}
+.badge-teal{background:#0D948818;color:var(--teal)}
+.badge-gold{background:#F59E0B18;color:var(--gold)}
+.badge-green{background:#10B98118;color:var(--green)}
+.badge-purple{background:#8B5CF618;color:#8B5CF6}
+.badge-indigo{background:#6366F118;color:#6366F1}
+.badge-blue{background:#2563EB18;color:var(--blue)}
+
+.top-bar{background:linear-gradient(135deg,var(--navy) 0%,#1E3A5F 100%);color:var(--white);padding:10px 16px;text-align:center;font-size:13px;font-weight:600;position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap}
+.top-bar-btn{background:var(--teal);color:var(--white);border:none;border-radius:4px;padding:4px 12px;font-size:12px;font-weight:700;cursor:pointer;margin-left:8px}
+.nav{display:flex;justify-content:space-between;align-items:center;padding:18px 40px;background:#fff;border-bottom:1px solid #F3F4F6}
+.nav-logo{display:flex;align-items:center;gap:10px}
+.nav-icon{width:36px;height:36px;border-radius:8px;background:linear-gradient(135deg,var(--teal),var(--navy));display:flex;align-items:center;justify-content:center}
+.nav-brand{font-size:20px;font-weight:800;color:var(--navy)}
+.nav-brand span{color:var(--teal)}
+.nav-actions{display:flex;align-items:center;gap:12px}
+.btn-lang{background:var(--g100);border:none;border-radius:6px;padding:6px 12px;font-size:13px;font-weight:600;cursor:pointer;color:#374151 !important;font-family:inherit}
+.btn-primary{background:var(--teal);color:var(--white);border:none;border-radius:8px;padding:10px 20px;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit;display:inline-flex;align-items:center;gap:6px}
+.btn-primary:hover{background:var(--teal-light)}
+.btn-primary-lg{padding:16px 32px;font-size:16px;border-radius:10px}
+.btn-secondary{background:rgba(255,255,255,.1);color:var(--white);border:1px solid rgba(255,255,255,.2);border-radius:10px;padding:16px 28px;font-size:16px;font-weight:600;cursor:pointer;font-family:inherit;display:inline-flex;align-items:center;gap:8px}
+.btn-secondary:hover{background:rgba(255,255,255,.15)}
+.btn-gold{background:var(--gold);color:var(--navy);border:none;border-radius:8px;padding:10px 20px;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit}
+
+.breadcrumb{padding:12px 40px 0;font-size:12px;color:var(--g500)}
+.breadcrumb a{color:var(--teal);font-weight:600}
+.breadcrumb span{margin:0 6px;color:var(--g200)}
+
+.hero{background:linear-gradient(135deg,var(--navy) 0%,#1E3A5F 100%);padding:60px 24px 70px 92px;position:relative;overflow:hidden;margin-left:-68px;width:calc(100% + 68px)}
+.hero-circle-1{position:absolute;top:-40px;right:-40px;width:200px;height:200px;border-radius:50%;background:var(--blue);opacity:.1}
+.hero-circle-2{position:absolute;bottom:-60px;left:-20px;width:300px;height:300px;border-radius:50%;background:var(--teal);opacity:.07}
+.hero-inner{max-width:820px;margin:0 auto;text-align:center;position:relative;z-index:1}
+.hero h1{font-size:clamp(28px,5vw,42px);font-weight:800;color:var(--white);margin:20px 0 8px;line-height:1.2}
+.hero h1 span{color:var(--teal-light)}
+.hero p{font-size:17px;color:#94A3B8;max-width:600px;margin:16px auto 28px;line-height:1.7}
+.hero-buttons{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.trust-bar{display:flex;gap:24px;justify-content:center;margin-top:32px;flex-wrap:wrap}
+.trust-item{text-align:center}
+.trust-num{font-size:22px;font-weight:800;color:var(--teal-light)}
+.trust-label{font-size:12px;color:#94A3B8}
+
+.countdown-wrap{background:var(--white);padding:0 24px;transform:translateY(-28px);position:relative;z-index:10}
+.countdown-card{max-width:720px;margin:0 auto;background:var(--white);border-radius:14px;box-shadow:0 4px 24px rgba(0,0,0,.08);padding:20px 32px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
+.countdown-date{display:flex;align-items:center;gap:12px}
+.countdown-label{font-size:13px;font-weight:600;color:#374151 !important}
+.countdown-value{font-size:15px;font-weight:800;color:#111827 !important}
+.countdown-digits{display:flex;gap:8px;align-items:center}
+.countdown-digit{min-width:42px;height:48px;padding:0 6px;border-radius:8px;background:var(--navy);color:var(--teal-light);display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:800}
+.countdown-text{font-size:13px;font-weight:700;color:#374151 !important;margin-left:4px}
+
+.tool-section{padding:56px 24px;max-width:1000px;margin:0 auto}
+.tool-card{background:linear-gradient(135deg,#EEF4FF 0%,var(--teal-bg) 100%);border:1px solid var(--blue);border-radius:16px;padding:32px;position:relative;overflow:hidden;margin-bottom:24px}
+.tool-card::before{content:"";position:absolute;top:-50px;right:-50px;width:200px;height:200px;border-radius:50%;background:var(--blue);opacity:.05}
+.tool-head{display:flex;align-items:center;gap:12px;margin-bottom:20px;position:relative}
+.tool-icon{width:48px;height:48px;border-radius:12px;background:var(--blue);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.tool-icon.teal{background:var(--teal)}
+.tool-head h3{font-size:20px;font-weight:800;color:#111827 !important}
+.tool-head p{font-size:13px;color:#374151 !important;margin-top:2px}
+.tool-inputs{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;position:relative}
+.tool-field label{display:block;font-size:12px;font-weight:700;color:#374151 !important;margin-bottom:6px}
+.tool-field input,.tool-field select{width:100%;padding:12px;border-radius:8px;border:1px solid var(--g200);font-size:14px;outline:none;font-family:inherit;background:var(--white)}
+.tool-field input:focus,.tool-field select:focus{border-color:var(--blue)}
+.tool-cta{margin-top:20px;display:flex;gap:12px;align-items:center;flex-wrap:wrap;position:relative}
+.tool-result{margin-top:20px;background:var(--white);border-radius:10px;padding:20px;display:none;position:relative;box-shadow:0 2px 8px rgba(0,0,0,.04)}
+.tool-result.active{display:block}
+.result-row{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px dashed var(--g200);font-size:14px}
+.result-row:last-child{border-bottom:none}
+.result-row strong{color:var(--navy)}
+.tier-list{margin-top:12px}
+.tier-row{display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:8px;margin-bottom:6px;font-size:13px}
+.tier-row.ambitious{background:#FEF2F2;color:#991B1B;border-left:3px solid var(--red)}
+.tier-row.target{background:#ECFDF5;color:#065F46;border-left:3px solid var(--green)}
+.tier-row.safe{background:#EFF6FF;color:#1E40AF;border-left:3px solid var(--blue)}
+.tier-label{font-weight:800;min-width:70px}
+
+.resources-section{padding:40px 24px 60px;max-width:1100px;margin:0 auto}
+.section-header{text-align:center;margin-bottom:36px}
+.section-header h2{font-size:clamp(24px,4vw,30px);font-weight:800;color:#111827 !important;margin:12px 0 8px}
+.section-header p{font-size:15px;color:#374151 !important;max-width:560px;margin:0 auto}
+.resources-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:16px;max-width:1020px;margin:0 auto}
+.resource-card{background:var(--white);border:1px solid var(--g200);border-radius:12px;padding:24px 20px;cursor:pointer;transition:all .2s;display:flex;gap:16px;align-items:flex-start}
+.resource-card:hover{box-shadow:0 4px 16px rgba(0,0,0,.06);border-color:var(--teal);transform:translateY(-2px)}
+.resource-icon{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.resource-content{flex:1}
+.resource-title-row{display:flex;align-items:center;gap:8px;margin-bottom:4px;flex-wrap:wrap}
+.resource-title{font-size:15px;font-weight:800;color:#111827 !important;margin:0}
+.resource-title span{color:#111827 !important}
+.resource-desc{font-size:13px;color:#374151 !important;margin:4px 0 0;line-height:1.5}
+.resource-desc span{color:#374151 !important}
+.resource-arrow{flex-shrink:0;margin-top:12px;color:#374151}
+
+/* Timeline */
+.timeline-section{background:var(--g50);padding:56px 24px}
+.timeline-inner{max-width:820px;margin:0 auto}
+.timeline{margin-top:28px;position:relative;padding-left:28px}
+.timeline::before{content:"";position:absolute;left:10px;top:6px;bottom:6px;width:2px;background:var(--teal);opacity:.25}
+.timeline-item{position:relative;padding:10px 0 22px}
+.timeline-dot{position:absolute;left:-24px;top:14px;width:14px;height:14px;border-radius:50%;background:var(--teal);border:3px solid var(--white);box-shadow:0 0 0 2px var(--teal)}
+.timeline-item.urgent .timeline-dot{background:var(--gold);box-shadow:0 0 0 2px var(--gold)}
+.timeline-date{font-size:12px;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:.5px}
+.timeline-item.urgent .timeline-date{color:var(--gold)}
+.timeline-title{font-size:16px;font-weight:700;color:#111827 !important;margin:4px 0}
+.timeline-desc{font-size:13px;color:#374151 !important;line-height:1.6}
+
+/* SOP teardown */
+.sop-section{padding:56px 24px;max-width:900px;margin:0 auto}
+.sop-card{background:var(--white);border:1px solid var(--g200);border-radius:14px;padding:28px;margin-top:24px}
+.sop-header{display:flex;gap:14px;align-items:center;margin-bottom:16px}
+.sop-grade{width:44px;height:44px;border-radius:10px;background:var(--teal-bg);display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:800;color:var(--teal);flex-shrink:0}
+.sop-grade.bad{background:#FEF2F2;color:var(--red)}
+.sop-header h3{font-size:16px;font-weight:700;color:#111827 !important}
+.sop-header p{font-size:12px;color:#374151 !important}
+.sop-quote{background:var(--g50);border-left:3px solid var(--g200);padding:14px 18px;font-size:14px;color:#374151 !important;font-style:italic;line-height:1.7;border-radius:6px;margin:10px 0}
+.sop-card.teardown .sop-quote{border-left-color:var(--red)}
+.sop-card.teardown-fix .sop-quote{border-left-color:var(--green)}
+.sop-verdict{display:flex;gap:8px;align-items:center;font-size:13px;color:#374151 !important;margin-top:8px}
+.sop-verdict strong{color:#111827 !important}
+
+/* FAQs */
+.faq-section{background:var(--g50);padding:56px 24px}
+.faq-inner{max-width:780px;margin:0 auto}
+.faq-list{margin-top:24px;display:flex;flex-direction:column;gap:10px}
+.faq-item{background:var(--white);border:1px solid var(--g200);border-radius:10px;padding:18px 22px;cursor:pointer}
+.faq-q{display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:15px;font-weight:700;color:#111827 !important}
+.faq-q span{color:#111827 !important}
+.faq-q-icon{flex-shrink:0;color:var(--teal);font-size:18px}
+.faq-a{font-size:14px;color:#374151 !important;line-height:1.7;margin-top:12px;display:none}
+.faq-a span{color:#374151 !important}
+.faq-item.open .faq-a{display:block}
+.faq-item.open .faq-q-icon{transform:rotate(45deg)}
+
+.testimonials{background:var(--navy);padding:56px 24px}
+.testimonials-inner{max-width:900px;margin:0 auto;text-align:center}
+.testimonials h2{font-size:28px;font-weight:800;color:var(--white);margin:12px 0 28px}
+.test-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;text-align:left}
+.test-card{background:rgba(255,255,255,.06);border-radius:12px;padding:24px;border:1px solid rgba(255,255,255,.08)}
+.test-stars{display:flex;gap:4px;margin-bottom:12px}
+.test-quote{font-size:14px;color:#CBD5E1;line-height:1.7;margin:0 0 16px;font-style:italic}
+.test-footer{border-top:1px solid rgba(255,255,255,.08);padding-top:12px}
+.test-name{font-size:14px;font-weight:700;color:var(--white)}
+.test-detail{font-size:12px;color:var(--teal-light)}
+
+.wa-section{padding:56px 24px}
+.wa-card{max-width:700px;margin:0 auto;background:linear-gradient(135deg,#075E54,#128C7E);border-radius:16px;padding:40px 32px;text-align:center;position:relative;overflow:hidden}
+.wa-circle{position:absolute;top:-30px;right:-30px;width:120px;height:120px;border-radius:50%;background:rgba(255,255,255,.06)}
+.wa-card h2{font-size:clamp(20px,3.5vw,26px);font-weight:800;color:var(--white);margin:16px 0 8px}
+.wa-card p{font-size:15px;color:rgba(255,255,255,.85);margin:0 0 24px;line-height:1.6}
+.btn-wa{background:var(--white);color:#075E54;border:none;border-radius:10px;padding:14px 32px;font-size:16px;font-weight:700;cursor:pointer;font-family:inherit;display:inline-flex;align-items:center;gap:8px}
+
+.final-cta{background:var(--teal-bg);padding:48px 24px;text-align:center}
+.final-inner{max-width:620px;margin:0 auto}
+.final-cta h2{font-size:24px;font-weight:800;color:#111827 !important;margin:12px 0 8px}
+.final-cta p{font-size:15px;color:#374151 !important;margin:0 0 20px}
+
+.footer{background:var(--navy);padding:32px 24px;text-align:center}
+.footer-brand{display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:12px}
+.footer-brand span{font-size:16px;font-weight:700;color:var(--white)}
+.footer-brand span span{color:var(--teal-light)}
+.footer p{font-size:12px;color:#64748B}
+.footer .copy{font-size:11px;color:#475569;margin-top:8px}
+.footer-links{margin:8px 0;font-size:12px}
+.footer-links a{color:#94A3B8;margin:0 8px}
+
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:1000;display:none;align-items:center;justify-content:center;padding:16px}
+.modal-overlay.active{display:flex}
+.modal{background:var(--white);border-radius:16px;max-width:440px;width:100%;padding:32px;position:relative}
+.modal-close{position:absolute;top:12px;right:12px;background:none;border:none;cursor:pointer;font-size:20px;color:var(--g500);line-height:1}
+.modal-icon{width:56px;height:56px;border-radius:28px;background:var(--teal-bg);display:flex;align-items:center;justify-content:center;margin:0 auto 12px}
+.modal h3{font-size:20px;font-weight:700;color:#111827 !important;text-align:center;margin:0}
+.modal .subtitle{font-size:13px;color:#374151 !important;text-align:center;margin-top:6px}
+.modal-form{display:flex;flex-direction:column;gap:12px;margin-top:20px}
+.modal-form input,.modal-form select{padding:12px 14px;border-radius:8px;border:1px solid var(--g200);font-size:14px;outline:none;font-family:inherit;width:100%;box-sizing:border-box}
+.modal-form input:focus,.modal-form select:focus{border-color:var(--teal)}
+.modal-submit{background:var(--teal);color:var(--white);border:none;border-radius:8px;padding:14px 0;font-size:15px;font-weight:700;cursor:pointer;font-family:inherit;display:flex;align-items:center;justify-content:center;gap:8px;margin-top:4px;width:100%}
+.modal-privacy{font-size:11px;color:#374151 !important;text-align:center}
+.modal-success{text-align:center;padding:20px 0;display:none}
+.modal-success.active{display:block}
+.modal-form-wrap.hidden{display:none}
+.success-icon{width:64px;height:64px;border-radius:32px;background:#ECFDF5;display:flex;align-items:center;justify-content:center;margin:0 auto 16px}
+.success-wa{background:var(--teal-bg);border-radius:10px;padding:14px;margin:16px 0}
+.success-wa p{font-size:13px;color:var(--teal);font-weight:600;margin:0}
+
+@media(max-width:768px){.hero{margin-left:0;width:100%;padding-left:24px}}
+@media(max-width:640px){.resources-grid{grid-template-columns:1fr}.countdown-card{flex-direction:column;text-align:center;align-items:center}.nav{padding:12px 16px}.hero{padding:40px 16px 50px}}
+
+
+
+    
+  
+    /* ============= SIDEBAR — always-visible icon rail ============= */
+    .page-wrap { margin-left: 68px; }
+
+    .sidebar {
+      display: flex;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 68px;
+      height: 100vh;
+      background: var(--navy);
+      z-index: 1000;
+      flex-direction: column;
+      overflow: hidden;
+      transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 2px 0 24px rgba(15,27,45,0.15);
+    }
+    .sidebar:hover { width: 260px; }
+
+    /* Text labels hidden when collapsed, shown when expanded */
+    .sidebar .sb-label,
+    .sidebar .sidebar-section-label,
+    .sidebar .sidebar-user-info,
+    .sidebar .sidebar-badge,
+    .sidebar .sb-signout-text {
+      opacity: 0;
+      white-space: nowrap;
+      transition: opacity 0.2s ease 0s;
+    }
+    .sidebar:hover .sb-label,
+    .sidebar:hover .sidebar-section-label,
+    .sidebar:hover .sidebar-user-info,
+    .sidebar:hover .sidebar-badge,
+    .sidebar:hover .sb-signout-text {
+      opacity: 1;
+      transition: opacity 0.2s ease 0.12s;
+    }
+
+    /* Sidebar header — avatar area */
+    .sidebar-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 20px 14px 16px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      flex-shrink: 0;
+      min-height: 72px;
+    }
+    .sidebar-avatar {
+      width: 40px;
+      height: 40px;
+      min-width: 40px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--teal), var(--teal-light));
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 17px;
+      font-weight: 800;
+      flex-shrink: 0;
+      box-shadow: 0 2px 8px rgba(13,148,136,0.35);
+    }
+    .sidebar-user-info {
+      overflow: hidden;
+    }
+    .sidebar-user-info h4 {
+      margin: 0;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--white);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .sidebar-user-info p {
+      margin: 2px 0 0;
+      font-size: 11px;
+      color: rgba(255,255,255,0.5);
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    /* Sidebar nav links */
+    .sidebar-nav {
+      flex: 1;
+      padding: 8px 0;
+      overflow-y: auto;
+      overflow-x: hidden;
+      scrollbar-width: none;
+    }
+    .sidebar-nav::-webkit-scrollbar { display: none; }
+
+    .sidebar-section-label {
+      font-size: 9px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: rgba(255,255,255,0.35);
+      padding: 14px 14px 4px 22px;
+      white-space: nowrap;
+    }
+
+    .sidebar-link {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 10px 14px 10px 20px;
+      font-size: 13px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+      transition: all 0.15s ease;
+      border-left: 3px solid transparent;
+      position: relative;
+      white-space: nowrap;
+    }
+    .sidebar-link:hover {
+      background: rgba(13,148,136,0.15);
+      color: var(--teal-light);
+      border-left-color: var(--teal-light);
+    }
+    .sidebar-link svg {
+      width: 20px;
+      height: 20px;
+      min-width: 20px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .sidebar-link .sidebar-badge {
+      margin-left: auto;
+      background: var(--teal);
+      color: var(--white);
+      font-size: 10px;
+      font-weight: 800;
+      padding: 2px 7px;
+      border-radius: 999px;
+    }
+
+    /* Collapsed: show tooltip on icon hover */
+    .sidebar:not(:hover) .sidebar-link[data-tip]:hover::after {
+      content: attr(data-tip);
+      position: absolute;
+      left: 64px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: var(--navy);
+      color: var(--white);
+      font-size: 12px;
+      font-weight: 600;
+      padding: 6px 12px;
+      border-radius: 6px;
+      white-space: nowrap;
+      z-index: 1001;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      pointer-events: none;
+    }
+
+    .sidebar-divider {
+      height: 1px;
+      background: rgba(255,255,255,0.06);
+      margin: 6px 14px;
+    }
+
+    /* Sidebar footer — sign out */
+    .sidebar-footer {
+      padding: 12px 14px 16px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      flex-shrink: 0;
+    }
+    .sidebar-signout {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      width: 100%;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: transparent;
+      padding: 10px 10px;
+      border-radius: 10px;
+      font-size: 13px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.5);
+      cursor: pointer;
+      font-family: inherit;
+      transition: all 0.15s ease;
+      white-space: nowrap;
+    }
+    .sidebar-signout:hover {
+      border-color: rgba(239,68,68,0.5);
+      background: rgba(239,68,68,0.08);
+      color: #FCA5A5;
+    }
+    .sidebar-signout svg {
+      width: 18px;
+      height: 18px;
+      min-width: 18px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* Page wrapper: shifts content right when sidebar visible */
+    .page-wrap {
+      transition: margin-left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* ============= SIDEBAR MOBILE ============= */
+    @media (max-width: 768px) {
+      .sidebar { width: 0; }
+      .sidebar:hover { width: 260px; }
+      .page-wrap { margin-left: 0; }
+
+      /* When sidebar is hovered on mobile, show overlay */
+      .sidebar:hover ~ .page-wrap::before {
+        content: '';
+        position: fixed;
+        inset: 0;
+        background: rgba(15,27,45,0.3);
+        z-index: 998;
+      }
+    }
+
+        .ta { display: none; }
+    body.lang-ta .ta { display: inline; }
+    body.lang-ta .en { display: none; }
+
+        body.cv-signed-in .nav-sign-in { display: none; }
+    body.cv-signed-in .user-pill { display: inline-flex; }
+  
+
+    
+  </style>
+</head>
+<body>
+<!-- ================= SIDEBAR ================= -->
+<aside class="sidebar" id="sidebar">
+
+  <!-- Profile header -->
+  <div class="sidebar-header">
+    <div class="sidebar-avatar" id="sb-avatar"></div>
+    <div class="sidebar-user-info">
+      <h4 id="sb-name"></h4>
+      <p id="sb-exam">CAT 2026</p>
+    </div>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a href="./campusvazhi-home-v2.html" class="sidebar-link" data-tip="Home" style="margin-bottom:8px">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      <span class="sb-label"><span class="en">Home</span><span class="ta">முகப்பு</span></span>
+    </a>
+    <div class="sidebar-divider"></div>
+
+    <!-- Dashboard -->
+    <div class="sidebar-section-label"><span class="en">Dashboard</span><span class="ta">டாஷ்போர்டு</span></div>
+
+    <a href="./CampusVazhi-Dashboard.html" class="sidebar-link" data-tip="Dashboard">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+      <span class="sb-label"><span class="en">My Dashboard</span><span class="ta">என் டாஷ்போர்டு</span></span>
+    </a>
+    <a href="./CampusVazhi-College-Compare.html" class="sidebar-link" data-tip="Saved">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+      <span class="sb-label"><span class="en">Saved Resources</span><span class="ta">சேமித்த ஆதாரங்கள்</span></span>
+    </a>
+    <a href="./campusvazhi-home-v2.html#community" class="sidebar-link" data-tip="Groups">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      <span class="sb-label"><span class="en">My Groups</span><span class="ta">என் குழுக்கள்</span></span>
+      <span class="sidebar-badge">1</span>
+    </a>
+
+    <div class="sidebar-divider"></div>
+
+    <!-- Explore Pathways -->
+    <div class="sidebar-section-label"><span class="en">Explore Pathways</span><span class="ta">பாதைகளை ஆராயுங்கள்</span></div>
+
+    <a href="./CampusVazhi-CAT-2026.html" class="sidebar-link" data-tip="CAT 2026">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+      <span class="sb-label">CAT 2026</span>
+    </a>
+    <a href="./CampusVazhi-TANCET-Resource-Hub.html" class="sidebar-link" data-tip="TANCET Hub">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+      <span class="sb-label"><span class="en">TANCET Hub</span><span class="ta">TANCET மையம்</span></span>
+    </a>
+    <a href="./CampusVazhi-MS-USA.html" class="sidebar-link" data-tip="MS in USA">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+      <span class="sb-label"><span class="en">MS in USA</span><span class="ta">அமெரிக்காவில் MS</span></span>
+    </a>
+    <a href="./CampusVazhi-NEET-Counselling.html" class="sidebar-link" data-tip="NEET">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+      <span class="sb-label"><span class="en">NEET Counselling</span><span class="ta">NEET ஆலோசனை</span></span>
+    </a>
+    <a href="./CampusVazhi-After12th-Quiz.html" class="sidebar-link" data-tip="After 12th">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+      <span class="sb-label"><span class="en">After 12th Quiz</span><span class="ta">12ஆம் வகுப்புக்குப் பிறகு</span></span>
+    </a>
+    <a href="./CampusVazhi-TNEA-Calculator.html" class="sidebar-link" data-tip="TNEA Calc">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="10" y2="10"/><line x1="12" y1="10" x2="14" y2="10"/><line x1="8" y1="14" x2="10" y2="14"/><line x1="12" y1="14" x2="14" y2="14"/><line x1="8" y1="18" x2="16" y2="18"/></svg>
+      <span class="sb-label"><span class="en">TNEA Calculator</span><span class="ta">TNEA கால்குலேட்டர்</span></span>
+    </a>
+    <a href="./CampusVazhi-Resume.html" class="sidebar-link" data-tip="Resume">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+      <span class="sb-label"><span class="en">Resume Builder</span><span class="ta">ரெஸ்யூம் உருவாக்கி</span></span>
+    </a>
+
+    <div class="sidebar-divider"></div>
+
+    <!-- Support -->
+    <div class="sidebar-section-label"><span class="en">Support</span><span class="ta">ஆதரவு</span></div>
+
+    <a href="./CampusVazhi-Book-Counselling.html" class="sidebar-link" data-tip="Counselling">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      <span class="sb-label"><span class="en">Book a Free Call</span><span class="ta">ஆலோசனை முன்பதிவு</span></span>
+    </a>
+    <a href="https://wa.me/918939862211" target="_blank" class="sidebar-link" data-tip="WhatsApp">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      <span class="sb-label"><span class="en">WhatsApp Us</span><span class="ta">WhatsApp செய்யுங்கள்</span></span>
+    </a>
+
+    <div class="sidebar-divider"></div>
+
+    <!-- Profile & Settings -->
+    <div class="sidebar-section-label"><span class="en">Profile</span><span class="ta">சுயவிவரம்</span></div>
+
+    <a href="./CampusVazhi-Dashboard.html" class="sidebar-link" data-tip="Profile">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      <span class="sb-label"><span class="en">Edit Profile</span><span class="ta">சுயவிவரத்தை மாற்று</span></span>
+    </a>
+    <a href="./CampusVazhi-Dashboard.html" class="sidebar-link" data-tip="Settings">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+      <span class="sb-label"><span class="en">Settings</span><span class="ta">அமைப்புகள்</span></span>
+    </a>
+  </nav>
+
+  <div class="sidebar-footer">
+    <button class="sidebar-signout" onclick="signOut()">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+      <span class="sb-signout-text"><span class="en">Sign out</span><span class="ta">வெளியேறு</span></span>
+    </button>
+  </div>
+</aside>
+<div class="page-wrap">
+<div class="top-bar">
+  <span>🎓</span>
+  <span>Fall 2027 top-school deadlines start Dec 1, 2026. Start your shortlist now.</span>
+  <button class="top-bar-btn" onclick="openModal()">Get Free Roadmap →</button>
+</div>
+
+<nav class="nav">
+  <a href="./campusvazhi-home-v2.html" class="nav-logo" style="text-decoration:none">
+    <div class="nav-icon"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
+    <span class="nav-brand">Campus<span>Vazhi</span></span>
+  </a>
+  <div class="nav-actions">
+    <button class="btn-lang" onclick="toggleLang()" id="langBtn">தமிழ்</button>
+    <button class="btn-primary" onclick="openModal()">Get Free Roadmap</button>
+  </div>
+</nav>
+
+<div class="breadcrumb">
+  <a href="./campusvazhi-home-v2.html">Home</a><span>›</span>Study Abroad<span>›</span>MS in USA
+</div>
+
+<section class="hero">
+  <div class="hero-circle-1"></div>
+  <div class="hero-circle-2"></div>
+  <div class="hero-inner">
+    <span class="badge badge-blue">MS IN USA · FALL 2027</span>
+    <h1>Your MS in USA<br><span>Roadmap, Without the Agent Fees</span></h1>
+    <p>Free GRE-to-university shortlister, honest cost calculator, SOP teardowns, scholarship database. Built by Indian MS grads who went through exactly this.
+      </button>
+      <button class="btn-secondary" onclick="scrollTo('calculator')">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="16" y1="14" x2="16" y2="18"/><line x1="12" y1="14" x2="12" y2="18"/><line x1="8" y1="14" x2="8" y2="18"/></svg>
+        Calculate Total Cost
+      </button>
+    </div>
+    <div class="trust-bar">
+      <div class="trust-item"><div class="trust-num">200+</div><div class="trust-label">US Universities</div></div>
+      <div class="trust-item"><div class="trust-num">50+</div><div class="trust-label">SOP Samples</div></div>
+      <div class="trust-item"><div class="trust-num">₹0</div><div class="trust-label">Agent Fees</div></div>
+      <div class="trust-item"><div class="trust-num">100%</div><div class="trust-label">Free</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="countdown-wrap">
+  <div class="countdown-card">
+    <div class="countdown-date">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+      <div>
+        <div class="countdown-label">Earliest Fall 2027 Deadline</div>
+        <div class="countdown-value">Dec 1, 2026</div>
+      </div>
+    </div>
+    <div class="countdown-digits">
+      <div class="countdown-digit" id="cd1">0</div>
+      <span class="countdown-text">days left</span>
+    </div>
+    <button class="btn-gold" onclick="openModal()">Start Preparing →</button>
+  </div>
+</section>
+
+<!-- University Shortlister Tool -->
+<section class="tool-section" id="shortlister">
+  <div class="tool-card">
+    <div class="tool-head">
+      <div class="tool-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      </div>
+      <div>
+        <h3>MS University Shortlister</h3>
+        <p>Enter your profile → get Ambitious / Target / Safe tier lists for Fall 2027</p>
+      </div>
+    </div>
+    <div class="tool-inputs">
+      <div class="tool-field">
+        <label>GRE Total Score</label>
+        <input type="number" id="gre" placeholder="e.g. 320" max="340" aria-label="GRE score">
+      </div>
+      <div class="tool-field">
+        <label>Undergrad GPA (on 10)</label>
+        <input type="number" step="0.1" id="gpa" placeholder="e.g. 8.2" max="10" aria-label="GPA">
+      </div>
+      <div class="tool-field">
+        <label>TOEFL / IELTS</label>
+        <input type="number" id="toefl" placeholder="e.g. 100" aria-label="TOEFL score">
+      </div>
+      <div class="tool-field">
+        <label>Field</label>
+        <select id="field" aria-label="Field of study">
+          <option value="cs">Computer Science</option>
+          <option value="ds">Data Science / Analytics</option>
+          <option value="ece">ECE / EE</option>
+          <option value="mech">Mechanical</option>
+          <option value="civ">Civil / Environmental</option>
+          <option value="bio">Biotech / BME</option>
+        </select>
+      </div>
+      <div class="tool-field">
+        <label>Research / Projects</label>
+        <select id="research" aria-label="Research experience">
+          <option value="0">None</option>
+          <option value="1">Academic projects</option>
+          <option value="2">1 publication</option>
+          <option value="3">2+ publications</option>
+        </select>
+      </div>
+    </div>
+    <div class="tool-cta">
+      <button class="btn-primary" onclick="runShortlist()">
+        Get My Shortlist
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </button>
+      <span style="font-size:12px;color:#374151 !important">Based on 200+ universities · last 3 years of admit data</span>
+    </div>
+    <div class="tool-result" id="shortResult"></div>
+  </div>
+</section>
+
+<!-- Cost Calculator -->
+<section class="tool-section" id="calculator" style="padding-top:0">
+  <div class="tool-card" style="background:linear-gradient(135deg,#FEF3C7 0%,var(--teal-bg) 100%);border-color:var(--gold)">
+    <div class="tool-head">
+      <div class="tool-icon teal">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+      </div>
+      <div>
+        <h3>Total Cost Calculator (INR)</h3>
+        <p>Realistic all-in cost estimate for 2-year MS in USA — no hidden surprises</p>
+      </div>
+    </div>
+    <div class="tool-inputs">
+      <div class="tool-field">
+        <label>University Type</label>
+        <select id="utype" aria-label="University type">
+          <option value="private">Private (top 20)</option>
+          <option value="state">State / Public (top 50)</option>
+          <option value="midtier">Mid-tier (50-100)</option>
+        </select>
+      </div>
+      <div class="tool-field">
+        <label>City Cost</label>
+        <select id="ctype" aria-label="College type">
+          <option value="high">High (NYC, Bay Area, Boston)</option>
+          <option value="med">Medium (Dallas, Seattle, Chicago)</option>
+          <option value="low">Low (Midwest, South, College towns)</option>
+        </select>
+      </div>
+      <div class="tool-field">
+        <label>Expected Scholarship %</label>
+        <input type="number" id="schol" placeholder="e.g. 20" max="100" aria-label="Scholarship percentage">
+      </div>
+      <div class="tool-field">
+        <label>TA/RA Position?</label>
+        <select id="tara" aria-label="Target area">
+          <option value="0">No</option>
+          <option value="0.5">Semester-long TA</option>
+          <option value="1">Full 2-year RA</option>
+        </select>
+      </div>
+    </div>
+    <div class="tool-cta">
+      <button class="btn-primary" onclick="calcCost()">
+        Calculate Total Cost
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </button>
+    </div>
+    <div class="tool-result" id="costResult"></div>
+  </div>
+</section>
+
+<!-- Resources Grid -->
+<section class="resources-section">
+  <div class="section-header">
+    <span class="badge badge-teal">100% FREE RESOURCES</span>
+    <h2>Your Complete MS in USA Toolkit</h2>
+    <p>Everything agents charge ₹2-3 lakhs for, built by Indians who did it themselves</p>
+  </div>
+  <div class="resources-grid" id="resourcesGrid"></div>
+
+  <!-- College Compare CTA -->
+  <a href="./CampusVazhi-College-Compare.html?category=msusa" style="display:block;margin:32px auto 0;max-width:900px;text-decoration:none;background:linear-gradient(135deg,#0F1B2D 0%,#1E293B 100%);border-radius:16px;padding:28px 32px;color:#fff;position:relative;overflow:hidden;border:1px solid rgba(20,184,166,.3)">
+    <div style="display:flex;align-items:center;gap:20px;flex-wrap:wrap">
+      <div style="width:56px;height:56px;background:rgba(20,184,166,.15);border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#14B8A6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+      </div>
+      <div style="flex:1;min-width:220px">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px"><span style="background:#14B8A6;color:#fff;font-size:10px;font-weight:700;padding:3px 8px;border-radius:4px;letter-spacing:.5px">NEW TOOL</span><span style="color:#94A3B8;font-size:12px">Free · Sign-in required</span></div>
+        <h3 style="font-size:20px;font-weight:700;margin:0 0 4px">Compare US Universities</h3>
+        <p style="font-size:14px;color:#CBD5E1;margin:0">MIT · Stanford · CMU · UIUC · GT · Purdue — GRE cutoffs, acceptance, avg salary, STEM OPT</p>
+      </div>
+      <div style="background:#14B8A6;color:#fff;padding:12px 20px;border-radius:8px;font-weight:600;font-size:14px;white-space:nowrap">Open Compare Tool →</div>
+    </div>
+  </a>
+</section>
+
+<!-- Timeline -->
+<section class="timeline-section">
+  <div class="timeline-inner">
+    <div class="section-header">
+      <span class="badge badge-gold">FALL 2027 TIMELINE</span>
+      <h2>14-Month Application Roadmap</h2>
+      <p>Miss these dates and your Fall 2027 dream becomes Spring 2028</p>
+    </div>
+    <div class="timeline">
+      <div class="timeline-item urgent">
+        <div class="timeline-dot"></div>
+        <div class="timeline-date">April – May 2026 · NOW</div>
+        <div class="timeline-title">Start GRE Prep & Profile Audit</div>
+        <div class="timeline-desc">8-12 weeks of focused GRE prep. Simultaneously map your projects, research, and any publications you can still add.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-date">June – August 2026</div>
+        <div class="timeline-title">Take GRE & TOEFL / IELTS</div>
+        <div class="timeline-desc">GRE is valid for 5 years. Target 320+. Take TOEFL within 2 weeks of GRE while you're still in "test mode".</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-date">September 2026</div>
+        <div class="timeline-title">Finalize 8-10 University Shortlist</div>
+        <div class="timeline-desc">Use our shortlister. Mix: 2-3 ambitious + 4-5 target + 2 safe. Research labs, funding patterns, placement stats.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-date">October 2026</div>
+        <div class="timeline-title">Write SOPs & Get LORs</div>
+        <div class="timeline-desc">Tailor SOP for each university — 50% generic, 50% specific to that program. Request LORs early; follow up weekly.</div>
+      </div>
+      <div class="timeline-item urgent">
+        <div class="timeline-dot"></div>
+        <div class="timeline-date">Nov 2026 – Jan 2027</div>
+        <div class="timeline-title">Submit Applications</div>
+        <div class="timeline-desc">Top programs deadline as early as Dec 1. Submit at least 2 weeks before deadline. Keep transcripts, WES, score reports ready.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-date">Feb – April 2027</div>
+        <div class="timeline-title">Decisions + Financial Planning</div>
+        <div class="timeline-desc">Compare admits. Apply for scholarships, RA/TA, education loans. Make final decision by April 15.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-date">May – July 2027</div>
+        <div class="timeline-title">I-20, Visa, Travel</div>
+        <div class="timeline-desc">Receive I-20. Book F1 visa interview. Show funds. Book flights. Arrange on-arrival housing through university groups.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-date">August 2027</div>
+        <div class="timeline-title">Fly to USA 🇺🇸</div>
+        <div class="timeline-desc">Fall intake orientation. Pick courses, meet advisors, settle in. The roadmap worked.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOP Teardowns -->
+<section class="sop-section">
+  <div class="section-header">
+    <span class="badge badge-purple">SOP TEARDOWNS</span>
+    <h2>Good SOP vs Bad SOP — Side by Side</h2>
+    <p>Real openings from real Indian applicants, anonymized. What admissions committees actually think.</p>
+  </div>
+
+  <div class="sop-card teardown">
+    <div class="sop-header">
+      <div class="sop-grade bad">✕</div>
+      <div>
+        <h3>The "Childhood Dream" Opening (Rejected)</h3>
+        <p>Target: CMU MS CS · Profile: 8.1 GPA, 318 GRE</p>
+      </div>
+    </div>
+    <div class="sop-quote">Since my childhood I have been fascinated by computers. I used to watch my father work on our first family computer and wondered how such a machine could change the world. This passion for technology grew with me and today I stand before you as an aspirant for the prestigious Master of Science program at Carnegie Mellon University.</div>
+    <div class="sop-verdict">🚩 <strong>Verdict:</strong> Generic, nostalgic, signals nothing about the applicant. Could be any of 10,000 essays. Admissions committee flips to next page in 20 seconds.</div>
+  </div>
+
+  <div class="sop-card teardown-fix">
+    <div class="sop-header">
+      <div class="sop-grade">✓</div>
+      <div>
+        <h3>The "Specific Moment" Opening (Admit with 30% scholarship)</h3>
+        <p>Target: CMU MS CS · Same profile, rewritten</p>
+      </div>
+    </div>
+    <div class="sop-quote">During my third-year internship at a Chennai fintech startup, I watched our fraud detection system flag 30 legitimate transactions for every real fraud. I rewrote the anomaly detection layer using a simple isolation forest and cut false positives by 67%. That's when I realized: I wasn't interested in "computer science" broadly — I was interested in the machine learning decisions that sit between raw data and human trust.</div>
+    <div class="sop-verdict">✓ <strong>Verdict:</strong> Specific. Quantified. Shows the exact research interest CMU cares about. Leads naturally into which professors and labs the applicant wants to join.</div>
+  </div>
+
+  <div style="text-align:center;margin-top:24px">
+    <button class="btn-primary btn-primary-lg" onclick="openModal()">Get 50+ SOP Teardowns Free →</button>
+  </div>
+</section>
+
+<!-- FAQs -->
+<section class="faq-section">
+  <div class="faq-inner">
+    <div class="section-header">
+      <span class="badge badge-teal">QUESTIONS ASPIRANTS ACTUALLY ASK</span>
+      <h2>MS in USA FAQs</h2>
+    </div>
+    <div class="faq-list" id="faqList"></div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section class="testimonials">
+  <div class="testimonials-inner">
+    <span class="badge badge-gold">SUCCESS STORIES</span>
+    <h2>Indians Who Made It — Without Agents</h2>
+    <div class="test-grid" id="testGrid"></div>
+  </div>
+</section>
+
+<!-- WhatsApp CTA -->
+<section class="wa-section">
+  <div class="wa-card">
+    <div class="wa-circle"></div>
+    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+    <h2>Join the MS in USA WhatsApp Community</h2>
+    <p>SOP reviews, visa slot alerts, I-20 processing, roommate finder, scholarship drops</p>
+    <button class="btn-wa" onclick="openModal()">Join Free — 1,200+ MS Aspirants</button>
+  </div>
+</section>
+
+<section class="final-cta">
+  <div class="final-inner">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0D9488" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+    <h2>Don't Pay ₹2 Lakhs for What's Free</h2>
+    <p>Shortlister + cost calculator + 50+ SOP teardowns + visa prep + timeline. All yours.</p>
+    <button class="btn-primary btn-primary-lg" onclick="openModal()">Get Full Roadmap Free →</button>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-brand">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#14B8A6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+    <span>Campus<span>Vazhi</span></span>
+  </div>
+  <p>Your trusted guide for college admissions in Tamil Nadu & beyond</p>
+  <div class="footer-links">
+    <a href="./campusvazhi-home-v2.html">Home</a>·
+    <a href="./CampusVazhi-CAT-2026.html">CAT 2026</a>·
+    <a href="./CampusVazhi-TANCET-Resource-Hub.html">TANCET 2026</a>·
+    <a href="./CampusVazhi-NEET-Counselling.html">NEET Counselling</a>·
+    <a href="./CampusVazhi-Resume.html">Resume Builder</a>·
+    <a href="./CampusVazhi-Login.html">Sign in</a>
+  </div>
+  <p class="copy">© 2026 CampusVazhi. All rights reserved.</p>
+</footer>
+
+<!-- Lead Modal -->
+<div class="modal-overlay" id="modal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div class="modal-form-wrap" id="modalForm">
+      <div class="modal-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0D9488" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      </div>
+      <h3>Get the Full MS in USA Kit</h3>
+      <p class="subtitle">Shortlister + cost calculator + 50+ SOP samples — instant access</p>
+      <div class="modal-form">
+        <input type="text" placeholder="Your name" id="fname" aria-label="Your name">
+        <input type="tel" placeholder="Mobile (WhatsApp)" id="fmobile" aria-label="Mobile number">
+        <input type="email" placeholder="Email" id="femail" aria-label="Email">
+        <select id="fstatus" aria-label="Current status">
+          <option value="">Target intake</option>
+          <option>Fall 2027</option>
+          <option>Spring 2027</option>
+          <option>Fall 2028</option>
+          <option>Still deciding</option>
+        </select>
+        <button class="modal-submit" onclick="submitForm()">
+          Send Me the Kit
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </button>
+        <p class="modal-privacy">🔒 No spam. Unsubscribe anytime.</p>
+      </div>
+    </div>
+    <div class="modal-success" id="modalSuccess">
+      <div class="success-icon">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+      </div>
+      <h3>You're in! 🎉</h3>
+      <p style="font-size:14px;color:#374151 !important;line-height:1.6;margin-top:8px">Check WhatsApp & email. Your MS in USA roadmap is on the way.</p>
+      <div class="success-wa"><p>📱 Join our WhatsApp community for SOP reviews & visa prep</p></div>
+      <button class="btn-primary" onclick="closeModal()">Close</button>
+    </div>
+  </div>
+
+<script>
+  // 5. Sidebar — populate user data
+  function populateSidebar() {
+    try {
+      var u = JSON.parse(localStorage.getItem('cv_user'));
+      if (u && u.name) {
+        document.getElementById('sb-avatar').textContent = u.name.charAt(0).toUpperCase();
+        document.getElementById('sb-name').textContent = u.name;
+        document.getElementById('sb-exam').textContent = u.exam || 'Student';
+      }
+    } catch(e) {}
+  }
+  populateSidebar();
+
+  function checkSignIn() {
+    try {
+      var u = JSON.parse(localStorage.getItem('cv_user'));
+      var signedIn = localStorage.getItem('cv_signed_in') === '1';
+      if ((u && u.name) || signedIn) {
+        document.body.classList.add('cv-signed-in');
+        document.body.classList.add('logged-in');
+        document.documentElement.classList.add('logged-in');
+        if (u && u.name) localStorage.setItem('cv_signed_in', '1');
+        var sb = document.querySelector('.sidebar');
+        var pw = document.querySelector('.page-wrap');
+        if (sb) sb.style.setProperty('display', 'flex', 'important');
+        if (pw) pw.style.setProperty('margin-left', '68px', 'important');
+        var pill = document.getElementById('user-pill');
+        if (pill && u && u.name) {
+          pill.querySelector('.user-initial').textContent = u.name.charAt(0).toUpperCase();
+          pill.querySelector('.user-name').textContent = 'Hi, ' + u.name.split(' ')[0];
+        }
+      }
+    } catch(e) {}
+  }
+  checkSignIn();
+
+  function signOut() {
+    document.body.classList.remove('logged-in', 'cv-signed-in');
+    document.documentElement.classList.remove('logged-in');
+    var sb = document.querySelector('.sidebar');
+    var pw = document.querySelector('.page-wrap');
+    if (sb) sb.style.setProperty('display', 'none', 'important');
+    if (pw) pw.style.setProperty('margin-left', '0', 'important');
+    localStorage.removeItem('cv_signed_in');
+    localStorage.removeItem('cv_user');
+    if (typeof cvAuth !== 'undefined' && typeof cvAuth.logout === 'function') {
+      cvAuth.logout();
+    } else {
+      window.location.href = './campusvazhi-home-v2.html';
+    }
+  }
+
+// Countdown to Dec 1, 2026
+const deadline = new Date('2026-12-01T23:59:59+05:30');
+const daysLeft = Math.max(0, Math.floor((deadline - new Date()) / 86400000));
+document.getElementById('cd1').textContent = daysLeft;
+
+const resources = [
+  { title_en: "University Shortlister Tool", title_ta: "பல்கலைக்கழக குறியீட்டாளர் கருவி", desc_en: "Profile → Ambitious / Target / Safe tier lists", desc_ta: "சுயவிவரம் → महत्वाकांक्षी / लक्ष्य / सुरक्षित tier सूचियां", tag_en: "TOOL", tag_ta: "கருவி", color: "#2563EB", iconPath: '<circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>' },
+  { title_en: "Total Cost Calculator", title_ta: "मొత्తam सेलवु कणक", desc_en: "Realistic 2-year all-in cost in INR with scholarships", desc_ta: "वास्तविक 2-वर्षीय सभी-में लागत INR में வடிவமான के साथ", tag_en: "TOOL", tag_ta: "கருவி", color: "#8B5CF6", iconPath: '<line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>' },
+  { title_en: "50+ SOP Teardowns", title_ta: "50+ SOP பகுப्பாய்வுகள்", desc_en: "Real SOPs with line-by-line committee reactions", desc_ta: "वास्तविक SOPs पंक्ति-दर-पंक्ति समिति प्रतिक्रिया के साथ", tag_en: "FREE", tag_ta: "இலவசம்", color: "#0D9488", iconPath: '<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/>' },
+  { title_en: "GRE 320+ Study Plan", title_ta: "GRE 320+ अध्ययन योजना", desc_en: "8-week intensive with daily targets and mock schedule", desc_ta: "8-सप्ताह का गहन दैनिक लक्ष्यों और नकली समय सारणी के साथ", tag_en: "FREE", tag_ta: "இலவசம்", color: "#EC4899", iconPath: '<path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>' },
+  { title_en: "LOR Scripts & Templates", title_ta: "LOR स्क्रिप्ट्स और टेम्पलेट्स", desc_en: "What professors actually want from recommendation requests", desc_ta: "प्रोफेसर वास्तव में सिफारिश अनुरोधों से क्या चाहते हैं", tag_en: "FREE", tag_ta: "இலவசம்", color: "#F59E0B", iconPath: '<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/>' },
+  { title_en: "Scholarship Database", title_ta: "வடிவமான डेटाबेस", desc_en: "200+ scholarships by field, deadline, and eligibility", desc_ta: "200+ வடிவமான फील्ड, समय सीमा, और पात्रता द्वारा", tag_en: "FREE", tag_ta: "இலவசம்", color: "#10B981", iconPath: '<polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>' },
+  { title_en: "F1 Visa Interview Prep", title_ta: "F1 விசா साक्षात्कार तैयारी", desc_en: "50 actual questions + how to answer + red flags to avoid", desc_ta: "50 वास्तविक सवाल + जवाब कैसे दें + लाल झंडे से बचें", tag_en: "FREE", tag_ta: "இலவசம்", color: "#6366F1", iconPath: '<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>' },
+  { title_en: "STEM OPT Career Guide", title_ta: "STEM OPT தொழில் நির्দেশিக", desc_en: "3-year work authorization: how to maximize placement ROI", desc_ta: "3-वर्षीय कार्य प्राधिकरण: नियुक्ति ROI को कैसे अधिकतम करें", tag_en: "FREE", tag_ta: "இலவசம்", color: "#F97316", iconPath: '<rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>' }
+];
+
+const testimonials = [
+  { name: "Arun S.", score: "GRE 324", college: "UT Austin MS CS → Google", quote_en: "Agents quoted ₹2.5L. I used CampusVazhi, did it myself, got 40% scholarship. Saved more than my first year rent.", quote_ta: "एजेंटों ने ₹2.5L उद्धृत किया। मैंने CampusVazhi का इस्तेमाल किया, इसे खुद किया, 40% வடிவமான मिली। मेरे पहले साल के किराये से अधिक बचाया।" },
+  { name: "Priya N.", score: "GRE 319", college: "NC State MS DS → Deloitte", quote_en: "The SOP teardowns showed me exactly why my first draft was generic. Rewrote it in 2 weekends, got 6 of 8 admits.", quote_ta: "SOP पकड़ ने मुझे बिल्कुल दिखाया कि मेरा पहला ड्राफ्ट क्यों जेनेरिक था। इसे 2 सप्ताहांत में फिर से लिखा, 8 में से 6 Admits मिले।" },
+  { name: "Vikram R.", score: "GRE 327", college: "UIUC MS ECE → Intel", quote_en: "The timeline kept me honest. Every deadline I missed in my agent-led attempt, I hit on my own this time.", quote_ta: "समय रेखा ने मुझे ईमानदार रखा। प्रत्येक समय सीमा जो मैंने अपने एजेंट-नेतृत्व वाले प्रयास में याद की, मैंने इस बार अपने आप पर हिट किया।" }
+];
+
+const faqs = [
+  { q_en: "What GRE score do I need for top MS programs in USA?", q_ta: "USA में शीर्ष MS कार्यक्रमों के लिए मुझे कौन सी GRE स्कोर की आवश्यकता है?", a_en: "Top 10 programs typically expect 325+ with 165+ in Quant. Top 30 programs are comfortable with 315+. Top 50 accept 305+. But GRE is only 20% of your application — GPA, research, projects, and SOP weigh more at US admissions committees.", a_ta: "शीर्ष 10 कार्यक्रम आमतौर पर 325+ उम्मीद करते हैं 165+ के साथ क्वांट में। शीर्ष 30 कार्यक्रम 315+ के साथ सहज हैं। शीर्ष 50 305+ स्वीकार करते हैं। लेकिन GRE केवल आपके आवेदन का 20% है — GPA, अनुसंधान, परियोजनाएं, और SOP US ভর্ती समितियों पर अधिक वजन।" },
+  { q_en: "How much does MS in USA cost for Indian students?", q_ta: "भारतीय छात्रों के लिए USA में MS की लागत कितनी है?", a_en: "Budget ₹45-65 lakhs total for 2 years: ₹25-40L tuition, ₹12-18L living expenses, ₹1.5L flights, ₹2L application fees and visa. Scholarships and TA/RA positions can cut this by 30-60%. State universities are 40% cheaper than private ones.", a_ta: "2 साल के लिए कुल ₹45-65 लाख बजट: ₹25-40L ट्यूशन, ₹12-18L रहने की व्यय, ₹1.5L उड़ानें, ₹2L आवेदन शुल्क और वीसा। வடிவமான और TA/RA पद यह 30-60% कम कर सकते हैं। राज्य विश्वविद्यालय निजी से 40% सस्ते हैं।" },
+  { q_en: "When should I start applying for Fall 2027 MS?", q_ta: "मुझे Fall 2027 MS के लिए आवेदन कब शुरू करना चाहिए?", a_en: "Start GRE prep by May 2026, take GRE by August, finalize shortlist by September, write SOPs in October, submit applications between November 2026 and January 2027. Deadlines at top universities are as early as December 1.", a_ta: "May 2026 तक GRE तैयारी शुरू करें, August तक GRE लें, September तक शॉर्टलिस्ट को अंतिम रूप दें, October में SOPs लिखें, November 2026 और January 2027 के बीच आवेदन जमा करें। शीर्ष विश्वविद्यालयों पर डेडलाइन December 1 जितनी जल्दी है।" },
+  { q_en: "Is MS in USA still worth it in 2027?", q_ta: "क्या 2027 में USA में MS अभी भी इसके लायक है?", a_en: "Yes, if you target CS, Data Science, ECE, or specialized engineering at universities with strong industry connections. US STEM OPT gives 3 years of work authorization. ROI depends heavily on target company salaries vs your loan amount. Choose state schools and scholarships to improve ROI significantly.", a_ta: "हां, यदि आप मजबूत उद्योग कनेक्शन के साथ विश्वविद्यालयों में CS, Data Science, ECE, या विशेष इंजीनियरिंग को लक्ष्य करते हैं। US STEM OPT 3 साल का कार्य प्राधिकार देता है। ROI मुख्य रूप से लक्षित कंपनी वेतन बनाम आपकी ऋण राशि पर निर्भर करता है। ROI में सुधार के लिए राज्य विद्यालयों और வடிவமான चुनें।" },
+  { q_en: "What is the difference between Fall and Spring intake?", q_ta: "Fall और Spring intake के बीच क्या अंतर है?", a_en: "Fall (August) is the primary intake — 90% of students join then, most funding available, full course selection. Spring (January) has limited seats, fewer TA positions, but lets you start 6 months earlier if you missed Fall. Avoid Summer intake for degree programs.", a_ta: "Fall (August) प्राथमिक सेवन है — 90% छात्र तब शामिल होते हैं, अधिकतर धन उपलब्ध, पूर्ण पाठ्यक्रम चयन। Spring (January) में सीमित सीटें हैं, कम TA पद हैं, लेकिन यदि आपने Fall को याद किया तो आप 6 महीने पहले शुरू कर सकते हैं। डिग्री कार्यक्रमों के लिए Summer सेवन से बचें।" }
+];
+
+// Render
+document.getElementById('resourcesGrid').innerHTML = resources.map(r => `
+  <div class="resource-card" onclick="openModal()">
+    <div class="resource-icon" style="background:${r.color}12">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="${r.color}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${r.iconPath}</svg>
+    </div>
+    <div class="resource-content">
+      <div class="resource-title-row">
+        <h3 class="resource-title">${r.title_en}</h3>
+        <span class="badge ${r.tag_en === 'TOOL' ? 'badge-purple' : 'badge-green'}">${r.tag_en}</span>
+      </div>
+      <p class="resource-desc">${r.desc_en}</p>
+    </div>
+    <svg class="resource-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#374151" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+  </div>
+`).join('');
+
+const starSvg = '<svg width="14" height="14" viewBox="0 0 24 24" fill="#F59E0B" stroke="#F59E0B" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>';
+document.getElementById('testGrid').innerHTML = testimonials.map(t => `
+  <div class="test-card">
+    <div class="test-stars">${starSvg.repeat(5)}</div>
+    <p class="test-quote">"${t.quote_en}"</p>
+    <div class="test-footer">
+      <div class="test-name">${t.name}</div>
+      <div class="test-detail">${t.score} · ${t.college}</div>
+    </div>
+  </div>
+`).join('');
+
+document.getElementById('faqList').innerHTML = faqs.map((f, i) => `
+  <div class="faq-item" onclick="toggleFaq(${i})">
+    <div class="faq-q"><span>${f.q_en}</span><span class="faq-q-icon">+</span></div>
+    <div class="faq-a">${f.a_en}</div>
+  </div>
+`).join('');
+
+function toggleFaq(i) { document.querySelectorAll('.faq-item')[i].classList.toggle('open'); }
+
+// University shortlister
+function runShortlist() {
+  const gre = parseInt(document.getElementById('gre').value) || 0;
+  const gpa = parseFloat(document.getElementById('gpa').value) || 0;
+  const toefl = parseInt(document.getElementById('toefl').value) || 0;
+  const field = document.getElementById('field').value;
+  const research = parseInt(document.getElementById('research').value);
+  if (gre === 0 || gpa === 0) { alert('Please enter at least GRE and GPA'); return; }
+
+  // Composite score out of 100
+  const greScore = Math.min(100, (gre - 260) * 100 / 80); // 260-340 → 0-100
+  const gpaScore = gpa * 10;
+  const toeflScore = Math.min(100, (toefl - 60) * 100 / 60);
+  const researchBoost = research * 5;
+  const composite = greScore * 0.3 + gpaScore * 0.4 + toeflScore * 0.1 + researchBoost * 0.2 + research * 3;
+
+  const csData = {
+    ambitious: ["CMU", "Stanford", "MIT", "UC Berkeley", "UIUC"],
+    target: ["Georgia Tech", "UT Austin", "UMich", "Purdue", "UCSD", "NYU Courant"],
+    safe: ["Arizona State", "NCSU", "Stony Brook", "UT Dallas", "Rutgers", "Northeastern"]
+  };
+  const generalData = {
+    ambitious: ["Stanford", "MIT", "Cornell", "Columbia", "Princeton"],
+    target: ["Georgia Tech", "UMich", "UCLA", "USC", "UMD", "PSU"],
+    safe: ["Arizona State", "NC State", "Iowa State", "UIC", "SUNY Buffalo", "Northeastern"]
+  };
+  const data = field === 'cs' || field === 'ds' ? csData : generalData;
+
+  let ambitious = [], target = [], safe = [];
+  if (composite >= 78) {
+    ambitious = data.ambitious.slice(0, 3);
+    target = data.target.slice(0, 4);
+    safe = data.safe.slice(0, 2);
+  } else if (composite >= 65) {
+    ambitious = data.ambitious.slice(0, 1);
+    target = data.target.slice(0, 3);
+    safe = data.safe.slice(0, 3);
+  } else if (composite >= 50) {
+    target = data.target.slice(0, 2);
+    safe = data.safe.slice(0, 4);
+  } else {
+    safe = data.safe.slice(0, 5);
+  }
+
+  let html = `<div class="result-row"><span>Profile composite</span><strong>${composite.toFixed(0)}/100</strong></div><div class="tier-list">`;
+  if (ambitious.length) html += `<div class="tier-row ambitious"><span class="tier-label">AMBITIOUS</span><span>${ambitious.join(', ')}</span></div>`;
+  if (target.length) html += `<div class="tier-row target"><span class="tier-label">TARGET</span><span>${target.join(', ')}</span></div>`;
+  if (safe.length) html += `<div class="tier-row safe"><span class="tier-label">SAFE</span><span>${safe.join(', ')}</span></div>`;
+  html += `</div><div style="margin-top:14px;padding:12px;background:#EEF4FF;border-radius:8px;font-size:13px;color:var(--blue);font-weight:600;text-align:center">Want the full 200-university list with funding patterns? → <a style="color:var(--blue);text-decoration:underline;cursor:pointer" onclick="openModal()">Get it free</a></div>`;
+  document.getElementById('shortResult').innerHTML = html;
+  document.getElementById('shortResult').classList.add('active');
+}
+
+// Cost calculator
+function calcCost() {
+  const utype = document.getElementById('utype').value;
+  const ctype = document.getElementById('ctype').value;
+  const schol = parseFloat(document.getElementById('schol').value) || 0;
+  const tara = parseFloat(document.getElementById('tara').value);
+
+  const tuitionINR = { private: 4000000, state: 2500000, midtier: 1800000 }[utype];
+  const livingINR = { high: 1800000, med: 1300000, low: 900000 }[ctype];
+  const flights = 150000, appVisa = 200000;
+
+  const scholSaving = tuitionINR * (schol / 100);
+  const taraSaving = tara * tuitionINR * 0.75; // TA/RA often waive 75% tuition
+
+  const baseTotal = tuitionINR + livingINR + flights + appVisa;
+  const totalAfter = Math.max(livingINR + flights + appVisa, baseTotal - scholSaving - taraSaving);
+
+  const fmt = n => '₹' + (n / 100000).toFixed(1) + 'L';
+  const html = `
+    <div class="result-row"><span>2-yr Tuition (sticker)</span><strong>${fmt(tuitionINR)}</strong></div>
+    <div class="result-row"><span>2-yr Living Expenses</span><strong>${fmt(livingINR)}</strong></div>
+    <div class="result-row"><span>Flights + Visa + Apps</span><strong>${fmt(flights + appVisa)}</strong></div>
+    <div class="result-row"><span>Scholarship savings</span><strong style="color:var(--green)">-${fmt(scholSaving)}</strong></div>
+    <div class="result-row"><span>TA/RA tuition waiver</span><strong style="color:var(--green)">-${fmt(taraSaving)}</strong></div>
+    <div class="result-row" style="border-top:2px solid var(--navy);margin-top:8px;padding-top:12px"><span style="font-weight:800">TOTAL ALL-IN</span><strong style="font-size:18px;color:var(--navy)">${fmt(totalAfter)}</strong></div>
+    <div style="margin-top:14px;padding:12px;background:var(--teal-bg);border-radius:8px;font-size:13px;color:var(--teal);font-weight:600;text-align:center">Typical education loan: ${fmt(totalAfter * 0.7)} at 9-11% from SBI/HDFC Credila. <a style="color:var(--teal);text-decoration:underline;cursor:pointer" onclick="openModal()">Get loan comparison sheet</a></div>
+  `;
+  document.getElementById('costResult').innerHTML = html;
+  document.getElementById('costResult').classList.add('active');
+}
+
+function scrollTo(id) { document.getElementById(id).scrollIntoView({ behavior: 'smooth' }); }
+
+// Modal
+function openModal() {
+  document.getElementById('modal').classList.add('active');
+  document.getElementById('modalForm').classList.remove('hidden');
+  document.getElementById('modalSuccess').classList.remove('active');
+}
+function closeModal() { document.getElementById('modal').classList.remove('active'); }
+function submitForm() {
+  const name = document.getElementById('fname').value;
+  const mobile = document.getElementById('fmobile').value;
+  const email = document.getElementById('femail').value;
+  if (!name || !mobile) { alert('Please enter your name and mobile number'); return; }
+  console.log('Lead captured:', { name, mobile, page: 'MS-USA' });
+
+  // Save to Supabase
+  try {
+    if (typeof cvLeads !== 'undefined' && cvLeads.saveCTALead) {
+      cvLeads.saveCTALead({
+        name: name,
+        phone: mobile,
+        email: email,
+        cta_type: 'free_roadmap'
+      });
+      cvUI.toast('Saved! Check your WhatsApp.');
+    }
+  } catch(e) {
+    console.error('Supabase save error:', e);
+  }
+
+  document.getElementById('modalForm').classList.add('hidden');
+  document.getElementById('modalSuccess').classList.add('active');
+}
+document.getElementById('modal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+
+// Language toggle
+var lang = 'en';
+function toggleLang() {
+  lang = lang === 'en' ? 'ta' : 'en';
+  if (lang === 'ta') {
+    document.body.classList.add('lang-ta');
+    document.getElementById('langBtn').textContent = 'English';
+  } else {
+    document.body.classList.remove('lang-ta');
+    document.getElementById('langBtn').textContent = 'தமிழ்';
+  }
+}
+
+</script>
+</div>
+</div>
+
+<script src="./js/config.js"></script>
+<script src="./js/analytics.js"></script>
+<script src="./js/cookie-consent.js"></script>
+<script src="./js/lead-popup.js"></script>
+<script src="./js/download-gate.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="./js/supabase-client.js"></script>
+</body>
+</html>

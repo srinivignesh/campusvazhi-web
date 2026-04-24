@@ -1,0 +1,1181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style id="cv-sidebar-auth">
+.sidebar { display: none !important; }
+.page-wrap { margin-left: 0 !important; }
+body.logged-in .sidebar, .logged-in .sidebar { display: flex !important; }
+body.logged-in .page-wrap, .logged-in .page-wrap { margin-left: 68px !important; }
+@media (max-width: 768px) {
+  body.logged-in .page-wrap, .logged-in .page-wrap { margin-left: 0 !important; }
+}
+</style>
+<script>(function(){var s=localStorage.getItem('cv_signed_in')==='1';if(s)document.documentElement.classList.add('logged-in');document.addEventListener('DOMContentLoaded',function(){var sb=document.querySelector('.sidebar');var pw=document.querySelector('.page-wrap');if(s){document.body.classList.add('logged-in');if(sb)sb.style.setProperty('display','flex','important');if(pw)pw.style.setProperty('margin-left','68px','important')}else{if(sb)sb.style.setProperty('display','none','important');if(pw)pw.style.setProperty('margin-left','0','important')}});})()</script>
+<meta charset="UTF-8">
+<link rel="icon" type="image/svg+xml" href="./favicon.svg">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Dashboard | CampusVazhi</title>
+<meta name="description" content="Your CampusVazhi dashboard — saved college comparisons, exam countdown, profile, and recommended resources personalised to your target exam.">
+<link rel="canonical" href="https://campusvazhi.com/dashboard" />
+<meta property="og:title" content="My CampusVazhi Dashboard">
+<meta property="og:description" content="Your saved comparisons, exam countdown, profile, and personalised recommendations — all in one place.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://campusvazhi.com/dashboard" />
+<meta property="og:image" content="https://campusvazhi.com/og-default.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Tamil:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0F1B2D;
+  --navy-2:#1E3A5F;
+  --teal:#0D9488;
+  --teal-light:#14B8A6;
+  --teal-bg:#F0FDFA;
+  --gold:#F59E0B;
+  --blue:#2563EB;
+  --pink:#EC4899;
+  --orange:#F97316;
+  --purple:#8B5CF6;
+  --green:#10B981;
+  --red:#EF4444;
+  --g50:#F9FAFB;
+  --g100:#F3F4F6;
+  --g200:#E5E7EB;
+  --g300:#D1D5DB;
+  --g400:#9CA3AF;
+  --g500:#6B7280;
+  --g600:#4B5563;
+  --g700:#374151;
+  --g800:#1F2937;
+  --g900:#111827;
+  --shadow-sm:0 1px 2px rgba(0,0,0,.05);
+  --shadow:0 4px 14px rgba(15,27,45,.08);
+  --shadow-lg:0 12px 40px rgba(15,27,45,.15);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter','Noto Sans Tamil',system-ui,sans-serif;color:var(--g900);background:var(--g50);line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:0;background:none}
+.container{max-width:1200px;margin:0 auto;padding:0 20px}
+
+/* TOP BAR */
+.topbar{background:var(--navy);color:#fff;padding:8px 0;font-size:13px}
+.topbar-inner{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.topbar-left{display:flex;align-items:center;gap:16px}
+.topbar .dot{width:8px;height:8px;border-radius:50%;background:var(--teal-light);display:inline-block;margin-right:6px;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.user-chip{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.08);padding:4px 10px;border-radius:999px;font-size:12px}
+.user-chip .avatar{width:20px;height:20px;border-radius:50%;background:var(--teal);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:11px}
+.signout-btn{color:#fff;opacity:.7;font-size:12px;padding:2px 8px;border:1px solid rgba(255,255,255,.2);border-radius:4px;transition:all .2s;margin-left:8px}
+.signout-btn:hover{opacity:1;background:rgba(255,255,255,.1)}
+
+/* NAV */
+.nav{background:#fff;border-bottom:1px solid var(--g200);padding:18px 40px;position:sticky;top:0;z-index:90;box-shadow:var(--shadow-sm)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;font-size:18px;font-weight:800;color:var(--navy)}
+.brand span{color:var(--teal)}
+.brand-logo{width:34px;height:34px;background:linear-gradient(135deg,var(--teal) 0%,var(--teal-light) 100%);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:14px;font-weight:800}
+.nav-links{display:flex;gap:22px;font-size:14px;font-weight:500;color:var(--g700)}
+.nav-links a:hover{color:var(--teal)}
+.nav-cta{background:#25D366;color:#fff;padding:9px 16px;border-radius:8px;font-size:13px;font-weight:600;display:inline-flex;align-items:center;gap:6px}
+.nav-cta:hover{background:#1ebe5a}
+
+/* SIGN-IN GATE */
+.gate-overlay{display:none;position:fixed;inset:0;background:rgba(15,27,45,.88);backdrop-filter:blur(6px);z-index:500;align-items:center;justify-content:center;padding:20px}
+.gate-overlay.active{display:flex}
+.gate-modal{background:#fff;max-width:460px;width:100%;border-radius:18px;padding:36px 32px;box-shadow:var(--shadow-lg);position:relative}
+.gate-badge{display:inline-flex;align-items:center;gap:6px;background:var(--teal-bg);color:var(--teal);padding:5px 11px;border-radius:999px;font-size:11px;font-weight:700;margin-bottom:14px;letter-spacing:.3px;text-transform:uppercase}
+.gate-modal h2{font-size:24px;font-weight:800;color:var(--navy);margin-bottom:8px}
+.gate-modal .sub{color:var(--g600);font-size:14px;margin-bottom:22px}
+.gate-form .field{margin-bottom:14px}
+.gate-form label{display:block;font-size:12px;font-weight:600;color:var(--g700);margin-bottom:5px}
+.gate-form input,.gate-form select{width:100%;padding:11px 13px;border:1.5px solid var(--g200);border-radius:9px;font-size:14px;font-family:inherit;background:#fff;transition:border-color .15s}
+.gate-form input:focus,.gate-form select:focus{outline:none;border-color:var(--teal)}
+.gate-submit{width:100%;background:var(--teal);color:#fff;padding:13px;border-radius:10px;font-size:15px;font-weight:700;margin-top:4px;transition:background .2s}
+.gate-submit:hover{background:var(--teal-light)}
+.gate-footer{font-size:11px;color:var(--g500);margin-top:14px;text-align:center;line-height:1.55}
+.gate-protected{filter:blur(6px);pointer-events:none;user-select:none}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-2) 100%);color:#fff;padding:56px 20px 80px;position:relative;overflow:hidden}
+.hero-circle-1{position:absolute;top:-80px;right:-80px;width:320px;height:320px;background:radial-gradient(circle,rgba(20,184,166,.15) 0%,transparent 70%);border-radius:50%}
+.hero-circle-2{position:absolute;bottom:-100px;left:-60px;width:280px;height:280px;background:radial-gradient(circle,rgba(245,158,11,.12) 0%,transparent 70%);border-radius:50%}
+.hero-inner{max-width:1200px;margin:0 auto;position:relative;z-index:2}
+.hero-greet{font-size:13px;font-weight:600;color:var(--teal-light);text-transform:uppercase;letter-spacing:.6px;margin-bottom:8px;display:flex;align-items:center;gap:8px}
+.hero h1{font-size:clamp(26px,4vw,38px);font-weight:800;line-height:1.18;margin-bottom:10px;letter-spacing:-.02em}
+.hero h1 .name{color:var(--teal-light)}
+.hero .sub{font-size:15px;color:#CBD5E1;max-width:620px;margin-bottom:26px}
+
+/* STATS STRIP */
+.stats-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;max-width:800px}
+.stat-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:14px 16px;backdrop-filter:blur(6px)}
+.stat-card .n{font-size:24px;font-weight:800;color:#fff;display:block;line-height:1.1}
+.stat-card .l{font-size:11px;color:#94A3B8;text-transform:uppercase;letter-spacing:.4px;margin-top:4px;display:block}
+.stat-card .trend{font-size:10px;color:var(--teal-light);margin-top:4px;display:block}
+
+/* MAIN GRID */
+.main{margin-top:-48px;position:relative;z-index:3;padding-bottom:60px}
+.grid{display:grid;grid-template-columns:1fr 380px;gap:24px;max-width:1200px;margin:0 auto;padding:0 20px}
+.col-left,.col-right{display:flex;flex-direction:column;gap:20px}
+
+/* CARD */
+.card{background:#fff;border-radius:14px;padding:22px 24px;box-shadow:var(--shadow);border:1px solid var(--g100)}
+.card-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:18px;flex-wrap:wrap}
+.card-head h2{font-size:17px;font-weight:700;color:var(--navy);display:flex;align-items:center;gap:8px}
+.card-head h2 svg{width:18px;height:18px;color:var(--teal)}
+.card-head .action{font-size:12px;color:var(--teal);font-weight:600;display:inline-flex;align-items:center;gap:4px}
+.card-head .action:hover{color:var(--teal-light)}
+
+/* EXAM COUNTDOWN CARD */
+.exam-card{background:linear-gradient(135deg,var(--teal) 0%,var(--teal-light) 100%);color:#fff;border-radius:14px;padding:24px;box-shadow:var(--shadow-lg);position:relative;overflow:hidden}
+.exam-card::before{content:'';position:absolute;top:-40px;right:-40px;width:160px;height:160px;background:radial-gradient(circle,rgba(255,255,255,.15) 0%,transparent 65%);border-radius:50%}
+.exam-card-inner{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.exam-card-text{flex:1;min-width:180px}
+.exam-card .eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:.5px;opacity:.85;margin-bottom:4px;font-weight:600}
+.exam-card h3{font-size:22px;font-weight:800;margin-bottom:3px}
+.exam-card .date{font-size:13px;opacity:.9}
+.exam-card .countdown{font-size:48px;font-weight:900;line-height:1;margin-bottom:4px;font-variant-numeric:tabular-nums}
+.exam-card .countdown-label{font-size:12px;opacity:.85;text-transform:uppercase;letter-spacing:.5px}
+.exam-card .exam-cta{display:inline-block;margin-top:14px;background:rgba(255,255,255,.15);color:#fff;padding:9px 16px;border-radius:8px;font-weight:600;font-size:13px;border:1px solid rgba(255,255,255,.25);transition:background .2s}
+.exam-card .exam-cta:hover{background:rgba(255,255,255,.25)}
+
+/* SAVED COMPARISONS */
+.saved-list{display:flex;flex-direction:column;gap:10px}
+.saved-row{display:flex;align-items:center;gap:14px;padding:14px 16px;background:var(--g50);border-radius:10px;border:1px solid var(--g100);transition:all .2s}
+.saved-row:hover{background:#fff;border-color:var(--teal);box-shadow:var(--shadow-sm)}
+.saved-icon{width:38px;height:38px;border-radius:9px;background:var(--teal-bg);color:var(--teal);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.saved-icon svg{width:18px;height:18px}
+.saved-body{flex:1;min-width:0}
+.saved-title{font-size:14px;font-weight:600;color:var(--g900);margin-bottom:2px}
+.saved-meta{font-size:12px;color:var(--g500)}
+.saved-actions{display:flex;gap:6px}
+.btn-ghost{padding:6px 12px;font-size:12px;font-weight:600;color:var(--teal);background:#fff;border:1px solid var(--g200);border-radius:7px;transition:all .15s}
+.btn-ghost:hover{border-color:var(--teal);background:var(--teal-bg)}
+.btn-ghost.danger{color:var(--red)}
+.btn-ghost.danger:hover{border-color:var(--red);background:#FEF2F2}
+
+/* EMPTY STATES */
+.empty{text-align:center;padding:32px 20px;color:var(--g500)}
+.empty svg{width:48px;height:48px;color:var(--g300);margin-bottom:10px}
+.empty h4{font-size:15px;font-weight:600;color:var(--g700);margin-bottom:4px}
+.empty p{font-size:13px;margin-bottom:14px}
+.btn-primary{display:inline-flex;align-items:center;gap:6px;background:var(--teal);color:#fff;padding:10px 18px;border-radius:8px;font-size:13px;font-weight:600;transition:background .2s}
+.btn-primary:hover{background:var(--teal-light)}
+
+/* QUICK ACTIONS */
+.qa-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.qa-tile{background:var(--g50);border:1px solid var(--g100);border-radius:11px;padding:16px 14px;text-align:center;transition:all .2s;display:block}
+.qa-tile:hover{background:var(--teal-bg);border-color:var(--teal);transform:translateY(-2px)}
+.qa-tile svg{width:22px;height:22px;color:var(--teal);margin:0 auto 8px;display:block}
+.qa-tile .qa-label{font-size:12px;font-weight:600;color:var(--g800);line-height:1.3}
+
+/* PROFILE CARD */
+.profile-head{display:flex;align-items:center;gap:14px;margin-bottom:18px}
+.profile-avatar{width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--teal) 0%,var(--teal-light) 100%);color:#fff;font-size:22px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.profile-info{flex:1;min-width:0}
+.profile-name{font-size:16px;font-weight:700;color:var(--g900);display:block;line-height:1.25}
+.profile-tag{font-size:12px;color:var(--g500);margin-top:2px;display:block}
+.profile-rows{display:flex;flex-direction:column;gap:10px;padding-top:14px;border-top:1px solid var(--g100)}
+.profile-row{display:flex;justify-content:space-between;align-items:center;font-size:13px;gap:10px}
+.profile-row .k{color:var(--g500)}
+.profile-row .v{color:var(--g900);font-weight:500;text-align:right;max-width:60%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.profile-edit{width:100%;margin-top:16px;padding:9px;border:1px solid var(--g200);border-radius:8px;font-size:12px;font-weight:600;color:var(--g700);background:#fff;transition:all .15s}
+.profile-edit:hover{border-color:var(--teal);color:var(--teal)}
+
+/* EDIT MODAL */
+.edit-modal{display:none;position:fixed;inset:0;background:rgba(15,27,45,.8);backdrop-filter:blur(4px);z-index:600;align-items:center;justify-content:center;padding:20px}
+.edit-modal.active{display:flex}
+.edit-box{background:#fff;max-width:460px;width:100%;border-radius:16px;padding:28px;box-shadow:var(--shadow-lg)}
+.edit-box h3{font-size:18px;font-weight:700;color:var(--navy);margin-bottom:18px}
+.edit-actions{display:flex;gap:10px;margin-top:18px}
+.edit-actions button{flex:1;padding:11px;border-radius:9px;font-weight:600;font-size:14px}
+.edit-save{background:var(--teal);color:#fff}
+.edit-cancel{background:var(--g100);color:var(--g700)}
+
+/* RECOMMENDED */
+.rec-list{display:flex;flex-direction:column;gap:10px}
+.rec-row{display:flex;align-items:flex-start;gap:12px;padding:12px;background:var(--g50);border-radius:10px;border:1px solid var(--g100);transition:all .2s}
+.rec-row:hover{background:#fff;border-color:var(--teal)}
+.rec-icon{width:34px;height:34px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.rec-icon svg{width:16px;height:16px}
+.rec-body{flex:1}
+.rec-title{font-size:13px;font-weight:600;color:var(--g900);margin-bottom:1px}
+.rec-desc{font-size:11px;color:var(--g500);line-height:1.5}
+
+/* COMMUNITY CARDS */
+.comm-row{display:flex;align-items:center;gap:12px;padding:14px;background:var(--g50);border-radius:10px;border:1px solid var(--g100);transition:all .2s}
+.comm-row:hover{background:#fff;border-color:var(--teal)}
+.comm-icon{width:38px;height:38px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.wa-icon{background:#25D36615;color:#25D366}
+.tg-icon{background:#229ED915;color:#229ED9}
+.comm-body{flex:1}
+.comm-title{font-size:13px;font-weight:600;color:var(--g900)}
+.comm-desc{font-size:11px;color:var(--g500);margin-top:1px}
+.comm-arrow{color:var(--g400)}
+
+/* FOOTER */
+.footer{background:var(--navy);padding:40px 20px 24px;color:#94A3B8;margin-top:40px}
+.footer-inner{max-width:1200px;margin:0 auto;text-align:center}
+.footer-brand{display:flex;align-items:center;justify-content:center;gap:8px;font-size:16px;font-weight:700;color:#fff;margin-bottom:12px}
+.footer-brand span{color:var(--teal-light)}
+.footer-copy{font-size:12px;color:#64748B}
+
+/* TOAST */
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(100px);background:var(--navy);color:#fff;padding:13px 22px;border-radius:10px;box-shadow:var(--shadow-lg);font-size:13px;font-weight:600;z-index:700;opacity:0;transition:all .3s;display:flex;align-items:center;gap:8px}
+.toast.show{transform:translateX(-50%) translateY(0);opacity:1}
+.toast svg{width:16px;height:16px;color:var(--teal-light)}
+
+/* MOBILE */
+@media(max-width:900px){
+  .grid{grid-template-columns:1fr}
+  .stats-strip{grid-template-columns:repeat(2,1fr);max-width:100%}
+  .qa-grid{grid-template-columns:repeat(2,1fr)}
+  .nav-links{display:none}
+  .hero{padding:40px 16px 72px}
+  .hero h1{font-size:24px}
+  .main{margin-top:-40px}
+  .card{padding:18px 18px}
+  .exam-card{padding:20px}
+  .exam-card .countdown{font-size:38px}
+}
+
+/* ============= SIDEBAR ============= */
+.sidebar {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 68px;
+  height: 100vh;
+  background: var(--navy);
+  z-index: 1000;
+  flex-direction: column;
+  overflow: hidden;
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 2px 0 24px rgba(15,27,45,0.15);
+}
+.sidebar:hover { width: 260px; }
+
+.sidebar .sb-label,
+.sidebar .sidebar-section-label,
+.sidebar .sidebar-user-info,
+.sidebar .sidebar-badge,
+.sidebar .sb-signout-text {
+  opacity: 0;
+  white-space: nowrap;
+  transition: opacity 0.2s ease 0s;
+}
+.sidebar:hover .sb-label,
+.sidebar:hover .sidebar-section-label,
+.sidebar:hover .sidebar-user-info,
+.sidebar:hover .sidebar-badge,
+.sidebar:hover .sb-signout-text {
+  opacity: 1;
+  transition: opacity 0.2s ease 0.12s;
+}
+
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 20px 14px 16px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  flex-shrink: 0;
+  min-height: 72px;
+}
+.sidebar-avatar {
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--teal), var(--teal-light));
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 17px;
+  font-weight: 800;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(13,148,136,0.35);
+}
+.sidebar-user-info { overflow: hidden; }
+.sidebar-user-info h4 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.sidebar-user-info p {
+  margin: 2px 0 0;
+  font-size: 11px;
+  color: rgba(255,255,255,0.5);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.sidebar-nav {
+  flex: 1;
+  padding: 8px 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: none;
+}
+.sidebar-nav::-webkit-scrollbar { display: none; }
+
+.sidebar-section-label {
+  font-size: 9px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgba(255,255,255,0.35);
+  padding: 14px 14px 4px 22px;
+  white-space: nowrap;
+}
+
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 10px 14px 10px 20px;
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.6);
+  text-decoration: none;
+  transition: all 0.15s ease;
+  border-left: 3px solid transparent;
+  position: relative;
+  white-space: nowrap;
+}
+.sidebar-link:hover {
+  background: rgba(13,148,136,0.15);
+  color: var(--teal-light);
+  border-left-color: var(--teal-light);
+}
+.sidebar-link svg {
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.sidebar-link .sidebar-badge {
+  margin-left: auto;
+  background: var(--teal);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 800;
+  padding: 2px 7px;
+  border-radius: 999px;
+}
+
+.sidebar:not(:hover) .sidebar-link[data-tip]:hover::after {
+  content: attr(data-tip);
+  position: absolute;
+  left: 64px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--navy);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 6px;
+  white-space: nowrap;
+  z-index: 1001;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  pointer-events: none;
+}
+
+.sidebar-divider {
+  height: 1px;
+  background: rgba(255,255,255,0.06);
+  margin: 6px 14px;
+}
+
+.sidebar-footer {
+  padding: 12px 14px 16px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  flex-shrink: 0;
+}
+.sidebar-signout {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: transparent;
+  padding: 10px 10px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.5);
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+.sidebar-signout:hover {
+  border-color: rgba(239,68,68,0.5);
+  background: rgba(239,68,68,0.08);
+  color: #FCA5A5;
+}
+.sidebar-signout svg {
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+@media (max-width: 768px) {
+  .sidebar { width: 0; }
+  .sidebar:hover { width: 260px; }
+  .page-wrap { margin-left: 0; }
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "My Dashboard — CampusVazhi",
+  "url": "https://campusvazhi.com/dashboard",
+  "description": "Your CampusVazhi dashboard — saved college comparisons, exam countdown, profile, and recommended resources.",
+  "isPartOf": { "@type": "WebSite", "name": "CampusVazhi", "url": "https://campusvazhi.com" }
+}
+</script>
+</head>
+<body>
+
+<!-- SIDEBAR -->
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-header">
+    <div class="sidebar-avatar" id="sb-avatar"></div>
+    <div class="sidebar-user-info">
+      <h4 id="sb-name"></h4>
+      <p id="sb-exam">CAT 2026</p>
+    </div>
+  </div>
+  <nav class="sidebar-nav">
+    <a href="./campusvazhi-home-v2.html" class="sidebar-link" data-tip="Home" style="margin-bottom:8px">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      <span class="sb-label"><span class="en">Home</span><span class="ta">முகப்பு</span></span>
+    </a>
+    <div class="sidebar-divider"></div>
+    <div class="sidebar-section-label"><span class="en">Dashboard</span><span class="ta">டாஷ்போர்டு</span></div>
+    <a href="./CampusVazhi-Dashboard.html" class="sidebar-link" data-tip="Dashboard">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+      <span class="sb-label"><span class="en">My Dashboard</span><span class="ta">என் டாஷ்போர்டு</span></span>
+    </a>
+    <a href="./CampusVazhi-College-Compare.html" class="sidebar-link" data-tip="Saved">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+      <span class="sb-label"><span class="en">Saved Resources</span><span class="ta">சேமித்த ஆதாரங்கள்</span></span>
+    </a>
+    <a href="./campusvazhi-home-v2.html#community" class="sidebar-link" data-tip="Groups">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      <span class="sb-label"><span class="en">My Groups</span><span class="ta">என் குழுக்கள்</span></span>
+      <span class="sidebar-badge">1</span>
+    </a>
+    <div class="sidebar-divider"></div>
+    <div class="sidebar-section-label"><span class="en">Explore Pathways</span><span class="ta">பாதைகளை ஆராயுங்கள்</span></div>
+    <a href="./CampusVazhi-CAT-2026.html" class="sidebar-link" data-tip="CAT 2026">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+      <span class="sb-label">CAT 2026</span>
+    </a>
+    <a href="./CampusVazhi-TANCET-Resource-Hub.html" class="sidebar-link" data-tip="TANCET Hub">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+      <span class="sb-label"><span class="en">TANCET Hub</span><span class="ta">TANCET மையம்</span></span>
+    </a>
+    <a href="./CampusVazhi-MS-USA.html" class="sidebar-link" data-tip="MS in USA">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+      <span class="sb-label"><span class="en">MS in USA</span><span class="ta">அமெரிக்காவில் MS</span></span>
+    </a>
+    <a href="./CampusVazhi-NEET-Counselling.html" class="sidebar-link" data-tip="NEET">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+      <span class="sb-label"><span class="en">NEET Counselling</span><span class="ta">NEET ஆலோசனை</span></span>
+    </a>
+    <a href="./CampusVazhi-After12th-Quiz.html" class="sidebar-link" data-tip="After 12th">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+      <span class="sb-label"><span class="en">After 12th Quiz</span><span class="ta">12ஆம் வகுப்புக்குப் பிறகு</span></span>
+    </a>
+    <a href="./CampusVazhi-TNEA-Calculator.html" class="sidebar-link" data-tip="TNEA Calc">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="10" y2="10"/><line x1="12" y1="10" x2="14" y2="10"/><line x1="8" y1="14" x2="10" y2="14"/><line x1="12" y1="14" x2="14" y2="14"/><line x1="8" y1="18" x2="16" y2="18"/></svg>
+      <span class="sb-label"><span class="en">TNEA Calculator</span><span class="ta">TNEA கால்குலேட்டர்</span></span>
+    </a>
+    <a href="./CampusVazhi-Resume.html" class="sidebar-link" data-tip="Resume">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+      <span class="sb-label"><span class="en">Resume Builder</span><span class="ta">ரெஸ்யூம் உருவாக்கி</span></span>
+    </a>
+    <div class="sidebar-divider"></div>
+    <div class="sidebar-section-label"><span class="en">Support</span><span class="ta">ஆதரவு</span></div>
+    <a href="./CampusVazhi-Book-Counselling.html" class="sidebar-link" data-tip="Counselling">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      <span class="sb-label"><span class="en">Book a Free Call</span><span class="ta">ஆலோசனை முன்பதிவு</span></span>
+    </a>
+    <a href="https://wa.me/918939862211" target="_blank" class="sidebar-link" data-tip="WhatsApp">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      <span class="sb-label"><span class="en">WhatsApp Us</span><span class="ta">WhatsApp செய்யுங்கள்</span></span>
+    </a>
+    <div class="sidebar-divider"></div>
+    <div class="sidebar-section-label"><span class="en">Profile</span><span class="ta">சுயவிவரம்</span></div>
+    <a href="./CampusVazhi-Dashboard.html" class="sidebar-link" data-tip="Profile">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      <span class="sb-label"><span class="en">Edit Profile</span><span class="ta">சுயவிவரத்தை மாற்று</span></span>
+    </a>
+    <a href="./CampusVazhi-Dashboard.html" class="sidebar-link" data-tip="Settings">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+      <span class="sb-label"><span class="en">Settings</span><span class="ta">அமைப்புகள்</span></span>
+    </a>
+  </nav>
+  <div class="sidebar-footer">
+    <button class="sidebar-signout" onclick="signOut()">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+      <span class="sb-signout-text"><span class="en">Sign out</span><span class="ta">வெளியேறு</span></span>
+    </button>
+  </div>
+</aside>
+
+<div class="page-wrap">
+
+<!-- SIGN-IN GATE -->
+<div id="gateOverlay" class="gate-overlay">
+  <div class="gate-modal">
+    <span class="gate-badge">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+      Members Only
+    </span>
+    <h2>Sign in to your dashboard</h2>
+    <p class="sub">Access your saved comparisons, exam countdown, and personalised recommendations. 100% free — no password needed.</p>
+    <form id="gateForm" class="gate-form">
+      <div class="field">
+        <label for="gName">Your name</label>
+        <input type="text" id="gName" required placeholder="Rahul Kumar">
+      </div>
+      <div class="field">
+        <label for="gEmail">Email</label>
+        <input type="email" id="gEmail" required placeholder="rahul@example.com">
+      </div>
+      <div class="field">
+        <label for="gPhone">WhatsApp number</label>
+        <input type="tel" id="gPhone" required placeholder="+91 9XXXXXXXXX">
+      </div>
+      <div class="field">
+        <label for="gExam">Which exam are you preparing for?</label>
+        <select id="gExam" required>
+          <option value="">Select one</option>
+          <option value="CAT">CAT / Management in India</option>
+          <option value="TANCET">TANCET / TN Management</option>
+          <option value="TNEA">TNEA / UG Engineering</option>
+          <option value="NEET">NEET / Medical</option>
+          <option value="MS-USA">MS in USA</option>
+          <option value="Multiple">Multiple exams</option>
+        </select>
+      </div>
+      <button type="submit" class="gate-submit">Sign in to dashboard →</button>
+    </form>
+    <div class="gate-footer">
+      New here? This creates your free CampusVazhi account. <br>No spam. Unsubscribe any time.
+    </div>
+  </div>
+</div>
+
+<!-- EDIT PROFILE MODAL -->
+<div id="editModal" class="edit-modal">
+  <div class="edit-box">
+    <h3>Edit your profile</h3>
+    <form id="editForm" class="gate-form">
+      <div class="field">
+        <label>Name</label>
+        <input type="text" id="eName" required aria-label="Name">
+      </div>
+      <div class="field">
+        <label>Email</label>
+        <input type="email" id="eEmail" required aria-label="Email">
+      </div>
+      <div class="field">
+        <label>WhatsApp</label>
+        <input type="tel" id="ePhone" required aria-label="Phone number">
+      </div>
+      <div class="field">
+        <label>Target exam</label>
+        <select id="eExam" required aria-label="Target exam">
+          <option value="CAT">CAT / Management in India</option>
+          <option value="TANCET">TANCET / TN Management</option>
+          <option value="TNEA">TNEA / UG Engineering</option>
+          <option value="NEET">NEET / Medical</option>
+          <option value="MS-USA">MS in USA</option>
+          <option value="Multiple">Multiple exams</option>
+        </select>
+      </div>
+      <div class="edit-actions">
+        <button type="button" class="edit-cancel" onclick="closeEdit()">Cancel</button>
+        <button type="submit" class="edit-save">Save changes</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="container topbar-inner">
+    <div class="topbar-left">
+      <span><span class="dot"></span>2,847 TN students · 51 expert mentors inside</span>
+    </div>
+    <div id="userArea" style="display:none">
+      <span class="user-chip"><span class="avatar" id="userAvatar">?</span><span id="userName">Guest</span></span>
+      <button class="signout-btn" onclick="signOut()">Sign out</button>
+    </div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="container nav-inner">
+    <a href="./campusvazhi-home-v2.html" class="brand">
+      <span class="brand-logo">CV</span>
+      Campus<span>Vazhi</span>
+    </a>
+    <div class="nav-links">
+      <a href="./campusvazhi-home-v2.html">Home</a>
+      <a href="./CampusVazhi-College-Compare.html">Compare</a>
+      <a href="./CampusVazhi-TANCET-Resource-Hub.html">TANCET</a>
+      <a href="./CampusVazhi-CAT-2026.html">CAT 2026</a>
+      <a href="./CampusVazhi-NEET-Counselling.html">NEET</a>
+      <a href="./CampusVazhi-MS-USA.html">MS USA</a>
+    </div>
+    <a href="https://wa.me/918939862211" class="nav-cta">Join WhatsApp →</a>
+  </div>
+</nav>
+
+<!-- MAIN (protected behind gate) -->
+<div id="protectedArea" class="gate-protected">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-circle-1"></div>
+  <div class="hero-circle-2"></div>
+  <div class="hero-inner">
+    <div class="hero-greet">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      <span id="greetingLine">Member dashboard</span>
+    </div>
+    <h1>Welcome back, <span class="name" id="heroName">there</span></h1>
+    <p class="sub" id="heroSub">Your saved comparisons, exam countdown, and personalised recommendations — all in one place.</p>
+    <div class="stats-strip">
+      <div class="stat-card">
+        <span class="n" id="statDays">—</span>
+        <span class="l" id="statDaysLabel">Days to exam</span>
+      </div>
+      <div class="stat-card">
+        <span class="n" id="statSaved">0</span>
+        <span class="l">Saved comparisons</span>
+      </div>
+      <div class="stat-card">
+        <span class="n" id="statBookmarks">0</span>
+        <span class="l">Bookmarked colleges</span>
+      </div>
+      <div class="stat-card">
+        <span class="n" id="statMember">New</span>
+        <span class="l">Member since</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MAIN GRID -->
+<main class="main">
+  <div class="grid">
+
+    <!-- LEFT COLUMN -->
+    <div class="col-left">
+
+      <!-- EXAM COUNTDOWN CARD -->
+      <div class="exam-card" id="examCard">
+        <div class="exam-card-inner">
+          <div class="exam-card-text">
+            <div class="eyebrow" id="examEyebrow">YOUR TARGET EXAM</div>
+            <h3 id="examTitle">Select an exam</h3>
+            <div class="date" id="examDate">—</div>
+            <a class="exam-cta" id="examCta" href="./campusvazhi-home-v2.html">Open exam hub →</a>
+          </div>
+          <div style="text-align:right">
+            <div class="countdown" id="examCountdown">—</div>
+            <div class="countdown-label">days left</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SAVED COMPARISONS -->
+      <div class="card">
+        <div class="card-head">
+          <h2>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+            Saved comparisons
+          </h2>
+          <a class="action" href="./CampusVazhi-College-Compare.html">New comparison →</a>
+        </div>
+        <div id="savedList"></div>
+      </div>
+
+      <!-- QUICK ACTIONS -->
+      <div class="card">
+        <div class="card-head">
+          <h2>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            Quick actions
+          </h2>
+        </div>
+        <div class="qa-grid">
+          <a class="qa-tile" href="./CampusVazhi-College-Compare.html">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+            <span class="qa-label">College<br>Compare</span>
+          </a>
+          <a class="qa-tile" href="./campusvazhi-home-v2.html#predictor">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="10" y2="10"/><line x1="13" y1="10" x2="15" y2="10"/><line x1="8" y1="14" x2="10" y2="14"/></svg>
+            <span class="qa-label">Percentile<br>Predictor</span>
+          </a>
+          <a class="qa-tile" href="./CampusVazhi-Resume.html">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            <span class="qa-label">Resume<br>Builder</span>
+          </a>
+          <a class="qa-tile" href="./campusvazhi-home-v2.html#lead-magnet">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            <span class="qa-label">Free<br>PDF pack</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- RECOMMENDED FOR YOU -->
+      <div class="card">
+        <div class="card-head">
+          <h2>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            Recommended for you
+          </h2>
+        </div>
+        <div class="rec-list" id="recList"></div>
+      </div>
+
+    </div>
+
+    <!-- RIGHT COLUMN -->
+    <div class="col-right">
+
+      <!-- PROFILE CARD -->
+      <div class="card">
+        <div class="profile-head">
+          <div class="profile-avatar" id="profileAvatar">?</div>
+          <div class="profile-info">
+            <span class="profile-name" id="profileName">Guest</span>
+            <span class="profile-tag" id="profileTag">Not signed in</span>
+          </div>
+        </div>
+        <div class="profile-rows">
+          <div class="profile-row"><span class="k">Email</span><span class="v" id="profileEmail">—</span></div>
+          <div class="profile-row"><span class="k">WhatsApp</span><span class="v" id="profilePhone">—</span></div>
+          <div class="profile-row"><span class="k">Target exam</span><span class="v" id="profileExam">—</span></div>
+          <div class="profile-row"><span class="k">Member since</span><span class="v" id="profileMember">—</span></div>
+        </div>
+        <button class="profile-edit" onclick="openEdit()">Edit profile</button>
+      </div>
+
+      <!-- COMMUNITY -->
+      <div class="card">
+        <div class="card-head">
+          <h2>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            Your community
+          </h2>
+        </div>
+        <a class="comm-row" href="https://wa.me/918939862211" style="margin-bottom:10px">
+          <div class="comm-icon wa-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2z"/></svg>
+          </div>
+          <div class="comm-body">
+            <div class="comm-title">WhatsApp group</div>
+            <div class="comm-desc">2,847 TN students · daily exam discussions</div>
+          </div>
+          <svg class="comm-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </a>
+        <a class="comm-row" href="https://t.me/campusvazhi">
+          <div class="comm-icon tg-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+          </div>
+          <div class="comm-body">
+            <div class="comm-title">Telegram channel</div>
+            <div class="comm-desc">Cutoffs, dates, announcements · daily</div>
+          </div>
+          <svg class="comm-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </a>
+      </div>
+
+    </div>
+
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      Campus<span>Vazhi</span>
+    </div>
+    <div class="footer-copy">
+      Free TN college guidance · 2,847 students · 51 expert mentors<br>
+      © 2026 CampusVazhi · A Mockat brand
+    </div>
+  </div>
+</footer>
+
+</div><!-- /protectedArea -->
+
+<!-- TOAST -->
+<div id="toast" class="toast">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+  <span id="toastMsg">Saved</span>
+</div>
+
+<script>
+// ============ EXAM DATE MAP ============
+var EXAMS = {
+  'CAT':     { label: 'CAT 2026',        date: '2026-11-29', link: './CampusVazhi-CAT-2026.html',              tamil: 'CAT 2026' },
+  'TANCET':  { label: 'TANCET 2026',     date: '2026-05-09', link: './CampusVazhi-TANCET-Resource-Hub.html',   tamil: 'TANCET 2026' },
+  'TNEA':    { label: 'TNEA 2026',       date: '2026-07-15', link: './campusvazhi-home-v2.html',                tamil: 'TNEA 2026' },
+  'NEET':    { label: 'NEET 2026',       date: '2026-05-04', link: './CampusVazhi-NEET-Counselling.html',       tamil: 'NEET 2026' },
+  'MS-USA':  { label: 'MS USA Fall 2027',date: '2026-12-15', link: './CampusVazhi-MS-USA.html',                 tamil: 'MS USA' },
+  'Multiple':{ label: 'TANCET 2026',     date: '2026-05-09', link: './CampusVazhi-TANCET-Resource-Hub.html',    tamil: 'Multiple' }
+};
+
+// ============ CATEGORY LABELS ============
+var CATEGORY_LABELS = {
+  'cat':    'Management Colleges (CAT)',
+  'tancet': 'TN Management (TANCET)',
+  'tnea':   'TN Engineering (TNEA)',
+  'neet':   'TN Medical (NEET)',
+  'msusa':  'MS USA'
+};
+
+// ============ AUTH HELPERS ============
+function getUser(){
+  try { return JSON.parse(localStorage.getItem('cv_user') || 'null'); }
+  catch(e) { return null; }
+}
+function setUser(u){ localStorage.setItem('cv_user', JSON.stringify(u)); }
+function signOut() {
+    document.body.classList.remove('logged-in');
+    localStorage.removeItem('cv_signed_in');
+    localStorage.removeItem('cv_user');
+    if (typeof cvAuth !== 'undefined' && typeof cvAuth.logout === 'function') {
+      cvAuth.logout();
+    } else {
+      window.location.href = './campusvazhi-home-v2.html';
+    }
+  }
+function showGate(){
+  document.getElementById('gateOverlay').classList.add('active');
+  document.getElementById('protectedArea').classList.add('gate-protected');
+  document.getElementById('userArea').style.display = 'none';
+}
+function hideGate(){
+  document.getElementById('gateOverlay').classList.remove('active');
+  document.getElementById('protectedArea').classList.remove('gate-protected');
+}
+
+// ============ SAVED COMPARISONS ============
+function getSaved(){
+  try { return JSON.parse(localStorage.getItem('cv_saved_comparisons') || '[]'); }
+  catch(e) { return []; }
+}
+function setSaved(arr){ localStorage.setItem('cv_saved_comparisons', JSON.stringify(arr)); }
+function deleteSaved(id){
+  if (!confirm('Delete this saved comparison?')) return;
+  var arr = getSaved().filter(function(s){ return s.id !== id; });
+  setSaved(arr);
+  renderSaved();
+  updateStats();
+  showToast('Comparison deleted');
+}
+function renderSaved(){
+  var saved = getSaved();
+  var html = '';
+  if (saved.length === 0) {
+    html = '<div class="empty">' +
+      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>' +
+      '<h4>No saved comparisons yet</h4>' +
+      '<p>Compare 2-3 colleges side-by-side, then save the result to view it later.</p>' +
+      '<a class="btn-primary" href="./CampusVazhi-College-Compare.html">Launch compare tool →</a>' +
+    '</div>';
+  } else {
+    html = '<div class="saved-list">';
+    saved.sort(function(a,b){ return new Date(b.savedAt) - new Date(a.savedAt); });
+    saved.forEach(function(s){
+      var names = (s.collegeNames || []).join(' vs ');
+      var when = new Date(s.savedAt);
+      var whenStr = when.toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' });
+      var catLabel = CATEGORY_LABELS[s.category] || s.category;
+      var ids = (s.collegeIds || []).join(',');
+      var reloadUrl = './CampusVazhi-College-Compare.html?category=' + encodeURIComponent(s.category) + '&c=' + encodeURIComponent(ids);
+      html += '<div class="saved-row">' +
+        '<div class="saved-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>' +
+        '<div class="saved-body">' +
+          '<div class="saved-title">' + escapeHtml(names || 'Untitled comparison') + '</div>' +
+          '<div class="saved-meta">' + catLabel + ' · saved ' + whenStr + '</div>' +
+        '</div>' +
+        '<div class="saved-actions">' +
+          '<a class="btn-ghost" href="' + reloadUrl + '">Open</a>' +
+          '<button class="btn-ghost danger" onclick="deleteSaved(\'' + s.id + '\')">Delete</button>' +
+        '</div>' +
+      '</div>';
+    });
+    html += '</div>';
+  }
+  document.getElementById('savedList').innerHTML = html;
+}
+function escapeHtml(s){
+  return String(s || '').replace(/[&<>"']/g, function(m){
+    return { '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[m];
+  });
+}
+
+// ============ STATS + HERO ============
+function updateStats(){
+  var u = getUser();
+  var saved = getSaved();
+  document.getElementById('statSaved').textContent = saved.length;
+  document.getElementById('statBookmarks').textContent = 0; // reserved
+  if (u && u.ts) {
+    var since = new Date(u.ts);
+    var now = new Date();
+    var diffDays = Math.floor((now - since) / (1000 * 60 * 60 * 24));
+    var label;
+    if (diffDays < 1) label = 'Today';
+    else if (diffDays < 7) label = diffDays + 'd';
+    else if (diffDays < 30) label = Math.floor(diffDays/7) + 'w';
+    else label = Math.floor(diffDays/30) + 'mo';
+    document.getElementById('statMember').textContent = label;
+  }
+}
+
+function renderHero(){
+  var u = getUser();
+  if (!u) return;
+  document.getElementById('heroName').textContent = (u.name || 'there').split(' ')[0];
+  document.getElementById('userArea').style.display = 'flex';
+  document.getElementById('userName').textContent = u.name || 'Guest';
+  var initial = (u.name || '?').charAt(0).toUpperCase();
+  document.getElementById('userAvatar').textContent = initial;
+  document.getElementById('profileAvatar').textContent = initial;
+  document.getElementById('profileName').textContent = u.name || 'Guest';
+  document.getElementById('profileEmail').textContent = u.email || '—';
+  document.getElementById('profilePhone').textContent = u.phone || '—';
+  var examInfo = EXAMS[u.exam];
+  document.getElementById('profileExam').textContent = examInfo ? examInfo.label : (u.exam || '—');
+  document.getElementById('profileTag').textContent = examInfo ? ('Target: ' + examInfo.label) : 'CampusVazhi member';
+  if (u.ts) {
+    var d = new Date(u.ts);
+    document.getElementById('profileMember').textContent = d.toLocaleDateString('en-IN', { day:'numeric', month:'short', year:'numeric' });
+  }
+}
+
+function renderExamCountdown(){
+  var u = getUser();
+  if (!u || !u.exam) return;
+  var info = EXAMS[u.exam];
+  if (!info) return;
+  var examDate = new Date(info.date + 'T09:00:00+05:30');
+  var now = new Date();
+  var days = Math.max(0, Math.ceil((examDate - now) / (1000*60*60*24)));
+  document.getElementById('examTitle').textContent = info.label;
+  document.getElementById('examDate').textContent = examDate.toLocaleDateString('en-IN', { weekday:'long', day:'numeric', month:'long', year:'numeric' });
+  document.getElementById('examCountdown').textContent = days;
+  document.getElementById('examCta').href = info.link;
+  document.getElementById('statDays').textContent = days;
+  document.getElementById('statDaysLabel').textContent = 'Days to ' + (info.label.split(' ')[0]);
+}
+
+// ============ RECOMMENDATIONS (context-aware) ============
+var RECS = {
+  'CAT': [
+    { icon:'#14B8A6', title:'CAT 2026 prep hub', desc:'7-month study plans, 160+ hrs video, 15 full mocks', link:'./CampusVazhi-CAT-2026.html', iconPath:'<polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/>' },
+    { icon:'#8B5CF6', title:'Compare top colleges side-by-side', desc:'Top management colleges · cutoffs · fees · avg CTC · recruiters', link:'./CampusVazhi-College-Compare.html?category=cat', iconPath:'<rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/>' },
+    { icon:'#F59E0B', title:'College Shortlist Calculator', desc:'Academic + work ex → which colleges will shortlist you', link:'./CampusVazhi-CAT-2026.html#predictor', iconPath:'<path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/>' }
+  ],
+  'TANCET': [
+    { icon:'#14B8A6', title:'TANCET 2026 resource hub', desc:'Management · MCA · ME — syllabus, PYQs, mocks, schemes', link:'./CampusVazhi-TANCET-Resource-Hub.html', iconPath:'<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/>' },
+    { icon:'#8B5CF6', title:'Compare TN Management colleges', desc:'Anna DOMS · PSG · SSN · LIBA · Great Lakes · TSM', link:'./CampusVazhi-College-Compare.html?category=tancet', iconPath:'<rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/>' },
+    { icon:'#F59E0B', title:'TANCET predictor', desc:'Raw marks → percentile → TN college match', link:'./campusvazhi-home-v2.html#predictor', iconPath:'<rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="16" y2="14"/>' }
+  ],
+  'TNEA': [
+    { icon:'#14B8A6', title:'TN engineering colleges', desc:'IIT-M, NIT-T, CEG, PSG, SSN, SASTRA — cutoffs, fees', link:'./CampusVazhi-College-Compare.html?category=tnea', iconPath:'<rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/>' },
+    { icon:'#F59E0B', title:'50-college cutoff PDF', desc:'5-year trends · GC/BC/BCM/MBC/SC/ST · placements', link:'./campusvazhi-home-v2.html#lead-magnet', iconPath:'<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>' }
+  ],
+  'NEET': [
+    { icon:'#14B8A6', title:'NEET 2026 counselling', desc:'Rounds · options · bond · state quota strategy', link:'./CampusVazhi-NEET-Counselling.html', iconPath:'<path d="M12 2v20M2 12h20"/>' },
+    { icon:'#8B5CF6', title:'Compare TN medical colleges', desc:'MMC · SMC · KMC · CMC Vellore · deemed universities', link:'./CampusVazhi-College-Compare.html?category=neet', iconPath:'<rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/>' },
+    { icon:'#F59E0B', title:'Rank → college predictor', desc:'Enter your AIR → see your realistic college shortlist', link:'./CampusVazhi-NEET-Counselling.html#predictor', iconPath:'<polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/>' }
+  ],
+  'MS-USA': [
+    { icon:'#14B8A6', title:'MS in USA complete guide', desc:'University shortlisting · SOP · GRE · STEM OPT', link:'./CampusVazhi-MS-USA.html', iconPath:'<circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15 15 0 0 1 4 10 15 15 0 0 1-4 10 15 15 0 0 1-4-10 15 15 0 0 1 4-10z"/>' },
+    { icon:'#8B5CF6', title:'Compare US universities', desc:'MIT · Stanford · CMU · UIUC · GT · Purdue · USC', link:'./CampusVazhi-College-Compare.html?category=msusa', iconPath:'<rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/>' },
+    { icon:'#F59E0B', title:'SOP resume builder', desc:'Templates for MS apps · work ex framing · projects', link:'./CampusVazhi-Resume.html', iconPath:'<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/>' }
+  ],
+  'Multiple': [
+    { icon:'#14B8A6', title:'Launch the College Compare tool', desc:'5 exam categories · 62 colleges · 12 data points each', link:'./CampusVazhi-College-Compare.html', iconPath:'<rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/>' },
+    { icon:'#8B5CF6', title:'50-college cutoff PDF', desc:'Every major TN college · 5-year trend data', link:'./campusvazhi-home-v2.html#lead-magnet', iconPath:'<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>' }
+  ]
+};
+
+function renderRecs(){
+  var u = getUser();
+  if (!u) return;
+  var recs = RECS[u.exam] || RECS['Multiple'];
+  var html = '';
+  recs.forEach(function(r){
+    html += '<a class="rec-row" href="' + r.link + '">' +
+      '<div class="rec-icon" style="background:' + r.icon + '15;color:' + r.icon + '">' +
+        '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' + r.iconPath + '</svg>' +
+      '</div>' +
+      '<div class="rec-body">' +
+        '<div class="rec-title">' + escapeHtml(r.title) + '</div>' +
+        '<div class="rec-desc">' + escapeHtml(r.desc) + '</div>' +
+      '</div>' +
+    '</a>';
+  });
+  document.getElementById('recList').innerHTML = html;
+}
+
+// ============ EDIT PROFILE ============
+function openEdit(){
+  var u = getUser();
+  if (!u) { showGate(); return; }
+  document.getElementById('eName').value = u.name || '';
+  document.getElementById('eEmail').value = u.email || '';
+  document.getElementById('ePhone').value = u.phone || '';
+  document.getElementById('eExam').value = u.exam || 'CAT';
+  document.getElementById('editModal').classList.add('active');
+}
+function closeEdit(){
+  document.getElementById('editModal').classList.remove('active');
+}
+
+document.getElementById('editForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  var u = getUser() || {};
+  u.name = document.getElementById('eName').value.trim();
+  u.email = document.getElementById('eEmail').value.trim();
+  u.phone = document.getElementById('ePhone').value.trim();
+  u.exam = document.getElementById('eExam').value;
+  setUser(u);
+  closeEdit();
+  renderAll();
+  showToast('Profile updated');
+});
+
+// ============ SIGN-IN FORM ============
+document.getElementById('gateForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  var u = {
+    name: document.getElementById('gName').value.trim(),
+    email: document.getElementById('gEmail').value.trim(),
+    phone: document.getElementById('gPhone').value.trim(),
+    exam: document.getElementById('gExam').value,
+    ts: new Date().toISOString()
+  };
+  setUser(u);
+  // Save lead to Supabase
+  try {
+    var sbUrl = (typeof CV_CONFIG !== 'undefined' && CV_CONFIG.SUPABASE_URL) || '';
+    var sbKey = (typeof CV_CONFIG !== 'undefined' && CV_CONFIG.SUPABASE_ANON_KEY) || '';
+    if (sbUrl && sbKey) {
+      fetch(sbUrl + '/rest/v1/leads', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'apikey': sbKey,
+          'Authorization': 'Bearer ' + sbKey,
+          'Prefer': 'return=minimal'
+        },
+        body: JSON.stringify({ name: u.name, phone: u.phone, email: u.email, goal: u.exam, source: 'dashboard_gate', created_at: new Date().toISOString() })
+      });
+    }
+  } catch(e) {}
+  // Track in GA4
+  if (typeof cvTrack === 'function') {
+    cvTrack('generate_lead', { method: 'dashboard_gate', goal: u.exam });
+  }
+  hideGate();
+  renderAll();
+  showToast('Welcome to CampusVazhi!');
+});
+
+// ============ TOAST ============
+var toastTimer;
+function showToast(msg){
+  document.getElementById('toastMsg').textContent = msg || 'Saved';
+  var t = document.getElementById('toast');
+  t.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(function(){ t.classList.remove('show'); }, 2600);
+}
+
+// ============ INIT ============
+function renderAll(){
+  renderHero();
+  renderExamCountdown();
+  renderSaved();
+  renderRecs();
+  updateStats();
+}
+
+function init(){
+  var u = getUser();
+  if (!u || !u.email) {
+    showGate();
+  } else {
+    hideGate();
+    renderAll();
+  }
+}
+
+init();
+</script>
+
+<footer class="footer" style="background:#0F1B2D;padding:32px 24px;text-align:center;margin-top:40px">
+  <div style="display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:12px">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#14B8A6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+    <span style="font-size:16px;font-weight:700;color:#fff">Campus<span style="color:#14B8A6">Vazhi</span></span>
+  </div>
+  <p style="font-size:12px;color:#64748B">Your trusted guide for college admissions in Tamil Nadu & beyond</p>
+  <div style="margin:12px 0;display:flex;gap:8px;justify-content:center;flex-wrap:wrap;font-size:13px">
+    <a href="./campusvazhi-home-v2.html" style="color:#94A3B8;text-decoration:none">Home</a>·
+    <a href="./CampusVazhi-CAT-2026.html" style="color:#94A3B8;text-decoration:none">CAT 2026</a>·
+    <a href="./CampusVazhi-TANCET-Resource-Hub.html" style="color:#94A3B8;text-decoration:none">TANCET 2026</a>·
+    <a href="./CampusVazhi-MS-USA.html" style="color:#94A3B8;text-decoration:none">MS in USA</a>·
+    <a href="./CampusVazhi-NEET-Counselling.html" style="color:#94A3B8;text-decoration:none">NEET Counselling</a>·
+    <a href="./CampusVazhi-Resume.html" style="color:#94A3B8;text-decoration:none">Resume Builder</a>·
+    <a href="./CampusVazhi-Login.html" style="color:#94A3B8;text-decoration:none">Sign in</a>
+  </div>
+  <p style="font-size:11px;color:#475569;margin-top:8px">© 2026 CampusVazhi. All rights reserved.</p>
+</footer>
+
+</div><!-- /.page-wrap -->
+
+<script src="./js/config.js"></script>
+<script src="./js/analytics.js"></script>
+<script src="./js/cookie-consent.js"></script>
+<script src="./js/lead-popup.js"></script>
+<script src="./js/download-gate.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="./js/supabase-client.js"></script>
+</body>
+</html>

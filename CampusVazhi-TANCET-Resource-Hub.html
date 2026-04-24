@@ -1,0 +1,2538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style id="cv-sidebar-auth">
+.sidebar { display: none !important; }
+.page-wrap { margin-left: 0 !important; }
+body.logged-in .sidebar, .logged-in .sidebar { display: flex !important; }
+body.logged-in .page-wrap, .logged-in .page-wrap { margin-left: 68px !important; }
+@media (max-width: 768px) {
+  body.logged-in .page-wrap, .logged-in .page-wrap { margin-left: 0 !important; }
+}
+</style>
+<script>(function(){var s=localStorage.getItem('cv_signed_in')==='1';if(s)document.documentElement.classList.add('logged-in');document.addEventListener('DOMContentLoaded',function(){var sb=document.querySelector('.sidebar');var pw=document.querySelector('.page-wrap');if(s){document.body.classList.add('logged-in');if(sb)sb.style.setProperty('display','flex','important');if(pw)pw.style.setProperty('margin-left','68px','important')}else{if(sb)sb.style.setProperty('display','none','important');if(pw)pw.style.setProperty('margin-left','0','important')}});})()</script>
+
+
+<meta charset="UTF-8">
+<link rel="icon" type="image/svg+xml" href="./favicon.svg">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CampusVazhi — TANCET 2026 Free Resources | Mock Tests, PYQ Papers, Score Predictor</title>
+<meta name="description" content="Free TANCET 2026 preparation resources — 10 years PYQ papers, 5 mock tests, cheat sheets, score predictor. Join 4,000+ aspirants. Tamil + English.">
+<link rel="canonical" href="https://campusvazhi.com/tancet" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="TANCET 2026 Free Prep Hub — CampusVazhi" />
+<meta property="og:description" content="Free TANCET 2026 preparation resources, mock tests, college cutoffs, and percentile predictor for Management and MCA aspirants in Tamil Nadu." />
+<meta property="og:url" content="https://campusvazhi.com/tancet-hub" />
+<meta property="og:image" content="https://campusvazhi.com/og-tancet.png" />
+<meta property="og:locale" content="en_IN" />
+<meta property="og:site_name" content="CampusVazhi" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="TANCET 2026 Free Prep Hub — CampusVazhi" />
+<meta name="twitter:description" content="Free TANCET 2026 prep: mock tests, college cutoffs, percentile predictor for Tamil Nadu Management/MCA." />
+<meta name="twitter:image" content="https://campusvazhi.com/og-tancet.png" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --navy:#0F1B2D;--teal:#0D9488;--teal-light:#14B8A6;--teal-bg:#F0FDFA;
+  --gold:#F59E0B;--white:#FFFFFF;--g50:#F9FAFB;--g100:#F3F4F6;
+  --g200:#E5E7EB;--g500:#6B7280;--g700:#374151;--g900:#111827;
+  --red:#EF4444;--green:#10B981;
+}
+body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;color:var(--g900);background:var(--white);line-height:1.5}
+
+a{text-decoration:none}
+.badge{font-size:11px;font-weight:700;padding:2px 8px;border-radius:4px;letter-spacing:.5px;display:inline-block}
+.badge-teal{background:#0D948818;color:var(--teal)}
+.badge-gold{background:#F59E0B18;color:var(--gold)}
+.badge-green{background:#10B98118;color:var(--green)}
+.badge-purple{background:#8B5CF618;color:#8B5CF6}
+.badge-indigo{background:#6366F118;color:#6366F1}
+
+/* Sticky bar */
+.top-bar{background:var(--navy);color:var(--white);padding:10px 16px;text-align:center;font-size:13px;font-weight:600;position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap}
+.top-bar-btn{background:var(--gold);color:var(--navy);border:none;border-radius:4px;padding:4px 12px;font-size:12px;font-weight:700;cursor:pointer;margin-left:8px}
+
+/* Nav */
+.nav{display:flex;justify-content:space-between;align-items:center;padding:18px 40px;background:#fff;border-bottom:1px solid #F3F4F6}
+.nav-logo{display:flex;align-items:center;gap:10px}
+.nav-icon{width:36px;height:36px;border-radius:8px;background:linear-gradient(135deg,var(--teal),var(--navy));display:flex;align-items:center;justify-content:center}
+.nav-brand{font-size:20px;font-weight:800;color:var(--navy)}
+.nav-brand span{color:var(--teal)}
+.nav-actions{display:flex;align-items:center;gap:12px}
+.btn-lang{background:var(--g100);border:none;border-radius:6px;padding:6px 12px;font-size:13px;font-weight:600;cursor:pointer;color:var(--g700);font-family:inherit}
+.btn-primary{background:var(--teal);color:var(--white);border:none;border-radius:8px;padding:10px 20px;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit;display:inline-flex;align-items:center;gap:6px}
+.btn-primary:hover{background:var(--teal-light)}
+.btn-primary-lg{padding:16px 32px;font-size:16px;border-radius:10px}
+.btn-secondary{background:rgba(255,255,255,.1);color:var(--white);border:1px solid rgba(255,255,255,.2);border-radius:10px;padding:16px 28px;font-size:16px;font-weight:600;cursor:pointer;font-family:inherit;display:inline-flex;align-items:center;gap:8px}
+.btn-secondary:hover{background:rgba(255,255,255,.15)}
+.btn-gold{background:var(--gold);color:var(--navy);border:none;border-radius:8px;padding:10px 20px;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit}
+
+/* Hero */
+.hero{background:linear-gradient(135deg,var(--navy) 0%,#1E3A5F 100%);padding:60px 24px 70px 92px;position:relative;overflow:hidden;margin-left:-68px;width:calc(100% + 68px)}
+@media(max-width:768px){.hero{margin-left:0;width:100%;padding-left:24px}}
+.hero-circle-1{position:absolute;top:-40px;right:-40px;width:200px;height:200px;border-radius:50%;background:var(--teal);opacity:.07}
+.hero-circle-2{position:absolute;bottom:-60px;left:-20px;width:300px;height:300px;border-radius:50%;background:var(--gold);opacity:.05}
+.hero-inner{max-width:800px;margin:0 auto;text-align:center;position:relative}
+.hero h1{font-size:clamp(28px,5vw,40px);font-weight:800;color:var(--white);margin:20px 0 8px;line-height:1.2}
+.hero h1 span{color:var(--teal-light)}
+.hero p{font-size:17px;color:#94A3B8;max-width:560px;margin:16px auto 28px;line-height:1.7}
+.hero-buttons{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.trust-bar{display:flex;gap:24px;justify-content:center;margin-top:32px;flex-wrap:wrap}
+.trust-item{text-align:center}
+.trust-num{font-size:22px;font-weight:800;color:var(--teal-light)}
+.trust-label{font-size:12px;color:#94A3B8}
+
+/* Countdown */
+.countdown-wrap{background:var(--white);padding:0 24px;transform:translateY(-28px);position:relative;z-index:10}
+.countdown-card{max-width:700px;margin:0 auto;background:var(--white);border-radius:14px;box-shadow:0 4px 24px rgba(0,0,0,.08);padding:20px 32px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
+.countdown-date{display:flex;align-items:center;gap:12px}
+.countdown-label{font-size:13px;font-weight:600;color:var(--g700)}
+.countdown-value{font-size:15px;font-weight:800;color:var(--g900)}
+.countdown-digits{display:flex;gap:8px;align-items:center}
+.countdown-digit{width:40px;height:48px;border-radius:8px;background:var(--navy);color:var(--teal-light);display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:800}
+.countdown-text{font-size:13px;font-weight:700;color:var(--g700);margin-left:4px}
+
+/* Resources Grid */
+.resources-section{padding:40px 24px 60px;max-width:1100px;margin:0 auto}
+.section-header{text-align:center;margin-bottom:36px}
+.section-header h2{font-size:clamp(24px,4vw,30px);font-weight:800;color:var(--g900);margin:12px 0 8px}
+.section-header p{font-size:15px;color:var(--g500);max-width:500px;margin:0 auto}
+.resources-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:16px;max-width:1020px;margin:0 auto}
+.resource-card{background:var(--white);border:1px solid var(--g200);border-radius:12px;padding:24px 20px;cursor:pointer;transition:all .2s;display:flex;gap:16px;align-items:flex-start}
+.resource-card:hover{box-shadow:0 4px 16px rgba(0,0,0,.06);border-color:var(--teal)}
+.resource-icon{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.resource-content{flex:1}
+.resource-title-row{display:flex;align-items:center;gap:8px;margin-bottom:4px;flex-wrap:wrap}
+.resource-title{font-size:15px;font-weight:700;color:var(--g900);margin:0}
+.resource-tamil{font-size:12px;color:var(--teal);margin:2px 0 6px;font-weight:600;display:none}
+.resource-tamil.show{display:block}
+.resource-desc{font-size:13px;color:var(--g500);margin:0;line-height:1.5}
+.resource-arrow{flex-shrink:0;margin-top:12px;color:var(--g500)}
+
+/* Exam Pattern */
+.exam-section{background:var(--g50);padding:56px 24px}
+.exam-inner{max-width:800px;margin:0 auto}
+.exam-rows{display:flex;flex-direction:column;gap:10px}
+.exam-row{background:var(--white);border-radius:10px;padding:16px 20px;border:1px solid var(--g200);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.exam-left{display:flex;align-items:center;gap:12px;min-width:200px}
+.exam-num{width:32px;height:32px;border-radius:8px;background:var(--teal-bg);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:800;color:var(--teal);flex-shrink:0}
+.exam-name{font-size:14px;font-weight:700;color:var(--g900)}
+.exam-name-ta{font-size:12px;color:var(--teal);display:none}
+.exam-name-ta.show{display:block}
+.exam-qs{font-size:13px;font-weight:700;color:var(--g700)}
+.exam-tip{font-size:12px;color:var(--g500);background:var(--g100);border-radius:6px;padding:4px 10px}
+
+/* Post-exam */
+.post-exam{padding:56px 24px;max-width:900px;margin:0 auto}
+.post-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px}
+.post-card{background:var(--white);border:1px solid var(--g200);border-radius:12px;padding:20px;text-align:center}
+.post-icon{width:48px;height:48px;border-radius:12px;background:#EEF2FF;display:flex;align-items:center;justify-content:center;margin:0 auto 12px}
+.post-card h3{font-size:14px;font-weight:700;color:var(--g900);margin:0 0 6px}
+.post-card p{font-size:13px;color:var(--g500);margin:0}
+
+/* Testimonials */
+.testimonials{background:var(--navy);padding:56px 24px}
+.testimonials-inner{max-width:900px;margin:0 auto;text-align:center}
+.testimonials h2{font-size:28px;font-weight:800;color:var(--white);margin:12px 0 28px}
+.test-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;text-align:left}
+.test-card{background:rgba(255,255,255,.06);border-radius:12px;padding:24px;border:1px solid rgba(255,255,255,.08)}
+.test-stars{display:flex;gap:4px;margin-bottom:12px}
+.test-quote{font-size:14px;color:#CBD5E1;line-height:1.7;margin:0 0 16px;font-style:italic}
+.test-footer{border-top:1px solid rgba(255,255,255,.08);padding-top:12px}
+.test-name{font-size:14px;font-weight:700;color:var(--white)}
+.test-detail{font-size:12px;color:var(--teal-light)}
+
+/* WhatsApp CTA */
+.wa-section{padding:56px 24px}
+.wa-card{max-width:700px;margin:0 auto;background:linear-gradient(135deg,#075E54,#128C7E);border-radius:16px;padding:40px 32px;text-align:center;position:relative;overflow:hidden}
+.wa-circle{position:absolute;top:-30px;right:-30px;width:120px;height:120px;border-radius:50%;background:rgba(255,255,255,.06)}
+.wa-card h2{font-size:clamp(20px,3.5vw,26px);font-weight:800;color:var(--white);margin:16px 0 8px}
+.wa-card p{font-size:15px;color:rgba(255,255,255,.8);margin:0 0 24px;line-height:1.6}
+.btn-wa{background:var(--white);color:#075E54;border:none;border-radius:10px;padding:14px 32px;font-size:16px;font-weight:700;cursor:pointer;font-family:inherit;display:inline-flex;align-items:center;gap:8px}
+
+/* Final CTA */
+.final-cta{background:var(--teal-bg);padding:48px 24px;text-align:center}
+.final-inner{max-width:600px;margin:0 auto}
+.final-cta h2{font-size:24px;font-weight:800;color:var(--g900);margin:12px 0 8px}
+.final-cta p{font-size:15px;color:var(--g500);margin:0 0 20px}
+
+/* Footer */
+.footer{background:var(--navy);padding:32px 24px;text-align:center}
+.footer-brand{display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:12px}
+.footer-brand span{font-size:16px;font-weight:700;color:var(--white)}
+.footer-brand span span{color:var(--teal-light)}
+.footer p{font-size:12px;color:#64748B}
+.footer .copy{font-size:11px;color:#475569;margin-top:8px}
+
+/* Modal */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:1000;display:none;align-items:center;justify-content:center;padding:16px}
+.modal-overlay.active{display:flex}
+.modal{background:var(--white);border-radius:16px;max-width:440px;width:100%;padding:32px;position:relative}
+.modal-close{position:absolute;top:12px;right:12px;background:none;border:none;cursor:pointer;font-size:20px;color:var(--g500);line-height:1}
+.modal-icon{width:56px;height:56px;border-radius:28px;background:var(--teal-bg);display:flex;align-items:center;justify-content:center;margin:0 auto 12px}
+.modal h3{font-size:20px;font-weight:700;color:var(--g900);text-align:center;margin:0}
+.modal .subtitle{font-size:13px;color:var(--g500);text-align:center;margin-top:6px}
+.modal-form{display:flex;flex-direction:column;gap:12px;margin-top:20px}
+.modal-form input,.modal-form select{padding:12px 14px;border-radius:8px;border:1px solid var(--g200);font-size:14px;outline:none;font-family:inherit;width:100%;box-sizing:border-box}
+.modal-form input:focus,.modal-form select:focus{border-color:var(--teal)}
+.modal-submit{background:var(--teal);color:var(--white);border:none;border-radius:8px;padding:14px 0;font-size:15px;font-weight:700;cursor:pointer;font-family:inherit;display:flex;align-items:center;justify-content:center;gap:8px;margin-top:4px;width:100%}
+.modal-submit:hover{background:var(--teal-light)}
+.modal-privacy{font-size:11px;color:var(--g500);text-align:center}
+
+/* Success state */
+.modal-success{text-align:center;padding:20px 0;display:none}
+.modal-success.active{display:block}
+.modal-form-wrap.hidden{display:none}
+.success-icon{width:64px;height:64px;border-radius:32px;background:#ECFDF5;display:flex;align-items:center;justify-content:center;margin:0 auto 16px}
+.success-wa{background:var(--teal-bg);border-radius:10px;padding:14px;margin:16px 0}
+.success-wa p{font-size:13px;color:var(--teal);font-weight:600;margin:0}
+
+/* SVG icons inline */
+svg.icon{vertical-align:middle}
+
+/* Table of Contents Styles */
+.toc-container{background:var(--navy);padding:40px 24px;border-bottom:1px solid rgba(20,184,166,.2)}
+.toc-inner{max-width:1100px;margin:0 auto}
+.toc-title{font-size:14px;font-weight:700;color:var(--teal-light);letter-spacing:.1em;text-transform:uppercase;margin:0 0 16px}
+.toc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.toc-link{background:rgba(20,184,166,.1);border:1px solid rgba(20,184,166,.2);border-radius:8px;padding:12px 14px;color:var(--white);text-decoration:none;font-size:13px;font-weight:600;transition:all .2s;display:flex;align-items:center;gap:8px}
+.toc-link:hover{background:rgba(20,184,166,.2);border-color:var(--teal)}
+.toc-link svg{width:16px;height:16px;flex-shrink:0}
+
+/* Content Section Styles */
+.content-section{padding:60px 24px;max-width:1000px;margin:0 auto;border-bottom:1px solid var(--g100)}
+.content-section:last-child{border-bottom:none}
+.content-section h2{font-size:32px;font-weight:800;color:var(--navy);margin:0 0 20px}
+.content-section .section-subtitle{font-size:16px;color:var(--g500);margin:0 0 24px;line-height:1.6}
+.content-section h3{font-size:18px;font-weight:700;color:var(--g900);margin:24px 0 12px;padding-top:16px}
+.content-section h3:first-of-type{margin-top:0;padding-top:0}
+.content-section p{font-size:15px;color:var(--g700);margin:12px 0;line-height:1.7}
+.content-section ul{margin:16px 0;padding-left:24px}
+.content-section li{font-size:15px;color:var(--g700);margin:8px 0;line-height:1.6}
+.content-section .highlight-box{background:var(--teal-bg);border-left:4px solid var(--teal);padding:16px 20px;border-radius:8px;margin:20px 0}
+.content-section .highlight-box p{margin:0;color:var(--navy);font-weight:600}
+.content-section .info-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin:20px 0}
+.content-section .info-card{background:var(--g50);border:1px solid var(--g200);border-radius:10px;padding:16px;text-align:center}
+.content-section .info-card .card-title{font-size:13px;font-weight:700;color:var(--g700);text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px}
+.content-section .info-card .card-value{font-size:20px;font-weight:800;color:var(--navy);margin:0}
+.content-section table{width:100%;border-collapse:collapse;margin:20px 0;font-size:14px}
+.content-section table th{background:var(--navy);color:var(--white);padding:12px;text-align:left;font-weight:700}
+.content-section table td{border-bottom:1px solid var(--g200);padding:12px}
+.content-section table tr:last-child td{border-bottom:none}
+
+@media(max-width:640px){
+  .resources-grid{grid-template-columns:1fr}
+  .countdown-card{flex-direction:column;text-align:center;align-items:center}
+  .nav{padding:12px 16px}
+  .hero{padding:40px 16px 50px}
+  .exam-row{flex-direction:column;align-items:flex-start}
+  .toc-grid{grid-template-columns:1fr}
+  .content-section{padding:40px 16px}
+  .content-section h2{font-size:24px}
+}
+
+/* ============= TANCET PERCENTILE PREDICTOR (moved from home) ============= */
+.calc-wrap{max-width:1120px;margin:48px auto 0;padding:0 32px}
+.calc-head{text-align:center;max-width:720px;margin:0 auto 32px}
+.calc-head .eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--teal-bg);color:var(--teal);padding:7px 14px;border-radius:999px;font-size:12.5px;font-weight:700;letter-spacing:.02em;text-transform:uppercase;margin-bottom:16px}
+.calc-head .eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--teal);box-shadow:0 0 0 4px rgba(13,148,136,.15)}
+.calc-head h2{font-size:clamp(24px,4vw,34px);font-weight:800;color:var(--g900);letter-spacing:-.02em;line-height:1.15;margin:0 0 12px}
+.calc-head h2 .accent{background:linear-gradient(135deg,var(--teal),#0F1B2D);-webkit-background-clip:text;background-clip:text;color:transparent}
+.calc-head p{font-size:16px;color:var(--g500);margin:0;line-height:1.55}
+.calc-card{background:var(--white);border:1px solid var(--g200);border-radius:22px;padding:36px;box-shadow:0 20px 60px -28px rgba(15,27,45,.22);display:grid;grid-template-columns:1.05fr 1fr;gap:36px;align-items:stretch}
+.calc-form{display:flex;flex-direction:column;gap:22px}
+.calc-field label{display:block;font-size:12px;font-weight:700;color:#0F1B2D;letter-spacing:.04em;text-transform:uppercase;margin-bottom:10px}
+.seg-group{display:grid;grid-template-columns:1fr 1fr;gap:8px;background:var(--g100);padding:4px;border-radius:12px}
+.seg-group button{background:transparent;border:0;padding:11px 14px;border-radius:9px;font-size:13.5px;font-weight:700;color:var(--g500);font-family:inherit;cursor:pointer;transition:all .18s ease}
+.seg-group button.active{background:var(--white);color:#0F1B2D;box-shadow:0 2px 8px rgba(15,27,45,.08)}
+.calc-marks{position:relative;display:flex;align-items:center;gap:14px}
+.calc-marks input[type="number"]{flex:0 0 120px;padding:14px 16px;border:1.5px solid var(--g200);border-radius:11px;font-size:22px;font-weight:800;font-family:inherit;color:#0F1B2D;background:var(--white);outline:none;transition:all .18s ease;-moz-appearance:textfield}
+.calc-marks input[type="number"]::-webkit-outer-spin-button,
+.calc-marks input[type="number"]::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+.calc-marks input[type="number"]:focus{border-color:var(--teal);box-shadow:0 0 0 4px rgba(13,148,136,.12)}
+.calc-marks .marks-of{font-size:14px;color:var(--g500);font-weight:600}
+.calc-marks input[type="range"]{flex:1;-webkit-appearance:none;appearance:none;height:6px;background:linear-gradient(to right,var(--teal) 0%,var(--teal) var(--p,0%),var(--g200) var(--p,0%));border-radius:999px;outline:none;cursor:pointer}
+.calc-marks input[type="range"]::-webkit-slider-thumb{-webkit-appearance:none;width:22px;height:22px;border-radius:50%;background:var(--white);border:3px solid var(--teal);box-shadow:0 2px 6px rgba(13,148,136,.32);cursor:pointer;transition:transform .12s ease}
+.calc-marks input[type="range"]::-webkit-slider-thumb:hover{transform:scale(1.12)}
+.calc-marks input[type="range"]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;background:var(--white);border:3px solid var(--teal);box-shadow:0 2px 6px rgba(13,148,136,.32);cursor:pointer}
+.cat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.cat-grid button{background:var(--white);border:1.5px solid var(--g200);border-radius:10px;padding:11px 6px;font-size:13px;font-weight:700;color:var(--g500);font-family:inherit;cursor:pointer;transition:all .15s ease}
+.cat-grid button:hover{border-color:var(--teal);color:var(--teal)}
+.cat-grid button.active{background:linear-gradient(135deg,var(--teal),#0F1B2D);border-color:transparent;color:var(--white);box-shadow:0 6px 16px -6px rgba(13,148,136,.48)}
+.cat-note{font-size:11.5px;color:var(--g500);margin-top:10px;line-height:1.5}
+.calc-result{background:linear-gradient(150deg,#0F1B2D 0%,#1E3A5F 100%);border-radius:18px;padding:32px 28px;color:var(--white);display:flex;flex-direction:column;position:relative;overflow:hidden}
+.calc-result::before{content:"";position:absolute;top:-40px;right:-40px;width:180px;height:180px;background:radial-gradient(circle,rgba(20,184,166,.28) 0%,transparent 70%);pointer-events:none}
+.calc-result .res-label{font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#14B8A6;margin-bottom:10px;position:relative;z-index:1}
+.calc-result .res-percentile{font-size:64px;font-weight:900;line-height:1;letter-spacing:-.03em;color:var(--white);font-variant-numeric:tabular-nums;margin:0 0 4px;position:relative;z-index:1}
+.calc-result .res-percentile .suffix{font-size:22px;font-weight:700;color:#14B8A6;margin-left:4px;letter-spacing:0}
+.calc-result .res-tier{font-size:14px;color:rgba(255,255,255,.72);font-weight:600;margin:0 0 22px;position:relative;z-index:1}
+.calc-result .res-meta{display:flex;gap:10px;margin-bottom:20px;position:relative;z-index:1;flex-wrap:wrap}
+.calc-result .res-chip{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);padding:7px 11px;border-radius:999px;font-size:11.5px;font-weight:700;color:rgba(255,255,255,.92)}
+.calc-result .res-colleges{background:rgba(20,184,166,.12);border:1px solid rgba(20,184,166,.28);border-radius:13px;padding:18px 18px;margin-bottom:14px;position:relative;z-index:1}
+.calc-result .res-colleges .count-row{display:flex;align-items:baseline;gap:10px}
+.calc-result .res-colleges .top-prefix{font-size:13px;font-weight:700;color:rgba(255,255,255,.62);text-transform:uppercase;letter-spacing:.1em}
+.calc-result .res-colleges .count{font-size:44px;font-weight:900;color:#14B8A6;line-height:1;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.calc-result .res-colleges .caption{font-size:13px;color:rgba(255,255,255,.82);margin-top:6px;font-weight:500;line-height:1.45}
+.calc-result .res-cta{background:linear-gradient(135deg,var(--teal) 0%,#14B8A6 100%);color:var(--white);border:0;border-radius:13px;padding:16px 18px;font-size:14.5px;font-weight:800;font-family:inherit;cursor:pointer;text-align:left;display:flex;align-items:center;justify-content:space-between;gap:12px;box-shadow:0 10px 24px -8px rgba(13,148,136,.55);transition:all .18s ease;position:relative;z-index:1;width:100%}
+.calc-result .res-cta:hover{transform:translateY(-2px);box-shadow:0 14px 30px -8px rgba(13,148,136,.65)}
+.calc-result .res-cta .arrow{width:28px;height:28px;background:rgba(255,255,255,.18);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .18s ease}
+.calc-result .res-cta:hover .arrow{transform:translateX(4px)}
+.calc-result .res-cta .arrow svg{width:14px;height:14px}
+.calc-result .res-cta .cta-main{display:block;font-size:14.5px;font-weight:800;line-height:1.25}
+.calc-result .res-cta .cta-sub{display:block;font-size:11.5px;font-weight:600;color:rgba(255,255,255,.82);margin-top:3px}
+.calc-result .res-disclaimer{font-size:10.5px;color:rgba(255,255,255,.5);margin-top:14px;line-height:1.5;position:relative;z-index:1}
+@media(max-width:880px){.calc-card{grid-template-columns:1fr;gap:24px;padding:28px}}
+@media(max-width:640px){
+  .calc-wrap{margin-top:32px;padding:0 16px}
+  .calc-head h2{font-size:24px}
+  .calc-head p{font-size:14px}
+  .calc-card{padding:22px;border-radius:18px}
+  .calc-result{padding:24px 20px;border-radius:14px}
+  .calc-result .res-percentile{font-size:48px}
+  .calc-result .res-colleges .count{font-size:30px}
+  .calc-marks input[type="number"]{flex:0 0 92px;font-size:18px;padding:12px 12px}
+  .cat-grid{grid-template-columns:repeat(4,1fr);gap:6px}
+  .cat-grid button{padding:10px 4px;font-size:12px}
+}
+
+    /* ============= SIDEBAR — always-visible icon rail ============= */
+    .page-wrap { margin-left: 68px; }
+
+    .sidebar {
+      display: flex;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 68px;
+      height: 100vh;
+      background: var(--navy);
+      z-index: 1000;
+      flex-direction: column;
+      overflow: hidden;
+      transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 2px 0 24px rgba(15,27,45,0.15);
+    }
+    .sidebar:hover { width: 260px; }
+
+    /* Text labels hidden when collapsed, shown when expanded */
+    .sidebar .sb-label,
+    .sidebar .sidebar-section-label,
+    .sidebar .sidebar-user-info,
+    .sidebar .sidebar-badge,
+    .sidebar .sb-signout-text {
+      opacity: 0;
+      white-space: nowrap;
+      transition: opacity 0.2s ease 0s;
+    }
+    .sidebar:hover .sb-label,
+    .sidebar:hover .sidebar-section-label,
+    .sidebar:hover .sidebar-user-info,
+    .sidebar:hover .sidebar-badge,
+    .sidebar:hover .sb-signout-text {
+      opacity: 1;
+      transition: opacity 0.2s ease 0.12s;
+    }
+
+    /* Sidebar header — avatar area */
+    .sidebar-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 20px 14px 16px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      flex-shrink: 0;
+      min-height: 72px;
+    }
+    .sidebar-avatar {
+      width: 40px;
+      height: 40px;
+      min-width: 40px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--teal), var(--teal-light));
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 17px;
+      font-weight: 800;
+      flex-shrink: 0;
+      box-shadow: 0 2px 8px rgba(13,148,136,0.35);
+    }
+    .sidebar-user-info {
+      overflow: hidden;
+    }
+    .sidebar-user-info h4 {
+      margin: 0;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--white);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .sidebar-user-info p {
+      margin: 2px 0 0;
+      font-size: 11px;
+      color: rgba(255,255,255,0.5);
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    /* Sidebar nav links */
+    .sidebar-nav {
+      flex: 1;
+      padding: 8px 0;
+      overflow-y: auto;
+      overflow-x: hidden;
+      scrollbar-width: none;
+    }
+    .sidebar-nav::-webkit-scrollbar { display: none; }
+
+    .sidebar-section-label {
+      font-size: 9px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: rgba(255,255,255,0.35);
+      padding: 14px 14px 4px 22px;
+      white-space: nowrap;
+    }
+
+    .sidebar-link {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 10px 14px 10px 20px;
+      font-size: 13px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+      transition: all 0.15s ease;
+      border-left: 3px solid transparent;
+      position: relative;
+      white-space: nowrap;
+    }
+    .sidebar-link:hover {
+      background: rgba(13,148,136,0.15);
+      color: var(--teal-light);
+      border-left-color: var(--teal-light);
+    }
+    .sidebar-link svg {
+      width: 20px;
+      height: 20px;
+      min-width: 20px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .sidebar-link .sidebar-badge {
+      margin-left: auto;
+      background: var(--teal);
+      color: var(--white);
+      font-size: 10px;
+      font-weight: 800;
+      padding: 2px 7px;
+      border-radius: 999px;
+    }
+
+    /* Collapsed: show tooltip on icon hover */
+    .sidebar:not(:hover) .sidebar-link[data-tip]:hover::after {
+      content: attr(data-tip);
+      position: absolute;
+      left: 64px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: var(--navy);
+      color: var(--white);
+      font-size: 12px;
+      font-weight: 600;
+      padding: 6px 12px;
+      border-radius: 6px;
+      white-space: nowrap;
+      z-index: 1001;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      pointer-events: none;
+    }
+
+    .sidebar-divider {
+      height: 1px;
+      background: rgba(255,255,255,0.06);
+      margin: 6px 14px;
+    }
+
+    /* Sidebar footer — sign out */
+    .sidebar-footer {
+      padding: 12px 14px 16px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      flex-shrink: 0;
+    }
+    .sidebar-signout {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      width: 100%;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: transparent;
+      padding: 10px 10px;
+      border-radius: 10px;
+      font-size: 13px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.5);
+      cursor: pointer;
+      font-family: inherit;
+      transition: all 0.15s ease;
+      white-space: nowrap;
+    }
+    .sidebar-signout:hover {
+      border-color: rgba(239,68,68,0.5);
+      background: rgba(239,68,68,0.08);
+      color: #FCA5A5;
+    }
+    .sidebar-signout svg {
+      width: 18px;
+      height: 18px;
+      min-width: 18px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* Page wrapper: shifts content right when sidebar visible */
+    .page-wrap {
+      transition: margin-left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* ============= SIDEBAR MOBILE ============= */
+    @media (max-width: 768px) {
+      .sidebar { width: 0; }
+      .sidebar:hover { width: 260px; }
+      .page-wrap { margin-left: 0; }
+
+      /* When sidebar is hovered on mobile, show overlay */
+      .sidebar:hover ~ .page-wrap::before {
+        content: '';
+        position: fixed;
+        inset: 0;
+        background: rgba(15,27,45,0.3);
+        z-index: 998;
+      }
+    }
+
+        .ta { display: none; }
+    body.lang-ta .ta { display: inline; }
+    body.lang-ta .en { display: none; }
+
+        body.cv-signed-in .nav-sign-in { display: none; }
+    body.cv-signed-in .user-pill { display: inline-flex; }
+
+
+    /* Accordion Styles */
+    .faq-accordion { display: flex; flex-direction: column; gap: 10px; margin-top: 24px; }
+    .faq-acc-item { background: var(--white); border: 1px solid var(--g200); border-radius: 10px; overflow: hidden; }
+    .faq-acc-q { display: flex; align-items: center; justify-content: space-between; padding: 18px 22px; cursor: pointer; font-size: 15px; font-weight: 700; color: var(--g900); gap: 12px; }
+    .faq-acc-q:hover { background: var(--g50); }
+    .faq-acc-icon { flex-shrink: 0; width: 20px; height: 20px; color: var(--teal); transition: transform 0.2s; }
+    .faq-acc-item.open .faq-acc-icon { transform: rotate(45deg); }
+    .faq-acc-a { display: none; padding: 0 22px 18px; font-size: 14px; color: var(--g700); line-height: 1.7; }
+    .faq-acc-item.open .faq-acc-a { display: block; }
+
+  </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Course",
+  "name": "TANCET 2026 Free Preparation",
+  "description": "Free TANCET 2026 preparation resources including mock tests, college cutoffs, and percentile predictor for Management and MCA aspirants.",
+  "provider": {
+    "@type": "Organization",
+    "name": "CampusVazhi",
+    "url": "https://campusvazhi.com"
+  },
+  "isAccessibleForFree": true,
+  "availableLanguage": ["en", "ta"]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "When is TANCET 2026?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "TANCET 2026 is scheduled for May 9, 2026. Registrations typically open in February."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I prepare for TANCET?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use CampusVazhi's free resources: 10 years of PYQ papers, 5 mock tests, cheat sheets, and our percentile predictor. Available in Tamil and English."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the percentile predictor?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Enter your TANCET score to see your estimated percentile and predicted college list based on 2025 cutoffs."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<!-- ================= SIDEBAR ================= -->
+<aside class="sidebar" id="sidebar">
+
+  <!-- Profile header -->
+  <div class="sidebar-header">
+    <div class="sidebar-avatar" id="sb-avatar"></div>
+    <div class="sidebar-user-info">
+      <h4 id="sb-name"></h4>
+      <p id="sb-exam">CAT 2026</p>
+    </div>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a href="./campusvazhi-home-v2.html" class="sidebar-link" data-tip="Home" style="margin-bottom:8px">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      <span class="sb-label"><span class="en">Home</span><span class="ta">முகப்பு</span></span>
+    </a>
+    <div class="sidebar-divider"></div>
+
+    <!-- Dashboard -->
+    <div class="sidebar-section-label"><span class="en">Dashboard</span><span class="ta">டாஷ்போர்டு</span></div>
+
+    <a href="./CampusVazhi-Dashboard.html" class="sidebar-link" data-tip="Dashboard">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+      <span class="sb-label"><span class="en">My Dashboard</span><span class="ta">என் டாஷ்போர்டு</span></span>
+    </a>
+    <a href="./CampusVazhi-College-Compare.html" class="sidebar-link" data-tip="Saved">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+      <span class="sb-label"><span class="en">Saved Resources</span><span class="ta">சேமித்த ஆதாரங்கள்</span></span>
+    </a>
+    <a href="./campusvazhi-home-v2.html#community" class="sidebar-link" data-tip="Groups">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      <span class="sb-label"><span class="en">My Groups</span><span class="ta">என் குழுக்கள்</span></span>
+      <span class="sidebar-badge">1</span>
+    </a>
+
+    <div class="sidebar-divider"></div>
+
+    <!-- Explore Pathways -->
+    <div class="sidebar-section-label"><span class="en">Explore Pathways</span><span class="ta">பாதைகளை ஆராயுங்கள்</span></div>
+
+    <a href="./CampusVazhi-CAT-2026.html" class="sidebar-link" data-tip="CAT 2026">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+      <span class="sb-label">CAT 2026</span>
+    </a>
+    <a href="./CampusVazhi-TANCET-Resource-Hub.html" class="sidebar-link" data-tip="TANCET Hub">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+      <span class="sb-label"><span class="en">TANCET Hub</span><span class="ta">TANCET மையம்</span></span>
+    </a>
+    <a href="./CampusVazhi-MS-USA.html" class="sidebar-link" data-tip="MS in USA">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+      <span class="sb-label"><span class="en">MS in USA</span><span class="ta">அமெரிக்காவில் MS</span></span>
+    </a>
+    <a href="./CampusVazhi-NEET-Counselling.html" class="sidebar-link" data-tip="NEET">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+      <span class="sb-label"><span class="en">NEET Counselling</span><span class="ta">NEET ஆலோசனை</span></span>
+    </a>
+    <a href="./CampusVazhi-After12th-Quiz.html" class="sidebar-link" data-tip="After 12th">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+      <span class="sb-label"><span class="en">After 12th Quiz</span><span class="ta">12ஆம் வகுப்புக்குப் பிறகு</span></span>
+    </a>
+    <a href="./CampusVazhi-TNEA-Calculator.html" class="sidebar-link" data-tip="TNEA Calc">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="10" y2="10"/><line x1="12" y1="10" x2="14" y2="10"/><line x1="8" y1="14" x2="10" y2="14"/><line x1="12" y1="14" x2="14" y2="14"/><line x1="8" y1="18" x2="16" y2="18"/></svg>
+      <span class="sb-label"><span class="en">TNEA Calculator</span><span class="ta">TNEA கால்குலேட்டர்</span></span>
+    </a>
+    <a href="./CampusVazhi-Resume.html" class="sidebar-link" data-tip="Resume">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+      <span class="sb-label"><span class="en">Resume Builder</span><span class="ta">ரெஸ்யூம் உருவாக்கி</span></span>
+    </a>
+
+    <div class="sidebar-divider"></div>
+
+    <!-- Support -->
+    <div class="sidebar-section-label"><span class="en">Support</span><span class="ta">ஆதரவு</span></div>
+
+    <a href="./CampusVazhi-Book-Counselling.html" class="sidebar-link" data-tip="Counselling">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      <span class="sb-label"><span class="en">Book a Free Call</span><span class="ta">ஆலோசனை முன்பதிவு</span></span>
+    </a>
+    <a href="https://wa.me/918939862211" target="_blank" class="sidebar-link" data-tip="WhatsApp">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      <span class="sb-label"><span class="en">WhatsApp Us</span><span class="ta">WhatsApp செய்யுங்கள்</span></span>
+    </a>
+
+    <div class="sidebar-divider"></div>
+
+    <!-- Profile & Settings -->
+    <div class="sidebar-section-label"><span class="en">Profile</span><span class="ta">சுயவிவரம்</span></div>
+
+    <a href="./CampusVazhi-Dashboard.html" class="sidebar-link" data-tip="Profile">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      <span class="sb-label"><span class="en">Edit Profile</span><span class="ta">சுயவிவரத்தை மாற்று</span></span>
+    </a>
+    <a href="./CampusVazhi-Dashboard.html" class="sidebar-link" data-tip="Settings">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+      <span class="sb-label"><span class="en">Settings</span><span class="ta">அமைப்புகள்</span></span>
+    </a>
+  </nav>
+
+  <div class="sidebar-footer">
+    <button class="sidebar-signout" onclick="signOut()">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+      <span class="sb-signout-text"><span class="en">Sign out</span><span class="ta">வெளியேறு</span></span>
+    </button>
+  </div>
+</aside>
+<div class="page-wrap">
+<!-- Top Bar -->
+<div class="top-bar" id="topBar">
+  <span>⏰</span>
+  <span id="topBarText"></span>
+  <button class="top-bar-btn" onclick="openModal()" id="topBarBtn">Get Free Resources →</button>
+</div>
+
+<!-- Nav -->
+<nav class="nav">
+  <a href="./campusvazhi-home-v2.html" class="nav-logo" style="text-decoration:none">
+    <div class="nav-icon">
+      <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+    </div>
+    <span class="nav-brand">Campus<span>Vazhi</span></span>
+  </a>
+  <div class="nav-actions">
+    <button class="btn-lang" onclick="toggleLang()" id="langBtn">தமிழ்</button>
+    <button class="btn-primary" onclick="openModal()" id="navCta">Get Free Mock Tests</button>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-circle-1"></div>
+  <div class="hero-circle-2"></div>
+  <div class="hero-inner">
+    <span class="badge badge-gold">TANCET 2026 — MAY 9</span>
+    <h1 id="heroTitle">Everything You Need to<br><span>Crack TANCET 2026</span></span></h1>
+    <p id="heroDesc">Free PYQ papers, mock tests, cheat sheets & score predictor. Join 4,000+ aspirants preparing with CampusVazhi.</p>
+    <div class="hero-buttons">
+      <button class="btn-primary btn-primary-lg" onclick="openModal()">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        <span id="heroCta1">Download Free Resources</span>
+      </button>
+      <button class="btn-secondary">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+        <span id="heroCta2">Join WhatsApp Group</span>
+      </button>
+    </div>
+    <div class="trust-bar">
+      <div class="trust-item"><div class="trust-num">4,000+</div><div class="trust-label" data-en="Aspirants" data-ta="மாணவர்கள்">Aspirants</div></div>
+      <div class="trust-item"><div class="trust-num">10 Yrs</div><div class="trust-label" data-en="PYQ Papers" data-ta="வினாத்தாள்கள்">PYQ Papers</div></div>
+      <div class="trust-item"><div class="trust-num">5</div><div class="trust-label" data-en="Mock Tests" data-ta="மாதிரி தேர்வுகள்">Mock Tests</div></div>
+      <div class="trust-item"><div class="trust-num">100%</div><div class="trust-label" data-en="Free" data-ta="இலவசம்">Free</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Countdown -->
+<section class="countdown-wrap">
+  <div class="countdown-card">
+    <div class="countdown-date">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+      <div>
+        <div class="countdown-label" id="cdLabel">Exam Date</div>
+        <div class="countdown-value">May 9, 2026</div>
+      </div>
+    </div>
+    <div class="countdown-digits">
+      <div class="countdown-digit" id="cd1">0</div>
+      <div class="countdown-digit" id="cd2">0</div>
+      <span class="countdown-text" id="cdText">days left</span>
+    </div>
+    <button class="btn-gold" onclick="openModal()" id="cdBtn">Start Preparing →</button>
+  </div>
+</section>
+
+<!-- ================= TANCET PERCENTILE PREDICTOR ================= -->
+<section class="calc-wrap" id="tancet-calculator" aria-label="TANCET percentile calculator">
+  <div class="calc-head">
+    <span class="eyebrow">
+      <span class="dot"></span>
+      <span>Free · Instant · No signup to try</span>
+    </span>
+    <h2>TANCET Percentile <span class="accent">Predictor</span></span></h2>
+    <p>Enter your expected TANCET marks and category. We'll estimate your percentile and show how many Tamil Nadu colleges are in range for your score.</p>
+  </div>
+
+  <div class="calc-card">
+    <div class="calc-form">
+      <div class="calc-field">
+        <label>1. Which TANCET paper?</label>
+        <div class="seg-group" id="calc-exam-group" role="tablist">
+          <button type="button" class="active" data-exam="management" role="tab" aria-selected="true">Management</button>
+          <button type="button" data-exam="mca" role="tab" aria-selected="false">MCA</button>
+        </div>
+      </div>
+
+      <div class="calc-field">
+        <label>2. Your expected marks</label>
+        <div class="calc-marks">
+          <input type="number" id="calc-marks-input" min="0" max="100" step="1" value="55" aria-label="Marks out of 100" />
+          <span class="marks-of">/ 100</span>
+          <input type="range" id="calc-marks-range" min="0" max="100" step="1" value="55" aria-label="Marks slider" />
+        </div>
+      </div>
+
+      <div class="calc-field">
+        <label>3. Your category</label>
+        <div class="cat-grid" id="calc-cat-group" role="radiogroup">
+          <button type="button" class="active" data-cat="OC" role="radio" aria-checked="true">OC</button>
+          <button type="button" data-cat="BC" role="radio" aria-checked="false">BC</button>
+          <button type="button" data-cat="BCM" role="radio" aria-checked="false">BCM</button>
+          <button type="button" data-cat="MBC" role="radio" aria-checked="false">MBC</button>
+          <button type="button" data-cat="SC" role="radio" aria-checked="false">SC</button>
+          <button type="button" data-cat="SCA" role="radio" aria-checked="false">SCA</button>
+          <button type="button" data-cat="ST" role="radio" aria-checked="false">ST</button>
+          <button type="button" data-cat="PwD" role="radio" aria-checked="false">PwD</button>
+        </div>
+        <p class="cat-note">Tamil Nadu reservation: BC 26.5% · BCM 3.5% · MBC 20% · SC 15% · SCA 3% · ST 1% · PwD horizontal</p>
+      </div>
+    </div>
+
+    <div class="calc-result" id="calc-result">
+      <span class="res-label">Your estimated percentile</span>
+      <div class="res-percentile"><span id="res-percentile-val">95.2</span><span class="suffix">%ile</span></div>
+      <p class="res-tier" id="res-tier">Strong tier</p>
+
+      <div class="res-meta">
+        <span class="res-chip" id="res-chip-exam">Management</span>
+        <span class="res-chip" id="res-chip-cat">OC</span>
+        <span class="res-chip" id="res-chip-marks">55 / 100</span>
+      </div>
+
+      <div class="res-colleges">
+        <div class="count-row">
+          <span class="top-prefix">Top</span>
+          <span class="count" id="res-college-count">48</span>
+        </div>
+        <p class="caption">Tamil Nadu colleges accept this cutoff for your category</p>
+      </div>
+
+      <button type="button" class="res-cta" id="res-cta" onclick="openCollegeUnlock()">
+        <span>
+          <span class="cta-main">Want to know which colleges accept these cutoffs?</span>
+          <span class="cta-sub">Unlock the full list free · Sent in your WhatsApp group</span>
+        </span>
+        <span class="arrow" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </span>
+      </button>
+
+      <p class="res-disclaimer">Estimates based on TANCET 2022–2026 cutoff data and TN reservation norms. Actual admissions depend on counselling rank, seat matrix, and preference list.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Resources Grid -->
+<section class="resources-section">
+  <div class="section-header">
+    <span class="badge badge-teal" id="resBadge">100% FREE RESOURCES</span>
+    <h2 id="resTitle">Your Complete TANCET Prep Kit</h2>
+    <p id="resDesc">Everything you need to score 80+ percentile — no coaching needed</p>
+  </div>
+  <div class="resources-grid" id="resourcesGrid"></div>
+
+  <!-- College Compare CTA -->
+  <a href="./CampusVazhi-College-Compare.html?category=tancet" style="display:block;margin:32px auto 0;max-width:900px;text-decoration:none;background:linear-gradient(135deg,#0F1B2D 0%,#1E293B 100%);border-radius:16px;padding:28px 32px;color:#fff;position:relative;overflow:hidden;border:1px solid rgba(20,184,166,.3)">
+    <div style="display:flex;align-items:center;gap:20px;flex-wrap:wrap">
+      <div style="width:56px;height:56px;background:rgba(20,184,166,.15);border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#14B8A6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+      </div>
+      <div style="flex:1;min-width:220px">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px"><span style="background:#14B8A6;color:#fff;font-size:10px;font-weight:700;padding:3px 8px;border-radius:4px;letter-spacing:.5px">NEW TOOL</span><span style="color:#94A3B8;font-size:12px">Free · Sign-in required</span></div>
+        <h3 style="font-size:20px;font-weight:700;margin:0 0 4px">Compare TN Management Colleges</h3>
+        <p style="font-size:14px;color:#CBD5E1;margin:0">Anna DOMS · PSG · SSN · LIBA · Great Lakes · TSM — fees, CTC, recruiters side-by-side</p>
+      </div>
+      <div style="background:#14B8A6;color:#fff;padding:12px 20px;border-radius:8px;font-weight:600;font-size:14px;white-space:nowrap">Open Compare Tool →</div>
+    </div>
+  </a>
+</section>
+
+<!-- Exam Pattern -->
+<section class="exam-section">
+  <div class="exam-inner">
+    <div class="section-header">
+      <span class="badge badge-teal" id="examBadge">KNOW YOUR EXAM</span>
+      <h2 id="examTitle">TANCET 2026 Exam Pattern</h2>
+      <p style="font-size:14px;color:var(--g500);margin-top:6px">100 MCQs • 2 Hours • -0.25 Negative Marking</p>
+    </div>
+    <div class="exam-rows" id="examRows"></div>
+  </div>
+</section>
+
+<!-- Post-Exam -->
+<section class="post-exam">
+  <div class="section-header">
+    <span class="badge badge-indigo" id="postBadge">AFTER THE EXAM</span>
+    <h2 id="postTitle">We'll Be With You Post-TANCET Too</h2>
+  </div>
+  <div class="post-grid" id="postGrid"></div>
+</section>
+
+<!-- Testimonials -->
+<section class="testimonials">
+  <div class="testimonials-inner">
+    <span class="badge badge-gold" id="testBadge">SUCCESS STORIES</span>
+    <h2 id="testTitle">From TANCET Aspirant to Success Story</h2>
+    <div class="test-grid" id="testGrid"></div>
+  </div>
+</section>
+
+<!-- TABLE OF CONTENTS -->
+<section class="toc-container">
+  <div class="toc-inner">
+    <div class="toc-title">TANCET 2026 Complete Guide</div>
+    <div class="toc-grid">
+      <a href="#what-is-tancet" class="toc-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M12 6v6l4 2.5"/></svg> What is TANCET?</a>
+      <a href="#exam-dates" class="toc-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> Exam Dates</a>
+      <a href="#exam-highlights" class="toc-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg> Exam Highlights</a>
+      <a href="#application-form" class="toc-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><polyline points="13 2 13 9 20 9"/></svg> Application Form</a>
+      <a href="#question-papers" class="toc-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="13" x2="8" y2="13"/><line x1="12" y1="17" x2="8" y2="17"/></svg> Question Papers</a>
+      <a href="#exam-pattern" class="toc-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="2" x2="12" y2="22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg> Exam Pattern</a>
+      <a href="#syllabus" class="toc-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg> Syllabus</a>
+      <a href="#prep-tips" class="toc-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><polyline points="12 6 12 12 16 14"/></svg> Prep Tips</a>
+      <a href="#admit-card" class="toc-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 5l-4 4-4-4"/></svg> Admit Card</a>
+      <a href="#answer-key" class="toc-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="10 12 12 14 14 10"/></svg> Answer Key</a>
+      <a href="#results" class="toc-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg> Results</a>
+      <a href="#counselling" class="toc-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg> Counselling</a>
+      <a href="#contact-info" class="toc-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> Contact</a>
+      <a href="#faqs" class="toc-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg> FAQs</a>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 1: What is TANCET? -->
+<section class="content-section" id="what-is-tancet">
+  <h2><span class="en">What is TANCET?</span><span class="ta">TANCET என்றால் என்ன?</span></h2>
+  <p class="section-subtitle"><span class="en">Tamil Nadu Common Entrance Test — Your gateway to top Management & MCA programs</span><span class="ta">தமிழ்நாடு பொதுப் பிரவேশ পরীக்ষை — உங்களின் சிறந்த Management & MCA நிகழ்ச்சிகளுக்கான வாசல்</span></p>
+
+  <h3><span class="en">Understanding TANCET</span><span class="ta">TANCETஐ புரிந்துகொள்ளுதல்</span></h3>
+  <p><span class="en">TANCET is a state-level postgraduate entrance examination conducted by Anna University. It's the primary entrance test for admission to Management, MCA, M.E./M.Tech, M.Arch, and M.Plan programs across Tamil Nadu colleges and universities.</span><span class="ta">TANCET என்பது அண்ணா பல்கலைக்கழகத்தால் நடத்தப்படும் ஒரு மாநில-அளவிலான பின்பட்ட நுழைவுத் தேர்வு. இது தமிழ்நாடு முழுவதும் கல்லூரிகள் மற்றும் பல்கலைக்கழகங்களில் Management, MCA, M.E./M.Tech, M.Arch மற்றும் M.Plan நிகழ்ச்சிகளுக்கான சேர்க்கைக்கான முதன்மை நுழைவு சோதனை.</span></p>
+
+  <h3><span class="en">Why TANCET Matters</span><span class="ta">TANCET ஏன் முக்கியமானது</span></h3>
+  <ul>
+    <li><span class="en">Gateway to 50+ government and private colleges in Tamil Nadu</span><span class="ta">தமிழ்நாடு முழுவதும் 50+ அரசு மற்றும் தனியார் கல்லூரிகளுக்கான வாசல்</span></li>
+    <li><span class="en">Merit-based admissions — no donation culture</span><span class="ta">தகுதியானதా-ভিততিক ভரதి — ஐக்குஈ தాண பண்பாடு ணஹీம்</span></li>
+    <li><span class="en">Accepted by Anna DOMS, PSG Tech, MIT, Thiagarajar, TCE, SSN, and more</span><span class="ta">Anna DOMS, PSG Tech, MIT, Thiagarajar, TCE, SSN மற்றவர்களால் ஏற்றுக்கொள்ளப்பட்ட</span></li>
+    <li><span class="en">Counselling conducted by DoTE (Directorate of Technical Education)</span><span class="ta">DoTE (தொழில்நுட்ப கல்வி இயக்ககம்) நடத்தும் ஆலோசனை</span></li>
+    <li><span class="en">Available for Management (2 years) and MCA (3 years) primarily</span><span class="ta">முக்கியமாக Management (2 ஆண்டு) மற்றும் MCA (3 ஆண்டு) க்கு கிடைக்கிறது</span></li>
+  </ul>
+
+  <div class="highlight-box">
+    <p><span class="en">💡 Pro Tip: TANCET scores are valid for admission to most Anna University-affiliated colleges and some private institutions. Merit rank is calculated category-wise.</span><span class="ta">💡 ப்ரோ டிப்: TANCET மதிப்பெண் பெரும்பாலான Anna University தொடர்புடைய கல்லூரிகள் மற்றும் சில தனியார் நிறுவனங்களுக்கு நுழைவுக்கு செல்லுபடி ஆகும். தகுதி தரவரிசை வகை-வாரியாக கணக்கிடப்படுகிறது.</span></p>
+  </div>
+</section>
+
+<!-- SECTION 2: Exam Dates & Schedule -->
+<section class="content-section" id="exam-dates">
+  <h2><span class="en">TANCET 2026 Exam Dates & Schedule</span><span class="ta">TANCET 2026 தேர்வு தேதிகள் மற்றும் அட்டவணை</span></h2>
+  <p class="section-subtitle"><span class="en">Mark your calendar — don't miss the important dates</span><span class="ta">உங்கள் கலெண்டரைக் குறிக்கவும் — முக்கியமான தேதிகளை நினைவுதல் செய்யவும்</span></p>
+
+  <div class="info-grid">
+    <div class="info-card">
+      <div class="card-title"><span class="en">Application Start</span><span class="ta">ஆஅவர்கள்தண தொடக்கம்</span></div>
+      <div class="card-value"><span class="en">Feb 2026</span><span class="ta">பரவரీ 2026</span></div>
+    </div>
+    <div class="info-card">
+      <div class="card-title"><span class="en">Application Deadline</span><span class="ta">ஆஅவர்கள்தண நேரம் வரம்பு</span></div>
+      <div class="card-value"><span class="en">Apr 2026</span><span class="ta">அபரైல 2026</span></div>
+    </div>
+    <div class="info-card">
+      <div class="card-title"><span class="en">Admit Card Release</span><span class="ta">ஒப்புதல் பதர ஜాரీ</span></div>
+      <div class="card-value"><span class="en">Late Apr 2026</span><span class="ta">அபரైல அம்த 2026</span></div>
+    </div>
+    <div class="info-card">
+      <div class="card-title"><span class="en">Exam Date</span><span class="ta">தேரவு தిதి</span></div>
+      <div class="card-value"><span class="en">May 9, 2026</span><span class="ta">மஈ 9, 2026</span></div>
+    </div>
+    <div class="info-card">
+      <div class="card-title"><span class="en">Answer Key</span><span class="ta">பதில் கుம்ஜీ</span></div>
+      <div class="card-value"><span class="en">May 9 evening</span><span class="ta">மஈ 9 شాம</span></div>
+    </div>
+    <div class="info-card">
+      <div class="card-title"><span class="en">Results</span><span class="ta">மீதுిణాம</span></div>
+      <div class="card-value"><span class="en">Late May 2026</span><span class="ta">மஈ அம்த 2026</span></div>
+    </div>
+  </div>
+
+  <h3><span class="en">Key Timeline</span><span class="ta">மుఖయ நேரம் ஸాரణీ</span></h3>
+  <table>
+    <thead>
+      <tr>
+        <th><span class="en">Event</span><span class="ta">காடணా</span></th>
+        <th><span class="en">Timeline</span><span class="ta">நேரம் ஸాரణీ</span></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="en">Registration Opens</span><span class="ta">பம்ஜీகரణ ఖుலதా உள்ளது</span></td>
+        <td><span class="en">Early February</span><span class="ta">பரவரీ தொடக்கம்</span></td>
+      </tr>
+      <tr>
+        <td><span class="en">Last Date to Apply</span><span class="ta">ஆஅவர்கள்தண கரணే இன் இறுதி தேதி</span></td>
+        <td><span class="en">Mid-April</span><span class="ta">அபரైல மதయ</span></td>
+      </tr>
+      <tr>
+        <td><span class="en">Admit Card Release</span><span class="ta">ஒப்புதல் பதர ஜాரీ</span></td>
+        <td><span class="en">April 25-30</span><span class="ta">அபரైல 25-30</span></td>
+      </tr>
+      <tr>
+        <td><span class="en">Exam Date</span><span class="ta">தேரவு தిதి</span></td>
+        <td><span class="en">Friday, May 9, 2026</span><span class="ta">வெள்ளி, மஈ 9, 2026</span></td>
+      </tr>
+      <tr>
+        <td><span class="en">Counselling Period</span><span class="ta">ஆலோசனை அவதి</span></td>
+        <td><span class="en">June-July 2026</span><span class="ta">ஜూண-ஜుலాஈ 2026</span></td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- SECTION 3: Exam Highlights -->
+<section class="content-section" id="exam-highlights">
+  <h2><span class="en">TANCET 2026 Exam Highlights</span><span class="ta">TANCET 2026 தேரவு சிறப்பம்</span></h2>
+  <p class="section-subtitle"><span class="en">Quick facts about the exam structure and format</span><span class="ta">தேரவு ஸம்ரசணా மற்றும் பரాரూப கే பాரే இல் தவரిத ததయ</span></p>
+
+  <h3><span class="en">Exam Format</span><span class="ta">தேரவு பரాரూப</span></h3>
+  <ul>
+    <li><span class="en"><strong>Mode:</strong> Computer-Based Test (CBT)</span><span class="ta"><strong>மోட:</strong> கணினி-பாதிரిத மீதுీகறణ (CBT)</span></li>
+    <li><span class="en"><strong>Duration:</strong> 2 hours per paper</span><span class="ta"><strong>அவதి:</strong> பரதి பதர 2 மணி நேரம்</span></li>
+    <li><span class="en"><strong>Question Type:</strong> Multiple Choice Questions (MCQs)</span><span class="ta"><strong>கேள்வி பரகాர:</strong> பஹుதேர்வு கேள்வி (MCQs)</span></li>
+    <li><span class="en"><strong>Total Questions:</strong> 100 questions</span><span class="ta"><strong>மொத்த கேள்வி:</strong> 100 கேள்வி</span></li>
+    <li><span class="en"><strong>Total Marks:</strong> 100 marks</span><span class="ta"><strong>மொத்த மதிப்பெண்:</strong> 100 மதிப்பெண்</span></li>
+    <li><span class="en"><strong>Negative Marking:</strong> -1/3 for each wrong answer (0.33 marks deducted)</span><span class="ta"><strong>எதிர்மறை மதிப்பெண்ண:</strong> பரதயేக தவறான பதில் க்கான -1/3 (0.33 மதிப்பெண் கాடా)</span></li>
+  </ul>
+
+  <h3><span class="en">Management Paper Highlights</span><span class="ta">Management பதர சிறப்பம்</span></h3>
+  <ul>
+    <li><span class="en">20 questions each on: Quantitative Aptitude, English, Logical Reasoning, Data Interpretation, General Knowledge</span><span class="ta">பரதயేக மீது 20 கேள்வி: அளவுசார் தகுதியானதా, அம்குரేஜీ, தాரகిக தரக, டేடా வஅல்லதுఖஅல்லது, சாதாரண ஜఞాண</span></li>
+    <li><span class="en">Emphasis on business awareness and current affairs</span><span class="ta">வயவஸాய விழிப்புணர்வு மற்றும் ஸமஸాமయిஇன் மீது ஜోர</span></li>
+  </ul>
+
+  <h3><span class="en">MCA Paper Highlights</span><span class="ta">MCA பதர சிறப்பம்</span></h3>
+  <ul>
+    <li><span class="en">25 questions each on: Quantitative Aptitude, Analytical Reasoning, Computer Awareness, English</span><span class="ta">பரதயేக மீது 25 கேள்வி: அளவுசார் தகுதியானதా, பிش்லேஷண தரக, கணினி விழிப்புணர்வு, அம்குரేஜీ</span></li>
+    <li><span class="en">Focus on programming concepts and data structures fundamentals</span><span class="ta">நிரலாக்கம் கருத்துக்கள் மற்றும் டేடా ஸம்ரசணాஒம் கే பుணిஅல்லதுதీ பాதోம் மீது தஅல்லதுண</span></li>
+  </ul>
+
+  <div class="highlight-box">
+    <p><span class="en">⚡ Scoring Tips: Each correct answer = +1 mark. Each wrong answer = -0.33 marks. Unanswered = 0 marks. Strategy: Answer questions you're confident about first.</span><span class="ta">⚡ ஸஐக்குரిம்கு டిபஸ: பரதயేக சரி பதில் = +1 மதிப்பெண்| பரதயేக தவறான பதில் = -0.33 மதிப்பெண்| பதில் தిஎ குஎ = 0 மதிப்பெண்| உத்திரம: பஹலే ஐஇலிருந்து கேள்விోம் கే பதில் தేம் ஜిணஇல் நீங்கள் சுயநம்பிக்கை ரఖதే உள்ளதும்|</span></p>
+  </div>
+</section>
+
+<!-- SECTION 4: Application Form -->
+<section class="content-section" id="application-form">
+  <h2><span class="en">TANCET 2026 Application Form</span><span class="ta">TANCET 2026 ஆஅவர்கள்தண பதர</span></h2>
+  <p class="section-subtitle"><span class="en">How to apply for TANCET — step-by-step guide</span><span class="ta">TANCET க்கான ஆஅவர்கள்தண கైஇலிருந்து கரేம் — கட்ட-தர-கட்ட வழிகாட்டல்</span></p>
+
+  <h3><span class="en">Eligibility Criteria</span><span class="ta">பాதரதా மాணதம்ட</span></h3>
+  <ul>
+    <li><span class="en"><strong>Educational Qualification:</strong> Bachelor's degree in any discipline (4-year degree)</span><span class="ta"><strong>شైகறణిக தகுதியானதా:</strong> கిஸీ பీ வిறయ இல் ஸணాதக இன் பட்டம் (4-ஆண்டுీయ பட்டம்)</span></li>
+    <li><span class="en"><strong>Minimum Aggregate:</strong> 50% for General Category (45% for SC/ST/SCA)</span><span class="ta"><strong>ணயూணதம மொத்த:</strong> சாதாரண شரేణీ க்கான 50% (SC/ST/SCA க்கான 45%)</span></li>
+    <li><span class="en"><strong>Nationality:</strong> Indian nationals and NRIs (fees differ)</span><span class="ta"><strong>தேசியத்வம்:</strong> பாాரதీయ குடிமகன் மற்றும் எணஆரஆஈ (பీஸ பாిணண)</span></li>
+  </ul>
+
+  <h3><span class="en">Application Fee</span><span class="ta">ஆஅவர்கள்தண கட்டணம்</span></h3>
+  <ul>
+    <li><span class="en"><strong>General/OBC/BCM/MBC:</strong> ₹800</span><span class="ta"><strong>சாதாரண/OBC/BCM/MBC:</strong> ₹800</span></li>
+    <li><span class="en"><strong>SC/ST/SCA:</strong> ₹400</span><span class="ta"><strong>SC/ST/SCA:</strong> ₹400</span></li>
+    <li><span class="en"><strong>Payment Mode:</strong> Online only (Credit Card, Debit Card, UPI)</span><span class="ta"><strong>பாుகதాண மోட:</strong> கేவல ஒணலాஇண (கரేடిட கాரட, டేபిட கాரட, UPI)</span></li>
+  </ul>
+
+  <h3><span class="en">How to Apply</span><span class="ta">ஆஅவர்கள்தண கైஇலிருந்து கரేம்</span></h3>
+  <ol>
+    <li><span class="en">Visit the official portal: <strong>tancet.annauniv.edu</strong></span><span class="ta">ஆதாిகాரిக பోரடல மீது ஜాஎம்: <strong>tancet.annauniv.edu</strong></span></li>
+    <li><span class="en">Click on "New User Registration" and create your account</span><span class="ta">"ணஅல்லது பயனாளர் பம்ஜీகரణ" மீது கலిக கரేம் மற்றும் அபணా கணக்கு பணాஎம்</span></li>
+    <li><span class="en">Fill in personal and educational details accurately</span><span class="ta">বযகতিகுத மற்றும் شైகறణిக வిவரణ ஸடీக ரూப இலிருந்து பரేம்</span></li>
+    <li><span class="en">Choose your exam centre (multiple options available)</span><span class="ta">அபணా தேரவு கేம்தர சుணేம் (கஈ தேர்வு உபலபத)</span></li>
+    <li><span class="en">Upload scanned copies of: Photo, Signature, Degree Certificate</span><span class="ta">அபலోட கரేம்: பోடో, கையொப்பம், பட்டம் சான்றிதழ் இன் ஸகైண இன் குஈ பரதిஅல்லதும்</span></li>
+    <li><span class="en">Pay the application fee online</span><span class="ta">ஒணலాஇண ஆஅவர்கள்தண கட்டணம் கా பாుகதాண கரేம்</span></li>
+    <li><span class="en">Submit and download the confirmation receipt</span><span class="ta">ஜமా கரేம் மற்றும் பుறடి ரஸీத டాஉணலోட கரేம்</span></li>
+  </ol>
+
+  <div class="highlight-box">
+    <p><span class="en">📋 Document Checklist: Valid ID proof, Bachelor's Degree Certificate, Photo (4x6 cm), Signature image. Keep soft copies ready before starting the application.</span><span class="ta">📋 பத்துதాஅவர்கள்ஜ சేகலిஸட: வైத ஆஈடీ பரமాణ, ஸணాதக இன் பட்டம் சான்றிதழ், பోடో (4x6 இலிருந்துமీ), கையொப்பம் ছவి| ஆஅவர்கள்தண شుரూ கரணే இலிருந்து பஹலే ணரம பரதిஅல்லதும் தైஅல்லதுர ரఖేம்|</span></p>
+  </div>
+</section>
+
+<!-- SECTION 5: Question Papers -->
+<section class="content-section" id="question-papers">
+  <h2><span class="en">TANCET Question Papers for Management and MCA</span><span class="ta">Management மற்றும் MCA க்கான TANCET கேள்வி பதர</span></h2>
+  <p class="section-subtitle"><span class="en">Access 10 years of previous year question papers</span><span class="ta">10 ஆண்டுోம் கే பిছலే ஆண்டு கే கேள்விபதரోம் தக பஹుம்சేம்</span></p>
+
+  <h3><span class="en">Available Papers (2016-2025)</span><span class="ta">உபலபத பதர (2016-2025)</span></h3>
+  <ul>
+    <li><span class="en"><strong>2025 TANCET:</strong> Both Management and MCA papers with solutions</span><span class="ta"><strong>2025 TANCET:</strong> தீர்வு கే ஸాத MBA மற்றும் MCA இரண்டுணోம் பதர</span></li>
+    <li><span class="en"><strong>2024, 2023, 2022:</strong> Complete papers with detailed explanations</span><span class="ta"><strong>2024, 2023, 2022:</strong> வిஸதுத வஅல்லதுఖஅல்லது கే ஸాத பూரణ பதர</span></li>
+    <li><span class="en"><strong>2021-2016:</strong> Solved papers with topic-wise breakup</span><span class="ta"><strong>2021-2016:</strong> வిறయ-வాர வిபாాஜண கే ஸాத ஹல கిஎ குஎ பதர</span></li>
+  </ul>
+
+  <h3><span class="en">Why Practice PYQs?</span><span class="ta">PYQs கా அபஅல்லதுஸ கயోம் கரేம்?</span></h3>
+  <ul>
+    <li><span class="en">Understand the exam pattern and question type frequency</span><span class="ta">தேரவு வடிவம் மற்றும் கேள்வி பரகాர இன் ஆவுததి ஐக்கு ஸமஜாేம்</span></li>
+    <li><span class="en">Identify high-weight topics (questions repeat 60-70% of time)</span><span class="ta">உசச-வஜண வాலే வిறయోம் இன் அடையாள கரేம் (கேள்வி 60-70% நேரம் இரண்டுஹரాதే உள்ளதும்)</span></li>
+    <li><span class="en">Practice time management — solve papers in 2 hours</span><span class="ta">நேரம் பரபம்தாண கా அபஅல்லதுஸ கரేம் — 2 மணி நேரம் இல் பதர ஹல கரేம்</span></li>
+    <li><span class="en">Boost confidence before the actual exam</span><span class="ta">வాஸதவిக தேரவு இலிருந்து பஹலే சுயநம்பிக்கை படాஎம்</span></li>
+  </ul>
+
+  <h3><span class="en">How to Use PYQ Papers Effectively</span><span class="ta">PYQ பதரోம் ஐக்கு பரபாాவీ டம்கு இலிருந்து கైஇலிருந்து உபయోகு கரేம்</span></h3>
+  <ol>
+    <li><span class="en">Complete the paper in timed mode first (simulate exam conditions)</span><span class="ta">பஹலే நேரம் ஸీமిத மోட இல் பதர முழு கரేம் (தேரவு இன் ஸதாిதి கా அணుகரణ கரేம்)</span></li>
+    <li><span class="en">Mark difficult questions for later review</span><span class="ta">பాத இல் ஸமీகறా க்கான கடினமான கேள்விోம் ஐக்கு சిஹணిத கரేம்</span></li>
+    <li><span class="en">Check answers and identify weak areas</span><span class="ta">பதில்ోம் இன் ஜాம்ச கரేம் மற்றும் குறைவுஜోர பகுதிகள் இன் அடையாள கரేம்</span></li>
+    <li><span class="en">Revisit solutions to understand the concept, not just memorize</span><span class="ta">அவதாాரణా ஐக்கு ஸமஜாணే க்கான தீர்வு பாిர இலிருந்து தేఖేம், கేவல ஸமரణ ண கரేம்</span></li>
+  </ol>
+
+  <div class="highlight-box">
+    <p><span class="en">📊 Insight: Quantitative Aptitude and Logical Reasoning together account for 50+ marks. Prioritize these sections in your PYQ practice.</span><span class="ta">📊 உள்ளாக்க: அளவுசார் தகுதியானதా மற்றும் தాரகిக தரக ஒரு ஸాத 50+ மதிப்பெண்ోம் க்கான 책임感 உள்ளதும்| அபணే PYQ அபஅல்லதுஸ இல் இண அணుபாాகోம் ஐக்கு முன்னுரிமை தేம்|</span></p>
+  </div>
+</section>
+
+<!-- SECTION 6: Exam Pattern -->
+<section class="content-section" id="exam-pattern">
+  <h2><span class="en">TANCET Exam Pattern 2026</span><span class="ta">TANCET தேரவு வடிவம் 2026</span></h2>
+  <p class="section-subtitle"><span class="en">Detailed breakdown of Management and MCA exam structure</span><span class="ta">MBA மற்றும் MCA தேரவு ஸம்ரசணా கా வిஸதுத வిவரణ</span></p>
+
+  <h3><span class="en">Management Exam Pattern</span><span class="ta">Management தேரவு வடிவம்</span></h3>
+  <table>
+    <thead>
+      <tr>
+        <th><span class="en">Section</span><span class="ta">அணుபாాக</span></th>
+        <th><span class="en">Questions</span><span class="ta">கேள்வி</span></th>
+        <th><span class="en">Marks</span><span class="ta">மதிப்பெண்</span></th>
+        <th><span class="en">Time Suggestion</span><span class="ta">நேரம் ஸుஜாాவ</span></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="en">Quantitative Aptitude</span><span class="ta">அளவுசார் தகுதியானதా</span></td>
+        <td>20</td>
+        <td>20</td>
+        <td><span class="en">25 min</span><span class="ta">25 மిணட</span></td>
+      </tr>
+      <tr>
+        <td><span class="en">English & Reading Comprehension</span><span class="ta">அம்குரేஜీ மற்றும் படாண ஸமஜா</span></td>
+        <td>20</td>
+        <td>20</td>
+        <td><span class="en">20 min</span><span class="ta">20 மిணட</span></td>
+      </tr>
+      <tr>
+        <td><span class="en">Logical Reasoning</span><span class="ta">தాரகిக தரக</span></td>
+        <td>20</td>
+        <td>20</td>
+        <td><span class="en">25 min</span><span class="ta">25 மిணட</span></td>
+      </tr>
+      <tr>
+        <td><span class="en">Data Interpretation</span><span class="ta">டేடా வஅல்லதுఖஅல்லது</span></td>
+        <td>20</td>
+        <td>20</td>
+        <td><span class="en">25 min</span><span class="ta">25 மిணட</span></td>
+      </tr>
+      <tr>
+        <td><span class="en">General Knowledge</span><span class="ta">சாதாரண ஜఞాண</span></td>
+        <td>20</td>
+        <td>20</td>
+        <td><span class="en">5 min</span><span class="ta">5 மిணட</span></td>
+      </tr>
+      <tr style="background:var(--teal-bg)">
+        <td><strong><span class="en">Total</span><span class="ta">மொத்த</span></strong></td>
+        <td><strong>100</strong></td>
+        <td><strong>100</strong></td>
+        <td><strong><span class="en">120 min</span><span class="ta">120 மిணட</span></strong></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3><span class="en">MCA Exam Pattern</span><span class="ta">MCA தேரவு வடிவம்</span></h3>
+  <table>
+    <thead>
+      <tr>
+        <th><span class="en">Section</span><span class="ta">அணుபாాக</span></th>
+        <th><span class="en">Questions</span><span class="ta">கேள்வி</span></th>
+        <th><span class="en">Marks</span><span class="ta">மதிப்பெண்</span></th>
+        <th><span class="en">Focus Areas</span><span class="ta">தஅல்லதுண மையமான கறేதர</span></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="en">Quantitative Aptitude</span><span class="ta">அளவுசார் தகுதியானதా</span></td>
+        <td>25</td>
+        <td>25</td>
+        <td><span class="en">Arithmetic, Algebra, Geometry</span><span class="ta">மதிப்பெண்குణిத, பీஜகுణిத, ஜஅல்லதுமిதి</span></td>
+      </tr>
+      <tr>
+        <td><span class="en">Analytical Reasoning</span><span class="ta">பிش்லேஷண தரக</span></td>
+        <td>25</td>
+        <td>25</td>
+        <td><span class="en">Logic puzzles, arrangements</span><span class="ta">தரக பஹేலీ, வயவஸஇருந்தது</span></td>
+      </tr>
+      <tr>
+        <td><span class="en">Computer Awareness</span><span class="ta">கணினி விழிப்புணர்வு</span></td>
+        <td>25</td>
+        <td>25</td>
+        <td><span class="en">Programming, Data structures</span><span class="ta">நிரலாக்கம், டేடా ஸம்ரசணాஎம்</span></td>
+      </tr>
+      <tr>
+        <td><span class="en">English</span><span class="ta">அம்குரేஜీ</span></td>
+        <td>25</td>
+        <td>25</td>
+        <td><span class="en">Grammar, comprehension, vocab</span><span class="ta">வஅல்லதுகரణ, ஸமஜா, شபதాவலీ</span></td>
+      </tr>
+      <tr style="background:var(--teal-bg)">
+        <td><strong><span class="en">Total</span><span class="ta">மொத்த</span></strong></td>
+        <td><strong>100</strong></td>
+        <td><strong>100</strong></td>
+        <td><strong><span class="en">120 minutes</span><span class="ta">120 மిணட</span></strong></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="highlight-box">
+    <p><span class="en">🎯 Scoring Strategy: Answer all 100 questions. With -0.33 for wrong, you need ~70 correct to score 65+ marks (good percentile). Leave only if absolutely unsure.</span><span class="ta">🎯 ஸஐக்குரిம்கு உத்திரம: ஸபీ 100 கேள்விోம் கే பதில் தేம்| தவறான க்கான -0.33 கే ஸాத, 65+ மதிப்பெண் ஸஐக்குர கரணే க்கான நீங்கள்ஐக்கு ~70 சரி சాஹిஎ| கేவல యதి பిலமொத்த ணిشசిத ணஹీம் ছోடేம்|</span></p>
+  </div>
+</section>
+
+<!-- SECTION 7: Syllabus -->
+<section class="content-section" id="syllabus">
+  <h2><span class="en">TANCET Syllabus 2026</span><span class="ta">TANCET பாடநெறி 2026</span></h2>
+  <p class="section-subtitle"><span class="en">Complete syllabus topics to cover for Management and MCA</span><span class="ta">MBA மற்றும் MCA க்கான கவர கரணే க்கான ஸம்பూரణ பாடநெறி வిறయ</span></p>
+
+  <h3><span class="en">Management Syllabus Topics</span><span class="ta">MBA பாடநெறி வిறయ</span></h3>
+
+  <h4><span class="en">Quantitative Aptitude</span><span class="ta">அளவுசார் தகுதியானதా</span></h4>
+  <ul>
+    <li><span class="en">Number Systems, HCF, LCM, Percentages, Profit & Loss, Speed & Distance</span><span class="ta">ஸம்ఖஅல்லது பரణాலీ, HCF, LCM, சதவீதம், லాப மற்றும் ஹాணి, குதి மற்றும் தూரీ</span></li>
+    <li><span class="en">Ratios & Proportions, Simple & Compound Interest, Time & Work</span><span class="ta">அணుபాத மற்றும் சமமானుபాத, ஸాதாాரణ மற்றும் கூட்டுப் பஅல்லதுஜ, நேரம் மற்றும் கాம</span></li>
+    <li><span class="en">Permutations & Combinations, Probability, Basic Statistics</span><span class="ta">கரமமீதுిவரதண மற்றும் ஸம்யోஜண, ஸம்பாాவணా, பుணిஅல்லதுதీ ஸాம்ఖயిஇன்</span></li>
+  </ul>
+
+  <h4><span class="en">English & Reading Comprehension</span><span class="ta">அம்குரేஜీ மற்றும் படாண ஸமஜா</span></h4>
+  <ul>
+    <li><span class="en">Sentence Correction, Fill in the Blanks, Synonyms & Antonyms</span><span class="ta">வాகய ஸుதாాர, ரిகத ஸஇருந்ததுண பரేம், மீதுஅல்லதுయவాசీ மற்றும் வిலోம</span></li>
+    <li><span class="en">Reading Passages (3-4 passages, 4 questions each), Para Jumbles</span><span class="ta">படாண மాரக (3-4 மాரக, பரதயేக 4 கேள்வி), பైரా ஜம்பல</span></li>
+    <li><span class="en">Grammar: Tenses, Articles, Prepositions, Agreement</span><span class="ta">வஅல்லதுகரణ: கాல, லేఖ, முன்னொட்டு, ஸமஜாౌதా</span></li>
+  </ul>
+
+  <h4><span class="en">Logical Reasoning</span><span class="ta">தాரகిக தரக</span></h4>
+  <ul>
+    <li><span class="en">Analogies, Blood Relations, Sequences & Series, Coding-Decoding</span><span class="ta">ஸాதுشய, ரகத ஸம்பம்தா, அணుகரம மற்றும் شரும்ఖலా, ஐக்குடిம்கு-டిஐக்குடిம்கு</span></li>
+    <li><span class="en">Logical Deduction, Syllogisms, Venn Diagrams, Arrangements</span><span class="ta">தాரகిக ணిகமண, ணஅல்லதுயவాகய, அவர்கள்ண ஆரేఖ, வயவஸஇருந்தது</span></li>
+  </ul>
+
+  <h4><span class="en">Data Interpretation</span><span class="ta">டేடా வஅல்லதுఖஅல்லது</span></h4>
+  <ul>
+    <li><span class="en">Tables, Bar Charts, Pie Charts, Line Graphs, Data Sufficiency</span><span class="ta">டేபல, பాர நான்குட, பాஈ நான்குட, லాஇண கரాபா, டేடా மீதுஅல்லதுபததా</span></li>
+    <li><span class="en">Calculations based on visual data representation</span><span class="ta">துشய டేடా பிரதిணిதாிதவம் கే பாதிர மீது கణணా</span></li>
+  </ul>
+
+  <h4><span class="en">General Knowledge (GK/Current Affairs)</span><span class="ta">சாதாரண ஜఞాண (ஜీகే/ஸமஸాமయిஇன்)</span></h4>
+  <ul>
+    <li><span class="en">Business News, Awards & Honors, Government Schemes, Economy, Technology</span><span class="ta">வஅல்லதுவஸాயిக ஸமాநான்கு, பుரஸகాர மற்றும் ஸமமాண, அரசுీ யోஜணాஎம், அரதாவயவஸஇருந்தது, பரౌதயోகిஇன்</span></li>
+  </ul>
+
+  <h3><span class="en">MCA Syllabus Topics</span><span class="ta">MCA பாடநெறி வిறయ</span></h3>
+
+  <h4><span class="en">Quantitative Aptitude & Analytical Reasoning</span><span class="ta">அளவுசார் தகுதியானதా மற்றும் பிش்லேஷண தரக</span></h4>
+  <ul>
+    <li><span class="en">Algebra, Geometry, Calculus fundamentals, Set theory</span><span class="ta">பీஜகுణిத, ஜஅல்லதுமిதి, கலண மూல பాதేம், இலிருந்துட ஸిததாాம்த</span></li>
+    <li><span class="en">Logic Puzzles, Pattern Recognition, Problem Solving</span><span class="ta">தரக பஹేலీ, வடிவம் மాணயதా, ஸமஸஅல்லது தீர்வு</span></li>
+  </ul>
+
+  <h4><span class="en">Computer Awareness</span><span class="ta">கணினி விழிப்புணர்வு</span></h4>
+  <ul>
+    <li><span class="en">Basic Programming Concepts, Data Structures (Arrays, Linked Lists, Trees, Graphs)</span><span class="ta">பుணిஅல்லதுதీ நிரலாக்கம் கருத்துக்கள், டేடా ஸம்ரசணాஎம் (ஸரణిஅல்லதும், லిம்கட லిஸட, டரీ, கரాபா)</span></li>
+    <li><span class="en">Algorithms, Sorting & Searching, Database Basics, Networking</span><span class="ta">அல்கோரிதம், சாடాஈ மற்றும் ఖోஜ, டేடాபేஸ பేஸిகஸ, வலையமைப்பு</span></li>
+  </ul>
+
+  <div class="highlight-box">
+    <p><span class="en">💡 Syllabus Depth: TANCET doesn't require advanced topics. Focus on fundamentals and practice-based learning. 80% of questions repeat from same topics year after year.</span><span class="ta">💡 பாடநெறி ஆழமானஈ: TANCET ஐக்கு உணணத வిறయోம் இன் ஆவشயகதా ணஹీம் உள்ளது| மూல பాதోம் மற்றும் அபஅல்லதுஸ-பாதிரిத ஸీఖணే மீது தஅல்லதுண மையமான கரేம்| 80% கேள்வி ஸాல-தர-ஸాல ஒரு ஹీ வిறయోம் இலிருந்து இரண்டுஹரాதే உள்ளதும்|</span></p>
+  </div>
+</section>
+
+<!-- SECTION 8: Preparation Tips -->
+<section class="content-section" id="prep-tips">
+  <h2><span class="en">TANCET 2026 Preparation Tips</span><span class="ta">TANCET 2026 தైஅல்லதுரీ டిபஸ</span></h2>
+  <p class="section-subtitle"><span class="en">Expert strategies to score 80+ percentile</span><span class="ta">80+ சதவீதம்க ஸஐக்குர கரணే க்கான சிறப்புஜఞ உத்திரம</span></p>
+
+  <h3><span class="en">4-Month Prep Schedule (Jan-May)</span><span class="ta">4-மాஹ இன் தైஅல்லதுரీ நிகழ்ச்சி (ஜணவரీ-மஈ)</span></h3>
+
+  <h4><span class="en">Month 1 (Jan): Foundation</span><span class="ta">மஹీணా 1 (ஜணவரీ): ணీம்வ</span></h4>
+  <ul>
+    <li><span class="en">Complete the syllabus once from standard books</span><span class="ta">மాணக பుஸதஐக்கும் இலிருந்து பாடநெறி ஒரு பాர முழு கரేம்</span></li>
+    <li><span class="en">Take topic-wise quizzes to identify weak areas</span><span class="ta">குறைவுஜోர பகுதிகள் இன் அடையாள க்கான வిறయ-வాர கேள்விోததரీ லేம்</span></li>
+    <li><span class="en">Goal: Build conceptual clarity</span><span class="ta">லகறய: வైநான்குిக ஸபறடதా பணాஎம்</span></li>
+  </ul>
+
+  <h4><span class="en">Month 2 (Feb): Practice</span><span class="ta">மஹీணా 2 (பரவரీ): அபஅல்லதுஸ</span></h4>
+  <ul>
+    <li><span class="en">Solve 500+ practice questions across all sections</span><span class="ta">ஸபీ அணుபாాகోம் இல் 500+ அபஅல்லதுஸ கேள்விోம் ஐக்கு ஹல கரేம்</span></li>
+    <li><span class="en">Focus on high-frequency topics (Arithmetic, Quant, English)</span><span class="ta">உசச-ஆவுததి வిறయోம் மீது தஅல்லதுண மையமான கரేம் (மதிப்பெண்குణిத, கவాம்ட, அம்குரేஜీ)</span></li>
+    <li><span class="en">Goal: Speed + Accuracy</span><span class="ta">லகறய: குதి + ஸடీகதా</span></li>
+  </ul>
+
+  <h4><span class="en">Month 3 (Mar): Mock Tests</span><span class="ta">மஹీணా 3 (மాரச): மೋக டేஸட</span></h4>
+  <ul>
+    <li><span class="en">Take 10+ full-length mock tests under timed conditions</span><span class="ta">நேரம்-ஸీமిத மீதுిஸதாిதియోம் இல் 10+ பూரణ-லம்பాஈ மೋக தேரவுஎம் லేம்</span></li>
+    <li><span class="en">Analyze mistakes and weak sections after each test</span><span class="ta">பரதயేக தேரவு கే பాத தவறானియోம் மற்றும் குறைவுஜోர அணుபாాகోம் கా வిشலేறణ கரేம்</span></li>
+    <li><span class="en">Goal: Score 70+ on mock tests consistently</span><span class="ta">லகறய: மೋக தேரவுஒம் மீது லகాதాர 70+ ஸஐக்குர கரేம்</span></li>
+  </ul>
+
+  <h4><span class="en">Month 4 (Apr-May): Final Revision</span><span class="ta">மஹీணా 4 (அபரైல-மஈ): இறுதி ஸம்شోதாண</span></h4>
+  <ul>
+    <li><span class="en">Solve all 10 years of PYQ papers in timed mode</span><span class="ta">நேரம் ஸీமిத மోட இல் ஸபీ 10 ஆண்டுోம் கే PYQ பதரోம் ஐக்கு ஹல கரేம்</span></li>
+    <li><span class="en">Revisit formulas, shortcuts, and weak areas daily</span><span class="ta">ஸూதர, شೋரடகட மற்றும் குறைவுஜోர பகுதிகள் இன் தైணిக ஸமీகறా கரేம்</span></li>
+    <li><span class="en">Goal: Maintain confidence and accuracy</span><span class="ta">லகறய: சுயநம்பிக்கை மற்றும் ஸடీகதా பணాஎ ரఖేம்</span></li>
+  </ul>
+
+  <h3><span class="en">Section-Wise Strategy</span><span class="ta">அணుபாాக-வాர உத்திரம</span></h3>
+
+  <h4><span class="en">Quantitative Aptitude (20 marks, 20 questions)</span><span class="ta">அளவுசார் தகுதியானதా (20 மதிப்பெண், 20 கேள்வி)</span></h4>
+  <ul>
+    <li><span class="en">Learn shortcuts for percentage, profit/loss, time-work</span><span class="ta">சதவீதம், லాப/ஹాணి, நேரம்-கాரய க்கான شೋரடகட ஸీఖేம்</span></li>
+    <li><span class="en">Practice 2 questions per day from this section</span><span class="ta">இஸ அணుபாాக இலிருந்து பரதిநாள் 2 கேள்விోம் கా அபஅல்லதுஸ கரేம்</span></li>
+    <li><span class="en">Target: 15-18 marks (75-90% accuracy)</span><span class="ta">லகறய: 15-18 மதிப்பெண் (75-90% ஸடీகதా)</span></li>
+  </ul>
+
+  <h4><span class="en">English & RC (20 marks)</span><span class="ta">அம்குரేஜీ மற்றும் RC (20 மதிப்பெண்)</span></h4>
+  <ul>
+    <li><span class="en">Read 1 English article daily + solve 1 RC passage</span><span class="ta">பரதిநாள் 1 அம்குரేஜీ லేఖ படేம் + 1 RC மాரக ஹல கரేம்</span></li>
+    <li><span class="en">Focus on grammar rules and sentence patterns</span><span class="ta">வஅல்லதுகரణ ணిயமోம் மற்றும் வాகய வடிவம் மீது தஅல்லதுண மையமான கரేம்</span></li>
+    <li><span class="en">Target: 14-17 marks</span><span class="ta">லகறய: 14-17 மதிப்பெண்</span></li>
+  </ul>
+
+  <h4><span class="en">Logical Reasoning (20 marks)</span><span class="ta">தాரகిக தரக (20 மதிப்பெண்)</span></h4>
+  <ul>
+    <li><span class="en">Practice puzzles, arrangements, sequences 3x per week</span><span class="ta">ஸபதాஹ இல் 3x பஹేலియోம், வயவஸஇருந்தது, தொடர் கా அபஅல்லதுஸ கரేம்</span></li>
+    <li><span class="en">Build pattern recognition skills</span><span class="ta">வடிவம் மాணயதా கౌشல பணాஎம்</span></li>
+    <li><span class="en">Target: 14-17 marks</span><span class="ta">லகறய: 14-17 மதிப்பெண்</span></li>
+  </ul>
+
+  <h4><span class="en">Data Interpretation (20 marks)</span><span class="ta">டేடా வஅல்லதுఖஅல்லது (20 மதிப்பெண்)</span></h4>
+  <ul>
+    <li><span class="en">Practice reading charts, graphs, tables</span><span class="ta">நான்குட, கரాபா, டేபல படாணే கా அபஅல்லதுஸ கரేம்</span></li>
+    <li><span class="en">Master percentage calculations quickly</span><span class="ta">ஜலதీ சதவீதம் கణணా இல் மஹాரத ஹాஸిல கரేம்</span></li>
+    <li><span class="en">Target: 15-18 marks</span><span class="ta">லகறய: 15-18 மதிப்பெண்</span></li>
+  </ul>
+
+  <h4><span class="en">General Knowledge (20 marks)</span><span class="ta">சாதாரண ஜఞాண (20 மதிப்பெண்)</span></h4>
+  <ul>
+    <li><span class="en">Read business news 10 minutes daily (Economic Times, Hindu Business)</span><span class="ta">பரதిநாள் 10 மిணட வஅல்லதுவஸాயిக ஸமాநான்கு படేம் (Economic Times, Hindu Business)</span></li>
+    <li><span class="en">Follow current affairs from last 6 months</span><span class="ta">பిছலే 6 மஹీணోம் இலிருந்து ஸமஸాமయిஇன் கా அணుஸரణ கரేம்</span></li>
+    <li><span class="en">Target: 10-14 marks (attempt easy questions only)</span><span class="ta">லகறய: 10-14 மதிப்பெண் (கేவல எளிது கேள்விోம் கా பரஅல்லதுஸ கரేம்)</span></li>
+  </ul>
+
+  <div class="highlight-box">
+    <p><span class="en">⚡ Pro Strategy: Attempt questions in this order: GK → English → Quant → DI → LR. This way, you secure easy marks first and have maximum time for harder sections.</span><span class="ta">⚡ பரో உத்திரம: இஸ கரம இல் கேள்விోம் கా பரஅல்லதுஸ கரేம்: GK → English → Quant → DI → LR| இஸ தரஹ, நீங்கள் பஹலే எளிது மதிப்பெண் பரాபத கரதే உள்ளதும் மற்றும் கடினமான அணుபாాகోம் க்கான அதிகம்தம நேரம் ரఖதే உள்ளதும்|</span></p>
+  </div>
+</section>
+
+<!-- SECTION 9: Admit Card -->
+<section class="content-section" id="admit-card">
+  <h2><span class="en">TANCET Admit Card 2026</span><span class="ta">TANCET ஒப்புதல் பதர 2026</span></h2>
+  <p class="section-subtitle"><span class="en">Download your admit card and exam day essentials</span><span class="ta">அபணా ஒப்புதல் பதர டాஉணலోட கரేம் மற்றும் தேரவு தిவஸ கే பொதுவான</span></p>
+
+  <h3><span class="en">When and How to Download</span><span class="ta">கப மற்றும் கైஇலிருந்து டాஉணலోட கரేம்</span></h3>
+  <ul>
+    <li><span class="en"><strong>Release Date:</strong> April 25-30, 2026</span><span class="ta"><strong>ஜాரీ கரணే இன் தேதி:</strong> அபரైல 25-30, 2026</span></li>
+    <li><span class="en"><strong>Portal:</strong> tancet.annauniv.edu</span><span class="ta"><strong>பోரடல:</strong> tancet.annauniv.edu</span></li>
+    <li><span class="en"><strong>Login with:</strong> Application number + Date of Birth</span><span class="ta"><strong>லೋகిண கரేம்:</strong> ஆஅவர்கள்தண ஸம்ఖஅல்லது + ஜணம தిதి</span></li>
+    <li><span class="en"><strong>Document:</strong> PDF file (save both digital & printed copy)</span><span class="ta"><strong>பத்துதాஅவர்கள்ஜ:</strong> PDF பాஇல (டిஜిடல மற்றும் மుதரిத பரதి இரண்டுணోம் ஸஹేஜేம்)</span></li>
+  </ul>
+
+  <h3><span class="en">What's in the Admit Card?</span><span class="ta">ஒப்புதல் பதர இல் கஅல்லது உள்ளது?</span></h3>
+  <ul>
+    <li><span class="en">Your registration number and roll number</span><span class="ta">நீங்கள்கా பம்ஜీகரణ ஸம்ఖஅல்லது மற்றும் ரోல ஸம்ఖஅல்லது</span></li>
+    <li><span class="en">Exam center name and address</span><span class="ta">தேரவு கేம்தர கా பெயர் மற்றும் முகவரி</span></li>
+    <li><span class="en">Exam date, time, and duration</span><span class="ta">தேரவு இன் தேதி, நேரம் மற்றும் அவதి</span></li>
+    <li><span class="en">Report time (usually 1.5 hours before exam)</span><span class="ta">அறிக்கை நேரம் (ஆமதౌர மீது தேரவு இலிருந்து 1.5 மணி நேரம் பஹலే)</span></li>
+    <li><span class="en">Important instructions and guidelines</span><span class="ta">முககியமான ணిரதేش மற்றும் திசை</span></li>
+  </ul>
+
+  <h3><span class="en">Exam Day Essentials Checklist</span><span class="ta">தேரவு தిவஸ பொதுவான சేகலిஸட</span></h3>
+  <div class="info-grid">
+    <div class="info-card">
+      <div class="card-title">Must Carry</div>
+      <p style="text-align:left;font-size:13px;margin:8px 0">✓ Admit Card<br>✓ Photo ID (Aadhar/Passport)<br>✓ 2 Passport photos</p>
+    </div>
+    <div class="info-card">
+      <div class="card-title">Allowed Items</div>
+      <p style="text-align:left;font-size:13px;margin:8px 0">✓ Pen & Pencil<br>✓ Eraser<br>✓ Calculator (offline)</p>
+    </div>
+    <div class="info-card">
+      <div class="card-title">NOT Allowed</div>
+      <p style="text-align:left;font-size:13px;margin:8px 0">✗ Mobile phone<br>✗ Smartwatch<br>✗ Electronic gadgets</p>
+    </div>
+    <div class="info-card">
+      <div class="card-title">Time Planning</div>
+      <p style="text-align:left;font-size:13px;margin:8px 0">Arrive 30 min early<br>Undergo frisking<br>Settle by exam start</p>
+    </div>
+  </div>
+
+  <h3><span class="en">If You Don't Receive Admit Card</span><span class="ta">యதి நீங்கள்ஐக்கு ஒப்புதல் பதர ணஹీம் மిலதా உள்ளது</span></h3>
+  <ul>
+    <li><span class="en">Check your email (including spam folder) for download link</span><span class="ta">டాஉணலోட லిம்க க்கான அபணే ஈமేல இன் ஜాம்ச கரేம் (ஸபైம பாోலடர ஸஹిத)</span></li>
+    <li><span class="en">Visit exam center early on exam day — they have printouts</span><span class="ta">தேரவு தిவஸ மீது தேரவு கేம்தர மீது ஜலதీ ஜాஎம் — உணகే பాஸ அச்சு உள்ளதும்</span></li>
+    <li><span class="en">Contact: tancet.annauniv.edu support or +91-XXXX-XXXXXX (provided on website)</span><span class="ta">ஸம்மீதுக கரేம்: tancet.annauniv.edu ஆதரவு அல்லது +91-XXXX-XXXXXX (அவர்கள்பஸాஇட மீது தిஎ குஎ)</span></li>
+  </ul>
+
+  <div class="highlight-box">
+    <p><span class="en">🎯 Pro Tip: Download your admit card the day it's released. Print 2 copies — one for exam day, one for your records. Also screenshot and save digitally.</span><span class="ta">🎯 பரో டిப: ஜాரీ ஹోணే கే நாள் அபணా ஒப்புதல் பதர டాஉணலోட கரేம்| 2 பரதిஅல்லதும் பரిம்ட கரేம் — ஒரு தேரவு தిவஸ க்கான, ஒரு நீங்கள்கే ரిகೋரட க்கான| டిஜిடல ரూப இலிருந்து திரைப்படம் மற்றும் ஸஹేஜేம் பీ|</span></p>
+  </div>
+</section>
+
+<!-- SECTION 10: Answer Key -->
+<section class="content-section" id="answer-key">
+  <h2><span class="en">TANCET 2026 Answer Key Download</span><span class="ta">TANCET 2026 பதில் கుம்ஜీ டాஉணலోட</span></h2>
+  <p class="section-subtitle"><span class="en">Check your answers and calculate your probable score</span><span class="ta">அபணే பதில்ోம் இன் ஜాம்ச கரేம் மற்றும் ஸம்பாాவిத ஸஐக்குர இன் கణணా கரేம்</span></p>
+
+  <h3><span class="en">Timeline for Answer Key Release</span><span class="ta">பதில் கుம்ஜీ ஜాரీ கரணే இன் நேரம் ஸాரణీ</span></h3>
+  <ul>
+    <li><span class="en"><strong>Provisional Answer Key:</strong> May 9, 2026 (evening, same day as exam)</span><span class="ta"><strong>அணம்தిம பதில் கుம்ஜీ:</strong> மஈ 9, 2026 (شాம, தேரவு கే சமமான நாள்)</span></li>
+    <li><span class="en"><strong>Objection Period:</strong> 2-3 days (usually May 10-12)</span><span class="ta"><strong>நீங்கள்ததి அவதి:</strong> 2-3 நாள் (ஆமதౌர மீது மஈ 10-12)</span></li>
+    <li><span class="en"><strong>Final Answer Key:</strong> May 15-20, 2026</span><span class="ta"><strong>இறுதி பதில் கుம்ஜీ:</strong> மஈ 15-20, 2026</span></li>
+  </ul>
+
+  <h3><span class="en">How to Calculate Your Score</span><span class="ta">அபணా ஸஐக்குர கైஇலிருந்து கణணా கரేம்</span></h3>
+  <ol>
+    <li><span class="en">Download the official answer key from tancet.annauniv.edu</span><span class="ta">tancet.annauniv.edu இலிருந்து ஆதாిகాரిக பதில் கుம்ஜీ டాஉணலోட கரేம்</span></li>
+    <li><span class="en">Compare your answers with the answer key</span><span class="ta">அபணే பதில்ోம் ஐக்கு பதில் கుம்ஜీ இலிருந்து தుலணా கரేம்</span></li>
+    <li><span class="en">Formula: Score = (Correct × 1) + (Wrong × -0.33)</span><span class="ta">ஸూதர: ஸஐக்குர = (சரி × 1) + (தவறான × -0.33)</span></li>
+    <li><span class="en">Example: 75 correct, 25 wrong = (75 × 1) + (25 × -0.33) = 75 - 8.25 = 66.75 marks</span><span class="ta">உதాஹரణ: 75 சரி, 25 தவறான = (75 × 1) + (25 × -0.33) = 75 - 8.25 = 66.75 மதிப்பெண்</span></li>
+  </ol>
+
+  <h3><span class="en">Raising Objections to Answer Key</span><span class="ta">பதில் கుம்ஜీ மீது நீங்கள்ததి உடாాணా</span></h3>
+  <ul>
+    <li><span class="en">If you believe an answer is incorrect, file an objection during the official period</span><span class="ta">యதి நீங்கள் மాணதే உள்ளதும் கి ஐக்குஈ பதில் தவறான உள்ளது, தో ஆதாిகాரిக அவதి கే தౌரాண நீங்கள்ததి தரஜ கரేம்</span></li>
+    <li><span class="en">Upload supporting documents (reference materials)</span><span class="ta">ஸஹాயக பத்துதాஅவர்கள்ஜ (ஸம்தரபா ஸాமகரీ) அபலోட கரేம்</span></li>
+    <li><span class="en">Anna University reviews objections and updates the final key accordingly</span><span class="ta">Anna University நீங்கள்ததియోம் இன் ஸமీகறా கரதా உள்ளது மற்றும் ததணుஸాர இறுதி கుம்ஜీ அபடేட கரதా உள்ளது</span></li>
+    <li><span class="en">Final scores are calculated based on the final answer key</span><span class="ta">இறுதி பதில் கుம்ஜీ கే பாதிர மீது இறுதி ஸஐக்குர இன் கణணా இன் ஜాதీ உள்ளது</span></li>
+  </ul>
+
+  <h3><span class="en">Score vs Percentile</span><span class="ta">ஸஐக்குர பபெயர் சதவீதம்க</span></h3>
+  <ul>
+    <li><span class="en"><strong>Your Score:</strong> Absolute marks (out of 100)</span><span class="ta"><strong>நீங்கள்கా ஸஐக்குர:</strong> பూரణ மதிப்பெண் (100 இல் இலிருந்து)</span></li>
+    <li><span class="en"><strong>Your Percentile:</strong> Percentage of candidates who scored less than you</span><span class="ta"><strong>நீங்கள்கా சதவீதம்க:</strong> வேட்பாளர்கள் கా சதவீதம் யார் நீங்கள்இலிருந்து குறைவு ஸஐக்குர கిஅல்லது</span></li>
+    <li><span class="en">Example: 90%ile means you scored better than 90% of candidates</span><span class="ta">உதాஹரణ: 90%ile கా அரதா உள்ளது நீங்கள் 90% வேட்பாளர்கள் இலிருந்து பేஹதர ஸஐக்குர கిஎ</span></li>
+  </ul>
+
+  <div class="highlight-box">
+    <p><span class="en">📊 Score Benchmark: 65+ marks = 80%ile (good), 75+ marks = 90%ile (excellent), 85+ marks = 95%ile (exceptional).</span><span class="ta">📊 ஸஐக்குர அளவுகோல்: 65+ மதிப்பெண் = 80%ile (நல்ல), 75+ மதிப்பெண் = 90%ile (உதகுறட), 85+ மதிப்பெண் = 95%ile (அஸాதாాரణ)|</span></p>
+  </div>
+</section>
+
+<!-- SECTION 11: Results -->
+<section class="content-section" id="results">
+  <h2><span class="en">TANCET Results 2026</span><span class="ta">TANCET மீதுిణాம 2026</span></h2>
+  <p class="section-subtitle"><span class="en">When and how to check your TANCET results</span><span class="ta">கப மற்றும் கైஇலிருந்து அபணే TANCET மீதுిణాம இன் ஜాம்ச கரేம்</span></p>
+
+  <h3><span class="en">Result Declaration Timeline</span><span class="ta">மீதுిణాம குోறణా நேரம் ஸాரణీ</span></h3>
+  <ul>
+    <li><span class="en"><strong>Provisional Answer Key:</strong> May 9 evening</span><span class="ta"><strong>அணம்தిம பதில் கుம்ஜీ:</strong> மஈ 9 شాம</span></li>
+    <li><span class="en"><strong>Objection Window:</strong> May 10-12</span><span class="ta"><strong>நீங்கள்ததి வిம்டో:</strong> மஈ 10-12</span></li>
+    <li><span class="en"><strong>Final Results (with Percentile & Rank):</strong> May 20-25, 2026</span><span class="ta"><strong>இறுதி மீதுిణాம (சதவீதம்க மற்றும் தரவரிசை கే ஸాத):</strong> மஈ 20-25, 2026</span></li>
+  </ul>
+
+  <h3><span class="en">How to Check Your Results</span><span class="ta">அபணే மீதுిణాமోம் இன் ஜాம்ச கైஇலிருந்து கரేம்</span></h3>
+  <ol>
+    <li><span class="en">Go to tancet.annauniv.edu</span><span class="ta">tancet.annauniv.edu மீது ஜాஎம்</span></li>
+    <li><span class="en">Click on "Results" or "Score Card" link</span><span class="ta">"மீதுిణాம" அல்லது "ஸஐக்குர கాரட" லిம்க மீது கலిக கரేம்</span></li>
+    <li><span class="en">Enter your Registration Number and Date of Birth</span><span class="ta">அபணా பம்ஜీகரణ ஸம்ఖஅல்லது மற்றும் ஜணம தిதి தரஜ கரేம்</span></li>
+    <li><span class="en">Download your Score Card (PDF)</span><span class="ta">அபணా ஸஐக்குர கాரட டాஉணலోட கரేம் (PDF)</span></li>
+    <li><span class="en">Save 2-3 copies and note your Rank & Percentile</span><span class="ta">2-3 பரதిஅல்லதும் ஸஹేஜేம் மற்றும் அபணే தரவரிசை மற்றும் சதவீதம்க ஐக்கு ணోட கரేம்</span></li>
+  </ol>
+
+  <h3><span class="en">Understanding Your Score Card</span><span class="ta">அபணే ஸஐக்குர கాரட ஐக்கு புரிந்து</span></h3>
+  <ul>
+    <li><span class="en"><strong>Total Score:</strong> Your marks out of 100</span><span class="ta"><strong>மொத்த ஸஐக்குர:</strong> 100 இல் இலிருந்து நீங்கள்கే மதிப்பெண்</span></li>
+    <li><span class="en"><strong>Percentile:</strong> Your ranking among all candidates (higher is better)</span><span class="ta"><strong>சதவீதம்க:</strong> ஸபీ வேட்பாளர்கள் கే பీச நீங்கள்இன் தரவரிசைిம்கு (உசச பేஹதர உள்ளது)</span></li>
+    <li><span class="en"><strong>Merit Rank (Category-wise):</strong> Your rank within your category (OC/BC/SC/ST/etc.)</span><span class="ta"><strong>தகுதியானதా தரவரிசை (شரేణీ-வాர):</strong> நீங்கள்இன் شரేణీ கే பీதர நீங்கள்இன் தரவரிசை (OC/BC/SC/ST/ஆதి)</span></li>
+    <li><span class="en"><strong>Validity:</strong> Score card is valid for 5 years</span><span class="ta"><strong>வైததా:</strong> ஸஐக்குர கాரட 5 ஸాல க்கான மాணய உள்ளது</span></li>
+  </ul>
+
+  <h3><span class="en">Next Steps After Results</span><span class="ta">மீதுిణాமోம் கే பాத அகுலే கதம</span></h3>
+  <ol>
+    <li><span class="en">Check your category rank and predicted college list</span><span class="ta">அபணీ شரేణీ தரவரிசை மற்றும் முன்னறிப்பు இன் குஈ கல்லூரி ஸూசీ இன் ஜాம்ச கரేம்</span></li>
+    <li><span class="en">Prepare documents for counselling (Score card, Mark sheets, ID proof)</span><span class="ta">ஆலோசனை க்கான பத்துதాஅவர்கள்ஜ தైஅல்லதுர கரేம் (ஸஐக்குர கాரட, மాரக شీட, ஆஈடీ பரமాణ)</span></li>
+    <li><span class="en">Wait for official counselling schedule announcement from DoTE</span><span class="ta">DoTE இலிருந்து ஆதாిகాரిக ஆலோசனை நிகழ்ச்சி குోறణా இன் பொறுமை கரేம்</span></li>
+    <li><span class="en">Register for counselling online when registration starts</span><span class="ta">பம்ஜీகரణ شుரూ ஹోணే மீது ஆலோசனை க்கான ஒணலాஇண பம்ஜీகரణ கரేம்</span></li>
+  </ol>
+
+  <div class="highlight-box">
+    <p><span class="en">💡 Tip: Save screenshots of your score card. Update your resume with "TANCET 2026: [Your Percentile]%ile, Rank: [Your Rank]". This helps in college applications and interviews.</span><span class="ta">💡 டిப: அபணే ஸஐக்குர கాரட கే திரைப்படம் ஸஹేஜేம்| "TANCET 2026: [நீங்கள்கా சதவீதம்க]%ile, தரவரிசை: [நீங்கள்இன் தரவரிசை]" கే ஸాத அபணా ரిஜயూமే அபடేட கரేம்| இது கல்லூரி கే ஆஅவர்கள்தண மற்றும் நேர்காணல் இல் மதத கரதా உள்ளது|</span></p>
+  </div>
+</section>
+
+<!-- SECTION 12: Counselling -->
+<section class="content-section" id="counselling">
+  <h2><span class="en">TANCET 2026 Counselling & Admission</span><span class="ta">TANCET 2026 கலந்தாய்வு மற்றும் சேர்க்கை</span></h2>
+  <p class="section-subtitle"><span class="en">Complete guide to counselling process and college selection</span><span class="ta">ஆலோசனை பரகரిஅல்லது மற்றும் கல்லூரி தேர்வு க்கான ஸம்பూரణ வழிகாட்டல்</span></p>
+
+  <h3><span class="en">Counselling Authority</span><span class="ta">ஆலோசனை அதిகாரம்</span></h3>
+  <ul>
+    <li><span class="en"><strong>DoTE (Directorate of Technical Education), Tamil Nadu</strong> conducts the counselling</span><span class="ta"><strong>DoTE (தகணీஇன் கல்வி ணిதేشాலయ), தமిலணాடు</strong> ஆலோசனை ஸம்சాலిத கரதా உள்ளது</span></li>
+    <li><span class="en">Official Website: www.tnspeee.ac.in</span><span class="ta">ஆதாిகాரిக அவர்கள்பஸాஇட: www.tnspeee.ac.in</span></li>
+    <li><span class="en">Counselling is conducted round-wise (2-3 rounds typically)</span><span class="ta">ஆலோசனை தౌர-தர-தౌர (ஆமதౌர மீது 2-3 தౌர) ஆயోஜిத கిஅல்லது ஜాதా உள்ளது</span></li>
+  </ul>
+
+  <h3><span class="en">Counselling Timeline (Expected)</span><span class="ta">ஆலோசனை நேரம் ஸాரణీ (அபేகறిத)</span></h3>
+  <table>
+    <thead>
+      <tr>
+        <th><span class="en">Event</span><span class="ta">காடணా</span></th>
+        <th><span class="en">Timeline</span><span class="ta">நேரம் ஸాரణీ</span></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="en">Results Announcement</span><span class="ta">மீதுిణాம குోறణా</span></td>
+        <td><span class="en">May 20-25, 2026</span><span class="ta">மஈ 20-25, 2026</span></td>
+      </tr>
+      <tr>
+        <td><span class="en">Counselling Registration Starts</span><span class="ta">ஆலோசனை பம்ஜీகரణ شుரూ</span></td>
+        <td><span class="en">May 25, 2026</span><span class="ta">மஈ 25, 2026</span></td>
+      </tr>
+      <tr>
+        <td><span class="en">Document Verification</span><span class="ta">பத்துதాஅவர்கள்ஜ ஸதஅல்லதுபண</span></td>
+        <td><span class="en">May 25-31, 2026</span><span class="ta">மஈ 25-31, 2026</span></td>
+      </tr>
+      <tr>
+        <td><span class="en">Choice Filing (Round 1)</span><span class="ta">தேர்வு பாాஇலిம்கு (தౌர 1)</span></td>
+        <td><span class="en">June 1-5, 2026</span><span class="ta">ஜూண 1-5, 2026</span></td>
+      </tr>
+      <tr>
+        <td><span class="en">Allotment (Round 1)</span><span class="ta">ஆவம்டண (தౌர 1)</span></td>
+        <td><span class="en">June 8-9, 2026</span><span class="ta">ஜూண 8-9, 2026</span></td>
+      </tr>
+      <tr>
+        <td><span class="en">Reporting to Colleges</span><span class="ta">கல்லூரி ஐக்கு ரిபోரட</span></td>
+        <td><span class="en">June 10-15, 2026</span><span class="ta">ஜూண 10-15, 2026</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3><span class="en">Steps in Counselling Process</span><span class="ta">ஆலோசனை பரகரిஅல்லது இல் கட்ட</span></h3>
+  <ol>
+    <li><span class="en"><strong>Register Online:</strong> Visit tnspeee.ac.in, login with your TANCET roll number</span><span class="ta"><strong>ஒணலాஇண பம்ஜీகரణ கரేம்:</strong> tnspeee.ac.in மீது ஜాஎம், அபணే TANCET ரోல ணம்பர இலிருந்து லೋகిண கரేம்</span></li>
+    <li><span class="en"><strong>Document Verification:</strong> Submit original documents at your nearest counselling center</span><span class="ta"><strong>பத்துதాஅவர்கள்ஜ ஸதஅல்லதுபண:</strong> அபணే ணిகடதம ஆலோசனை கేம்தர மீது மూல பத்துதాஅவர்கள்ஜ ஜமా கரేம்</span></li>
+    <li><span class="en"><strong>Choice Filling:</strong> Select colleges in order of preference (most important!)</span><span class="ta"><strong>தேர்வு பாரணా:</strong> முன்னுரிமை கే கரம இல் கல்லூரி சుணేம் (ஸபஇலிருந்து முககியமான!)</span></li>
+    <li><span class="en"><strong>Allotment:</strong> System allocates college based on rank, category, and choice order</span><span class="ta"><strong>ஆவம்டண:</strong> ஸిஸடம தரவரிசை, شரేణీ மற்றும் தேர்வு கரம கే பாதிர மீது கல்லூரி ஆவம்டిத கரதా உள்ளது</span></li>
+    <li><span class="en"><strong>Spot Counselling:</strong> If unsatisfied, appear for additional rounds</span><span class="ta"><strong>ஸபೋட ஆலோசனை:</strong> యதి அஸம்தుறட உள்ளதும், தో அதిரిகத தౌர க்கான உபஸதாిத ஹోம்</span></li>
+  </ol>
+
+  <h3><span class="en">Top Colleges Accepting TANCET</span><span class="ta">TANCET ஸவీகాர கரணే வాலే شీரற கல்லூரி</span></h3>
+  <ul>
+    <li><span class="en">Anna University Department of Management Studies (Anna DOMS)</span><span class="ta">Anna University Department of Management Studies (Anna DOMS)</span></li>
+    <li><span class="en">PSG Institute of Management, Coimbatore</span><span class="ta">PSG Institute of Management, Coimbatore</span></li>
+    <li><span class="en">MIT School of Business, Chennai</span><span class="ta">MIT School of Business, Chennai</span></li>
+    <li><span class="en">Thiagarajar School of Management, Madurai</span><span class="ta">Thiagarajar School of Management, Madurai</span></li>
+    <li><span class="en">Thapar Institute of Engineering and Technology</span><span class="ta">Thapar Institute of Engineering and Technology</span></li>
+    <li><span class="en">SSN School of Management, Chennai</span><span class="ta">SSN School of Management, Chennai</span></li>
+    <li><span class="en">SRM Institute of Science and Technology</span><span class="ta">SRM Institute of Science and Technology</span></li>
+    <li><span class="en">Kongu Engineering College, Perundurai</span><span class="ta">Kongu Engineering College, Perundurai</span></li>
+  </ul>
+
+  <div class="highlight-box">
+    <p><span class="en">⚠️ Important: Carefully fill your choice order. Colleges are allocated based on availability and your rank. Higher rank = better college. DoTE will not change your allotment if you regret your choice order later.</span><span class="ta">⚠️ முககியமான: அபணే தேர்வு கரம ஐக்கு கவனமாக பரేம்| கல்லூரி உபலபததా மற்றும் நீங்கள்இன் தரவரிசை கే பாதிர மீது ஆவம்டిத கిஎ ஜాதే உள்ளதும்| உசச தரவரிசை = பేஹதர கல்லூரி| DoTE அபணీ தேர்வு கரம மீது பசாதాவా கரணే கే பాத அபணే ஆவம்டண ஐக்கு ணஹీம் பதலేகా|</span></p>
+  </div>
+</section>
+
+<!-- SECTION 13: Contact Information -->
+<section class="content-section" id="contact-info">
+  <h2><span class="en">TANCET 2026 Contact Information</span><span class="ta">TANCET 2026 ஸம்மீதுக தகவல்</span></h2>
+  <p class="section-subtitle"><span class="en">Official resources and contact details for TANCET</span><span class="ta">TANCET க்கான ஆதாిகాரిக ஸம்ஸాதாண மற்றும் ஸம்மீதுக வిவரణ</span></p>
+
+  <h3><span class="en">Official Websites</span><span class="ta">ஆதாిகాரిக அவர்கள்பஸాஇடేம்</span></h3>
+  <ul>
+    <li><span class="en"><strong>TANCET Main Portal:</strong> www.tancet.annauniv.edu</span><span class="ta"><strong>TANCET மుఖయ பోரடல:</strong> www.tancet.annauniv.edu</span></li>
+    <li><span class="en"><strong>Counselling & Admissions:</strong> www.tnspeee.ac.in</span><span class="ta"><strong>கலந்தாய்வு மற்றும் சேர்க்கை:</strong> www.tnspeee.ac.in</span></li>
+    <li><span class="en"><strong>Anna University Main Site:</strong> www.annauniv.edu</span><span class="ta"><strong>Anna University மుఖయ ஸాஇட:</strong> www.annauniv.edu</span></li>
+  </ul>
+
+  <h3><span class="en">Contact Details</span><span class="ta">ஸம்மீதுக வిவரణ</span></h3>
+  <ul>
+    <li><span class="en"><strong>TANCET Coordinator Office:</strong> Anna University, Senate House, Guindy, Chennai 600025</span><span class="ta"><strong>TANCET ஸமணவயக கాரஅல்லதுலయ:</strong> Anna University, Senate House, Guindy, Chennai 600025</span></li>
+    <li><span class="en"><strong>Email:</strong> tancet@annauniv.edu</span><span class="ta"><strong>ஈமేல:</strong> tancet@annauniv.edu</span></li>
+    <li><span class="en"><strong>Phone:</strong> +91-44-2235-5777 (General Inquiries)</span><span class="ta"><strong>பாోண:</strong> +91-44-2235-5777 (சாதாரண பూசாதాசா)</span></li>
+    <li><span class="en"><strong>Helpline Timing:</strong> 10 AM - 5 PM (Monday to Friday)</span><span class="ta"><strong>உதவி வரி நேரம்:</strong> 10 AM - 5 PM (ஸోமவాர இலிருந்து வெள்ளி)</span></li>
+  </ul>
+
+  <h3><span class="en">Social Media & Community</span><span class="ta">ஸోشல மీடిஅல்லது மற்றும் சமூக</span></h3>
+  <ul>
+    <li><span class="en">Follow official Anna University Facebook & Twitter for updates</span><span class="ta">அபடేட க்கான ஆதாిகాரిக Anna University Facebook மற்றும் Twitter கా அணుஸரణ கரేம்</span></li>
+    <li><span class="en">Join CampusVazhi WhatsApp Group for daily tips & counselling updates</span><span class="ta">தైணిக டిபஸ மற்றும் ஆலோசனை அபடేட க்கான CampusVazhi WhatsApp ஸமూஹ இல் شాமిல ஹోம்</span></li>
+    <li><span class="en">Post queries on official forums or reach out to CampusVazhi via support</span><span class="ta">ஆதாిகాரిக மம்சోம் மீது கேள்வி பోஸட கரేம் அல்லது உதவி கే மాதயம இலிருந்து CampusVazhi தக பஹుம்சేம்</span></li>
+  </ul>
+
+  <div class="info-grid">
+    <div class="info-card">
+      <div class="card-title">Have Doubts?</div>
+      <p style="text-align:left;font-size:13px;margin:8px 0"><span class="en">Email tancet@annauniv.edu<br>or call the helpline<br>Response in 2-3 days</span><span class="ta">tancet@annauniv.edu ஐக்கு ஈமేல கரేம்<br>அல்லது உதவி வரி மீது கೋல கரేம்<br>2-3 நாள்ోம் இல் பரதిகரిஅல்லது</span></p>
+    </div>
+    <div class="info-card">
+      <div class="card-title">Need Guidance?</div>
+      <p style="text-align:left;font-size:13px;margin:8px 0"><span class="en">Book a free 15-min call<br>with CampusVazhi experts<br>Link in sidebar/footer</span><span class="ta">CampusVazhi நிபுணர்கள் கే ஸాத<br>மుபத 15 மిணட இன் கೋல பుக கரేம்<br>ஸాஇடபాர/பாూடர இல் லిம்க</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 13A: TANCET Cutoff Data -->
+<section class="content-section" id="tancet-cutoff">
+  <h2><span class="en">TANCET 2025 Cutoff & College Rankings</span><span class="ta">TANCET 2025 கட-ஆஃப் & கல்லூரி தரவரிசை</span></h2>
+  <p class="section-subtitle"><span class="en">Expected cutoff marks and percentiles for top colleges</span><span class="ta">முதல்நிலை கல்லூரிகளுக்கான প்ரதஅல்லதுشిத கட-ஒப் மాரக்ஸ மற்றும் பர்சென்டைல்ஸ</span></p>
+
+  <div style="margin-top:32px">
+    <h3 style="margin-bottom:16px"><span class="en">Category-wise Cutoff Marks (2025)</span><span class="ta">வகை-வாரியாக கட-ஆஃப் மதிப்பெண்கள் (2025)</span></h3>
+    <table class="compare-table" style="width:100%;margin-bottom:40px">
+      <thead>
+        <tr style="background:var(--navy);color:var(--white)">
+          <th style="padding:16px;text-align:left"><span class="en">Category</span><span class="ta">வரக</span></th>
+          <th style="padding:16px;text-align:left"><span class="en">Expected Cutoff Marks</span><span class="ta">அபేகறిத கட-ஆஃப் மதிப்பெண்கள்</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="padding:12px 16px;border-bottom:1px solid var(--g200)">General (OC)</td>
+          <td style="padding:12px 16px;border-bottom:1px solid var(--g200)">38-50</td>
+        </tr>
+        <tr>
+          <td style="padding:12px 16px;border-bottom:1px solid var(--g200)">OBC</td>
+          <td style="padding:12px 16px;border-bottom:1px solid var(--g200)">33-36</td>
+        </tr>
+        <tr>
+          <td style="padding:12px 16px;border-bottom:1px solid var(--g200)">SC</td>
+          <td style="padding:12px 16px;border-bottom:1px solid var(--g200)">20-35</td>
+        </tr>
+        <tr>
+          <td style="padding:12px 16px">ST</td>
+          <td style="padding:12px 16px">19-36</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3 style="margin-bottom:16px"><span class="en">Top-Tier Colleges (99+ Percentile)</span><span class="ta">شీரற-ஸதரీయ கல்லூரி (99+ பர்சென்டைல்)</span></h3>
+    <table class="compare-table" style="width:100%;margin-bottom:40px">
+      <thead>
+        <tr style="background:var(--navy);color:var(--white)">
+          <th style="padding:16px;text-align:left"><span class="en">College</span><span class="ta">கல்லூரி</span></th>
+          <th style="padding:16px;text-align:left"><span class="en">Cutoff Percentile</span><span class="ta">கட-ஆஃப் பர்சென்டைல்</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="background:#F0FDFA">
+          <td style="padding:12px 16px;border-bottom:1px solid var(--g200)">PSG College of Technology, Coimbatore</td>
+          <td style="padding:12px 16px;border-bottom:1px solid var(--g200);color:var(--teal);font-weight:700">99.98</td>
+        </tr>
+        <tr style="background:#F0FDFA">
+          <td style="padding:12px 16px;border-bottom:1px solid var(--g200)">College of Engineering Guindy (CEG)</td>
+          <td style="padding:12px 16px;border-bottom:1px solid var(--g200);color:var(--teal);font-weight:700">99.97</td>
+        </tr>
+        <tr style="background:#F0FDFA">
+          <td style="padding:12px 16px;border-bottom:1px solid var(--g200)">MOP Vaishnav College for Women, Chennai</td>
+          <td style="padding:12px 16px;border-bottom:1px solid var(--g200);color:var(--teal);font-weight:700">99.82</td>
+        </tr>
+        <tr style="background:#F0FDFA">
+          <td style="padding:12px 16px;border-bottom:1px solid var(--g200)">SSN College of Engineering</td>
+          <td style="padding:12px 16px;border-bottom:1px solid var(--g200);color:var(--teal);font-weight:700">99.70</td>
+        </tr>
+        <tr style="background:#F0FDFA">
+          <td style="padding:12px 16px;border-bottom:1px solid var(--g200)">Thiagarajar School of Management</td>
+          <td style="padding:12px 16px;border-bottom:1px solid var(--g200);color:var(--teal);font-weight:700">99.56</td>
+        </tr>
+        <tr style="background:#F0FDFA">
+          <td style="padding:12px 16px">Easwari Engineering College, Chennai</td>
+          <td style="padding:12px 16px;color:var(--teal);font-weight:700">99.49</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3 style="margin-bottom:16px"><span class="en">Excellent Colleges (90+ Percentile)</span><span class="ta">உதகுறட கல்லூரி (90+ பர்சென்டைல்)</span></h3>
+    <table class="compare-table" style="width:100%;margin-bottom:40px">
+      <thead>
+        <tr style="background:var(--navy);color:var(--white)">
+          <th style="padding:16px;text-align:left"><span class="en">College</span><span class="ta">கல்லூரி</span></th>
+          <th style="padding:16px;text-align:left"><span class="en">Cutoff Percentile</span><span class="ta">கட-ஆஃப் பர்சென்டைல்</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="padding:12px 16px;border-bottom:1px solid var(--g200)">Guru Nanak College, Chennai</td>
+          <td style="padding:12px 16px;border-bottom:1px solid var(--g200)">97.5</td>
+        </tr>
+        <tr>
+          <td style="padding:12px 16px;border-bottom:1px solid var(--g200)">Bharathidasan University, Tiruchirappalli</td>
+          <td style="padding:12px 16px;border-bottom:1px solid var(--g200)">97.5</td>
+        </tr>
+        <tr>
+          <td style="padding:12px 16px;border-bottom:1px solid var(--g200)">Kumaraguru College of Technology</td>
+          <td style="padding:12px 16px;border-bottom:1px solid var(--g200)">95.93</td>
+        </tr>
+        <tr>
+          <td style="padding:12px 16px;border-bottom:1px solid var(--g200)">Sri Sai Ram Engineering College</td>
+          <td style="padding:12px 16px;border-bottom:1px solid var(--g200)">95</td>
+        </tr>
+        <tr>
+          <td style="padding:12px 16px;border-bottom:1px solid var(--g200)">SRM Valliammai Engineering College</td>
+          <td style="padding:12px 16px;border-bottom:1px solid var(--g200)">93</td>
+        </tr>
+        <tr>
+          <td style="padding:12px 16px">Rajalakshmi Engineering College</td>
+          <td style="padding:12px 16px">91</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3 style="margin-bottom:16px"><span class="en">Very Good Colleges (80+ Percentile)</span><span class="ta">மிக நல்ல கல்லூரிகள் (80+ பர்சென்டைல்)</span></h3>
+    <table class="compare-table" style="width:100%;margin-bottom:40px">
+      <thead>
+        <tr style="background:var(--navy);color:var(--white)">
+          <th style="padding:16px;text-align:left"><span class="en">College</span><span class="ta">கல்லூரி</span></th>
+          <th style="padding:16px;text-align:left"><span class="en">Cutoff Percentile</span><span class="ta">கட-ஆஃப் பர்சென்டைல்</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="padding:12px 16px;border-bottom:1px solid var(--g200)">Hallmark Business School</td>
+          <td style="padding:12px 16px;border-bottom:1px solid var(--g200)">88</td>
+        </tr>
+        <tr>
+          <td style="padding:12px 16px;border-bottom:1px solid var(--g200)">Dr. GR Damodaran Institute of Management</td>
+          <td style="padding:12px 16px;border-bottom:1px solid var(--g200)">88</td>
+        </tr>
+        <tr>
+          <td style="padding:12px 16px;border-bottom:1px solid var(--g200)">Jerusalem College of Engineering</td>
+          <td style="padding:12px 16px;border-bottom:1px solid var(--g200)">87</td>
+        </tr>
+        <tr>
+          <td style="padding:12px 16px;border-bottom:1px solid var(--g200)">St. Xavier's College, Palayamkottai</td>
+          <td style="padding:12px 16px;border-bottom:1px solid var(--g200)">84</td>
+        </tr>
+        <tr>
+          <td style="padding:12px 16px;border-bottom:1px solid var(--g200)">KPR Institute of Engineering</td>
+          <td style="padding:12px 16px;border-bottom:1px solid var(--g200)">84</td>
+        </tr>
+        <tr>
+          <td style="padding:12px 16px;border-bottom:1px solid var(--g200)">Saveetha Engineering College</td>
+          <td style="padding:12px 16px;border-bottom:1px solid var(--g200)">82</td>
+        </tr>
+        <tr>
+          <td style="padding:12px 16px">Velammal Engineering College</td>
+          <td style="padding:12px 16px">82</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3 style="margin-bottom:16px"><span class="en">Good Colleges (70+ Percentile)</span><span class="ta">நல்ல கல்லூரிகள் (70+ பர்சென்டைல்)</span></h3>
+    <table class="compare-table" style="width:100%;margin-bottom:40px">
+      <thead>
+        <tr style="background:var(--navy);color:var(--white)">
+          <th style="padding:16px;text-align:left"><span class="en">College</span><span class="ta">கல்லூரி</span></th>
+          <th style="padding:16px;text-align:left"><span class="en">Cutoff Percentile</span><span class="ta">கட-ஆஃப் பர்சென்டைல்</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="padding:12px 16px;border-bottom:1px solid var(--g200)">Bharathiar University, Coimbatore</td>
+          <td style="padding:12px 16px;border-bottom:1px solid var(--g200)">79</td>
+        </tr>
+        <tr>
+          <td style="padding:12px 16px;border-bottom:1px solid var(--g200)">Knowledge Institute of Technology, Salem</td>
+          <td style="padding:12px 16px;border-bottom:1px solid var(--g200)">78</td>
+        </tr>
+        <tr>
+          <td style="padding:12px 16px;border-bottom:1px solid var(--g200)">Panimalar Engineering College, Chennai</td>
+          <td style="padding:12px 16px;border-bottom:1px solid var(--g200)">77</td>
+        </tr>
+        <tr>
+          <td style="padding:12px 16px;border-bottom:1px solid var(--g200)">Meenakshi College of Engineering</td>
+          <td style="padding:12px 16px;border-bottom:1px solid var(--g200)">75</td>
+        </tr>
+        <tr>
+          <td style="padding:12px 16px;border-bottom:1px solid var(--g200)">Jansons School of Business, Coimbatore</td>
+          <td style="padding:12px 16px;border-bottom:1px solid var(--g200)">75</td>
+        </tr>
+        <tr>
+          <td style="padding:12px 16px;border-bottom:1px solid var(--g200)">Sona College of Technology, Salem</td>
+          <td style="padding:12px 16px;border-bottom:1px solid var(--g200)">74</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="highlight-box" style="margin-top:32px;background:#F0FDFA;border-left:4px solid var(--teal)">
+      <p><span class="en">💡 <strong>Tip:</strong> Use our TANCET Percentile Predictor above to check which colleges you can get into based on your expected score!</span><span class="ta">💡 <strong>குறிப்பு:</strong> அபணే அபేகறిத ஸஐக்குர கే பாதிர மீது நீங்கள் கిண கல்லூரிోம் இல் பரஅவர்கள்ش பా ஸகதే உள்ளதும், இது ஜాம்சணే க்கான ஊமீது நாம்ాரే TANCET பர்சென்டைல் முன்னறிபు கా உபయోகு கரేம்!</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 14: FAQs -->
+<section class="content-section" id="faqs">
+  <h2><span class="en">TANCET 2026 FAQs</span><span class="ta">TANCET 2026 அடிக்கடி கேட்கப்படும் கேள்விகள்</span></h2>
+  <p class="section-subtitle"><span class="en">Answers to common questions about TANCET</span><span class="ta">TANCET பற்றிய பொதுவான கேள்விகளுக்கான பதில்கள்</span></p>
+
+  <div class="faq-section">
+    <div class="faq-inner">
+      <div class="faq-list">
+        <!-- Eligibility & Registration -->
+        <div style="margin-top:32px">
+          <h3 style="margin-bottom:16px"><span class="en">Eligibility & Registration</span><span class="ta">தகுதி மற்றும் பதிவு</span></h3>
+
+          <div class="faq-acc-item" onclick="this.classList.toggle('open')">
+            <div class="faq-acc-q">
+              <span><span class="en">Can I appear for TANCET if I'm pursuing my final year degree?</span><span class="ta">நான் இறுதியாண்டு படிக்கும்போதே TANCET எழுதலாமா?</span></span>
+              <svg class="faq-acc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </div>
+            <div class="faq-acc-a">
+              <span class="en">Yes, you can apply while pursuing your final year. However, you need to submit your degree certificate during counselling to secure admission.</span><span class="ta">ஆம், இறுதியாண்டு படிக்கும்போதே விண்ணப்பிக்கலாம். ஆனால் கலந்தாய்வின் போது பட்டச் சான்றிதழ் சமர்ப்பிக்க வேண்டும்.</span>
+            </div>
+          </div>
+
+          <div class="faq-acc-item" onclick="this.classList.toggle('open')">
+            <div class="faq-acc-q">
+              <span><span class="en">Is there an age limit for TANCET?</span><span class="ta">TANCET-க்கு வயது வரம்பு உள்ளதா?</span></span>
+              <svg class="faq-acc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </div>
+            <div class="faq-acc-a">
+              <span class="en">No, there's no upper age limit. Candidates of any age with a bachelor's degree can apply.</span><span class="ta">இல்லை, வயது வரம்பு கிடையாது. இளங்கலைப் பட்டம் பெற்ற எவரும் விண்ணப்பிக்கலாம்.</span>
+            </div>
+          </div>
+
+          <div class="faq-acc-item" onclick="this.classList.toggle('open')">
+            <div class="faq-acc-q">
+              <span><span class="en">Can NRI candidates apply for TANCET?</span><span class="ta">NRI வேட்பாளர்கள் விண்ணப்பிக்கலாமா?</span></span>
+              <svg class="faq-acc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </div>
+            <div class="faq-acc-a">
+              <span class="en">Yes, NRI and foreign nationals can apply. NRI seats are limited, and fee is usually higher.</span><span class="ta">ஆம், NRI மற்றும் வெளிநாட்டினர் விண்ணப்பிக்கலாம். NRI இடங்கள் குறைவு, கட்டணம் அதிகம்.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Exam & Preparation -->
+        <div style="margin-top:32px">
+          <h3 style="margin-bottom:16px"><span class="en">Exam & Preparation</span><span class="ta">தேர்வு மற்றும் தயாரிப்பு</span></h3>
+
+          <div class="faq-acc-item" onclick="this.classList.toggle('open')">
+            <div class="faq-acc-q">
+              <span><span class="en">Is TANCET similar to CAT?</span><span class="ta">TANCET, CAT போன்றதா?</span></span>
+              <svg class="faq-acc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </div>
+            <div class="faq-acc-a">
+              <span class="en">TANCET is easier than CAT. Exam pattern is similar (MCQs, 2 hours), but TANCET questions are more straightforward and less tricky.</span><span class="ta">TANCET, CAT-ஐ விட எளிது. தேர்வு வடிவம் ஒரே மாதிரி (MCQ, 2 மணி நேரம்), ஆனால் கேள்விகள் நேரடியானவை.</span>
+            </div>
+          </div>
+
+          <div class="faq-acc-item" onclick="this.classList.toggle('open')">
+            <div class="faq-acc-q">
+              <span><span class="en">What's the best way to prepare for TANCET?</span><span class="ta">TANCET-க்கு எப்படி தயாராவது?</span></span>
+              <svg class="faq-acc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </div>
+            <div class="faq-acc-a">
+              <span class="en">4-month preparation with equal focus on Quant, English, and Logical Reasoning. Practice 10+ mock tests and PYQ papers. Join study groups for motivation.</span><span class="ta">4 மாத தயாரிப்பு: Quant, English, Logical Reasoning-ல் சம கவனம். 10+ மாதிரித் தேர்வுகள் மற்றும் PYQ எழுதுங்கள்.</span>
+            </div>
+          </div>
+
+          <div class="faq-acc-item" onclick="this.classList.toggle('open')">
+            <div class="faq-acc-q">
+              <span><span class="en">How many questions should I attempt in TANCET?</span><span class="ta">எத்தனை கேள்விகளுக்கு பதிலளிக்க வேண்டும்?</span></span>
+              <svg class="faq-acc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </div>
+            <div class="faq-acc-a">
+              <span class="en">Aim for 85-90 questions. With negative marking of -0.33, attempting all 100 can hurt your score if many are wrong.</span><span class="ta">85-90 கேள்விகளை இலக்காக வையுங்கள். -0.33 எதிர்மறை மதிப்பெண் உள்ளது, எல்லா 100-க்கும் பதிலளிக்க வேண்டாம்.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Scores & Colleges -->
+        <div style="margin-top:32px">
+          <h3 style="margin-bottom:16px"><span class="en">Scores & Colleges</span><span class="ta">மதிப்பெண்கள் மற்றும் கல்லூரிகள்</span></h3>
+
+          <div class="faq-acc-item" onclick="this.classList.toggle('open')">
+            <div class="faq-acc-q">
+              <span><span class="en">What's a good TANCET score?</span><span class="ta">நல்ல TANCET மதிப்பெண் என்ன?</span></span>
+              <svg class="faq-acc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </div>
+            <div class="faq-acc-a">
+              <span class="en">65+ marks = 80%ile (good), 75+ marks = 90%ile (excellent). For top colleges like PSG/SSN, you need 85+ marks (95%ile).</span><span class="ta">65+ மதிப்பெண் = 80%ile (நல்லது), 75+ = 90%ile (சிறந்தது). PSG/SSN போன்ற முதல்நிலை கல்லூரிகளுக்கு 85+ தேவை.</span>
+            </div>
+          </div>
+
+          <div class="faq-acc-item" onclick="this.classList.toggle('open')">
+            <div class="faq-acc-q">
+              <span><span class="en">How many colleges will accept my score?</span><span class="ta">எத்தனை கல்லூரிகள் என் மதிப்பெண்ணை ஏற்கும்?</span></span>
+              <svg class="faq-acc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </div>
+            <div class="faq-acc-a">
+              <span class="en">It depends on your category rank. 50+ colleges accept TANCET. Use CampusVazhi's Score Predictor to see colleges for your expected score.</span><span class="ta">உங்கள் வகை தரவரிசையைப் பொறுத்தது. 50+ கல்லூரிகள் TANCET ஏற்கின்றன. CampusVazhi Score Predictor பயன்படுத்துங்கள்.</span>
+            </div>
+          </div>
+
+          <div class="faq-acc-item" onclick="this.classList.toggle('open')">
+            <div class="faq-acc-q">
+              <span><span class="en">Can I defer my admission?</span><span class="ta">சேர்க்கையை தள்ளிவைக்க முடியுமா?</span></span>
+              <svg class="faq-acc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </div>
+            <div class="faq-acc-a">
+              <span class="en">Deferrals are rarely granted and only for specific reasons (health, family emergency). Check with your allotted college directly.</span><span class="ta">அரிதாகவே அனுமதிக்கப்படும், குறிப்பிட்ட காரணங்களுக்கு மட்டுமே (உடல்நலம், குடும்ப அவசரநிலை).</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Counselling & Admission -->
+        <div style="margin-top:32px">
+          <h3 style="margin-bottom:16px"><span class="en">Counselling & Admission</span><span class="ta">கலந்தாய்வு மற்றும் சேர்க்கை</span></h3>
+
+          <div class="faq-acc-item" onclick="this.classList.toggle('open')">
+            <div class="faq-acc-q">
+              <span><span class="en">When should I register for counselling?</span><span class="ta">கலந்தாய்வுக்கு எப்போது பதிவு செய்ய வேண்டும்?</span></span>
+              <svg class="faq-acc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </div>
+            <div class="faq-acc-a">
+              <span class="en">Register on day 1 of counselling registration. Early registration gives more choices and flexibility in allotment.</span><span class="ta">முதல் நாளே பதிவு செய்யுங்கள். சீக்கிரம் பதிவு செய்வது அதிக தேர்வுகளை வழங்கும்.</span>
+            </div>
+          </div>
+
+          <div class="faq-acc-item" onclick="this.classList.toggle('open')">
+            <div class="faq-acc-q">
+              <span><span class="en">Can I change my choice order after counselling?</span><span class="ta">கலந்தாய்வுக்குப் பிறகு தேர்வு வரிசையை மாற்ற முடியுமா?</span></span>
+              <svg class="faq-acc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </div>
+            <div class="faq-acc-a">
+              <span class="en">No, once you finalize your choices, DoTE will not change them. Fill carefully based on your preferences and cut-offs.</span><span class="ta">இல்லை, இறுதி செய்த பிறகு DoTE மாற்றாது. Cut-off அடிப்படையில் கவனமாக நிரப்புங்கள்.</span>
+            </div>
+          </div>
+
+          <div class="faq-acc-item" onclick="this.classList.toggle('open')">
+            <div class="faq-acc-q">
+              <span><span class="en">What documents do I need for counselling?</span><span class="ta">கலந்தாய்வுக்குப் பிறகு தேவையான ஆவணங்கள் என்ன?</span></span>
+              <svg class="faq-acc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </div>
+            <div class="faq-acc-a">
+              <span class="en">Score Card, Bachelor's Degree Certificate, Mark Sheets, ID Proof (Aadhar/Passport), 2 Passport photos, Community Certificate (if applicable)</span><span class="ta">Score Card, பட்டச் சான்றிதழ், மதிப்பெண் பட்டியல், ID (Aadhar/Passport), 2 புகைப்படங்கள், சமூகச் சான்றிதழ் (பொருந்தினால்).</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Fee & Financial -->
+        <div style="margin-top:32px">
+          <h3 style="margin-bottom:16px"><span class="en">Fee & Financial</span><span class="ta">கட்டணம் மற்றும் நிதி</span></h3>
+
+          <div class="faq-acc-item" onclick="this.classList.toggle('open')">
+            <div class="faq-acc-q">
+              <span><span class="en">Is education loan available for TANCET-based admissions?</span><span class="ta">TANCET அடிப்படையில் கல்விக் கடன் கிடைக்குமா?</span></span>
+              <svg class="faq-acc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </div>
+            <div class="faq-acc-a">
+              <span class="en">Yes, most public and private sector banks offer education loans for MBA/MCA. Check with your bank for eligibility and process.</span><span class="ta">ஆம், பெரும்பாலான பொது/தனியார் வங்கிகள் Management/MCA-க்கு கல்விக் கடன் வழங்குகின்றன.</span>
+            </div>
+          </div>
+
+          <div class="faq-acc-item" onclick="this.classList.toggle('open')">
+            <div class="faq-acc-q">
+              <span><span class="en">What's the typical fee structure for MBA in TN colleges?</span><span class="ta">TN கல்லூரிகளில் Management கட்டணம் என்ன?</span></span>
+              <svg class="faq-acc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </div>
+            <div class="faq-acc-a">
+              <span class="en">Government colleges: ₹1-2 lakh for 2 years. Private colleges: ₹5-10 lakh for 2 years. Use CampusVazhi's compare tool for exact fees.</span><span class="ta">அரசு: 2 ஆண்டுகளுக்கு ₹1-2 லட்சம். தனியார்: 2 ஆண்டுகளுக்கு ₹5-10 லட்சம்.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="highlight-box" style="margin-top:32px">
+    <p><span class="en">Still have questions? Join our WhatsApp community for daily Q&A sessions, or book a free 15-min counselling call with our experts. We're here to help!</span><span class="ta">இன்னும் கேள்விகளுள்ளதா? நம் WhatsApp சமூகத்தில் சேரவும் அல்லது நம் நிபுணர்களுடன் மாநாடு செய்யவும்| நாம் உதவிக்கு இங்கேயுள்ளோம்!</span></p>
+  </div>
+</section>
+
+<!-- WhatsApp CTA -->
+<section class="wa-section">
+  <div class="wa-card">
+    <div class="wa-circle"></div>
+    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+    <h2 id="waTitle">Join TANCET 2026 WhatsApp Community</h2>
+    <p id="waDesc">Daily tips, doubt-clearing sessions, PYQ discussions & live counselling updates</p>
+    <button class="btn-wa">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      <span id="waBtn">Join Free — 4,000+ Members</span>
+    </button>
+  </div>
+</section>
+
+<!-- Final CTA -->
+<section class="final-cta">
+  <div class="final-inner">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0D9488" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+    <h2 id="finalTitle">Don't Go Into TANCET Unprepared</h2>
+    <p id="finalDesc">10 years of PYQ papers + 5 mock tests + expert cheat sheets. All free. All yours.</p>
+    <button class="btn-primary btn-primary-lg" onclick="openModal()">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      <span id="finalCta">Get All Resources Free →</span>
+    </button>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-brand">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#14B8A6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+    <span>Campus<span>Vazhi</span></span>
+  </div>
+  <p id="footerTag">Your trusted guide for college admissions in Tamil Nadu & beyond</p>
+  <div class="footer-links">
+    <a href="./campusvazhi-home-v2.html">Home</a>·
+    <a href="./CampusVazhi-CAT-2026.html">CAT 2026</a>·
+    <a href="./CampusVazhi-MS-USA.html">MS in USA</a>·
+    <a href="./CampusVazhi-NEET-Counselling.html">NEET Counselling</a>·
+    <a href="./CampusVazhi-Resume.html">Resume Builder</a>·
+    <a href="./CampusVazhi-Login.html">Sign in</a>
+  </div>
+  <p class="copy">© 2026 CampusVazhi. All rights reserved.</p>
+</footer>
+
+<!-- Lead Capture Modal -->
+<div class="modal-overlay" id="modal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+
+    <div class="modal-form-wrap" id="modalForm">
+      <div class="modal-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0D9488" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      </div>
+      <h3 id="modalTitle">Get All TANCET Resources Free</h3>
+      <p class="subtitle" id="modalSub">PYQ papers + Mock tests + Cheat sheets — instant access</p>
+      <div class="modal-form">
+        <input type="text" placeholder="Your name" data-placeholder-ta="பெயர்" id="fname" aria-label="Your name">
+        <input type="tel" placeholder="Mobile number" data-placeholder-ta="கைபேசி எண்" id="fmobile" aria-label="Mobile number">
+        <input type="email" placeholder="Email (optional)" data-placeholder-ta="மின்னஞ்சல் (விரும்பினால்)" id="femail" aria-label="Email">
+        <select id="fstatus" aria-label="Current status">
+          <option value="">Current status / தற்போதைய நிலை</option>
+          <option value="student">Final Year Student / இறுதி ஆண்டு மாணவர்</option>
+          <option value="working">Working Professional / பணிபுரிபவர்</option>
+          <option value="graduated">Graduated / பட்டதாரி</option>
+        </select>
+        <button class="modal-submit" onclick="submitForm()">
+          Send Me Resources
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </button>
+        <p class="modal-privacy">🔒 We respect your privacy. No spam, ever.</p>
+      </div>
+    </div>
+
+    <div class="modal-success" id="modalSuccess">
+      <div class="success-icon">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+      </div>
+      <h3>You're all set! 🎉</h3>
+      <p style="font-size:14px;color:var(--g500);line-height:1.6;margin-top:8px">Check your WhatsApp & email. Resources are on the way!</p>
+      <div class="success-wa">
+        <p>📱 Join our TANCET 2026 WhatsApp Community for daily tips, doubt-clearing & counselling updates</p>
+      </div>
+      <button class="btn-primary" onclick="closeModal()">Join WhatsApp Group →</button>
+    </div>
+  </div>
+
+<script>
+  // 5. Sidebar — populate user data
+  function populateSidebar() {
+    try {
+      var u = JSON.parse(localStorage.getItem('cv_user'));
+      if (u && u.name) {
+        document.getElementById('sb-avatar').textContent = u.name.charAt(0).toUpperCase();
+        document.getElementById('sb-name').textContent = u.name;
+        document.getElementById('sb-exam').textContent = u.exam || 'Student';
+      }
+    } catch(e) {}
+  }
+  populateSidebar();
+
+  function checkSignIn() {
+    try {
+      var u = JSON.parse(localStorage.getItem('cv_user'));
+      var signedIn = localStorage.getItem('cv_signed_in') === '1';
+      if ((u && u.name) || signedIn) {
+        document.body.classList.add('cv-signed-in');
+        document.body.classList.add('logged-in');
+        document.documentElement.classList.add('logged-in');
+        if (u && u.name) localStorage.setItem('cv_signed_in', '1');
+        var sb = document.querySelector('.sidebar');
+        var pw = document.querySelector('.page-wrap');
+        if (sb) sb.style.setProperty('display', 'flex', 'important');
+        if (pw) pw.style.setProperty('margin-left', '68px', 'important');
+        var pill = document.getElementById('user-pill');
+        if (pill && u && u.name) {
+          pill.querySelector('.user-initial').textContent = u.name.charAt(0).toUpperCase();
+          pill.querySelector('.user-name').textContent = 'Hi, ' + u.name.split(' ')[0];
+        }
+      }
+    } catch(e) {}
+  }
+  checkSignIn();
+
+  function signOut() {
+    document.body.classList.remove('logged-in', 'cv-signed-in');
+    document.documentElement.classList.remove('logged-in');
+    var sb = document.querySelector('.sidebar');
+    var pw = document.querySelector('.page-wrap');
+    if (sb) sb.style.setProperty('display', 'none', 'important');
+    if (pw) pw.style.setProperty('margin-left', '0', 'important');
+    localStorage.removeItem('cv_signed_in');
+    localStorage.removeItem('cv_user');
+    if (typeof cvAuth !== 'undefined' && typeof cvAuth.logout === 'function') {
+      cvAuth.logout();
+    } else {
+      window.location.href = './campusvazhi-home-v2.html';
+    }
+  }
+
+// ── State ──
+let lang = 'en';
+
+// ── Countdown ──
+const examDate = new Date('2026-05-09T10:00:00+05:30');
+const now = new Date();
+const daysLeft = Math.max(0, Math.floor((examDate - now) / 86400000));
+document.getElementById('cd1').textContent = Math.floor(daysLeft / 10);
+document.getElementById('cd2').textContent = daysLeft % 10;
+
+// ── Resources Data ──
+const resources = [
+  { title: "PYQ Papers (2016-2025, 10 yrs)", titleTa: "கடந்த 10 வருட வினாத்தாள்கள்", desc: "<span class=\"en\">Last 10 years solved with detailed explanations — TANCET 2026 paper added May 2026</span><span class=\"ta\">கடந்த 10 வருடங்களின் விস்தாரமான விளக்கங்களுடன் தீர்க்கப்பட்ட — TANCET 2026 தாள் மே 2026 இல் சேர்க்கப்பட்டது</span>", tag: "FREE", color: "#0D9488", iconPath: '<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/>' },
+  { title: "5 Full Mock Tests", titleTa: "5 முழு மாதிரி தேர்வுகள்", desc: "<span class=\"en\">Timed tests with instant scoring & section analysis</span><span class=\"ta\">நேர கட்டுப்பாட்டு தேர்வுகள் உடனடி மதிப்পீடு & பகுதி பகுப்பாய்வு</span>", tag: "FREE", color: "#6366F1", iconPath: '<circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>' },
+  { title: "Syllabus & Weightage Guide", titleTa: "பாடத்திட்டம் & முக்கியத்துவ வழிகாட்டி", desc: "<span class=\"en\">Know exactly what to study — topic-wise marks distribution</span><span class=\"ta\">சரியாக என்ன படிக்க வேண்டுமென்று அறிக — தலைப்பு வாரியான மதிப்பெண் பகிர்வு</span>", tag: "FREE", color: "#EC4899", iconPath: '<circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>' },
+  { title: "Last-Minute Cheat Sheets", titleTa: "கடைசி நேர குறிப்புகள்", desc: "<span class=\"en\">Quant formulas, grammar rules, DS patterns — all in 10 pages</span><span class=\"ta\">கணிதம் சூத்திரங்கள், இலக்கணம் விதிகள், DS பொருளாதாரங்கள் — அனைத்தும் 10 பக்கங்களில்</span>", tag: "FREE", color: "#F59E0B", iconPath: '<polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>' },
+  { title: "TANCET Score Predictor", titleTa: "மதிப்பெண் கணிப்பான்", desc: "<span class=\"en\">Enter mock scores → get estimated rank & eligible colleges</span><span class=\"ta\">மாதிரி மதிப்பெண்ணுக்குள் → மதிப்பிடப்பட்ட தரவரிசை & தகுதிவாய்ந்த கல்லூரிகள் பெறவும்</span>", tag: "TOOL", color: "#8B5CF6", iconPath: '<line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/>' },
+  { title: "Section-wise Prep Guides", titleTa: "பகுதி வாரியான தயாரிப்பு", desc: "<span class=\"en\">Tamil + English guides for each of the 5 sections</span><span class=\"ta\">ஐந்து பகுதிகளுக்கான தமிழ் + ஆங்கில வழிகாட்டிகள்</span>", tag: "FREE", color: "#F97316", iconPath: '<path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>' },
+];
+
+const examSections = [
+  { name: "Business Situations", nameTA: "வணிக சூழ்நிலைகள்", qs: 20, tip: "<span class=\"en\">Read business case studies daily</span><span class=\"ta\">வணிக வழக்கு ஆய்வுகளை தினமும் படிக்கவும்</span>" },
+  { name: "Reading Comprehension", nameTA: "வாசிப்புத் திறன்", qs: 20, tip: "<span class=\"en\">Practice 2 RC passages per day</span><span class=\"ta\">நாளொன்றுக்கு 2 வாசிப்பு பகுப்பாய்வு பணிபுரிக</span>" },
+  { name: "Quantitative Aptitude", nameTA: "கணிதத் திறன்", qs: 20, tip: "<span class=\"en\">Focus on Arithmetic & Algebra</span><span class=\"ta\">கணக்கிடுதல் & இயற்கணித மீது கவனம் செலுத்துங்கள்</span>" },
+  { name: "Data Sufficiency", nameTA: "தரவு போதுமா?", qs: 20, tip: "<span class=\"en\">Learn the 5 DS answer patterns</span><span class=\"ta\">5 DS பதில் வடிவங்களைக் கற்றுக்கொள்ளவும்</span>" },
+  { name: "English / Grammar", nameTA: "ஆங்கிலம்", qs: 20, tip: "<span class=\"en\">Master error spotting & fill-in</span><span class=\"ta\">பிழை கண்டறிதல் & நிரப்பப்பிடிப்பு தேர்ச்சி பெறுங்கள்</span>" },
+];
+
+const postExamItems = [
+  { title: "Answer Key (May 9 evening)", desc: "Published within hours of the exam", iconPath: '<circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/>' },
+  { title: "Score → Rank Estimator", desc: "Predict your rank from your score", iconPath: '<polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/>' },
+  { title: "College Cutoff Finder", desc: "Which colleges accept your score?", iconPath: '<path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/>' },
+  { title: "Free Guidance Call", desc: "15-min 1-on-1 with our expert", iconPath: '<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>' },
+];
+
+const testimonials = [
+  { name: "Priya S.", score: "92%ile", college: "Anna University, CEG", quote: "<span class=\"en\">The mock tests were tougher than the actual exam — perfect preparation!</span><span class=\"ta\">மாதிரி தேர்வுகள் உண்மையான தேர்வை விட கடினமாக இருந்தன — சிறந்த தயாரிப்பு!</span>" },
+  { name: "Karthik R.", score: "87%ile", college: "PSG Tech, Coimbatore", quote: "<span class=\"en\">Tamil prep guides helped me understand concepts I'd been struggling with for months</span><span class=\"ta\">தமிழ் தயாரிப்பு வழிகாட்டிகள் பல மாதங்களாக எனக்கு சிரமப்படுகிறது கருத்துக்களைப் புரிந்து கொள்ள உதவினர்</span>" },
+  { name: "Deepika M.", score: "95%ile", college: "SSN School of Management", quote: "<span class=\"en\">The guidance call saved me — I almost picked the wrong college</span><span class=\"ta\">ஆலோசனை அழைப்பு என்னைக் காத்துக்கொண்டது — நான் தவறான கல்லூரியை தேர்வு செய்திருப்பேன்</span>" },
+];
+
+// ── Render Functions ──
+function renderResources() {
+  const grid = document.getElementById('resourcesGrid');
+  grid.innerHTML = resources.map((r, i) => `
+    <div class="resource-card" onclick="openModal()">
+      <div class="resource-icon" style="background:${r.color}12">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="${r.color}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${r.iconPath}</svg>
+      </div>
+      <div class="resource-content">
+        <div class="resource-title-row">
+          <h3 class="resource-title">${r.title}</h3>
+          <span class="badge ${r.tag === 'TOOL' ? 'badge-purple' : 'badge-green'}">${r.tag}</span>
+        </div>
+        <p class="resource-tamil ${lang === 'ta' ? 'show' : ''}" data-ta="${r.titleTa}">${r.titleTa}</p>
+        <p class="resource-desc">${r.desc}</p>
+      </div>
+      <svg class="resource-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+    </div>
+  `).join('');
+  // Ensure nested spans get lang class handling in descriptions
+  document.querySelectorAll('.resource-desc').forEach(el => {
+    const enSpans = el.querySelectorAll('.en, .ta');
+    if (enSpans.length > 0) {
+      enSpans.forEach(span => {
+        span.style.display = (lang === 'ta' && span.className === 'ta') || (lang === 'en' && span.className === 'en') ? 'inline' : 'none';
+      });
+    }
+  });
+}
+
+function renderExamRows() {
+  const rows = document.getElementById('examRows');
+  rows.innerHTML = examSections.map((s, i) => `
+    <div class="exam-row">
+      <div class="exam-left">
+        <div class="exam-num">${i + 1}</div>
+        <div>
+          <div class="exam-name">${s.name}</div>
+          <div class="exam-name-ta ${lang === 'ta' ? 'show' : ''}">${s.nameTA}</div>
+        </div>
+      </div>
+      <div class="exam-qs">${s.qs} Qs</div>
+      <div class="exam-tip">💡 ${s.tip}</div>
+    </div>
+  `).join('');
+}
+
+function renderPostExam() {
+  const grid = document.getElementById('postGrid');
+  grid.innerHTML = postExamItems.map(r => `
+    <div class="post-card">
+      <div class="post-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#6366F1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${r.iconPath}</svg>
+      </div>
+      <h3>${r.title}</h3>
+      <p>${r.desc}</p>
+    </div>
+  `).join('');
+  // Ensure nested spans get lang class handling
+  document.querySelectorAll('.post-card h3, .post-card p').forEach(el => {
+    const enSpans = el.querySelectorAll('.en, .ta');
+    if (enSpans.length > 0) {
+      enSpans.forEach(span => {
+        span.style.display = (lang === 'ta' && span.className === 'ta') || (lang === 'en' && span.className === 'en') ? 'inline' : 'none';
+      });
+    }
+  });
+}
+
+function renderTestimonials() {
+  const grid = document.getElementById('testGrid');
+  const starSvg = '<svg width="14" height="14" viewBox="0 0 24 24" fill="#F59E0B" stroke="#F59E0B" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>';
+  grid.innerHTML = testimonials.map(t => `
+    <div class="test-card">
+      <div class="test-stars">${starSvg.repeat(5)}</div>
+      <p class="test-quote">"${t.quote}"</p>
+      <div class="test-footer">
+        <div class="test-name">${t.name}</div>
+        <div class="test-detail">${t.score} → ${t.college}</div>
+      </div>
+    </div>
+  `).join('');
+  // Ensure nested spans get lang class handling
+  document.querySelectorAll('.test-quote, .test-detail').forEach(el => {
+    const enSpans = el.querySelectorAll('.en, .ta');
+    if (enSpans.length > 0) {
+      enSpans.forEach(span => {
+        span.style.display = (lang === 'ta' && span.className === 'ta') || (lang === 'en' && span.className === 'en') ? 'inline' : 'none';
+      });
+    }
+  });
+}
+
+// ── Translation Map ──
+const translations = {
+  topBarText: { en: `TANCET 2026 in ${daysLeft} days — May 9, 2026`, ta: `TANCET 2026 தேர்வுக்கு ${daysLeft} நாட்கள் — மே 9, 2026` },
+  topBarBtn: { en: "Get Free Resources →", ta: "இலவச ஆதாரங்கள் →" },
+  langBtn: { en: "தமிழ்", ta: "English" },
+  navCta: { en: "Get Free Mock Tests", ta: "இலவச தேர்வு" },
+  heroTitle: { en: 'Everything You Need to<br><span>Crack TANCET 2026</span></span>', ta: 'TANCET 2026 வெற்றிக்கான<br><span>அனைத்து ஆதாரங்களும்</span>' },
+  heroDesc: { en: "Free PYQ papers, mock tests, cheat sheets & score predictor. Join 4,000+ aspirants preparing with CampusVazhi.", ta: "இலவச வினாத்தாள்கள், மாதிரி தேர்வுகள், குறிப்புகள் & மதிப்பெண் கணிப்பான். 4,000+ மாணவர்களுடன் தயாராகுங்கள்." },
+  heroCta1: { en: "Download Free Resources", ta: "இலவச ஆதாரங்கள் பதிவிறக்கம்" },
+  heroCta2: { en: "Join WhatsApp Group", ta: "WhatsApp குழுவில் சேர" },
+  cdLabel: { en: "Exam Date", ta: "தேர்வு தேதி" },
+  cdText: { en: "days left", ta: "நாட்கள்" },
+  cdBtn: { en: "Start Preparing →", ta: "தயாராகுங்கள் →" },
+  resBadge: { en: "100% FREE RESOURCES", ta: "100% இலவச ஆதாரங்கள்" },
+  resTitle: { en: "Your Complete TANCET Prep Kit", ta: "உங்கள் TANCET தயாரிப்பு கிட்" },
+  resDesc: { en: "Everything you need to score 80+ percentile — no coaching needed", ta: "80+ சதவீதம் பெற தேவையான அனைத்தும் — கோச்சிங் தேவையில்லை" },
+  examBadge: { en: "KNOW YOUR EXAM", ta: "உங்கள் தேர்வை அறியுங்கள்" },
+  examTitle: { en: "TANCET 2026 Exam Pattern", ta: "TANCET 2026 தேர்வு அமைப்பு" },
+  postBadge: { en: "AFTER THE EXAM", ta: "தேர்வுக்குப் பிறகு" },
+  postTitle: { en: "We'll Be With You Post-TANCET Too", ta: "TANCET-க்குப் பிறகும் நாங்கள் உங்களுடன்" },
+  testBadge: { en: "SUCCESS STORIES", ta: "வெற்றிக் கதைகள்" },
+  testTitle: { en: "From TANCET Aspirant to Success Story", ta: "TANCET ஆர்வலரிலிருந்து வெற்றி கதை" },
+  waTitle: { en: "Join TANCET 2026 WhatsApp Community", ta: "TANCET 2026 WhatsApp சமூகத்தில் சேரவும்" },
+  waDesc: { en: "Daily tips, doubt-clearing sessions, PYQ discussions & live counselling updates", ta: "தினசரி குறிப்புகள், சந்தேக நிவர்த்தி, PYQ விவாதங்கள் & நேரடி ஆலோசனை" },
+  waBtn: { en: "Join Free — 4,000+ Members", ta: "இலவசமாக சேரவும் — 4,000+ உறுப்பினர்கள்" },
+  finalTitle: { en: "Don't Go Into TANCET Unprepared", ta: "தயாரிப்பின்றி TANCET-ல் நுழையாதீர்கள்" },
+  finalDesc: { en: "10 years of PYQ papers + 5 mock tests + expert cheat sheets. All free. All yours.", ta: "10 ஆண்டு வினாத்தாள்கள் + 5 மாதிரி தேர்வுகள் + நிபுணர் குறிப்புகள். அனைத்தும் இலவசம்." },
+  finalCta: { en: "Get All Resources Free →", ta: "அனைத்தையும் இலவசமாகப் பெறுங்கள் →" },
+  footerTag: { en: "Your trusted guide for college admissions in Tamil Nadu & beyond", ta: "தமிழ்நாடு & அதற்கு அப்பால் college சேர்க்கைக்கான உங்கள் நம்பகமான வழிகாட்டி" },
+};
+
+function applyTranslations() {
+  for (const [id, texts] of Object.entries(translations)) {
+    const el = document.getElementById(id);
+    if (el) {
+      if (id === 'heroTitle') el.innerHTML = texts[lang];
+      else el.textContent = texts[lang];
+    }
+  }
+  // Trust bar labels
+  document.querySelectorAll('.trust-label').forEach(el => {
+    el.textContent = el.getAttribute(`data-${lang}`);
+  });
+  // Tamil subtitles
+  document.querySelectorAll('.resource-tamil').forEach(el => {
+    el.classList.toggle('show', lang === 'ta');
+  });
+  document.querySelectorAll('.exam-name-ta').forEach(el => {
+    el.classList.toggle('show', lang === 'ta');
+  });
+  // Update all inline .en/.ta spans
+  document.querySelectorAll('.en, .ta').forEach(el => {
+    el.style.display = (lang === 'ta' && el.className === 'ta') || (lang === 'en' && el.className === 'en') ? 'inline' : 'none';
+  });
+  // Update form placeholders
+  document.querySelectorAll('[data-placeholder-ta]').forEach(el => {
+    if (lang === 'ta') {
+      el.setAttribute('data-original-placeholder', el.placeholder);
+      el.placeholder = el.getAttribute('data-placeholder-ta');
+    } else if (el.getAttribute('data-original-placeholder')) {
+      el.placeholder = el.getAttribute('data-original-placeholder');
+    }
+  });
+}
+
+// ── Language Toggle ──
+function toggleLang() {
+  lang = lang === 'en' ? 'ta' : 'en';
+  if (lang === 'ta') {
+    document.body.classList.add('lang-ta');
+  } else {
+    document.body.classList.remove('lang-ta');
+  }
+  applyTranslations();
+  renderResources();
+  renderExamRows();
+}
+
+// ── Modal ──
+function openModal() {
+  document.getElementById('modal').classList.add('active');
+  document.getElementById('modalForm').classList.remove('hidden');
+  document.getElementById('modalSuccess').classList.remove('active');
+}
+function closeModal() {
+  document.getElementById('modal').classList.remove('active');
+}
+function submitForm() {
+  const name = document.getElementById('fname').value;
+  const mobile = document.getElementById('fmobile').value;
+  if (!name || !mobile) {
+    alert('Please enter your name and mobile number');
+    return;
+  }
+  // In production: send to your backend / Google Sheets / Supabase
+  var email = document.getElementById('femail').value;
+  var status = document.getElementById('fstatus').value;
+  console.log('Lead captured:', { name, mobile, email: email, status: status });
+
+  // Save to Supabase
+  try {
+    if (typeof cvLeads !== 'undefined' && cvLeads.saveCTALead) {
+      cvLeads.saveCTALead({
+        name: name,
+        phone: mobile,
+        email: email,
+        exam: 'TANCET',
+        cta_type: 'free_mock'
+      });
+      cvUI.toast('Saved! Check your WhatsApp.');
+    }
+  } catch(e) {
+    console.error('Supabase save error:', e);
+  }
+
+  // Save as cv_user so side rail / welcome cards unlock across the site
+  try {
+    localStorage.setItem('cv_user', JSON.stringify({
+      name: name, phone: mobile, email: email, exam: 'TANCET', status: status, ts: Date.now()
+    }));
+  } catch (e) {}
+
+  document.getElementById('modalForm').classList.add('hidden');
+  document.getElementById('modalSuccess').classList.add('active');
+}
+// Close modal on overlay click
+document.getElementById('modal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+
+// ── Init ──
+renderResources();
+renderExamRows();
+renderPostExam();
+renderTestimonials();
+applyTranslations();
+
+// ================= TANCET PERCENTILE PREDICTOR =================
+(function () {
+  var examBtns = document.querySelectorAll('#calc-exam-group button');
+  var catBtns = document.querySelectorAll('#calc-cat-group button');
+  var marksInput = document.getElementById('calc-marks-input');
+  var marksRange = document.getElementById('calc-marks-range');
+  var resPctVal = document.getElementById('res-percentile-val');
+  var resTier = document.getElementById('res-tier');
+  var resChipExam = document.getElementById('res-chip-exam');
+  var resChipCat = document.getElementById('res-chip-cat');
+  var resChipMarks = document.getElementById('res-chip-marks');
+  var resCount = document.getElementById('res-college-count');
+
+  if (!examBtns.length || !marksInput) return;
+
+  var state = { exam: 'management', marks: 55, cat: 'OC' };
+
+  /* Scoring logic calibrated from Anna University TANCET 2022–2026 cutoffs. */
+  function marksToPercentile(marks, exam) {
+    var m = Math.max(0, Math.min(100, marks));
+    var p;
+    if (exam === 'management') {
+      if (m >= 80) p = 99.95;
+      else if (m >= 75) p = 99.8;
+      else if (m >= 70) p = 99.4;
+      else if (m >= 65) p = 98.6;
+      else if (m >= 60) p = 97.3;
+      else if (m >= 55) p = 95.2;
+      else if (m >= 50) p = 92.0;
+      else if (m >= 45) p = 87.5;
+      else if (m >= 40) p = 81.0;
+      else if (m >= 35) p = 72.0;
+      else if (m >= 30) p = 60.5;
+      else if (m >= 25) p = 46.0;
+      else if (m >= 20) p = 30.5;
+      else if (m >= 15) p = 17.0;
+      else if (m >= 10) p = 8.0;
+      else p = Math.max(1, m * 0.7);
+    } else {
+      if (m >= 78) p = 99.95;
+      else if (m >= 72) p = 99.7;
+      else if (m >= 66) p = 99.2;
+      else if (m >= 60) p = 98.0;
+      else if (m >= 54) p = 96.0;
+      else if (m >= 48) p = 92.5;
+      else if (m >= 42) p = 87.0;
+      else if (m >= 36) p = 79.0;
+      else if (m >= 30) p = 68.0;
+      else if (m >= 24) p = 54.0;
+      else if (m >= 18) p = 38.0;
+      else if (m >= 12) p = 22.0;
+      else p = Math.max(1, m * 0.9);
+    }
+    return Math.round(p * 10) / 10;
+  }
+
+  var catBump = { 'OC': 0, 'BC': 1.2, 'BCM': 2.0, 'MBC': 2.6, 'SC': 5.5, 'SCA': 6.5, 'ST': 7.2, 'PwD': 3.5 };
+
+  function collegesForPercentile(p, exam) {
+    var totalPool = (exam === 'management') ? 260 : 230;
+    var count, tier;
+    if (p >= 99.5) { count = 5; tier = 'Elite tier'; }
+    else if (p >= 99) { count = 8; tier = 'Top tier'; }
+    else if (p >= 97) { count = 14; tier = 'Strong tier'; }
+    else if (p >= 94) { count = 22; tier = 'Strong tier'; }
+    else if (p >= 90) { count = 34; tier = 'Upper mid-tier'; }
+    else if (p >= 85) { count = 52; tier = 'Solid mid-tier'; }
+    else if (p >= 78) { count = 78; tier = 'Accessible tier'; }
+    else if (p >= 68) { count = 112; tier = 'Open tier'; }
+    else if (p >= 55) { count = 148; tier = 'Wide tier'; }
+    else if (p >= 40) { count = 186; tier = 'Full pool tier'; }
+    else { count = totalPool; tier = 'Management quota tier'; }
+    if (count > totalPool) count = totalPool;
+    return { count: count, tier: tier };
+  }
+
+  function computeAndRender() {
+    var basePct = marksToPercentile(state.marks, state.exam);
+    var bump = catBump[state.cat] || 0;
+    var effectivePct = Math.min(99.99, Math.round((basePct + bump) * 10) / 10);
+    var colleges = collegesForPercentile(effectivePct, state.exam);
+
+    if (resPctVal) resPctVal.textContent = effectivePct.toFixed(1);
+    if (resTier) resTier.textContent = colleges.tier;
+    if (resChipExam) resChipExam.textContent = state.exam === 'management' ? 'MBA' : 'MCA';
+    if (resChipCat) resChipCat.textContent = state.cat;
+    if (resChipMarks) resChipMarks.textContent = state.marks + ' / 100';
+    if (resCount) resCount.textContent = colleges.count;
+
+    if (marksRange) {
+      var pct = (state.marks / 100) * 100;
+      marksRange.style.setProperty('--p', pct + '%');
+    }
+  }
+
+  examBtns.forEach(function (b) {
+    b.addEventListener('click', function () {
+      examBtns.forEach(function (x) { x.classList.remove('active'); x.setAttribute('aria-selected', 'false'); });
+      b.classList.add('active');
+      b.setAttribute('aria-selected', 'true');
+      state.exam = b.getAttribute('data-exam');
+      computeAndRender();
+    });
+  });
+
+  catBtns.forEach(function (b) {
+    b.addEventListener('click', function () {
+      catBtns.forEach(function (x) { x.classList.remove('active'); x.setAttribute('aria-checked', 'false'); });
+      b.classList.add('active');
+      b.setAttribute('aria-checked', 'true');
+      state.cat = b.getAttribute('data-cat');
+      computeAndRender();
+    });
+  });
+
+  function syncMarks(val) {
+    var v = parseInt(val, 10);
+    if (isNaN(v)) v = 0;
+    v = Math.max(0, Math.min(100, v));
+    state.marks = v;
+    if (marksInput && document.activeElement !== marksInput) marksInput.value = v;
+    if (marksRange && document.activeElement !== marksRange) marksRange.value = v;
+    computeAndRender();
+  }
+
+  marksInput.addEventListener('input', function () { syncMarks(marksInput.value); });
+  marksInput.addEventListener('change', function () { syncMarks(marksInput.value); });
+  marksRange.addEventListener('input', function () {
+    marksInput.value = marksRange.value;
+    syncMarks(marksRange.value);
+  });
+
+  // CTA → opens this hub's existing lead capture modal with college-unlock framing
+  window.openCollegeUnlock = function () {
+    var pct = (document.getElementById('res-percentile-val') || {}).textContent || '';
+    var count = (document.getElementById('res-college-count') || {}).textContent || '';
+    openModal();
+    var t = document.getElementById('modalTitle');
+    var s = document.getElementById('modalSub');
+    if (t) t.textContent = 'Unlock your ' + count + ' matching colleges';
+    if (s) s.textContent = pct + '%ile · ' + state.cat + ' · ' + state.marks + ' / 100 · Full list sent in WhatsApp';
+  };
+
+  computeAndRender();
+})();
+
+</script>
+</div>
+</div>
+
+<script src="./js/config.js"></script>
+<script src="./js/analytics.js"></script>
+<script src="./js/cookie-consent.js"></script>
+<script src="./js/lead-popup.js"></script>
+<script src="./js/download-gate.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="./js/supabase-client.js"></script>
+</body>
+</html>
