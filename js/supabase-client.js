@@ -4,14 +4,14 @@
 // Requires: config.js loaded first, then Supabase CDN
 
 // Initialize Supabase client
-const supabase = window.supabase.createClient(CV_CONFIG.SUPABASE_URL, CV_CONFIG.SUPABASE_ANON_KEY);
+var cvSupabase = window.supabase.createClient(CV_CONFIG.SUPABASE_URL, CV_CONFIG.SUPABASE_ANON_KEY);
 
 // ---- AUTH HELPERS ----
 
 const cvAuth = {
   // Get current session
   async getSession() {
-    const { data: { session } } = await supabase.auth.getSession();
+    const { data: { session } } = await cvSupabase.auth.getSession();
     return session;
   },
 
@@ -19,13 +19,13 @@ const cvAuth = {
   async getUser() {
     const session = await this.getSession();
     if (!session) return null;
-    const { data } = await supabase.from('students').select('*').eq('auth_id', session.user.id).single();
+    const { data } = await cvSupabase.from('students').select('*').eq('auth_id', session.user.id).single();
     return data;
   },
 
   // Magic link login (email-based, no Google OAuth needed)
   async loginWithMagicLink(email) {
-    const { data, error } = await supabase.auth.signInWithOtp({
+    const { data, error } = await cvSupabase.auth.signInWithOtp({
       email: email,
       options: { emailRedirectTo: window.location.origin + '/CampusVazhi-Login.html?auth=callback' }
     });
@@ -35,7 +35,7 @@ const cvAuth = {
 
   // Google login (for future use when OAuth is configured)
   async loginWithGoogle() {
-    const { data, error } = await supabase.auth.signInWithOAuth({
+    const { data, error } = await cvSupabase.auth.signInWithOAuth({
       provider: 'google',
       options: { redirectTo: window.location.origin + '/campusvazhi-home-v2.html' }
     });
@@ -54,7 +54,7 @@ const cvAuth = {
     if (pw) pw.style.setProperty('margin-left', '0', 'important');
     localStorage.removeItem('cv_signed_in');
     localStorage.removeItem('cv_user');
-    await supabase.auth.signOut();
+    await cvSupabase.auth.signOut();
     window.location.href = './campusvazhi-home-v2.html';
   },
 
@@ -82,7 +82,7 @@ const cvAuth = {
 
     if (!existing) {
       // New user — insert basic profile from Google data
-      await supabase.from('students').insert({
+      await cvSupabase.from('students').insert({
         auth_id: user.id,
         email: user.email,
         full_name: user.user_metadata?.full_name || user.email.split('@')[0],
@@ -114,7 +114,7 @@ const cvAuth = {
 
   // Listen for auth state changes
   onAuthChange(callback) {
-    supabase.auth.onAuthStateChange((event, session) => {
+    cvSupabase.auth.onAuthStateChange((event, session) => {
       callback(event, session);
     });
   }
@@ -125,7 +125,7 @@ const cvAuth = {
 const cvLeads = {
   // Save CTA lead (Get Free Guide/Kit/Roadmap/Mock modals)
   async saveCTALead(data) {
-    const { error } = await supabase.from('cta_leads').insert({
+    const { error } = await cvSupabase.from('cta_leads').insert({
       name: data.name || null,
       email: data.email || null,
       phone: data.phone || null,
@@ -139,7 +139,7 @@ const cvLeads = {
 
   // Save counselling booking
   async saveCounsellingLead(data) {
-    const { error } = await supabase.from('counselling_leads').insert({
+    const { error } = await cvSupabase.from('counselling_leads').insert({
       name: data.name,
       email: data.email || null,
       phone: data.phone,
@@ -160,7 +160,7 @@ const cvLeads = {
       const student = await cvAuth.getUser();
       studentId = student?.id;
     }
-    const { error } = await supabase.from('quiz_results').insert({
+    const { error } = await cvSupabase.from('quiz_results').insert({
       student_id: studentId,
       answers: data.answers,
       result: data.result,
@@ -178,7 +178,7 @@ const cvLeads = {
       const student = await cvAuth.getUser();
       studentId = student?.id;
     }
-    const { error } = await supabase.from('calculator_saves').insert({
+    const { error } = await cvSupabase.from('calculator_saves').insert({
       student_id: studentId,
       maths_marks: data.maths,
       physics_marks: data.physics,
