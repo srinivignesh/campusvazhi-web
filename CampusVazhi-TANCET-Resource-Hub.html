@@ -2320,7 +2320,7 @@ function toggleLang() {
 
 // ── Modal ──
 function openModal() {
-  if (localStorage.getItem('cv_signed_in') === '1') { return; }
+  if (localStorage.getItem('cv_signed_in') === '1') { window.open('/CampusVazhi-TANCET-MBA-Resource-Pack.pdf', '_blank'); return; }
   document.getElementById('modal').classList.add('active');
   document.getElementById('modalForm').classList.remove('hidden');
   document.getElementById('modalSuccess').classList.remove('active');

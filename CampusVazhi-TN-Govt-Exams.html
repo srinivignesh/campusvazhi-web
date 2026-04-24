@@ -713,7 +713,7 @@ body:not(.lang-ta) .ta{display:none}
 
   // 2. Modal control
   function openModal() {
-    if (localStorage.getItem('cv_signed_in') === '1') { return; }
+    if (localStorage.getItem('cv_signed_in') === '1') { window.open('/CampusVazhi-TNPSC-Group-2A-Resource-Pack.pdf', '_blank'); return; }
     document.getElementById('modal').classList.add('active');
     document.getElementById('modalForm').classList.remove('hidden');
     document.getElementById('modalSuccess').classList.remove('active');
