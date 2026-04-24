@@ -74,7 +74,7 @@ const cvAuth = {
     if (!session) return;
 
     const user = session.user;
-    const { data: existing } = await supabase
+    const { data: existing } = await cvSupabase
       .from('students')
       .select('id')
       .eq('auth_id', user.id)
@@ -98,7 +98,7 @@ const cvAuth = {
     const session = await this.getSession();
     if (!session) throw new Error('Not logged in');
 
-    const { error } = await supabase
+    const { error } = await cvSupabase
       .from('students')
       .update({
         phone: data.phone,
