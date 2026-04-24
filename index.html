@@ -1152,15 +1152,14 @@ body.logged-in .page-wrap, .logged-in .page-wrap { margin-left: 68px !important;
   </a>
 
   <div class="nav-actions">
-    <a href="#sign-in" class="btn-ghost nav-sign-in" onclick="event.preventDefault();openSignin()">
-      <span class="en">Sign in</span>
+    <a href="#login" class="btn-ghost nav-sign-in" onclick="event.preventDefault();openSignin()" style="cursor:pointer">
+      <span class="en">Log in</span>
       <span class="ta">உள்நுழை</span>
-      <span> →</span>
     </a>
 
-    <a href="./CampusVazhi-Book-Counselling.html" class="btn-primary">
-      <span class="en">Talk to a mentor</span>
-      <span class="ta">ஆலோசகரிடம் பேசுங்கள்</span>
+    <a href="#signup" class="btn-primary nav-sign-in" onclick="event.preventDefault();openModal()" style="cursor:pointer">
+      <span class="en">Sign up</span>
+      <span class="ta">பதிவு செய்யுங்கள்</span>
     </a>
 
     <div class="lang-toggle" role="tablist" aria-label="Language">
@@ -3263,68 +3262,33 @@ body.logged-in .page-wrap, .logged-in .page-wrap { margin-left: 68px !important;
   </div>
 </footer>
 
-<!-- ================= SIGN-IN POPUP ================= -->
+<!-- ================= LOGIN POPUP ================= -->
 <div class="modal-overlay" id="signin-modal" onclick="if(event.target===this)closeSignin()">
   <div class="modal-card" style="background: var(--white); border-radius: 16px; padding: 32px; max-width: 380px; box-shadow: var(--shadow-lg); position: relative;">
 
-    <!-- Step 1: Enter phone -->
     <div id="si-step1">
       <button class="modal-close" onclick="closeSignin()" style="position: absolute; top: 16px; right: 16px; border: 0; background: transparent; font-size: 28px; color: var(--g500); cursor: pointer; padding: 0; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;" onmouseover="this.style.color='var(--g700)'" onmouseout="this.style.color='var(--g500)'">×</button>
 
-      <div style="width: 48px; height: 48px; border-radius: 12px; background: var(--teal-bg); display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-          <circle cx="12" cy="7" r="4"/>
-        </svg>
+      <!-- CampusVazhi Logo -->
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:24px;">
+        <div style="width:40px;height:40px;min-width:40px;background:linear-gradient(135deg,#0D9488,#14B8A6);border-radius:10px;display:flex;align-items:center;justify-content:center">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+        </div>
+        <span style="font-size:18px;font-weight:800;color:var(--navy)">Campus<span style="color:var(--teal)">Vazhi</span></span>
       </div>
 
-      <h3 style="font-size: 20px; font-weight: 800; color: var(--navy); margin: 0 0 6px;">
-        <span class="en">Welcome back</span>
-        <span class="ta">மீண்டும் வரவேற்கிறோம்</span>
-      </h3>
-      <p style="font-size: 14px; color: var(--g500); margin: 0 0 20px; line-height: 1.5;">
-        <span class="en">Enter the WhatsApp number you signed up with.</span>
-        <span class="ta">நீங்கள் பதிவு செய்த WhatsApp எண்ணை உள்ளிடுங்கள்.</span>
-      </p>
+      <h3 style="font-size: 22px; font-weight: 800; color: var(--navy); margin: 0 0 8px;">Login to get started</h3>
+      <p style="font-size: 14px; color: var(--g500); margin: 0 0 24px; line-height: 1.5;">Welcome back! Sign in to access your dashboard.</p>
 
-      <input type="tel" id="si-phone" placeholder="WhatsApp number" style="width: 100%; border: 1px solid var(--g200); border-radius: 8px; padding: 12px 14px; font-size: 15px; font-family: inherit; margin-bottom: 6px; transition: border-color 0.15s ease;"  aria-label="WhatsApp number"/>
-      <p id="si-error" style="font-size: 12px; color: var(--red); margin: 0 0 12px; display: none;">
-        <span class="en">We couldn't find that number. Try joining first.</span>
-        <span class="ta">அந்த எண் கிடைக்கவில்லை. முதலில் இணையுங்கள்.</span>
-      </p>
-
-      <button class="btn-primary" style="width: 100%; justify-content: center;" onclick="lookupSignin()">
-        <span class="en">Sign in →</span>
-        <span class="ta">உள்நுழை →</span>
+      <!-- Google Sign-in Button -->
+      <button onclick="googleSignIn()" style="width:100%;display:flex;align-items:center;justify-content:center;gap:10px;padding:14px;border:1.5px solid var(--g200);border-radius:10px;background:#fff;font-size:15px;font-weight:600;color:var(--g700);cursor:pointer;font-family:inherit;transition:all 0.15s ease;" onmouseover="this.style.borderColor='#4285F4';this.style.background='#F8FAFF'" onmouseout="this.style.borderColor='var(--g200)';this.style.background='#fff'">
+        <svg width="20" height="20" viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>
+        Log in with Google
       </button>
 
-      <p style="font-size: 12px; color: var(--g500); margin: 14px 0 0; text-align: center; line-height: 1.5;">
-        <span class="en">New here? <a href="#" onclick="event.preventDefault();closeSignin();openModal();" style="color: var(--teal); font-weight: 600;">Join free →</a></span>
-        <span class="ta">புதிதாக வந்தீர்களா? <a href="#" onclick="event.preventDefault();closeSignin();openModal();" style="color: var(--teal); font-weight: 600;">இலவசமாக இணையுங்கள் →</a></span>
+      <p style="font-size: 14px; color: var(--g500); margin: 24px 0 0; text-align: center; line-height: 1.5;">
+        New user? <a href="#" onclick="event.preventDefault();closeSignin();openModal();" style="color: #2563EB; font-weight: 700; text-decoration: none; padding: 8px 20px; background: #EFF6FF; border-radius: 8px; display: inline-block; margin-top: 8px;">Sign up</a>
       </p>
-    </div>
-
-    <!-- Step 2: Found — welcome back -->
-    <div id="si-found" style="display: none; text-align: center;">
-      <button class="modal-close" onclick="closeSignin()" style="position: absolute; top: 16px; right: 16px; border: 0; background: transparent; font-size: 28px; color: var(--g500); cursor: pointer; padding: 0; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;" onmouseover="this.style.color='var(--g700)'" onmouseout="this.style.color='var(--g500)'">×</button>
-
-      <div style="width: 64px; height: 64px; border-radius: 50%; background: var(--teal); display: flex; align-items: center; justify-content: center; margin: 0 auto 16px;">
-        <span id="si-avatar" style="font-size: 28px; font-weight: 800; color: var(--white);">V</span>
-      </div>
-
-      <h3 style="font-size: 20px; font-weight: 800; color: var(--navy); margin: 0 0 4px;">
-        <span class="en">Welcome back, <span id="si-name-en">—</span>!</span>
-        <span class="ta">மீண்டும் வரவேற்கிறோம், <span id="si-name-ta">—</span>!</span>
-      </h3>
-      <p style="font-size: 14px; color: var(--g500); margin: 0 0 20px; line-height: 1.5;">
-        <span class="en">You're signed in. Your group and resources are ready.</span>
-        <span class="ta">நீங்கள் உள்நுழைந்துள்ளீர்கள். உங்கள் குழு மற்றும் வளங்கள் தயாராக உள்ளன.</span>
-      </p>
-
-      <button class="btn-primary" style="width: 100%; justify-content: center;" onclick="closeSignin()">
-        <span class="en">Continue →</span>
-        <span class="ta">தொடரவும் →</span>
-      </button>
     </div>
 
   </div>
@@ -3333,39 +3297,37 @@ body.logged-in .page-wrap, .logged-in .page-wrap { margin-left: 68px !important;
 <!-- ================= MODAL ================= -->
 <div class="modal-overlay" id="modal" onclick="if(event.target===this)closeModal()">
   <div class="modal-card" style="background: var(--white); border-radius: 16px; padding: 32px; max-width: 420px; box-shadow: var(--shadow-lg); position: relative;">
-    <!-- Form state -->
+    <!-- Sign Up Form -->
     <div id="modalForm">
       <button class="modal-close" onclick="closeModal()" style="position: absolute; top: 16px; right: 16px; border: 0; background: transparent; font-size: 28px; color: var(--g500); cursor: pointer; padding: 0; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; transition: color 0.15s ease;" onmouseover="this.style.color='var(--g700)'" onmouseout="this.style.color='var(--g500)'">×</button>
 
-      <h3 style="font-size: 22px; font-weight: 800; color: var(--navy); margin: 0 0 8px;">
-        <span class="en">Join CampusVazhi</span>
-        <span class="ta">CampusVazhi-ல் இணைந்து கொள்ளுங்கள்</span>
-      </h3>
-      <p id="modal-sub" style="font-size: 14px; color: var(--g500); margin: 0 0 24px; line-height: 1.6;">
-        <span class="en">Pick your group and you're in. Free forever.</span>
-        <span class="ta">உங்கள் குழுவைத் தேர்ந்தெடுங்கள், நீங்கள் உள்ளே உள்ளீர்கள். என்றுமே இலவசம்.</span>
-      </p>
+      <!-- CampusVazhi Logo -->
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:24px;">
+        <div style="width:40px;height:40px;min-width:40px;background:linear-gradient(135deg,#0D9488,#14B8A6);border-radius:10px;display:flex;align-items:center;justify-content:center">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+        </div>
+        <span style="font-size:18px;font-weight:800;color:var(--navy)">Campus<span style="color:var(--teal)">Vazhi</span></span>
+      </div>
 
-      <!-- Google Sign-in Button -->
-      <button onclick="googleSignIn()" style="width:100%;display:flex;align-items:center;justify-content:center;gap:10px;padding:12px 14px;border:1.5px solid var(--g200);border-radius:8px;background:#fff;font-size:14px;font-weight:600;color:var(--g700);cursor:pointer;font-family:inherit;margin-bottom:16px;transition:all 0.15s ease;" onmouseover="this.style.borderColor='#4285F4';this.style.background='#F8FAFF'" onmouseout="this.style.borderColor='var(--g200)';this.style.background='#fff'">
-        <svg width="18" height="18" viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>
-        <span class="en">Continue with Google</span>
-        <span class="ta">Google மூலம் தொடரவும்</span>
+      <h3 style="font-size: 22px; font-weight: 800; color: var(--navy); margin: 0 0 8px;">Sign up to get started</h3>
+      <p id="modal-sub" style="font-size: 14px; color: var(--g500); margin: 0 0 20px; line-height: 1.5;">Create your free account. No payment needed.</p>
+
+      <!-- Google Sign-up Button -->
+      <button onclick="googleSignIn()" style="width:100%;display:flex;align-items:center;justify-content:center;gap:10px;padding:14px;border:1.5px solid var(--g200);border-radius:10px;background:#fff;font-size:15px;font-weight:600;color:var(--g700);cursor:pointer;font-family:inherit;margin-bottom:20px;transition:all 0.15s ease;" onmouseover="this.style.borderColor='#4285F4';this.style.background='#F8FAFF'" onmouseout="this.style.borderColor='var(--g200)';this.style.background='#fff'">
+        <svg width="20" height="20" viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>
+        Sign up with Google
       </button>
 
       <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px">
         <div style="flex:1;height:1px;background:var(--g200)"></div>
-        <span style="font-size:12px;color:var(--g400);font-weight:500">or fill manually</span>
+        <span style="font-size:12px;color:var(--g400);font-weight:500">or fill in your details</span>
         <div style="flex:1;height:1px;background:var(--g200)"></div>
       </div>
 
-      <input type="text" id="jn-name" placeholder="Your name" style="width: 100%; border: 1px solid var(--g200); border-radius: 8px; padding: 12px 14px; font-size: 14px; font-family: inherit; margin-bottom: 12px; transition: border-color 0.15s ease;"  aria-label="Your name"/>
-      <input type="tel" id="jn-phone" placeholder="WhatsApp number" style="width: 100%; border: 1px solid var(--g200); border-radius: 8px; padding: 12px 14px; font-size: 14px; font-family: inherit; margin-bottom: 12px; transition: border-color 0.15s ease;"  aria-label="WhatsApp number"/>
+      <input type="text" id="jn-name" placeholder="Your name" style="width: 100%; border: 1px solid var(--g200); border-radius: 8px; padding: 12px 14px; font-size: 14px; font-family: inherit; margin-bottom: 12px; transition: border-color 0.15s ease;" aria-label="Your name"/>
+      <input type="tel" id="jn-phone" placeholder="WhatsApp number" style="width: 100%; border: 1px solid var(--g200); border-radius: 8px; padding: 12px 14px; font-size: 14px; font-family: inherit; margin-bottom: 12px; transition: border-color 0.15s ease;" aria-label="WhatsApp number"/>
       <select id="jn-goal" style="width: 100%; border: 1px solid var(--g200); border-radius: 8px; padding: 12px 14px; font-size: 14px; font-family: inherit; margin-bottom: 16px; color: var(--g700); appearance: none; background-image: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2224%22 height=%2224%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%236B7280%22 stroke-width=%222%22 aria-label="Your goal"><polyline points=%226 9 12 15 18 9%22></polyline></svg>'); background-repeat: no-repeat; background-position: right 8px center; background-size: 20px; padding-right: 32px;">
-        <option value="">
-          <span class="en">What's your goal?</span>
-          <span class="ta">உங்கள் இலக்கு என்ன?</span>
-        </option>
+        <option value="">What's your goal?</option>
         <option>TANCET 2026</option>
         <option>CAT 2026 Prep</option>
         <option>MS / MIM Abroad</option>
@@ -3373,10 +3335,13 @@ body.logged-in .page-wrap, .logged-in .page-wrap { margin-left: 68px !important;
         <option>Career & Resume</option>
         <option>Just exploring</option>
       </select>
-      <button class="btn-primary" style="width: 100%; justify-content: center; margin-top: 8px;" onclick="submitJoin()">
-        <span class="en">Join free →</span>
-        <span class="ta">இலவசமாக இணைந்து கொள்ளுங்கள் →</span>
+      <button class="btn-primary" style="width: 100%; justify-content: center; margin-top: 4px;" onclick="submitJoin()">
+        Sign up free →
       </button>
+
+      <p style="font-size: 13px; color: var(--g500); margin: 16px 0 0; text-align: center; line-height: 1.5;">
+        Already have an account? <a href="#" onclick="event.preventDefault();closeModal();openSignin();" style="color: var(--teal); font-weight: 600;">Log in →</a>
+      </p>
     </div>
 
     <!-- Success state -->
@@ -3555,12 +3520,8 @@ body.logged-in .page-wrap, .logged-in .page-wrap { margin-left: 68px !important;
   }
   checkSignIn();
 
-  // 3b. Sign-in Popup
+  // 3b. Login Popup
   function openSignin() {
-    document.getElementById('si-step1').style.display = '';
-    document.getElementById('si-found').style.display = 'none';
-    document.getElementById('si-phone').value = '';
-    document.getElementById('si-error').style.display = 'none';
     document.getElementById('signin-modal').classList.add('active');
   }
 
