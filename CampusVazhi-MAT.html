@@ -499,10 +499,11 @@ function submitForm() {
       source: 'mat-page', created_at: new Date().toISOString()
     }]);
   }
+  var pdfWin = window.open('/CampusVazhi-MAT-Resource-Pack.pdf', '_blank');
   document.getElementById('modalFormWrap').classList.add('hidden');
   document.getElementById('modalSuccess').classList.add('active');
   setTimeout(function() {
-    window.open('/CampusVazhi-MAT-Resource-Pack.pdf', '_blank');
+    if (!pdfWin || pdfWin.closed) window.open('/CampusVazhi-MAT-Resource-Pack.pdf', '_blank');
   }, 1200);
 }
 function signOut() {
