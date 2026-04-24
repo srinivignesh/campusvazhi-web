@@ -37,7 +37,7 @@ const cvAuth = {
   async loginWithGoogle() {
     const { data, error } = await cvSupabase.auth.signInWithOAuth({
       provider: 'google',
-      options: { redirectTo: window.location.origin + '/campusvazhi-home-v2.html' }
+      options: { redirectTo: window.location.origin + '/' }
     });
     if (error) console.error('Login error:', error);
     return { data, error };
