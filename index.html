@@ -381,7 +381,9 @@ body.logged-in .page-wrap, .logged-in .page-wrap { margin-left: 68px !important;
 
     /* ============= ANNOUNCEMENT TOP BAR ============= */
     .top-bar {
-      background: var(--navy);
+      background: linear-gradient(90deg, #991b1b, #dc2626, #b91c1c, #dc2626, #991b1b);
+      background-size: 300% 100%;
+      animation: topBarShimmer 4s ease-in-out infinite;
       color: var(--white);
       padding: 10px 16px;
       text-align: center;
@@ -396,27 +398,33 @@ body.logged-in .page-wrap, .logged-in .page-wrap { margin-left: 68px !important;
       gap: 10px;
       flex-wrap: wrap;
     }
+    @keyframes topBarShimmer {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+    }
     .top-bar .pulse {
-      width: 8px;
-      height: 8px;
+      width: 9px;
+      height: 9px;
       border-radius: 50%;
-      background: var(--gold);
+      background: #fef08a;
       display: inline-block;
-      animation: pulse 2s ease-in-out infinite;
+      animation: pulse 0.9s ease-in-out infinite;
     }
     @keyframes pulse {
       0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.4; transform: scale(0.8); }
+      50% { opacity: 0.3; transform: scale(1.5); }
     }
     .top-bar a {
-      background: var(--gold);
-      color: var(--navy);
+      background: #fef08a;
+      color: #7f1d1d;
       border-radius: 4px;
       padding: 4px 12px;
       font-size: 12px;
       font-weight: 800;
       margin-left: 4px;
       display: inline-block;
+      white-space: nowrap;
+      text-decoration: none;
     }
 
     /* ============= NAV ============= */
@@ -693,32 +701,56 @@ body.logged-in .page-wrap, .logged-in .page-wrap { margin-left: 68px !important;
     }
 
     /* Hero countdown */
+    .hero-countdown-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      margin: 0 auto 24px;
+    }
+    .hero-countdown-eyebrow {
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #fca5a5;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
     .hero-countdown {
       display: inline-flex;
       align-items: center;
       gap: 16px;
-      background: rgba(15, 27, 45, 0.6);
-      border: 1px solid rgba(255,255,255,0.1);
+      background: rgba(127,29,29,0.35);
+      border: 1.5px solid rgba(239,68,68,0.5);
       border-radius: 16px;
-      padding: 12px 24px;
-      margin: 0 auto 24px;
+      padding: 14px 28px;
+      box-shadow: 0 0 24px rgba(239,68,68,0.2), inset 0 0 24px rgba(127,29,29,0.15);
+      animation: urgentGlow 2s ease-in-out infinite;
+      position: relative;
+    }
+    @keyframes urgentGlow {
+      0%, 100% { box-shadow: 0 0 18px rgba(239,68,68,0.2); border-color: rgba(239,68,68,0.45); }
+      50%       { box-shadow: 0 0 36px rgba(239,68,68,0.45); border-color: rgba(239,68,68,0.85); }
     }
     .cd-label {
       display: flex;
+      flex-direction: column;
       align-items: center;
-      gap: 8px;
-      font-size: 11px;
+      gap: 4px;
+      font-size: 10px;
       font-weight: 800;
-      letter-spacing: 0.08em;
-      color: var(--gold);
+      letter-spacing: 0.1em;
+      color: #fca5a5;
       text-transform: uppercase;
     }
     .cd-pulse {
       width: 8px;
       height: 8px;
       border-radius: 50%;
-      background: var(--gold);
-      animation: pulse 2s ease-in-out infinite;
+      background: #ef4444;
+      animation: pulse 0.9s ease-in-out infinite;
     }
     .cd-boxes {
       display: flex;
@@ -726,17 +758,18 @@ body.logged-in .page-wrap, .logged-in .page-wrap { margin-left: 68px !important;
       gap: 6px;
     }
     .cd-box {
-      background: rgba(255,255,255,0.08);
+      background: rgba(239,68,68,0.15);
+      border: 1px solid rgba(239,68,68,0.3);
       border-radius: 10px;
-      padding: 8px 12px;
+      padding: 10px 14px;
       text-align: center;
-      min-width: 54px;
+      min-width: 58px;
     }
     .cd-val {
       display: block;
-      font-size: 26px;
-      font-weight: 800;
-      color: var(--white);
+      font-size: 30px;
+      font-weight: 900;
+      color: #fff;
       line-height: 1;
     }
     .cd-unit {
@@ -744,22 +777,55 @@ body.logged-in .page-wrap, .logged-in .page-wrap { margin-left: 68px !important;
       font-size: 9px;
       font-weight: 700;
       letter-spacing: 0.08em;
-      color: rgba(255,255,255,0.5);
+      color: #fca5a5;
       margin-top: 4px;
       text-transform: uppercase;
     }
     .cd-sep {
-      color: rgba(255,255,255,0.3);
-      font-size: 20px;
-      font-weight: 700;
+      color: rgba(239,68,68,0.5);
+      font-size: 22px;
+      font-weight: 800;
+    }
+    .hero-countdown-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #ef4444;
+      color: #fff;
+      font-size: 13px;
+      font-weight: 800;
+      border-radius: 10px;
+      padding: 10px 22px;
+      text-decoration: none;
+      letter-spacing: 0.02em;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .hero-countdown-cta:hover {
+      background: #dc2626;
+      transform: translateY(-1px);
+    }
+    .hero-countdown-sub {
+      font-size: 11px;
+      color: rgba(255,255,255,0.5);
+      margin-top: 2px;
     }
 
     /* ============= RESPONSIVE ============= */
     @media (max-width: 640px) {
       .top-bar {
-        font-size: 12px;
-        padding: 9px 14px;
+        font-size: 11px;
+        padding: 9px 12px;
       }
+      .hero-countdown {
+        flex-direction: column;
+        gap: 10px;
+        padding: 14px 18px;
+      }
+      .cd-box { min-width: 48px; padding: 8px 10px; }
+      .cd-val { font-size: 24px; }
+      .hero-countdown-cta { font-size: 12px; padding: 9px 18px; }
+      .hero-countdown-eyebrow { font-size: 10px; text-align: center; }
+      .hero-countdown-sub { font-size: 10px; text-align: center; padding: 0 16px; }
       .nav {
         padding: 14px 16px;
         gap: 10px;
@@ -1131,11 +1197,11 @@ body.logged-in .page-wrap, .logged-in .page-wrap { margin-left: 68px !important;
 <!-- ================= TOP BAR ================= -->
 <div class="top-bar">
   <span class="pulse"></span>
-  <span class="en"><strong>TANCET 2026</strong> is on May 9 · Free prep hub is live</span>
-  <span class="ta"><strong>TANCET 2026</strong> மே 9 · இலவச தயாரிப்பு ஹப் திறந்துவிட்டது</span>
+  <span class="en">⚠️ <strong>TANCET 2026 is on May 9</strong> — Only 14 days left. Don't walk in unprepared.</span>
+  <span class="ta">⚠️ <strong>TANCET 2026 மே 9</strong> — வெறும் 14 நாட்கள் மட்டுமே. தயாராகி விடுங்கள்!</span>
   <a href="./CampusVazhi-TANCET-Resource-Hub.html">
-    <span class="en">Open Prep Hub →</span>
-    <span class="ta">திற →</span>
+    <span class="en">Free PYQs + Mock Tests →</span>
+    <span class="ta">இலவச PYQ + Mock →</span>
   </a>
 </div>
 
@@ -1208,20 +1274,36 @@ body.logged-in .page-wrap, .logged-in .page-wrap { margin-left: 68px !important;
       <span class="ta">வெளிநாட்டுப் படிப்பு, Management programs, UG சேர்க்கை, TANCET தயாரிப்பு, தொழில் வாய்ப்புகள் — அனுபவமுள்ள பல்கலைக்கழக முன்னாள் மாணவர்களால் தமிழ்நாட்டு மாணவர்களுக்காக உருவாக்கிய இலவச வழிகாட்டுதல். இடைத்தரகர் இல்லை. மறைவான கமிஷன் இல்லை. உங்கள் சிறந்த தேர்வ என்ன என்பது நீங்கள் தீர்மானிக்கவும்; நாங்கள் படத்தை தெளிவுபடுத்துவோம்.</span>
     </p>
 
-    <div class="hero-countdown">
-      <div class="cd-label">
-        <span class="cd-pulse"></span>
-        <span class="en">TANCET 2026 IN</span>
-        <span class="ta">TANCET 2026</span>
+    <div class="hero-countdown-wrapper">
+      <div class="hero-countdown-eyebrow">
+        <span>🔥</span>
+        <span class="en">EXAM COUNTDOWN — ACT NOW OR REGRET LATER</span>
+        <span class="ta">தேர்வு எண்ணிக்கை — இப்போதே தயாரிக்கவும்</span>
       </div>
-      <div class="cd-boxes">
-        <div class="cd-box"><span class="cd-val" id="cd-d">25</span><span class="cd-unit">DAYS</span></div>
-        <span class="cd-sep">:</span>
-        <div class="cd-box"><span class="cd-val" id="cd-h">19</span><span class="cd-unit">HRS</span></div>
-        <span class="cd-sep">:</span>
-        <div class="cd-box"><span class="cd-val" id="cd-m">02</span><span class="cd-unit">MIN</span></div>
-        <span class="cd-sep">:</span>
-        <div class="cd-box"><span class="cd-val" id="cd-s">21</span><span class="cd-unit">SEC</span></div>
+      <div class="hero-countdown">
+        <div class="cd-label">
+          <span class="cd-pulse"></span>
+          <span class="en">TANCET 2026 IN</span>
+          <span class="ta">TANCET 2026</span>
+        </div>
+        <div class="cd-boxes">
+          <div class="cd-box"><span class="cd-val" id="cd-d">14</span><span class="cd-unit">DAYS</span></div>
+          <span class="cd-sep">:</span>
+          <div class="cd-box"><span class="cd-val" id="cd-h">00</span><span class="cd-unit">HRS</span></div>
+          <span class="cd-sep">:</span>
+          <div class="cd-box"><span class="cd-val" id="cd-m">00</span><span class="cd-unit">MIN</span></div>
+          <span class="cd-sep">:</span>
+          <div class="cd-box"><span class="cd-val" id="cd-s">00</span><span class="cd-unit">SEC</span></div>
+        </div>
+      </div>
+      <a href="./CampusVazhi-TANCET-Resource-Hub.html" class="hero-countdown-cta">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        <span class="en">Start Last-Minute Prep — Free</span>
+        <span class="ta">இலவச தயாரிப்பு தொடங்குங்கள்</span>
+      </a>
+      <div class="hero-countdown-sub">
+        <span class="en">10 years of PYQs · Free mock tests · Join 4,000+ students preparing now</span>
+        <span class="ta">10 வருட PYQ · இலவச mock tests · 4,000+ மாணவர்களுடன் சேரவும்</span>
       </div>
     </div>
 
