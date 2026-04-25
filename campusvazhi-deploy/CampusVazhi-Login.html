@@ -7,10 +7,31 @@
 body.logged-in .sidebar, .logged-in .sidebar { display: flex !important; }
 body.logged-in .page-wrap, .logged-in .page-wrap { margin-left: 68px !important; }
 @media (max-width: 768px) {
+  body.logged-in .sidebar, .logged-in .sidebar { display: none !important; }
   body.logged-in .page-wrap, .logged-in .page-wrap { margin-left: 0 !important; }
 }
 </style>
-<script>(function(){var s=localStorage.getItem('cv_signed_in')==='1';if(s)document.documentElement.classList.add('logged-in');document.addEventListener('DOMContentLoaded',function(){var sb=document.querySelector('.sidebar');var pw=document.querySelector('.page-wrap');if(s){document.body.classList.add('logged-in');if(sb)sb.style.setProperty('display','flex','important');if(pw)pw.style.setProperty('margin-left','68px','important')}else{if(sb)sb.style.setProperty('display','none','important');if(pw)pw.style.setProperty('margin-left','0','important')}});})()</script>
+<script>(function(){
+  var s = localStorage.getItem('cv_signed_in') === '1';
+  if(s) document.documentElement.classList.add('logged-in');
+  document.addEventListener('DOMContentLoaded', function(){
+    var sb = document.querySelector('.sidebar');
+    var pw = document.querySelector('.page-wrap');
+    function applyLayout(){
+      var isMobile = window.innerWidth <= 768;
+      if(s){
+        document.body.classList.add('logged-in');
+        if(sb) sb.style.setProperty('display', isMobile ? 'none' : 'flex', 'important');
+        if(pw) pw.style.setProperty('margin-left', isMobile ? '0' : '68px', 'important');
+      } else {
+        if(sb) sb.style.setProperty('display','none','important');
+        if(pw) pw.style.setProperty('margin-left','0','important');
+      }
+    }
+    applyLayout();
+    window.addEventListener('resize', applyLayout);
+  });
+})()</script>
 
 
 <meta charset="UTF-8">
@@ -309,33 +330,21 @@ body.lang-ta .en{display:none}
     <div class="error-msg" id="errorMsg"></div>
     <div class="success-msg" id="successMsg"></div>
 
-    <!-- Auth Section — Email Magic Link (shown on initial load) -->
+    <!-- Auth Section — Google Sign In Only -->
     <div class="auth-section" id="authSection">
-      <!-- Email Input Form -->
-      <div id="emailForm">
-        <div class="email-input-group">
-          <label><span class="en">Email Address</span><span class="ta">மின்னஞ்சல் முகவரி</span></label>
-          <input type="email" id="emailInput" placeholder="you@example.com" autocomplete="email" required  aria-label="Email address"/>
-        </div>
-        <button class="magic-link-btn" onclick="sendMagicLink()" id="magicLinkBtn">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          <span><span class="en">Send Login Link</span><span class="ta">உள்நுழைவு இணைப்பை அனுப்பு</span></span>
-        </button>
-      </div>
+      <p style="font-size:13px;font-weight:600;color:#0D9488;text-align:center;margin-bottom:20px;background:#F0FDFA;padding:12px;border-radius:8px;line-height:1.5">
+        📦 Sign in to download your free resource pack
+      </p>
 
-      <!-- Magic Link Sent Confirmation (hidden initially) -->
-      <div id="magicLinkSent" class="magic-link-sent" style="display:none">
-        <div class="sent-icon">
-          <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-        </div>
-        <h3><span class="en">Check Your Email</span><span class="ta">உங்கள் மின்னஞ்சலைச் சரிபாருங்கள்</span></h3>
-        <p><span class="en">We sent a magic login link to <strong id="sentEmailDisplay"></strong>. Click the link in the email to sign in.</span><span class="ta"><strong id="sentEmailDisplayTa"></strong> க்கு மேஜிக் உள்நுழைவு இணைப்பை அனுப்பினோம். உள்நுழைய மின்னஞ்சலில் உள்ள இணைப்பைக் கிளிக் செய்யுங்கள்.</span></p>
-        <button class="resend-link" onclick="resendMagicLink()"><span class="en">Didn't get it? Resend link</span><span class="ta">கிடைக்கவில்லையா? மீண்டும் அனுப்பு</span></button>
-      </div>
+      <!-- Google Sign In Button -->
+      <button onclick="signInWithGoogle()" style="width:100%;display:flex;align-items:center;justify-content:center;gap:12px;padding:14px 20px;background:#fff;border:1.5px solid #E5E7EB;border-radius:10px;font-size:15px;font-weight:600;color:#374151;cursor:pointer;font-family:inherit;transition:all 0.2s;box-shadow:0 1px 4px rgba(0,0,0,0.06)" onmouseover="this.style.borderColor='#0D9488';this.style.boxShadow='0 2px 8px rgba(13,148,136,0.15)'" onmouseout="this.style.borderColor='#E5E7EB';this.style.boxShadow='0 1px 4px rgba(0,0,0,0.06)'">
+        <svg width="20" height="20" viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.5 0 6.6 1.2 9.1 3.2l6.8-6.8C35.9 2.4 30.3 0 24 0 14.6 0 6.6 5.5 2.8 13.5l7.9 6.1C12.5 13.1 17.8 9.5 24 9.5z"/><path fill="#4285F4" d="M46.5 24.5c0-1.6-.1-3.1-.4-4.5H24v8.5h12.7c-.6 3-2.3 5.5-4.8 7.2l7.5 5.8C43.8 37.3 46.5 31.3 46.5 24.5z"/><path fill="#FBBC05" d="M10.7 28.4A14.5 14.5 0 0 1 9.5 24c0-1.5.3-3 .7-4.4L2.3 13.5A23.9 23.9 0 0 0 0 24c0 3.8.9 7.4 2.5 10.6l8.2-6.2z"/><path fill="#34A853" d="M24 48c6.2 0 11.5-2 15.3-5.5l-7.5-5.8c-2 1.4-4.6 2.2-7.8 2.2-6.2 0-11.5-3.7-13.3-9.1l-8 6.2C6.6 42.5 14.6 48 24 48z"/></svg>
+        Continue with Google
+      </button>
 
-      <div class="privacy-notice" style="margin-top:16px">
-        <p><span class="en">No password needed. We'll email you a secure login link. Your data stays private.</span><span class="ta">கடவுச்சொல் தேவையில்லை. பாதுகாப்பான உள்நுழைவு இணைப்பை மின்னஞ்சல் செய்வோம். உங்கள் தரவு தனிப்பட்டதாக இருக்கும்.</span></p>
-      </div>
+      <p style="font-size:12px;color:#9CA3AF;text-align:center;margin-top:16px;line-height:1.6">
+        Free access · No spam · Your data stays private
+      </p>
     </div>
 
     <!-- Profile Completion Form (shown after login) -->
@@ -392,6 +401,27 @@ body.lang-ta .en{display:none}
 <script src="./js/supabase-client.js"></script>
 
 <script>
+// ============= GOOGLE SIGN IN =============
+async function signInWithGoogle() {
+  // Save redirect destination before OAuth redirect
+  var params = new URLSearchParams(window.location.search);
+  var redirectTo = params.get('redirect') || '';
+  if (redirectTo) sessionStorage.setItem('cv_post_login_redirect', redirectTo);
+
+  // Trigger Supabase Google OAuth
+  const { error } = await cvSupabase.auth.signInWithOAuth({
+    provider: 'google',
+    options: {
+      redirectTo: window.location.origin + '/CampusVazhi-Login.html?auth=callback'
+    }
+  });
+  if (error) {
+    document.getElementById('errorMsg').textContent = 'Google sign-in failed. Please try again.';
+    document.getElementById('errorMsg').style.display = 'block';
+    console.error(error);
+  }
+}
+
 // ============= LANGUAGE TOGGLE =============
 function toggleLang() {
   const body = document.body;
@@ -530,7 +560,7 @@ async function resendMagicLink() {
   }
 }
 
-// Handle auth callback (when user clicks magic link and returns)
+// Handle auth callback (Google OAuth return)
 window.addEventListener('DOMContentLoaded', async function() {
   const params = new URLSearchParams(window.location.search);
   const hash = window.location.hash;
@@ -538,14 +568,15 @@ window.addEventListener('DOMContentLoaded', async function() {
     try {
       const session = await cvAuth.getSession();
       if (session) {
-        showSuccess('Logged in successfully!');
-        const user = await cvAuth.getUser();
-        if (user && user.phone) {
-          const redirect = params.get('redirect') || './CampusVazhi-Dashboard.html';
-          setTimeout(() => window.location.href = redirect, 1000);
-        } else {
-          showProfileForm();
-        }
+        localStorage.setItem('cv_signed_in', '1');
+        const name = session.user.user_metadata?.full_name || session.user.email?.split('@')[0] || 'Student';
+        localStorage.setItem('cv_user', JSON.stringify({ name: name, initial: name[0].toUpperCase() }));
+        showSuccess('Signed in successfully! Redirecting...');
+        // Check for saved redirect from before OAuth flow
+        const savedRedirect = sessionStorage.getItem('cv_post_login_redirect');
+        sessionStorage.removeItem('cv_post_login_redirect');
+        const redirect = savedRedirect || params.get('redirect') || './CampusVazhi-Dashboard.html';
+        setTimeout(() => window.location.href = redirect, 1000);
       }
     } catch (e) { console.error('Auth callback error:', e); }
   }

@@ -7,10 +7,31 @@
 body.logged-in .sidebar, .logged-in .sidebar { display: flex !important; }
 body.logged-in .page-wrap, .logged-in .page-wrap { margin-left: 68px !important; }
 @media (max-width: 768px) {
+  body.logged-in .sidebar, .logged-in .sidebar { display: none !important; }
   body.logged-in .page-wrap, .logged-in .page-wrap { margin-left: 0 !important; }
 }
 </style>
-<script>(function(){var s=localStorage.getItem('cv_signed_in')==='1';if(s)document.documentElement.classList.add('logged-in');document.addEventListener('DOMContentLoaded',function(){var sb=document.querySelector('.sidebar');var pw=document.querySelector('.page-wrap');if(s){document.body.classList.add('logged-in');if(sb)sb.style.setProperty('display','flex','important');if(pw)pw.style.setProperty('margin-left','68px','important')}else{if(sb)sb.style.setProperty('display','none','important');if(pw)pw.style.setProperty('margin-left','0','important')}});})()</script>
+<script>(function(){
+  var s = localStorage.getItem('cv_signed_in') === '1';
+  if(s) document.documentElement.classList.add('logged-in');
+  document.addEventListener('DOMContentLoaded', function(){
+    var sb = document.querySelector('.sidebar');
+    var pw = document.querySelector('.page-wrap');
+    function applyLayout(){
+      var isMobile = window.innerWidth <= 768;
+      if(s){
+        document.body.classList.add('logged-in');
+        if(sb) sb.style.setProperty('display', isMobile ? 'none' : 'flex', 'important');
+        if(pw) pw.style.setProperty('margin-left', isMobile ? '0' : '68px', 'important');
+      } else {
+        if(sb) sb.style.setProperty('display','none','important');
+        if(pw) pw.style.setProperty('margin-left','0','important');
+      }
+    }
+    applyLayout();
+    window.addEventListener('resize', applyLayout);
+  });
+})()</script>
 
 
   <meta charset="UTF-8">

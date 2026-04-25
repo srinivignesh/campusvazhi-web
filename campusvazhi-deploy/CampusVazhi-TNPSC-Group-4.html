@@ -457,6 +457,10 @@ updateCalc();
 
 <script>
 function openModal() {
+  if (localStorage.getItem('cv_signed_in') !== '1') {
+    window.location.href = './CampusVazhi-Login.html?redirect=' + encodeURIComponent(window.location.href);
+    return;
+  }
   if (localStorage.getItem('cv_signed_in') === '1') {
     window.open('/CampusVazhi-TNPSC-Group-4-Resource-Pack.pdf', '_blank');
     return;
@@ -475,11 +479,11 @@ function submitForm() {
   var email = document.getElementById('femail').value.trim();
   var goal = document.getElementById('fgoal').value;
   // Supabase lead capture
-  if (window.supabaseClient) {
-    window.supabaseClient.from('leads').insert([{
-      name: name, mobile: mobile, email: email||null,
-      exam: 'TNPSC Group 4', target_year: goal||null,
-      source: 'tnpsc-group-4-page', created_at: new Date().toISOString()
+  if (window.cvSupabase) {
+    window.cvSupabase.from('cta_leads').insert([{
+      name: name, phone: mobile, email: email||null,
+      exam: 'TNPSC Group 4', cta_type: 'exam_resource',
+      source_page: 'tnpsc-group-4-page'
     }]);
   }
   var pdfWin = window.open('/CampusVazhi-TNPSC-Group-4-Resource-Pack.pdf', '_blank');

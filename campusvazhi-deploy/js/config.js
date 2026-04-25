@@ -8,6 +8,6 @@ const CV_CONFIG = {
   SUPABASE_URL: 'https://txyimbzkutnkaphyvifg.supabase.co',
   SUPABASE_ANON_KEY: 'sb_publishable_REz6tM-s9uOZsCElHF2FVg_N_ma-1j5',
   SITE_URL: 'https://campusvazhi.com',
-  WHATSAPP: 'https://wa.me/918939862211',
+  WHATSAPP: 'https://wa.me/919677213139',
   GA_MEASUREMENT_ID: 'G-C2C6TXTXL1',
 };

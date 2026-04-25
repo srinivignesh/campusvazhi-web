@@ -7,10 +7,31 @@
 body.logged-in .sidebar, .logged-in .sidebar { display: flex !important; }
 body.logged-in .page-wrap, .logged-in .page-wrap { margin-left: 68px !important; }
 @media (max-width: 768px) {
+  body.logged-in .sidebar, .logged-in .sidebar { display: none !important; }
   body.logged-in .page-wrap, .logged-in .page-wrap { margin-left: 0 !important; }
 }
 </style>
-<script>(function(){var s=localStorage.getItem('cv_signed_in')==='1';if(s)document.documentElement.classList.add('logged-in');document.addEventListener('DOMContentLoaded',function(){var sb=document.querySelector('.sidebar');var pw=document.querySelector('.page-wrap');if(s){document.body.classList.add('logged-in');if(sb)sb.style.setProperty('display','flex','important');if(pw)pw.style.setProperty('margin-left','68px','important')}else{if(sb)sb.style.setProperty('display','none','important');if(pw)pw.style.setProperty('margin-left','0','important')}});})()</script>
+<script>(function(){
+  var s = localStorage.getItem('cv_signed_in') === '1';
+  if(s) document.documentElement.classList.add('logged-in');
+  document.addEventListener('DOMContentLoaded', function(){
+    var sb = document.querySelector('.sidebar');
+    var pw = document.querySelector('.page-wrap');
+    function applyLayout(){
+      var isMobile = window.innerWidth <= 768;
+      if(s){
+        document.body.classList.add('logged-in');
+        if(sb) sb.style.setProperty('display', isMobile ? 'none' : 'flex', 'important');
+        if(pw) pw.style.setProperty('margin-left', isMobile ? '0' : '68px', 'important');
+      } else {
+        if(sb) sb.style.setProperty('display','none','important');
+        if(pw) pw.style.setProperty('margin-left','0','important');
+      }
+    }
+    applyLayout();
+    window.addEventListener('resize', applyLayout);
+  });
+})()</script>
 
 
 <meta charset="UTF-8">
@@ -759,11 +780,21 @@ svg.icon{vertical-align:middle}
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
         <span id="heroCta1">Download Free Resources</span>
       </button>
-      <button class="btn-secondary">
+      <a href="https://chat.whatsapp.com/KElR6tKAq38EjpMnvMCzWE" target="_blank" rel="noopener" class="btn-secondary" style="text-decoration:none;display:inline-flex;align-items:center;gap:8px;">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
         <span id="heroCta2">Join WhatsApp Group</span>
-      </button>
+      </a>
     </div>
+  <!-- PYQ shortcut card below hero buttons -->
+  <div style="margin-top:16px;display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:12px;padding:14px 20px;cursor:pointer;transition:all .2s" onclick="document.getElementById('pyqSection').scrollIntoView({behavior:'smooth',block:'start'})" onmouseover="this.style.background='rgba(255,255,255,.13)'" onmouseout="this.style.background='rgba(255,255,255,.08)'">
+    <div style="width:36px;height:36px;background:#0D9488;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+    </div>
+    <div style="text-align:left">
+      <div style="font-size:14px;font-weight:700;color:#fff">Download TANCET PYQ Papers</div>
+      <div style="font-size:12px;color:#94A3B8;margin-top:2px">2015–2025 · Free · With Solutions ↓</div>
+    </div>
+  </div>
     <div class="trust-bar">
       <div class="trust-item"><div class="trust-num">4,000+</div><div class="trust-label" data-en="Aspirants" data-ta="மாணவர்கள்">Aspirants</div></div>
       <div class="trust-item"><div class="trust-num">10 Yrs</div><div class="trust-label" data-en="PYQ Papers" data-ta="வினாத்தாள்கள்">PYQ Papers</div></div>
@@ -901,43 +932,43 @@ svg.icon{vertical-align:middle}
   <div class="pyq-years-grid">
     <div class="pyq-year-row">
       <div class="pyq-year-info"><span class="pyq-year-num">TANCET 2025</span><span class="pyq-year-tag">Latest · With Solutions</span></div>
-      <a class="pyq-dl-btn" href="./pyqs/TANCET-MBA-2025-Solutions-CampusVazhi.pdf"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Download</a>
+      <a class="pyq-dl-btn" href="./TANCET-MBA-2025-Solutions-CampusVazhi.pdf"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Download</a>
     </div>
     <div class="pyq-year-row">
       <div class="pyq-year-info"><span class="pyq-year-num">TANCET 2024</span><span class="pyq-year-tag">Analytical Reasoning · DS</span></div>
-      <a class="pyq-dl-btn" href="./pyqs/TANCET-MBA-2024-Solutions-CampusVazhi.pdf"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Download</a>
+      <a class="pyq-dl-btn" href="./TANCET-MBA-2024-Solutions-CampusVazhi.pdf"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Download</a>
     </div>
     <div class="pyq-year-row">
       <div class="pyq-year-info"><span class="pyq-year-num">TANCET 2023</span><span class="pyq-year-tag">Quant · DS · English</span></div>
-      <a class="pyq-dl-btn" href="./pyqs/TANCET-MBA-2023-Solutions-CampusVazhi.pdf"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Download</a>
+      <a class="pyq-dl-btn" href="./TANCET-MBA-2023-Solutions-CampusVazhi.pdf"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Download</a>
     </div>
     <div class="pyq-year-row">
       <div class="pyq-year-info"><span class="pyq-year-num">TANCET 2022</span><span class="pyq-year-tag">Reasoning · Seating</span></div>
-      <a class="pyq-dl-btn" href="./pyqs/TANCET-MBA-2022-Solutions-CampusVazhi.pdf"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Download</a>
+      <a class="pyq-dl-btn" href="./TANCET-MBA-2022-Solutions-CampusVazhi.pdf"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Download</a>
     </div>
     <div class="pyq-year-row">
       <div class="pyq-year-info"><span class="pyq-year-num">TANCET 2021</span><span class="pyq-year-tag">Maths · Probability · DS</span></div>
-      <a class="pyq-dl-btn" href="./pyqs/TANCET-MBA-2021-Solutions-CampusVazhi.pdf"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Download</a>
+      <a class="pyq-dl-btn" href="./TANCET-MBA-2021-Solutions-CampusVazhi.pdf"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Download</a>
     </div>
     <div class="pyq-year-row">
       <div class="pyq-year-info"><span class="pyq-year-num">TANCET 2020</span><span class="pyq-year-tag">RC · Reasoning · English</span></div>
-      <a class="pyq-dl-btn" href="./pyqs/TANCET-MBA-2020-Solutions-CampusVazhi.pdf"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Download</a>
+      <a class="pyq-dl-btn" href="./TANCET-MBA-2020-Solutions-CampusVazhi.pdf"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Download</a>
     </div>
     <div class="pyq-year-row">
       <div class="pyq-year-info"><span class="pyq-year-num">TANCET 2018</span><span class="pyq-year-tag">Language · DS</span></div>
-      <a class="pyq-dl-btn" href="./pyqs/TANCET-MBA-2018-Solutions-CampusVazhi.pdf"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Download</a>
+      <a class="pyq-dl-btn" href="./TANCET-MBA-2018-Solutions-CampusVazhi.pdf"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Download</a>
     </div>
     <div class="pyq-year-row">
       <div class="pyq-year-info"><span class="pyq-year-num">TANCET 2017</span><span class="pyq-year-tag">Arithmetic · Number Theory</span></div>
-      <a class="pyq-dl-btn" href="./pyqs/TANCET-MBA-2017-Solutions-CampusVazhi.pdf"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Download</a>
+      <a class="pyq-dl-btn" href="./TANCET-MBA-2017-Solutions-CampusVazhi.pdf"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Download</a>
     </div>
     <div class="pyq-year-row">
       <div class="pyq-year-info"><span class="pyq-year-num">TANCET 2016</span><span class="pyq-year-tag">Profit/Loss · Ratios</span></div>
-      <a class="pyq-dl-btn" href="./pyqs/TANCET-MBA-2016-Solutions-CampusVazhi.pdf"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Download</a>
+      <a class="pyq-dl-btn" href="./TANCET-MBA-2016-Solutions-CampusVazhi.pdf"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Download</a>
     </div>
     <div class="pyq-year-row">
       <div class="pyq-year-info"><span class="pyq-year-num">TANCET 2015</span><span class="pyq-year-tag">Number Systems · Algebra</span></div>
-      <a class="pyq-dl-btn" href="./pyqs/TANCET-MBA-2015-Solutions-CampusVazhi.pdf"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Download</a>
+      <a class="pyq-dl-btn" href="./TANCET-MBA-2015-Solutions-CampusVazhi.pdf"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Download</a>
     </div>
   </div>
   <div class="pyq-footer">
@@ -945,7 +976,7 @@ svg.icon{vertical-align:middle}
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
       Free PDF · Step-by-step solutions · Prepared by CampusVazhi
     </span>
-    <a class="pyq-dl-all" href="./pyqs/TANCET-MBA-2025-Solutions-CampusVazhi.pdf">
+    <a class="pyq-dl-all" href="./TANCET-MBA-2025-Solutions-CampusVazhi.pdf">
       <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
       Download PYQs (Latest 2025)
     </a>
@@ -2073,10 +2104,10 @@ svg.icon{vertical-align:middle}
     <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
     <h2 id="waTitle">Join TANCET 2026 WhatsApp Community</h2>
     <p id="waDesc">Daily tips, doubt-clearing sessions, PYQ discussions & live counselling updates</p>
-    <button class="btn-wa">
+    <a href="https://chat.whatsapp.com/KElR6tKAq38EjpMnvMCzWE" target="_blank" rel="noopener" class="btn-wa" style="text-decoration:none;display:inline-flex;align-items:center;gap:8px;">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
       <span id="waBtn">Join Free — 4,000+ Members</span>
-    </button>
+    </a>
   </div>
 </section>
 
@@ -2113,43 +2144,48 @@ svg.icon{vertical-align:middle}
 
 <!-- Lead Capture Modal -->
 <div class="modal-overlay" id="modal">
-  <div class="modal">
-    <button class="modal-close" onclick="closeModal()">✕</button>
+  <div class="modal" style="max-width:400px;padding:36px 32px;text-align:center;position:relative">
+    <button onclick="closeModal()" style="position:absolute;top:14px;right:16px;background:none;border:none;font-size:20px;cursor:pointer;color:#6B7280;line-height:1">✕</button>
 
-    <div class="modal-form-wrap" id="modalForm">
-      <div class="modal-icon">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0D9488" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+    <!-- Sign-in panel -->
+    <div id="modalSignIn">
+      <div style="width:56px;height:56px;background:#F0FDFA;border-radius:14px;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;border:1px solid #CCFBF1">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0D9488" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
       </div>
-      <h3 id="modalTitle">Get All TANCET Resources Free</h3>
-      <p class="subtitle" id="modalSub">PYQ papers + Mock tests + Cheat sheets — instant access</p>
-      <div class="modal-form">
-        <input type="text" placeholder="Your name" data-placeholder-ta="பெயர்" id="fname" aria-label="Your name">
-        <input type="tel" placeholder="Mobile number" data-placeholder-ta="கைபேசி எண்" id="fmobile" aria-label="Mobile number">
-        <input type="email" placeholder="Email (optional)" data-placeholder-ta="மின்னஞ்சல் (விரும்பினால்)" id="femail" aria-label="Email">
-        <select id="fstatus" aria-label="Current status">
-          <option value="">Current status / தற்போதைய நிலை</option>
-          <option value="student">Final Year Student / இறுதி ஆண்டு மாணவர்</option>
-          <option value="working">Working Professional / பணிபுரிபவர்</option>
-          <option value="graduated">Graduated / பட்டதாரி</option>
-        </select>
-        <button class="modal-submit" onclick="submitForm()">
-          Send Me Resources
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-        </button>
-        <p class="modal-privacy">🔒 We respect your privacy. No spam, ever.</p>
+      <h3 style="font-size:19px;font-weight:800;color:#0F1B2D;margin:0 0 6px">Get All TANCET Resources Free</h3>
+      <p style="font-size:13px;color:#6B7280;margin:0 0 24px;line-height:1.6">PYQ papers · Mock tests · Cheat sheets<br>One-time sign-in — instant access forever</p>
+
+      <!-- Phone number field -->
+      <div style="margin-bottom:14px;text-align:left">
+        <label style="font-size:12px;font-weight:700;color:#374151;display:block;margin-bottom:6px;text-transform:uppercase;letter-spacing:.04em">
+          Mobile Number <span style="color:#EF4444">*</span>
+        </label>
+        <div id="phoneInputWrap" style="display:flex;align-items:center;border:1.5px solid #E5E7EB;border-radius:10px;overflow:hidden;transition:border-color .15s">
+          <span style="padding:12px 10px 12px 12px;background:#F9FAFB;font-size:13px;color:#374151;font-weight:600;border-right:1px solid #E5E7EB;white-space:nowrap">🇮🇳 +91</span>
+          <input type="tel" id="modalPhone" placeholder="10-digit number" maxlength="10"
+                 style="flex:1;border:none;padding:12px 12px;font-size:14px;outline:none;font-family:inherit;background:#fff;min-width:0"
+                 oninput="this.value=this.value.replace(/[^0-9]/g,'');cvValidatePhone()"
+                 onfocus="document.getElementById('phoneInputWrap').style.borderColor='#0D9488'"
+                 onblur="document.getElementById('phoneInputWrap').style.borderColor=document.getElementById('modalPhone').value.length===10?'#0D9488':'#E5E7EB'">
+        </div>
+        <p id="phoneError" style="font-size:11px;color:#EF4444;margin:5px 0 0;display:none">⚠ Enter a valid 10-digit Indian mobile number</p>
       </div>
+
+      <!-- Google Sign-In button — disabled until phone valid -->
+      <button id="btnGoogleSignIn" onclick="signInWithGoogle()" disabled
+              style="width:100%;display:flex;align-items:center;justify-content:center;gap:10px;padding:14px 20px;background:#F3F4F6;border:1.5px solid #E5E7EB;border-radius:10px;font-size:14px;font-weight:700;color:#9CA3AF;cursor:not-allowed;font-family:inherit;transition:all .2s;box-shadow:none">
+        <svg width="18" height="18" viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.31-8.16 2.31-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/><path fill="none" d="M0 0h48v48H0z"/></svg>
+        Continue with Google
+      </button>
+
+      <p style="font-size:11px;color:#9CA3AF;margin:14px 0 0">🔒 Your number is never shared. Free forever.</p>
     </div>
 
-    <div class="modal-success" id="modalSuccess">
-      <div class="success-icon">
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-      </div>
-      <h3>You're all set! 🎉</h3>
-      <p style="font-size:14px;color:var(--g500);line-height:1.6;margin-top:8px">Check your WhatsApp & email. Resources are on the way!</p>
-      <div class="success-wa">
-        <p>📱 Join our TANCET 2026 WhatsApp Community for daily tips, doubt-clearing & counselling updates</p>
-      </div>
-      <button class="btn-primary" onclick="closeModal()">Join WhatsApp Group →</button>
+    <!-- Loading state -->
+    <div id="modalSignInLoading" style="display:none;padding:20px 0">
+      <div style="width:40px;height:40px;border:3px solid #E5E7EB;border-top-color:#0D9488;border-radius:50%;animation:spin 0.8s linear infinite;margin:0 auto 16px"></div>
+      <p style="font-size:14px;color:#6B7280;font-weight:600">Signing in with Google…</p>
+      <p style="font-size:12px;color:#9CA3AF;margin-top:4px">You'll be redirected back here after sign-in</p>
     </div>
   </div>
 
@@ -2418,55 +2454,123 @@ function toggleLang() {
   renderExamRows();
 }
 
-// ── Modal ──
+// ── Modal / Auth ──
 function openModal() {
-  if (localStorage.getItem('cv_signed_in') === '1') { window.open('/CampusVazhi-TANCET-MBA-Resource-Pack.pdf', '_blank'); return; }
+  if (localStorage.getItem('cv_signed_in') === '1') {
+    window.open('./CampusVazhi-TANCET-MBA-Resource-Pack.pdf', '_blank');
+    return;
+  }
   document.getElementById('modal').classList.add('active');
-  document.getElementById('modalForm').classList.remove('hidden');
-  document.getElementById('modalSuccess').classList.remove('active');
+  document.getElementById('modalSignIn').style.display = 'block';
+  document.getElementById('modalSignInLoading').style.display = 'none';
+  document.getElementById('phoneError').style.display = 'none';
+  document.getElementById('modalPhone').value = '';
+  cvResetGoogleBtn();
 }
+
 function closeModal() {
   document.getElementById('modal').classList.remove('active');
 }
-function submitForm() {
-  const name = document.getElementById('fname').value;
-  const mobile = document.getElementById('fmobile').value;
-  if (!name || !mobile) {
-    alert('Please enter your name and mobile number');
+
+// Phone validation — enable Google button only when 10 digits entered
+function cvValidatePhone() {
+  var phone = document.getElementById('modalPhone').value;
+  var btn   = document.getElementById('btnGoogleSignIn');
+  var err   = document.getElementById('phoneError');
+  var valid = /^[6-9][0-9]{9}$/.test(phone);
+  if (valid) {
+    btn.disabled = false;
+    btn.style.background = '#fff';
+    btn.style.color = '#0F1B2D';
+    btn.style.cursor = 'pointer';
+    btn.style.borderColor = '#E5E7EB';
+    btn.style.boxShadow = '0 1px 4px rgba(0,0,0,.08)';
+    err.style.display = 'none';
+  } else {
+    cvResetGoogleBtn();
+    if (phone.length === 10) err.style.display = 'block';
+  }
+}
+
+function cvResetGoogleBtn() {
+  var btn = document.getElementById('btnGoogleSignIn');
+  btn.disabled = true;
+  btn.style.background = '#F3F4F6';
+  btn.style.color = '#9CA3AF';
+  btn.style.cursor = 'not-allowed';
+  btn.style.borderColor = '#E5E7EB';
+  btn.style.boxShadow = 'none';
+}
+
+// Google OAuth — saves phone first, then redirects
+async function signInWithGoogle() {
+  var phone = document.getElementById('modalPhone').value.trim();
+  if (!/^[6-9][0-9]{9}$/.test(phone)) {
+    document.getElementById('phoneError').style.display = 'block';
     return;
   }
-  // In production: send to your backend / Google Sheets / Supabase
-  var email = document.getElementById('femail').value;
-  var status = document.getElementById('fstatus').value;
-  console.log('Lead captured:', { name, mobile, email: email, status: status });
+  // Persist phone across OAuth redirect
+  localStorage.setItem('cv_pending_phone', '+91' + phone);
 
-  // Save to Supabase
+  document.getElementById('modalSignIn').style.display = 'none';
+  document.getElementById('modalSignInLoading').style.display = 'block';
   try {
-    if (typeof cvLeads !== 'undefined' && cvLeads.saveCTALead) {
-      cvLeads.saveCTALead({
-        name: name,
-        phone: mobile,
-        email: email,
-        exam: 'TANCET',
-        cta_type: 'free_mock'
-      });
-      cvUI.toast('Saved! Check your WhatsApp.');
+    if (typeof cvAuth !== 'undefined') {
+      await cvAuth.loginWithGoogle();
+    } else {
+      var sb = window.supabase.createClient(CV_CONFIG.SUPABASE_URL, CV_CONFIG.SUPABASE_ANON_KEY);
+      await sb.auth.signInWithOAuth({ provider: 'google', options: { redirectTo: window.location.href } });
     }
   } catch(e) {
-    console.error('Supabase save error:', e);
+    console.error('Google sign-in error:', e);
+    document.getElementById('modalSignIn').style.display = 'block';
+    document.getElementById('modalSignInLoading').style.display = 'none';
+    alert('Sign-in failed. Please try again.');
   }
-
-  // Save as cv_user so side rail / welcome cards unlock across the site
-  try {
-    localStorage.setItem('cv_user', JSON.stringify({
-      name: name, phone: mobile, email: email, exam: 'TANCET', status: status, ts: Date.now()
-    }));
-  } catch (e) {}
-
-  document.getElementById('modalForm').classList.add('hidden');
-  document.getElementById('modalSuccess').classList.add('active');
 }
-// Close modal on overlay click
+
+// After Google OAuth redirect — save pending phone to Supabase cta_leads
+(async function cvSavePendingPhone() {
+  var pendingPhone = localStorage.getItem('cv_pending_phone');
+  if (!pendingPhone) return;
+  try {
+    var sbUrl = (typeof CV_CONFIG !== 'undefined' && CV_CONFIG.SUPABASE_URL) || '';
+    var sbKey = (typeof CV_CONFIG !== 'undefined' && CV_CONFIG.SUPABASE_ANON_KEY) || '';
+    if (!sbUrl || !sbKey) return;
+    var sb = window.supabase ? window.supabase.createClient(sbUrl, sbKey) : null;
+    if (!sb) return;
+    var session = null;
+    try { var r = await sb.auth.getSession(); session = r.data.session; } catch(e) {}
+    if (!session) return;
+    var user = session.user;
+    await fetch(sbUrl + '/rest/v1/cta_leads', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'apikey': sbKey,
+        'Authorization': 'Bearer ' + sbKey,
+        'Prefer': 'return=minimal'
+      },
+      body: JSON.stringify({
+        name  : user.user_metadata?.full_name || '',
+        email : user.email || '',
+        phone : pendingPhone,
+        exam  : 'TANCET',
+        cta_type : 'google_signin_tancet',
+        source_page : window.location.pathname
+      })
+    });
+    localStorage.removeItem('cv_pending_phone');
+    console.log('✅ Phone saved to Supabase cta_leads');
+  } catch(e) { console.error('Phone save error:', e); }
+})();
+
+// Spin animation
+var _spinSt = document.createElement('style');
+_spinSt.textContent = '@keyframes spin{to{transform:rotate(360deg)}}';
+document.head.appendChild(_spinSt);
+
+// Close on overlay click
 document.getElementById('modal').addEventListener('click', function(e) {
   if (e.target === this) closeModal();
 });

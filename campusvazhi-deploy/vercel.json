@@ -28,6 +28,7 @@
     { "source": "/mat", "destination": "/CampusVazhi-MAT.html" },
     { "source": "/nimcet", "destination": "/CampusVazhi-NIMCET.html" },
     { "source": "/rrb-ntpc", "destination": "/CampusVazhi-RRB-NTPC.html" },
+    { "source": "/rrb-ntpc/pyq", "destination": "/CampusVazhi-RRB-NTPC-PYQ.html" },
     { "source": "/sbi-clerk", "destination": "/CampusVazhi-SBI-Clerk.html" },
     { "source": "/sbi-po", "destination": "/CampusVazhi-SBI-PO.html" },
     { "source": "/snap", "destination": "/CampusVazhi-SNAP.html" },
