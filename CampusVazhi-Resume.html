@@ -7,10 +7,31 @@
 body.logged-in .sidebar, .logged-in .sidebar { display: flex !important; }
 body.logged-in .page-wrap, .logged-in .page-wrap { margin-left: 68px !important; }
 @media (max-width: 768px) {
+  body.logged-in .sidebar, .logged-in .sidebar { display: none !important; }
   body.logged-in .page-wrap, .logged-in .page-wrap { margin-left: 0 !important; }
 }
 </style>
-<script>(function(){var s=localStorage.getItem('cv_signed_in')==='1';if(s)document.documentElement.classList.add('logged-in');document.addEventListener('DOMContentLoaded',function(){var sb=document.querySelector('.sidebar');var pw=document.querySelector('.page-wrap');if(s){document.body.classList.add('logged-in');if(sb)sb.style.setProperty('display','flex','important');if(pw)pw.style.setProperty('margin-left','68px','important')}else{if(sb)sb.style.setProperty('display','none','important');if(pw)pw.style.setProperty('margin-left','0','important')}});})()</script>
+<script>(function(){
+  var s = localStorage.getItem('cv_signed_in') === '1';
+  if(s) document.documentElement.classList.add('logged-in');
+  document.addEventListener('DOMContentLoaded', function(){
+    var sb = document.querySelector('.sidebar');
+    var pw = document.querySelector('.page-wrap');
+    function applyLayout(){
+      var isMobile = window.innerWidth <= 768;
+      if(s){
+        document.body.classList.add('logged-in');
+        if(sb) sb.style.setProperty('display', isMobile ? 'none' : 'flex', 'important');
+        if(pw) pw.style.setProperty('margin-left', isMobile ? '0' : '68px', 'important');
+      } else {
+        if(sb) sb.style.setProperty('display','none','important');
+        if(pw) pw.style.setProperty('margin-left','0','important');
+      }
+    }
+    applyLayout();
+    window.addEventListener('resize', applyLayout);
+  });
+})()</script>
 
 
   <meta charset="UTF-8">
@@ -2032,7 +2053,112 @@ body.logged-in .page-wrap, .logged-in .page-wrap { margin-left: 68px !important;
   </script>
 
   <!-- FOOTER -->
-  <footer class="footer">
+  
+<!-- ========== COUNSELLING BANNER ========== -->
+<section class="cvcs-section">
+  <div class="cvcs-inner">
+    <div class="cvcs-left">
+      <div class="cvcs-eyebrow">Free · 15 min · Alumni mentor</div>
+      <h2 class="cvcs-heading">
+        <span class="en">Still confused? Let&rsquo;s get it all cleared.</span>
+        <span class="ta">குழப்பமா? வாருங்கள், தெளிவாக பேசலாம்.</span>
+      </h2>
+      <p class="cvcs-sub">
+        <span class="en">Book a free 15-minute call with a CampusVazhi mentor — IIM &amp; university alumni who give you honest, zero-spin guidance. Tamil or English. No charge, ever.</span>
+        <span class="ta">CampusVazhi வழிகாட்டியுடன் 15 நிமிட இலவச அழைப்பு பதிவு செய்யுங்கள் — தமிழ் அல்லது ஆங்கிலம், எந்த கட்டணமும் இல்லை.</span>
+      </p>
+      <ul class="cvcs-bullets">
+        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0D9488" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span class="en">What course / college suits you best</span><span class="ta">உங்களுக்கு ஏற்ற பாடம் / கல்லூரி</span></li>
+        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0D9488" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span class="en">Realistic timeline to crack the exam</span><span class="ta">தேர்வில் வெற்றி பெற உண்மையான காலக்கெடு</span></li>
+        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0D9488" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span class="en">Your next 3 action steps — crystal clear</span><span class="ta">அடுத்த 3 செயல் படிகள் — தெளிவாக</span></li>
+      </ul>
+    </div>
+    <div class="cvcs-right">
+      <div class="cvcs-form-card">
+        <form id="cvcs-form" class="cvcs-form" onsubmit="submitCVCounsel(event)">
+          <input type="text" id="cvcs-name" class="cvcs-input" placeholder="Your name" required>
+          <input type="tel" id="cvcs-phone" class="cvcs-input" placeholder="WhatsApp number (+91...)" required>
+          <select id="cvcs-goal" class="cvcs-input cvcs-select">
+            <option value="">What do you need guidance on?</option>
+            <option value="TANCET MBA">TANCET 2026 — MBA prep</option>
+            <option value="CAT MBA">CAT 2026 — MBA prep</option>
+            <option value="MS USA">MS in USA / UK / Canada</option>
+            <option value="TNEA">TNEA / B.E. admissions</option>
+            <option value="Career">Career planning / job search</option>
+            <option value="Other">Other</option>
+          </select>
+          <button type="submit" id="cvcs-btn" class="cvcs-submit">
+            <span class="en">Book Free Session →</span>
+            <span class="ta">இலவச அமர்வு பதிவு செய்யவும் →</span>
+          </button>
+        </form>
+        <div id="cvcs-success" class="cvcs-success" style="display:none;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/></svg>
+          <div>
+            <strong><span class="en">Booked! Expect a WhatsApp message within 2 hours.</span><span class="ta">பதிவாகிவிட்டது! 2 மணி நேரத்தில் WhatsApp செய்தி வரும்.</span></strong>
+          </div>
+        </div>
+        <p class="cvcs-trust">
+          <span class="en">⚡ We reply within 2 hrs · 4,000+ students guided · Zero sales pitch</span>
+          <span class="ta">⚡ 2 மணி நேரத்தில் பதில் · 4,000+ மாணவர்கள் · விற்பனை இல்லை</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.cvcs-section{background:linear-gradient(135deg,#0F1B2D 0%,#0D2137 60%,#0A1628 100%);padding:56px 24px;border-top:1px solid rgba(13,148,136,0.2)}
+.cvcs-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 420px;gap:56px;align-items:center}
+.cvcs-eyebrow{display:inline-block;background:rgba(13,148,136,0.15);color:#5EEAD4;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;padding:5px 12px;border-radius:20px;margin-bottom:16px;border:1px solid rgba(13,148,136,0.3)}
+.cvcs-heading{font-size:30px;font-weight:800;color:#FFFFFF;line-height:1.2;margin:0 0 14px}
+.cvcs-sub{font-size:14px;color:rgba(255,255,255,0.7);line-height:1.7;margin:0 0 20px}
+.cvcs-bullets{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px}
+.cvcs-bullets li{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:rgba(255,255,255,0.85);font-weight:500}
+.cvcs-bullets svg{flex-shrink:0;margin-top:2px}
+.cvcs-form-card{background:#FFFFFF;border-radius:16px;padding:24px;box-shadow:0 8px 40px rgba(0,0,0,0.3)}
+.cvcs-form{display:flex;flex-direction:column;gap:10px}
+.cvcs-input{width:100%;padding:11px 14px;border:1.5px solid #E2E8F0;border-radius:8px;font-size:14px;font-family:inherit;background:#F8FAFC;color:#1E293B;outline:none;transition:border-color .15s;box-sizing:border-box}
+.cvcs-input:focus{border-color:#0D9488;background:#fff}
+.cvcs-input::placeholder{color:#94A3B8}
+.cvcs-select{cursor:pointer;color:#1E293B}
+.cvcs-submit{background:#0D9488;color:#fff;border:none;border-radius:8px;padding:13px 20px;font-size:14px;font-weight:700;font-family:inherit;cursor:pointer;transition:background .15s,transform .1s;margin-top:2px}
+.cvcs-submit:hover{background:#0F766E;transform:translateY(-1px)}
+.cvcs-success{display:flex;align-items:flex-start;gap:10px;background:#F0FDF4;border:1px solid #BBF7D0;border-radius:10px;padding:14px;color:#15803D;font-size:14px}
+.cvcs-trust{font-size:11px;color:#94A3B8;margin:10px 0 0;text-align:center}
+@media(max-width:900px){.cvcs-inner{grid-template-columns:1fr;gap:32px}.cvcs-heading{font-size:24px}}
+@media(max-width:640px){.cvcs-section{padding:40px 16px}.cvcs-heading{font-size:22px}}
+</style>
+
+<script>
+function submitCVCounsel(e) {
+  e.preventDefault();
+  var name = document.getElementById('cvcs-name').value.trim();
+  var phone = document.getElementById('cvcs-phone').value.trim();
+  var goal = document.getElementById('cvcs-goal').value;
+  if (!name || !phone) return;
+  var btn = document.getElementById('cvcs-btn');
+  if (btn) { btn.disabled = true; btn.textContent = 'Booking…'; }
+  try {
+    var sbUrl = (typeof CV_CONFIG !== 'undefined' && CV_CONFIG.SUPABASE_URL) || 'https://txyimbzkutnkaphyvifg.supabase.co';
+    var sbKey = (typeof CV_CONFIG !== 'undefined' && CV_CONFIG.SUPABASE_ANON_KEY) || '';
+    var src = (window.location.pathname.split('/').pop() || 'subpage').replace('.html','');
+    if (sbUrl && sbKey) {
+      fetch(sbUrl + '/rest/v1/leads', {
+        method: 'POST',
+        headers: {'Content-Type':'application/json','apikey':sbKey,'Authorization':'Bearer '+sbKey,'Prefer':'return=minimal'},
+        body: JSON.stringify({name:name,phone:phone,goal:goal||'Counselling',source:'counsel_banner_'+src,created_at:new Date().toISOString()})
+      });
+    }
+  } catch(e2){}
+  if (typeof cvTrack === 'function') cvTrack('generate_lead', {method:'counsel_banner',goal:goal});
+  document.getElementById('cvcs-form').style.display = 'none';
+  document.getElementById('cvcs-success').style.display = 'flex';
+}
+</script>
+<!-- ========== END COUNSELLING BANNER ========== -->
+
+<footer class="footer">
     <div class="footer-brand">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#14B8A6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
       <span>Campus<span>Vazhi</span></span>

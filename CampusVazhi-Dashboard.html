@@ -7,10 +7,31 @@
 body.logged-in .sidebar, .logged-in .sidebar { display: flex !important; }
 body.logged-in .page-wrap, .logged-in .page-wrap { margin-left: 68px !important; }
 @media (max-width: 768px) {
+  body.logged-in .sidebar, .logged-in .sidebar { display: none !important; }
   body.logged-in .page-wrap, .logged-in .page-wrap { margin-left: 0 !important; }
 }
 </style>
-<script>(function(){var s=localStorage.getItem('cv_signed_in')==='1';if(s)document.documentElement.classList.add('logged-in');document.addEventListener('DOMContentLoaded',function(){var sb=document.querySelector('.sidebar');var pw=document.querySelector('.page-wrap');if(s){document.body.classList.add('logged-in');if(sb)sb.style.setProperty('display','flex','important');if(pw)pw.style.setProperty('margin-left','68px','important')}else{if(sb)sb.style.setProperty('display','none','important');if(pw)pw.style.setProperty('margin-left','0','important')}});})()</script>
+<script>(function(){
+  var s = localStorage.getItem('cv_signed_in') === '1';
+  if(s) document.documentElement.classList.add('logged-in');
+  document.addEventListener('DOMContentLoaded', function(){
+    var sb = document.querySelector('.sidebar');
+    var pw = document.querySelector('.page-wrap');
+    function applyLayout(){
+      var isMobile = window.innerWidth <= 768;
+      if(s){
+        document.body.classList.add('logged-in');
+        if(sb) sb.style.setProperty('display', isMobile ? 'none' : 'flex', 'important');
+        if(pw) pw.style.setProperty('margin-left', isMobile ? '0' : '68px', 'important');
+      } else {
+        if(sb) sb.style.setProperty('display','none','important');
+        if(pw) pw.style.setProperty('margin-left','0','important');
+      }
+    }
+    applyLayout();
+    window.addEventListener('resize', applyLayout);
+  });
+})()</script>
 <meta charset="UTF-8">
 <link rel="icon" type="image/svg+xml" href="./favicon.svg">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -83,8 +104,8 @@ button{font-family:inherit;cursor:pointer;border:0;background:none}
 .nav-cta:hover{background:#1ebe5a}
 
 /* SIGN-IN GATE */
-.gate-overlay{display:none;position:fixed;inset:0;background:rgba(15,27,45,.88);backdrop-filter:blur(6px);z-index:500;align-items:center;justify-content:center;padding:20px}
-.gate-overlay.active{display:flex}
+.gate-overlay{display:none !important;position:fixed;inset:0;background:rgba(15,27,45,.88);backdrop-filter:blur(6px);z-index:500;align-items:center;justify-content:center;padding:20px}
+.gate-overlay.active{display:none !important}
 .gate-modal{background:#fff;max-width:460px;width:100%;border-radius:18px;padding:36px 32px;box-shadow:var(--shadow-lg);position:relative}
 .gate-badge{display:inline-flex;align-items:center;gap:6px;background:var(--teal-bg);color:var(--teal);padding:5px 11px;border-radius:999px;font-size:11px;font-weight:700;margin-bottom:14px;letter-spacing:.3px;text-transform:uppercase}
 .gate-modal h2{font-size:24px;font-weight:800;color:var(--navy);margin-bottom:8px}
@@ -1138,13 +1159,15 @@ function renderAll(){
 }
 
 function init(){
-  var u = getUser();
-  if (!u || !u.email) {
-    showGate();
-  } else {
-    hideGate();
-    renderAll();
+  var signedIn = localStorage.getItem('cv_signed_in') === '1';
+  if (!signedIn) {
+    // Not signed in — redirect to login, never show blocking modal
+    window.location.href = './CampusVazhi-Login.html?next=CampusVazhi-Dashboard.html';
+    return;
   }
+  // Signed in — always hide gate and render
+  hideGate();
+  renderAll();
 }
 
 init();

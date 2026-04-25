@@ -1,93 +1,232 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- ===== HOMEPAGE ===== -->
   <url>
     <loc>https://campusvazhi.com/</loc>
-    <lastmod>2026-04-15</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
+
+  <!-- ===== HIGH PRIORITY EXAM HUBS ===== -->
   <url>
-    <loc>https://campusvazhi.com/tancet</loc>
-    <lastmod>2026-04-15</lastmod>
+    <loc>https://campusvazhi.com/CampusVazhi-TANCET-Resource-Hub.html</loc>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.95</priority>
   </url>
   <url>
-    <loc>https://campusvazhi.com/cat</loc>
-    <lastmod>2026-04-15</lastmod>
+    <loc>https://campusvazhi.com/CampusVazhi-TANCET-MCA.html</loc>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.90</priority>
   </url>
   <url>
-    <loc>https://campusvazhi.com/neet</loc>
-    <lastmod>2026-04-15</lastmod>
+    <loc>https://campusvazhi.com/CampusVazhi-CAT-2026.html</loc>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.90</priority>
   </url>
   <url>
-    <loc>https://campusvazhi.com/ms-usa</loc>
-    <lastmod>2026-04-15</lastmod>
+    <loc>https://campusvazhi.com/CampusVazhi-MS-USA.html</loc>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.90</priority>
   </url>
   <url>
-    <loc>https://campusvazhi.com/tnea</loc>
-    <lastmod>2026-04-15</lastmod>
+    <loc>https://campusvazhi.com/CampusVazhi-TNEA-Calculator.html</loc>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.88</priority>
+  </url>
+
+  <!-- ===== MANAGEMENT EXAMS ===== -->
+  <url>
+    <loc>https://campusvazhi.com/CampusVazhi-XAT.html</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://campusvazhi.com/quiz</loc>
-    <lastmod>2026-04-15</lastmod>
+    <loc>https://campusvazhi.com/CampusVazhi-CMAT.html</loc>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://campusvazhi.com/counselling</loc>
-    <lastmod>2026-04-15</lastmod>
+    <loc>https://campusvazhi.com/CampusVazhi-SNAP.html</loc>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://campusvazhi.com/resume</loc>
-    <lastmod>2026-04-15</lastmod>
+    <loc>https://campusvazhi.com/CampusVazhi-MAT.html</loc>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.78</priority>
   </url>
   <url>
-    <loc>https://campusvazhi.com/dashboard</loc>
-    <lastmod>2026-04-15</lastmod>
+    <loc>https://campusvazhi.com/CampusVazhi-ATMA.html</loc>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.75</priority>
+  </url>
+
+  <!-- ===== PG ENTRANCE ===== -->
+  <url>
+    <loc>https://campusvazhi.com/CampusVazhi-GATE.html</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.82</priority>
   </url>
   <url>
-    <loc>https://campusvazhi.com/login</loc>
-    <lastmod>2026-04-15</lastmod>
+    <loc>https://campusvazhi.com/CampusVazhi-NIMCET.html</loc>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.78</priority>
   </url>
   <url>
-    <loc>https://campusvazhi.com/privacy</loc>
-    <lastmod>2026-04-15</lastmod>
+    <loc>https://campusvazhi.com/CampusVazhi-IIT-JAM.html</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.78</priority>
+  </url>
+  <url>
+    <loc>https://campusvazhi.com/CampusVazhi-CUET-PG.html</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.78</priority>
+  </url>
+  <url>
+    <loc>https://campusvazhi.com/CampusVazhi-CEETA-PG.html</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <!-- ===== UG & AFTER 12TH ===== -->
+  <url>
+    <loc>https://campusvazhi.com/CampusVazhi-After12th-Quiz.html</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.82</priority>
+  </url>
+  <url>
+    <loc>https://campusvazhi.com/CampusVazhi-NEET-Counselling.html</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- ===== BANKING & GOVT EXAMS ===== -->
+  <url>
+    <loc>https://campusvazhi.com/CampusVazhi-TN-Govt-Exams.html</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.82</priority>
+  </url>
+  <url>
+    <loc>https://campusvazhi.com/CampusVazhi-TNPSC-Group-2A.html</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://campusvazhi.com/CampusVazhi-TNPSC-Group-4.html</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://campusvazhi.com/CampusVazhi-SBI-PO.html</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.78</priority>
+  </url>
+  <url>
+    <loc>https://campusvazhi.com/CampusVazhi-SBI-Clerk.html</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.78</priority>
+  </url>
+  <url>
+    <loc>https://campusvazhi.com/CampusVazhi-IBPS-PO.html</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.78</priority>
+  </url>
+  <url>
+    <loc>https://campusvazhi.com/CampusVazhi-IBPS-Clerk.html</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.78</priority>
+  </url>
+  <url>
+    <loc>https://campusvazhi.com/CampusVazhi-SSC-CGL.html</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.78</priority>
+  </url>
+  <url>
+    <loc>https://campusvazhi.com/CampusVazhi-RRB-NTPC.html</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.78</priority>
+  </url>
+  <url>
+    <loc>https://campusvazhi.com/CampusVazhi-RRB-NTPC-PYQ.html</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <!-- ===== TOOLS & SERVICES ===== -->
+  <url>
+    <loc>https://campusvazhi.com/CampusVazhi-College-Compare.html</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://campusvazhi.com/CampusVazhi-Resume.html</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://campusvazhi.com/CampusVazhi-Book-Counselling.html</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- ===== ACCOUNT ===== -->
+  <url>
+    <loc>https://campusvazhi.com/CampusVazhi-Login.html</loc>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.3</priority>
+    <priority>0.50</priority>
   </url>
   <url>
-    <loc>https://campusvazhi.com/terms</loc>
-    <lastmod>2026-04-15</lastmod>
+    <loc>https://campusvazhi.com/CampusVazhi-Dashboard.html</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.55</priority>
+  </url>
+
+  <!-- ===== LEGAL ===== -->
+  <url>
+    <loc>https://campusvazhi.com/privacy.html</loc>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.3</priority>
+    <priority>0.30</priority>
   </url>
   <url>
-    <loc>https://campusvazhi.com/tn-govt-exams</loc>
-    <lastmod>2026-04-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://campusvazhi.com/terms.html</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.30</priority>
   </url>
-  <url>
-    <loc>https://campusvazhi.com/college-compare</loc>
-    <lastmod>2026-04-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
+
 </urlset>
