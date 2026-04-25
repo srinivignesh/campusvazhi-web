@@ -486,11 +486,11 @@ function submitForm() {
   var email = document.getElementById('femail').value.trim();
   var goal = document.getElementById('fgoal').value;
   // Supabase lead capture
-  if (window.supabaseClient) {
-    window.cvSupabase ? window.cvSupabase.from('cta_leads').insert([{
+  if (window.cvSupabase) {
+    window.cvSupabase.from('cta_leads').insert([{
       name: name, phone: mobile, email: email||null,
       exam: 'RRB NTPC', cta_type: 'exam_resource',
-      source_page: 'rrb-ntpc-page', created_at: new Date().toISOString()
+      source_page: 'rrb-ntpc-page'
     }]);
   }
   var pdfWin = window.open('/CampusVazhi-RRB-NTPC-Resource-Pack.pdf', '_blank');
