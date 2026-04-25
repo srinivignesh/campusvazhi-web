@@ -2622,12 +2622,14 @@ body.logged-in .page-wrap, .logged-in .page-wrap { margin-left: 68px !important;
   }
 
   .headed-tancet {
-    background: linear-gradient(135deg, #0F1B2D 0%, #1a1a3e 100%);
+    background: #0F1B2D;
     color: var(--white);
-    border: none;
+    border: 2px solid #F97316;
+    box-shadow: 0 0 28px rgba(249,115,22,0.15);
+    animation: urgentGlow 2s ease-in-out infinite;
   }
 
-  .headed-tancet .headed-icon { color: var(--teal-light); }
+  .headed-tancet .headed-icon { color: #F97316; }
 
   .headed-abroad {
     background: var(--teal-bg);
@@ -2654,7 +2656,7 @@ body.logged-in .page-wrap, .logged-in .page-wrap { margin-left: 68px !important;
     flex-shrink: 0;
   }
 
-  .headed-tancet .headed-icon { background: rgba(13, 148, 136, 0.18); }
+  .headed-tancet .headed-icon { background: rgba(249, 115, 22, 0.18); }
   .headed-abroad .headed-icon { background: rgba(13, 148, 136, 0.1); }
 
   .headed-card h3 {
@@ -2688,7 +2690,12 @@ body.logged-in .page-wrap, .logged-in .page-wrap { margin-left: 68px !important;
     line-height: 1;
   }
 
-  .headed-tancet .headed-countdown-box { background: rgba(13, 148, 136, 0.15); }
+  .headed-tancet .headed-countdown-box {
+    background: rgba(249, 115, 22, 0.1);
+    border: 1px solid rgba(249, 115, 22, 0.35);
+  }
+  .headed-tancet .headed-countdown-val { color: #FFFFFF; }
+  .headed-tancet .headed-countdown-unit { color: rgba(251, 146, 60, 0.9); }
 
   .headed-countdown-unit {
     font-size: 10px;
@@ -2715,6 +2722,16 @@ body.logged-in .page-wrap, .logged-in .page-wrap { margin-left: 68px !important;
     background: rgba(16, 185, 129, 0.15);
     color: var(--green);
     width: fit-content;
+  }
+
+  .headed-tancet .headed-badge.live {
+    background: rgba(249, 115, 22, 0.15);
+    color: #FB923C;
+    border: 1px solid rgba(249, 115, 22, 0.3);
+  }
+
+  .headed-tancet .headed-badge.live .badge-dot {
+    background: #F97316;
   }
 
   .badge-dot {
@@ -2754,11 +2771,11 @@ body.logged-in .page-wrap, .logged-in .page-wrap { margin-left: 68px !important;
   .headed-btn:hover { background: var(--teal-light); }
 
   .headed-tancet .headed-btn {
-    background: var(--teal);
+    background: #F97316;
     color: var(--white);
   }
 
-  .headed-tancet .headed-btn:hover { background: var(--teal-light); }
+  .headed-tancet .headed-btn:hover { background: rgba(249, 115, 22, 0.85); }
 
   .headed-bottom {
     display: grid;
