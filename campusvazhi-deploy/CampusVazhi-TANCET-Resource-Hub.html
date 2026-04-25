@@ -540,6 +540,33 @@ svg.icon{vertical-align:middle}
     .faq-acc-item.open .faq-acc-icon { transform: rotate(45deg); }
     .faq-acc-a { display: none; padding: 0 22px 18px; font-size: 14px; color: var(--g700); line-height: 1.7; }
     .faq-acc-item.open .faq-acc-a { display: block; }
+/* ── PYQ Download Card ────────────────────────────────────── */
+.pyq-card{background:#fff;border:1.5px solid #E5E7EB;border-radius:16px;padding:28px 28px 22px;max-width:1020px;margin:0 auto 24px;box-shadow:0 2px 12px rgba(13,148,136,.07)}
+.pyq-card-header{display:flex;align-items:flex-start;gap:16px;margin-bottom:20px;flex-wrap:wrap}
+.pyq-card-icon{width:52px;height:52px;border-radius:12px;background:#F0FDFA;display:flex;align-items:center;justify-content:center;flex-shrink:0;border:1px solid #CCFBF1}
+.pyq-card-meta{flex:1;min-width:200px}
+.pyq-card-meta h3{font-size:17px;font-weight:800;color:#0F1B2D;margin:0 0 4px;line-height:1.3}
+.pyq-card-meta p{font-size:13px;color:#6B7280;margin:0;line-height:1.5}
+.pyq-card-badges{display:flex;gap:8px;margin-top:8px;flex-wrap:wrap}
+.pyq-badge{font-size:11px;font-weight:700;padding:3px 9px;border-radius:4px;letter-spacing:.4px}
+.pyq-badge-teal{background:#F0FDFA;color:#0D9488;border:1px solid #99F6E4}
+.pyq-badge-gold{background:#FFFBEB;color:#D97706;border:1px solid #FDE68A}
+.pyq-divider{border:none;border-top:1px solid #F3F4F6;margin:0 0 18px}
+.pyq-years-label{font-size:12px;font-weight:700;color:#374151;text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px}
+.pyq-years-grid{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:20px}
+.pyq-year-row{display:flex;align-items:center;justify-content:space-between;background:#F9FAFB;border:1px solid #E5E7EB;border-radius:10px;padding:10px 14px;gap:12px;flex:1 1 200px;min-width:160px;transition:border-color .15s,box-shadow .15s}
+.pyq-year-row:hover{border-color:#0D9488;box-shadow:0 2px 8px rgba(13,148,136,.1)}
+.pyq-year-info{display:flex;flex-direction:column;gap:2px}
+.pyq-year-num{font-size:14px;font-weight:800;color:#0F1B2D}
+.pyq-year-tag{font-size:11px;color:#6B7280}
+.pyq-dl-btn{display:inline-flex;align-items:center;gap:5px;padding:6px 13px;background:#0D9488;color:#fff;border-radius:6px;font-size:12px;font-weight:700;text-decoration:none;white-space:nowrap;transition:background .15s;border:none;cursor:pointer;font-family:inherit}
+.pyq-dl-btn:hover{background:#0F766E}
+.pyq-dl-btn svg{flex-shrink:0}
+.pyq-footer{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;padding-top:14px;border-top:1px solid #F3F4F6}
+.pyq-footer-note{font-size:12px;color:#9CA3AF;display:flex;align-items:center;gap:5px}
+.pyq-dl-all{display:inline-flex;align-items:center;gap:6px;padding:10px 20px;background:linear-gradient(135deg,#0D9488,#0F766E);color:#fff;border-radius:8px;font-size:13px;font-weight:700;text-decoration:none;transition:opacity .15s}
+.pyq-dl-all:hover{opacity:.9}
+@media(max-width:600px){.pyq-card{padding:20px 16px}.pyq-year-row{flex:1 1 140px}}
 
   </style>
 <script type="application/ld+json">
@@ -670,7 +697,7 @@ svg.icon{vertical-align:middle}
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
       <span class="sb-label"><span class="en">Book a Free Call</span><span class="ta">ஆலோசனை முன்பதிவு</span></span>
     </a>
-    <a href="https://wa.me/918939862211" target="_blank" class="sidebar-link" data-tip="WhatsApp">
+    <a href="https://wa.me/91919677213139" target="_blank" class="sidebar-link" data-tip="WhatsApp">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
       <span class="sb-label"><span class="en">WhatsApp Us</span><span class="ta">WhatsApp செய்யுங்கள்</span></span>
     </a>
@@ -852,6 +879,79 @@ svg.icon{vertical-align:middle}
     <h2 id="resTitle">Your Complete TANCET Prep Kit</h2>
     <p id="resDesc">Everything you need to score 80+ percentile — no coaching needed</p>
   </div>
+
+<!-- ── PYQ Download Card ── -->
+<div class="pyq-card" id="pyqSection">
+  <div class="pyq-card-header">
+    <div class="pyq-card-icon">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0D9488" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+    </div>
+    <div class="pyq-card-meta">
+      <h3>TANCET MBA Previous Year Question Papers (2015 – 2025)</h3>
+      <p>10 years of solved PYQs with step-by-step workings for every Maths, Data Sufficiency &amp; Reasoning question. Prepared by CampusVazhi.</p>
+      <div class="pyq-card-badges">
+        <span class="pyq-badge pyq-badge-teal">FREE DOWNLOAD</span>
+        <span class="pyq-badge pyq-badge-gold">WITH SOLUTIONS</span>
+        <span class="pyq-badge pyq-badge-teal">10 YEARS</span>
+      </div>
+    </div>
+  </div>
+  <hr class="pyq-divider">
+  <div class="pyq-years-label">Download by Year — MBA Section</div>
+  <div class="pyq-years-grid">
+    <div class="pyq-year-row">
+      <div class="pyq-year-info"><span class="pyq-year-num">TANCET 2025</span><span class="pyq-year-tag">Latest · With Solutions</span></div>
+      <a class="pyq-dl-btn" href="./pyqs/TANCET-MBA-2025-Solutions-CampusVazhi.pdf"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Download</a>
+    </div>
+    <div class="pyq-year-row">
+      <div class="pyq-year-info"><span class="pyq-year-num">TANCET 2024</span><span class="pyq-year-tag">Analytical Reasoning · DS</span></div>
+      <a class="pyq-dl-btn" href="./pyqs/TANCET-MBA-2024-Solutions-CampusVazhi.pdf"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Download</a>
+    </div>
+    <div class="pyq-year-row">
+      <div class="pyq-year-info"><span class="pyq-year-num">TANCET 2023</span><span class="pyq-year-tag">Quant · DS · English</span></div>
+      <a class="pyq-dl-btn" href="./pyqs/TANCET-MBA-2023-Solutions-CampusVazhi.pdf"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Download</a>
+    </div>
+    <div class="pyq-year-row">
+      <div class="pyq-year-info"><span class="pyq-year-num">TANCET 2022</span><span class="pyq-year-tag">Reasoning · Seating</span></div>
+      <a class="pyq-dl-btn" href="./pyqs/TANCET-MBA-2022-Solutions-CampusVazhi.pdf"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Download</a>
+    </div>
+    <div class="pyq-year-row">
+      <div class="pyq-year-info"><span class="pyq-year-num">TANCET 2021</span><span class="pyq-year-tag">Maths · Probability · DS</span></div>
+      <a class="pyq-dl-btn" href="./pyqs/TANCET-MBA-2021-Solutions-CampusVazhi.pdf"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Download</a>
+    </div>
+    <div class="pyq-year-row">
+      <div class="pyq-year-info"><span class="pyq-year-num">TANCET 2020</span><span class="pyq-year-tag">RC · Reasoning · English</span></div>
+      <a class="pyq-dl-btn" href="./pyqs/TANCET-MBA-2020-Solutions-CampusVazhi.pdf"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Download</a>
+    </div>
+    <div class="pyq-year-row">
+      <div class="pyq-year-info"><span class="pyq-year-num">TANCET 2018</span><span class="pyq-year-tag">Language · DS</span></div>
+      <a class="pyq-dl-btn" href="./pyqs/TANCET-MBA-2018-Solutions-CampusVazhi.pdf"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Download</a>
+    </div>
+    <div class="pyq-year-row">
+      <div class="pyq-year-info"><span class="pyq-year-num">TANCET 2017</span><span class="pyq-year-tag">Arithmetic · Number Theory</span></div>
+      <a class="pyq-dl-btn" href="./pyqs/TANCET-MBA-2017-Solutions-CampusVazhi.pdf"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Download</a>
+    </div>
+    <div class="pyq-year-row">
+      <div class="pyq-year-info"><span class="pyq-year-num">TANCET 2016</span><span class="pyq-year-tag">Profit/Loss · Ratios</span></div>
+      <a class="pyq-dl-btn" href="./pyqs/TANCET-MBA-2016-Solutions-CampusVazhi.pdf"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Download</a>
+    </div>
+    <div class="pyq-year-row">
+      <div class="pyq-year-info"><span class="pyq-year-num">TANCET 2015</span><span class="pyq-year-tag">Number Systems · Algebra</span></div>
+      <a class="pyq-dl-btn" href="./pyqs/TANCET-MBA-2015-Solutions-CampusVazhi.pdf"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Download</a>
+    </div>
+  </div>
+  <div class="pyq-footer">
+    <span class="pyq-footer-note">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      Free PDF · Step-by-step solutions · Prepared by CampusVazhi
+    </span>
+    <a class="pyq-dl-all" href="./pyqs/TANCET-MBA-2025-Solutions-CampusVazhi.pdf">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      Download PYQs (Latest 2025)
+    </a>
+  </div>
+</div>
+
   <div class="resources-grid" id="resourcesGrid"></div>
 
   <!-- College Compare CTA -->
@@ -2118,7 +2218,7 @@ document.getElementById('cd2').textContent = daysLeft % 10;
 
 // ── Resources Data ──
 const resources = [
-  { title: "PYQ Papers (2016-2025, 10 yrs)", titleTa: "கடந்த 10 வருட வினாத்தாள்கள்", desc: "<span class=\"en\">Last 10 years solved with detailed explanations — TANCET 2026 paper added May 2026</span><span class=\"ta\">கடந்த 10 வருடங்களின் விস்தாரமான விளக்கங்களுடன் தீர்க்கப்பட்ட — TANCET 2026 தாள் மே 2026 இல் சேர்க்கப்பட்டது</span>", tag: "FREE", color: "#0D9488", iconPath: '<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/>' },
+  { title: "PYQ Papers (2015-2025, 10 yrs)", titleTa: "கடந்த 10 வருட வினாத்தாள்கள்", desc: "<span class=\"en\">Last 10 years solved with detailed explanations — TANCET 2026 paper added May 2026</span><span class=\"ta\">கடந்த 10 வருடங்களின் விস்தாரமான விளக்கங்களுடன் தீர்க்கப்பட்ட — TANCET 2026 தாள் மே 2026 இல் சேர்க்கப்பட்டது</span>", tag: "FREE", color: "#0D9488", iconPath: '<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/>' },
   { title: "5 Full Mock Tests", titleTa: "5 முழு மாதிரி தேர்வுகள்", desc: "<span class=\"en\">Timed tests with instant scoring & section analysis</span><span class=\"ta\">நேர கட்டுப்பாட்டு தேர்வுகள் உடனடி மதிப்পீடு & பகுதி பகுப்பாய்வு</span>", tag: "FREE", color: "#6366F1", iconPath: '<circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>' },
   { title: "Syllabus & Weightage Guide", titleTa: "பாடத்திட்டம் & முக்கியத்துவ வழிகாட்டி", desc: "<span class=\"en\">Know exactly what to study — topic-wise marks distribution</span><span class=\"ta\">சரியாக என்ன படிக்க வேண்டுமென்று அறிக — தலைப்பு வாரியான மதிப்பெண் பகிர்வு</span>", tag: "FREE", color: "#EC4899", iconPath: '<circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>' },
   { title: "Last-Minute Cheat Sheets", titleTa: "கடைசி நேர குறிப்புகள்", desc: "<span class=\"en\">Quant formulas, grammar rules, DS patterns — all in 10 pages</span><span class=\"ta\">கணிதம் சூத்திரங்கள், இலக்கணம் விதிகள், DS பொருளாதாரங்கள் — அனைத்தும் 10 பக்கங்களில்</span>", tag: "FREE", color: "#F59E0B", iconPath: '<polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>' },
@@ -2151,7 +2251,7 @@ const testimonials = [
 function renderResources() {
   const grid = document.getElementById('resourcesGrid');
   grid.innerHTML = resources.map((r, i) => `
-    <div class="resource-card" onclick="openModal()">
+    <div class="resource-card" onclick="${i===0 ? "document.getElementById('pyqSection').scrollIntoView({behavior:'smooth',block:'start'})" : 'openModal()'}">
       <div class="resource-icon" style="background:${r.color}12">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="${r.color}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${r.iconPath}</svg>
       </div>
