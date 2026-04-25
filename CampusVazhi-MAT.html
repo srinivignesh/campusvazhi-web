@@ -479,7 +479,7 @@ updateCalc();
 <script>
 function openModal() {
   if (localStorage.getItem('cv_signed_in') !== '1') {
-    window.location.href = './CampusVazhi-Login.html?from=' + encodeURIComponent(window.location.href);
+    window.location.href = './CampusVazhi-Login.html?redirect=' + encodeURIComponent(window.location.href);
     return;
   }
   if (localStorage.getItem('cv_signed_in') === '1') {
@@ -501,10 +501,10 @@ function submitForm() {
   var goal = document.getElementById('fgoal').value;
   // Supabase lead capture
   if (window.supabaseClient) {
-    window.supabaseClient.from('leads').insert([{
-      name: name, mobile: mobile, email: email||null,
-      exam: 'MAT', target_year: goal||null,
-      source: 'mat-page', created_at: new Date().toISOString()
+    window.cvSupabase ? window.cvSupabase.from('cta_leads').insert([{
+      name: name, phone: mobile, email: email||null,
+      exam: 'MAT', cta_type: 'exam_resource',
+      source_page: 'mat-page', created_at: new Date().toISOString()
     }]);
   }
   var pdfWin = window.open('/CampusVazhi-MAT-Resource-Pack.pdf', '_blank');
