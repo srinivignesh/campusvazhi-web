@@ -764,6 +764,16 @@ svg.icon{vertical-align:middle}
         <span id="heroCta2">Join WhatsApp Group</span>
       </button>
     </div>
+  <!-- PYQ shortcut card below hero buttons -->
+  <div style="margin-top:16px;display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:12px;padding:14px 20px;cursor:pointer;transition:all .2s" onclick="document.getElementById('pyqSection').scrollIntoView({behavior:'smooth',block:'start'})" onmouseover="this.style.background='rgba(255,255,255,.13)'" onmouseout="this.style.background='rgba(255,255,255,.08)'">
+    <div style="width:36px;height:36px;background:#0D9488;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+    </div>
+    <div style="text-align:left">
+      <div style="font-size:14px;font-weight:700;color:#fff">Download TANCET PYQ Papers</div>
+      <div style="font-size:12px;color:#94A3B8;margin-top:2px">2015–2025 · Free · With Solutions ↓</div>
+    </div>
+  </div>
     <div class="trust-bar">
       <div class="trust-item"><div class="trust-num">4,000+</div><div class="trust-label" data-en="Aspirants" data-ta="மாணவர்கள்">Aspirants</div></div>
       <div class="trust-item"><div class="trust-num">10 Yrs</div><div class="trust-label" data-en="PYQ Papers" data-ta="வினாத்தாள்கள்">PYQ Papers</div></div>
@@ -2426,8 +2436,7 @@ function toggleLang() {
 // ── Modal / Auth ──
 function openModal() {
   if (localStorage.getItem('cv_signed_in') === '1') {
-    var pyq = document.getElementById('pyqSection');
-    if (pyq) pyq.scrollIntoView({behavior:'smooth', block:'start'});
+    window.open('./CampusVazhi-TANCET-MBA-Resource-Pack.pdf', '_blank');
     return;
   }
   document.getElementById('modal').classList.add('active');
