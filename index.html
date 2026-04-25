@@ -112,7 +112,7 @@ body.logged-in .page-wrap, .logged-in .page-wrap { margin-left: 68px !important;
         "name": "What type of guidance does CampusVazhi provide?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "We offer free guidance on Study Abroad (MS, Management, MIM in USA, UK, Canada, Germany), Management programs in India, UG admissions (JEE, NEET, TNEA, CUET), TANCET 2026 prep, resume building, and general career planning."
+          "text": "We offer free guidance on Study Abroad (MS, Management, MIM in USA, UK, Canada, Germany), Management programs in India, UG admissions (JEE, TNEA, CUET), TANCET 2026 prep, resume building, and general career planning."
         }
       },
       {
@@ -403,11 +403,10 @@ body.logged-in .page-wrap, .logged-in .page-wrap { margin-left: 68px !important;
 
     /* ============= ANNOUNCEMENT TOP BAR ============= */
     .top-bar {
-      background: linear-gradient(90deg, #991b1b, #dc2626, #b91c1c, #dc2626, #991b1b);
-      background-size: 300% 100%;
-      animation: topBarShimmer 4s ease-in-out infinite;
+      background: #0F1B2D;
+      border-bottom: 1px solid rgba(251,191,36,0.25);
       color: var(--white);
-      padding: 10px 16px;
+      padding: 9px 16px;
       text-align: center;
       font-size: 13px;
       font-weight: 600;
@@ -420,15 +419,11 @@ body.logged-in .page-wrap, .logged-in .page-wrap { margin-left: 68px !important;
       gap: 10px;
       flex-wrap: wrap;
     }
-    @keyframes topBarShimmer {
-      0%, 100% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-    }
     .top-bar .pulse {
-      width: 9px;
-      height: 9px;
+      width: 8px;
+      height: 8px;
       border-radius: 50%;
-      background: #fef08a;
+      background: #FCD34D;
       display: inline-block;
       animation: pulse 0.9s ease-in-out infinite;
     }
@@ -624,13 +619,16 @@ body.logged-in .page-wrap, .logged-in .page-wrap { margin-left: 68px !important;
     .hero {
       background: linear-gradient(135deg, #0F1B2D 0%, #1a1a3e 100%);
       color: var(--white);
-      padding: 56px 24px 40px;
-      text-align: center;
+      padding: 56px 24px 48px;
     }
 
     .hero-inner {
-      max-width: 900px;
+      max-width: 1200px;
       margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      gap: 40px;
+      align-items: start;
     }
 
     .eyebrow {
@@ -654,12 +652,12 @@ body.logged-in .page-wrap, .logged-in .page-wrap { margin-left: 68px !important;
     }
 
     .hero h1 {
-      font-size: clamp(32px, 6vw, 56px);
+      font-size: clamp(32px, 4.5vw, 56px);
       font-weight: 800;
       color: var(--white);
       letter-spacing: -0.025em;
       line-height: 1.08;
-      margin: 0 auto 18px;
+      margin: 0 0 18px;
       max-width: 20ch;
     }
     body.lang-ta .hero h1 {
@@ -674,10 +672,10 @@ body.logged-in .page-wrap, .logged-in .page-wrap { margin-left: 68px !important;
     }
 
     .hero p.sub {
-      font-size: clamp(16px, 2vw, 19px);
+      font-size: clamp(15px, 1.6vw, 18px);
       color: #94A3B8;
-      max-width: 65ch;
-      margin: 0 auto 32px;
+      max-width: 55ch;
+      margin: 0 0 28px;
       line-height: 1.55;
     }
 
@@ -685,10 +683,9 @@ body.logged-in .page-wrap, .logged-in .page-wrap { margin-left: 68px !important;
     .hero-tags {
       display: flex;
       gap: 8px;
-      justify-content: center;
+      justify-content: flex-start;
       flex-wrap: wrap;
-      margin: 14px auto 0;
-      max-width: 900px;
+      margin: 14px 0 0;
     }
     .hero-tags .label {
       font-size: 13px;
@@ -743,55 +740,38 @@ body.logged-in .page-wrap, .logged-in .page-wrap { margin-left: 68px !important;
     .hero-countdown {
       display: inline-flex;
       align-items: center;
-      gap: 16px;
-      background: rgba(127,29,29,0.35);
-      border: 1.5px solid rgba(239,68,68,0.5);
-      border-radius: 16px;
-      padding: 14px 28px;
-      box-shadow: 0 0 24px rgba(239,68,68,0.2), inset 0 0 24px rgba(127,29,29,0.15);
+      justify-content: center;
+      gap: 8px;
+      background: rgba(92,56,0,0.4);
+      border: 1.5px solid rgba(251,191,36,0.5);
+      border-radius: 14px;
+      padding: 12px 16px;
       animation: urgentGlow 2s ease-in-out infinite;
-      position: relative;
+      width: 100%;
+      box-sizing: border-box;
     }
     @keyframes urgentGlow {
-      0%, 100% { box-shadow: 0 0 18px rgba(239,68,68,0.2); border-color: rgba(239,68,68,0.45); }
-      50%       { box-shadow: 0 0 36px rgba(239,68,68,0.45); border-color: rgba(239,68,68,0.85); }
-    }
-    .cd-label {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 4px;
-      font-size: 10px;
-      font-weight: 800;
-      letter-spacing: 0.1em;
-      color: #fca5a5;
-      text-transform: uppercase;
-    }
-    .cd-pulse {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: #ef4444;
-      animation: pulse 0.9s ease-in-out infinite;
+      0%, 100% { box-shadow: 0 0 14px rgba(251,191,36,0.18); border-color: rgba(251,191,36,0.4); }
+      50%       { box-shadow: 0 0 28px rgba(251,191,36,0.4); border-color: rgba(251,191,36,0.85); }
     }
     .cd-boxes {
       display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 5px;
     }
     .cd-box {
-      background: rgba(239,68,68,0.15);
-      border: 1px solid rgba(239,68,68,0.3);
+      background: rgba(251,191,36,0.12);
+      border: 1px solid rgba(251,191,36,0.3);
       border-radius: 10px;
-      padding: 10px 14px;
+      padding: 10px 12px;
       text-align: center;
-      min-width: 58px;
+      min-width: 56px;
     }
     .cd-val {
       display: block;
-      font-size: 30px;
+      font-size: 28px;
       font-weight: 900;
-      color: #fff;
+      color: #FCD34D;
       line-height: 1;
     }
     .cd-unit {
@@ -799,43 +779,167 @@ body.logged-in .page-wrap, .logged-in .page-wrap { margin-left: 68px !important;
       font-size: 9px;
       font-weight: 700;
       letter-spacing: 0.08em;
-      color: #fca5a5;
+      color: rgba(252,211,77,0.7);
       margin-top: 4px;
       text-transform: uppercase;
     }
     .cd-sep {
-      color: rgba(239,68,68,0.5);
-      font-size: 22px;
+      color: rgba(251,191,36,0.6);
+      font-size: 20px;
       font-weight: 800;
     }
-    .hero-countdown-cta {
-      display: inline-flex;
+
+    /* ============= HERO SPLIT LAYOUT ============= */
+    .hero-left {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .hero-right {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    /* TANCET urgency card */
+    .tancet-urgency-card {
+      background: rgba(92,56,0,0.5);
+      border: 1.5px solid rgba(251,191,36,0.45);
+      border-radius: 16px;
+      padding: 18px 18px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .tancet-urgency-eyebrow {
+      display: flex;
       align-items: center;
       gap: 8px;
-      background: #ef4444;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #FCD34D;
+    }
+    .tancet-live-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #F59E0B;
+      animation: pulse 0.9s ease-in-out infinite;
+      flex-shrink: 0;
+    }
+    .tancet-prep-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      background: #D97706;
       color: #fff;
       font-size: 13px;
       font-weight: 800;
       border-radius: 10px;
-      padding: 10px 22px;
+      padding: 11px 20px;
       text-decoration: none;
       letter-spacing: 0.02em;
       transition: background 0.2s, transform 0.15s;
     }
-    .hero-countdown-cta:hover {
-      background: #dc2626;
+    .tancet-prep-cta:hover {
+      background: #B45309;
       transform: translateY(-1px);
     }
-    .hero-countdown-sub {
+    .tancet-social-proof {
       font-size: 11px;
-      color: rgba(255,255,255,0.5);
-      margin-top: 2px;
+      color: rgba(252,211,77,0.6);
+      text-align: center;
     }
+
+    /* Free counselling form card */
+    .hero-counsel-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 20px 20px 16px;
+      color: #0F1B2D;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+    }
+    .counsel-heading {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 15px;
+      font-weight: 800;
+      color: #0F1B2D;
+      margin-bottom: 4px;
+    }
+    .counsel-heading svg { color: #0D9488; flex-shrink: 0; }
+    .counsel-sub {
+      font-size: 12px;
+      color: #64748B;
+      margin-bottom: 14px;
+    }
+    .counsel-form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .counsel-input {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 11px 14px;
+      border: 1.5px solid #E2E8F0;
+      border-radius: 10px;
+      font-size: 14px;
+      color: #0F1B2D;
+      background: #F8FAFC;
+      font-family: inherit;
+      outline: none;
+      transition: border-color 0.15s;
+    }
+    .counsel-input:focus { border-color: #0D9488; }
+    .counsel-input::placeholder { color: #94A3B8; }
+    .counsel-select { cursor: pointer; }
+    .counsel-submit {
+      width: 100%;
+      padding: 13px;
+      background: #0D9488;
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 800;
+      cursor: pointer;
+      font-family: inherit;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .counsel-submit:hover { background: #0F766E; transform: translateY(-1px); }
+    .counsel-success {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      background: #F0FDF4;
+      border: 1.5px solid #86EFAC;
+      border-radius: 10px;
+      padding: 14px;
+      color: #166534;
+      font-size: 14px;
+    }
+    .counsel-success svg { color: #16A34A; flex-shrink: 0; margin-top: 1px; }
 
     /* ============= RESPONSIVE ============= */
     /* ============= TABLET (≤768px) ============= */
     @media (max-width: 768px) {
       .page-wrap { margin-left: 0 !important; }
+    }
+
+    /* ============= TABLET HERO STACK (≤900px) ============= */
+    @media (max-width: 900px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+      .hero-left { align-items: flex-start; }
+      .hero-right { max-width: 520px; }
     }
 
     /* ============= MOBILE (≤640px) ============= */
@@ -867,67 +971,35 @@ body.logged-in .page-wrap, .logged-in .page-wrap { margin-left: 68px !important;
       .nav-sign-in .btn-primary { display: none; }
       .btn-ghost { padding: 7px 12px; font-size: 12px; }
 
-      /* --- Hero --- */
-      .hero { padding: 32px 16px 24px; }
+      /* --- Hero split → stack on mobile --- */
+      .hero { padding: 28px 16px 32px; }
+      .hero-inner {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
       .hero h1 { font-size: clamp(28px, 8vw, 40px); max-width: 100%; }
-      .hero p.sub { font-size: 14px; max-width: 100%; margin-bottom: 24px; }
+      .hero p.sub { font-size: 14px; max-width: 100%; margin-bottom: 20px; }
       .eyebrow { font-size: 11px; padding: 6px 12px; }
 
-      /* --- Hero countdown wrapper --- */
-      .hero-countdown-wrapper {
-        width: 100%;
-        padding: 0 4px;
-        gap: 10px;
-      }
-      .hero-countdown-eyebrow {
-        font-size: 9px;
-        text-align: center;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 4px;
-        padding: 0 8px;
-      }
-
-      /* Keep boxes horizontal — only shrink sizing */
-      .hero-countdown {
-        display: flex;
-        flex-direction: row;
-        gap: 6px;
-        padding: 12px 16px;
-        width: fit-content;
-        max-width: 100%;
-        margin: 0 auto;
-      }
-      .cd-label { display: none; } /* hide label on mobile to save space */
-      .cd-boxes { gap: 4px; }
-      .cd-box {
-        min-width: 52px;
-        padding: 8px 6px;
-        border-radius: 8px;
-      }
+      /* --- TANCET urgency card (mobile) --- */
+      .tancet-urgency-card { padding: 14px 14px 12px; gap: 10px; }
+      .tancet-urgency-eyebrow { font-size: 10px; }
+      .hero-countdown { padding: 10px 12px; }
+      .cd-box { min-width: 50px; padding: 8px 6px; }
       .cd-val { font-size: 22px; }
       .cd-unit { font-size: 8px; margin-top: 3px; }
       .cd-sep { font-size: 16px; }
+      .tancet-prep-cta { font-size: 13px; padding: 11px 16px; }
 
-      .hero-countdown-cta {
-        font-size: 13px;
-        padding: 11px 20px;
-        width: calc(100% - 8px);
-        justify-content: center;
-        border-radius: 10px;
-      }
-      .hero-countdown-sub {
-        font-size: 11px;
-        text-align: center;
-        padding: 0 12px;
-        line-height: 1.5;
-      }
+      /* --- Counselling card (mobile) --- */
+      .hero-counsel-card { padding: 16px; }
+      .counsel-heading { font-size: 14px; }
 
       /* --- Hero tags --- */
       .hero-tags {
         gap: 6px;
-        justify-content: center;
-        padding: 0 4px;
+        justify-content: flex-start;
+        padding: 0;
       }
       .tag { font-size: 12px; padding: 6px 10px; }
 
@@ -1228,10 +1300,6 @@ body.logged-in .page-wrap, .logged-in .page-wrap { margin-left: 68px !important;
       <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
       <span class="sb-label"><span class="en">MS in USA</span><span class="ta">அமெரிக்காவில் MS</span></span>
     </a>
-    <a href="./CampusVazhi-NEET-Counselling.html" class="sidebar-link" data-tip="NEET">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-      <span class="sb-label"><span class="en">NEET Counselling</span><span class="ta">NEET ஆலோசனை</span></span>
-    </a>
     <a href="./CampusVazhi-After12th-Quiz.html" class="sidebar-link" data-tip="After 12th">
       <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
       <span class="sb-label"><span class="en">After 12th Quiz</span><span class="ta">12ஆம் வகுப்புக்குப் பிறகு</span></span>
@@ -1347,121 +1415,131 @@ body.logged-in .page-wrap, .logged-in .page-wrap { margin-left: 68px !important;
 <!-- ================= HERO SECTION ================= -->
 <section class="hero">
   <div class="hero-inner">
-    <div class="eyebrow">
-      <span class="dot"></span>
-      <span class="en">Tamil Nadu · Free guidance · Zero middlemen</span>
-      <span class="ta">தமிழ்நாடு · இலவச ஆலோசனை · இடைத்தரகர் இல்லை</span>
-    </div>
 
-    <h1>
-      <span class="en">Your college.<br>Your career.<br>Your <span class="accent">choice.</span></span>
-      <span class="ta">உங்கள் கல்லூரி.<br>உங்கள் தொழில்.<br>உங்கள் <span class="accent">தேர்வு.</span></span>
-    </h1>
-
-    <p class="sub">
-      <span class="en">Free guidance on Study Abroad, Management programs, UG admissions, TANCET prep and careers — built by experienced university alumni for Tamil Nadu students. No middlemen. No hidden commissions. You decide what's best for you; we just make the picture clear.</span>
-      <span class="ta">வெளிநாட்டுப் படிப்பு, Management programs, UG சேர்க்கை, TANCET தயாரிப்பு, தொழில் வாய்ப்புகள் — அனுபவமுள்ள பல்கலைக்கழக முன்னாள் மாணவர்களால் தமிழ்நாட்டு மாணவர்களுக்காக உருவாக்கிய இலவச வழிகாட்டுதல். இடைத்தரகர் இல்லை. மறைவான கமிஷன் இல்லை. உங்கள் சிறந்த தேர்வ என்ன என்பது நீங்கள் தீர்மானிக்கவும்; நாங்கள் படத்தை தெளிவுபடுத்துவோம்.</span>
-    </p>
-
-    <div class="hero-countdown-wrapper">
-      <div class="hero-countdown-eyebrow">
-        <span>🔥</span>
-        <span class="en">EXAM COUNTDOWN — ACT NOW OR REGRET LATER</span>
-        <span class="ta">தேர்வு எண்ணிக்கை — இப்போதே தயாரிக்கவும்</span>
+    <!-- LEFT COLUMN: headline + sub + tags -->
+    <div class="hero-left">
+      <div class="eyebrow">
+        <span class="dot"></span>
+        <span class="en">Tamil Nadu · Free guidance · Zero middlemen</span>
+        <span class="ta">தமிழ்நாடு · இலவச ஆலோசனை · இடைத்தரகர் இல்லை</span>
       </div>
-      <div class="hero-countdown">
-        <div class="cd-label">
-          <span class="cd-pulse"></span>
-          <span class="en">TANCET 2026 IN</span>
+
+      <h1>
+        <span class="en">Your college.<br>Your career.<br>Your <span class="accent">choice.</span></span>
+        <span class="ta">உங்கள் கல்லூரி.<br>உங்கள் தொழில்.<br>உங்கள் <span class="accent">தேர்வு.</span></span>
+      </h1>
+
+      <p class="sub">
+        <span class="en">Free guidance on Study Abroad, Management programs, UG admissions, TANCET prep and careers — built by experienced alumni for Tamil Nadu students. No middlemen. No hidden commissions.</span>
+        <span class="ta">வெளிநாட்டுப் படிப்பு, Management programs, UG சேர்க்கை, TANCET தயாரிப்பு — அனுபவமுள்ள முன்னாள் மாணவர்களால் தமிழ்நாட்டு மாணவர்களுக்காக இலவச வழிகாட்டுதல். இடைத்தரகர் இல்லை. மறைவான கமிஷன் இல்லை.</span>
+      </p>
+
+      <div class="hero-tags">
+        <span class="label">
+          <span class="en">Popular:</span>
+          <span class="ta">பிரபலமானவை:</span>
+        </span>
+        <a class="tag" href="./CampusVazhi-TANCET-Resource-Hub.html">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          <span class="en">TANCET 2026</span>
           <span class="ta">TANCET 2026</span>
-        </div>
-        <div class="cd-boxes">
-          <div class="cd-box"><span class="cd-val" id="cd-d">14</span><span class="cd-unit">DAYS</span></div>
-          <span class="cd-sep">:</span>
-          <div class="cd-box"><span class="cd-val" id="cd-h">00</span><span class="cd-unit">HRS</span></div>
-          <span class="cd-sep">:</span>
-          <div class="cd-box"><span class="cd-val" id="cd-m">00</span><span class="cd-unit">MIN</span></div>
-          <span class="cd-sep">:</span>
-          <div class="cd-box"><span class="cd-val" id="cd-s">00</span><span class="cd-unit">SEC</span></div>
-        </div>
-      </div>
-      <a href="./CampusVazhi-TANCET-Resource-Hub.html" class="hero-countdown-cta">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-        <span class="en">Start Last-Minute Prep — Free</span>
-        <span class="ta">இலவச தயாரிப்பு தொடங்குங்கள்</span>
-      </a>
-      <div class="hero-countdown-sub">
-        <span class="en">10 years of PYQs · Free mock tests · Join 4,000+ students preparing now</span>
-        <span class="ta">10 வருட PYQ · இலவச mock tests · 4,000+ மாணவர்களுடன் சேரவும்</span>
+        </a>
+        <a class="tag" href="./CampusVazhi-MS-USA.html">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          <span class="en">MS in USA</span>
+          <span class="ta">USA இல் MS</span>
+        </a>
+        <a class="tag" href="./CampusVazhi-CAT-2026.html">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7h-3V4a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v3H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1zM9 5h6v2H9V5z"/></svg>
+          <span class="en">CAT 2026</span>
+          <span class="ta">CAT 2026</span>
+        </a>
+        <a class="tag" href="./CampusVazhi-After12th-Quiz.html">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          <span class="en">After 12th Quiz</span>
+          <span class="ta">12th பின் தேர்வு</span>
+        </a>
+        <a class="tag" href="./CampusVazhi-TN-Govt-Exams.html">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/></svg>
+          <span class="en">TN Govt Exams</span>
+          <span class="ta">TN அரசு தேர்வுகள்</span>
+        </a>
+        <a class="tag" href="./CampusVazhi-TNEA-Calculator.html">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"/><line x1="6" y1="6" x2="18" y2="6"/><line x1="6" y1="14" x2="18" y2="14"/><line x1="6" y1="18" x2="18" y2="18"/><line x1="10" y1="10" x2="14" y2="10"/></svg>
+          <span class="en">TNEA Calculator</span>
+          <span class="ta">TNEA கணக்கி</span>
+        </a>
       </div>
     </div>
 
-    <div class="hero-tags">
-      <span class="label">
-        <span class="en">Popular:</span>
-        <span class="ta">பிரபலமானவை:</span>
-      </span>
-      <a class="tag" href="./CampusVazhi-TANCET-Resource-Hub.html">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="3" y="4" width="18" height="18" rx="2"/>
-          <line x1="16" y1="2" x2="16" y2="6"/>
-          <line x1="8" y1="2" x2="8" y2="6"/>
-          <line x1="3" y1="10" x2="21" y2="10"/>
-        </svg>
-        <span class="en">TANCET 2026</span>
-        <span class="ta">TANCET 2026</span>
-      </a>
-      <a class="tag" href="./CampusVazhi-MS-USA.html">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="12" cy="12" r="10"/>
-          <line x1="2" y1="12" x2="22" y2="12"/>
-          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-        </svg>
-        <span class="en">MS in USA</span>
-        <span class="ta">USA இல் MS</span>
-      </a>
-      <a class="tag" href="./CampusVazhi-CAT-2026.html">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M20 7h-3V4a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v3H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1zM9 5h6v2H9V5z"/>
-        </svg>
-        <span class="en">CAT 2026</span>
-        <span class="ta">CAT 2026</span>
-      </a>
-      <a class="tag" href="./CampusVazhi-NEET-Counselling.html">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
-          <path d="M6 12v5c3 3 9 3 12 0v-5"/>
-        </svg>
-        <span class="en">NEET counselling</span>
-        <span class="ta">NEET கவுன்சிலிங்</span>
-      </a>
-      <a class="tag" href="./CampusVazhi-After12th-Quiz.html">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="12" cy="12" r="10"/>
-          <path d="M12 6v6l4 2"/>
-        </svg>
-        <span class="en">After 12th Quiz</span>
-        <span class="ta">12th பின் தேர்வு</span>
-      </a>
-      <a class="tag" href="./CampusVazhi-TN-Govt-Exams.html">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M3 21h18"/>
-          <path d="M5 21V7l7-4 7 4v14"/>
-        </svg>
-        <span class="en">TN Govt Exams</span>
-        <span class="ta">TN அரசு தேர்வுகள்</span>
-      </a>
-      <a class="tag" href="./CampusVazhi-TNEA-Calculator.html">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="4" y="2" width="16" height="20" rx="2" ry="2"/>
-          <line x1="6" y1="6" x2="18" y2="6"/>
-          <line x1="6" y1="14" x2="18" y2="14"/>
-          <line x1="6" y1="18" x2="18" y2="18"/>
-          <line x1="10" y1="10" x2="14" y2="10"/>
-        </svg>
-        <span class="en">TNEA Calculator</span>
-        <span class="ta">TNEA கணக்கி</span>
-      </a>
+    <!-- RIGHT COLUMN: TANCET urgency + counselling form -->
+    <div class="hero-right">
+
+      <!-- TANCET Urgency Card -->
+      <div class="tancet-urgency-card">
+        <div class="tancet-urgency-eyebrow">
+          <span class="tancet-live-dot"></span>
+          <span class="en">⚠️ TANCET 2026 — MAY 9 · ACT NOW</span>
+          <span class="ta">⚠️ TANCET 2026 — மே 9 · இப்போதே தயாரிக்கவும்</span>
+        </div>
+        <div class="hero-countdown">
+          <div class="cd-boxes">
+            <div class="cd-box"><span class="cd-val" id="cd-d">14</span><span class="cd-unit">DAYS</span></div>
+            <span class="cd-sep">:</span>
+            <div class="cd-box"><span class="cd-val" id="cd-h">00</span><span class="cd-unit">HRS</span></div>
+            <span class="cd-sep">:</span>
+            <div class="cd-box"><span class="cd-val" id="cd-m">00</span><span class="cd-unit">MIN</span></div>
+            <span class="cd-sep">:</span>
+            <div class="cd-box"><span class="cd-val" id="cd-s">00</span><span class="cd-unit">SEC</span></div>
+          </div>
+        </div>
+        <a href="./CampusVazhi-TANCET-Resource-Hub.html" class="tancet-prep-cta">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          <span class="en">Start Last-Minute Prep — Free</span>
+          <span class="ta">இலவச தயாரிப்பு தொடங்குங்கள்</span>
+        </a>
+        <div class="tancet-social-proof">
+          <span class="en">10 years of PYQs · Free mock tests · 4,000+ students preparing</span>
+          <span class="ta">10 வருட PYQ · இலவச mock tests · 4,000+ மாணவர்கள்</span>
+        </div>
+      </div>
+
+      <!-- Free Counselling Form Card -->
+      <div class="hero-counsel-card">
+        <div class="counsel-heading">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 11.5a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.55a16 16 0 0 0 5.55 5.55l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16.92z"/></svg>
+          <span class="en">Book a Free Counselling Session</span>
+          <span class="ta">இலவச ஆலோசனை பதிவு செய்யவும்</span>
+        </div>
+        <div class="counsel-sub">
+          <span class="en">Alumni mentor · 15 min · Tamil or English · Zero sales pitch</span>
+          <span class="ta">முன்னாள் மாணவர் · 15 நிமிடம் · தமிழ் / ஆங்கிலம்</span>
+        </div>
+        <form id="hero-counsel-form" class="counsel-form" onsubmit="submitCounselForm(event)">
+          <input type="text" id="counsel-name" class="counsel-input" placeholder="Your name" required>
+          <input type="tel" id="counsel-phone" class="counsel-input" placeholder="WhatsApp number (+91...)" required>
+          <select id="counsel-goal" class="counsel-input counsel-select">
+            <option value="">What do you need guidance on?</option>
+            <option value="TANCET MBA">TANCET 2026 — MBA prep</option>
+            <option value="CAT MBA">CAT 2026 — MBA prep</option>
+            <option value="MS USA">MS in USA / UK / Canada</option>
+            <option value="TNEA">TNEA / B.E. admissions</option>
+            <option value="Career">Career planning / job search</option>
+            <option value="Other">Other</option>
+          </select>
+          <button type="submit" id="counsel-btn" class="counsel-submit">
+            <span class="en">Book Free Session →</span>
+            <span class="ta">இலவச அமர்வு பதிவு செய்யவும் →</span>
+          </button>
+        </form>
+        <div id="counsel-success" class="counsel-success" style="display:none;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/></svg>
+          <div>
+            <strong><span class="en">We got it! Expect a WhatsApp message within 2 hours.</span><span class="ta">கிடைத்தது! 2 மணி நேரத்தில் WhatsApp செய்தி எதிர்பார்க்கலாம்.</span></strong>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -1624,11 +1702,11 @@ body.logged-in .page-wrap, .logged-in .page-wrap { margin-left: 68px !important;
         </a>
       </div>
 
-      <div class="group-card" onclick="openModal('TNEA / NEET UG')">
+      <div class="group-card" onclick="openModal('TNEA')">
         <div class="group-header">
           <h4>
-            <span class="en">TNEA / NEET UG</span>
-            <span class="ta">TNEA / NEET UG</span>
+            <span class="en">TNEA</span>
+            <span class="ta">TNEA</span>
           </h4>
         </div>
         <p class="group-members">
@@ -1803,8 +1881,8 @@ body.logged-in .page-wrap, .logged-in .page-wrap { margin-left: 68px !important;
           <span class="ta">இந்தியாவில் UG</span>
         </h3>
         <p class="headed-desc">
-          <span class="en">JEE, NEET, TNEA and CUET — Tamil Nadu counselling rounds, cutoffs and college selection decoded for parents and students.</span>
-          <span class="ta">JEE, NEET, TNEA மற்றும் CUET — தமிழ்நாடு கவுன்சிலிங் சுற்றுகள், நிழல்கள் மற்றும் பெற்றோர் மற்றும் மாணவர்களுக்கான கல்லூரி தேர்வு குறிப்பிடப்பட்டுள்ளது.</span>
+          <span class="en">JEE, TNEA and CUET — Tamil Nadu counselling rounds, cutoffs and college selection decoded for parents and students.</span>
+          <span class="ta">JEE, TNEA மற்றும் CUET — தமிழ்நாடு கவுன்சிலிங் சுற்றுகள், நிழல்கள் மற்றும் பெற்றோர் மற்றும் மாணவர்களுக்கான கல்லூரி தேர்வு குறிப்பிடப்பட்டுள்ளது.</span>
         </p>
         <a href="./CampusVazhi-After12th-Quiz.html" class="headed-btn">
           <span class="en">Explore streams →</span>
@@ -3424,7 +3502,6 @@ body.logged-in .page-wrap, .logged-in .page-wrap { margin-left: 68px !important;
           <li><a href="./CampusVazhi-TANCET-Resource-Hub.html" style="font-size: 13px; color: #94A3B8; transition: color 0.15s ease;" onmouseover="this.style.color='var(--teal-light)'" onmouseout="this.style.color='#94A3B8'">TANCET 2026</a></li>
           <li><a href="./CampusVazhi-MS-USA.html" style="font-size: 13px; color: #94A3B8; transition: color 0.15s ease;" onmouseover="this.style.color='var(--teal-light)'" onmouseout="this.style.color='#94A3B8'">MS in USA</a></li>
           <li><a href="./CampusVazhi-CAT-2026.html" style="font-size: 13px; color: #94A3B8; transition: color 0.15s ease;" onmouseover="this.style.color='var(--teal-light)'" onmouseout="this.style.color='#94A3B8'">CAT 2026</a></li>
-          <li><a href="./CampusVazhi-NEET-Counselling.html" style="font-size: 13px; color: #94A3B8; transition: color 0.15s ease;" onmouseover="this.style.color='var(--teal-light)'" onmouseout="this.style.color='#94A3B8'">NEET Counselling</a></li>
           <li><a href="./CampusVazhi-Resume.html" style="font-size: 13px; color: #94A3B8; transition: color 0.15s ease;" onmouseover="this.style.color='var(--teal-light)'" onmouseout="this.style.color='#94A3B8'">Resume Builder</a></li>
         </ul>
       </div>
@@ -3788,6 +3865,45 @@ body.logged-in .page-wrap, .logged-in .page-wrap { margin-left: 68px !important;
     closeSignin();
   }
 
+  // 3c. Hero Counselling Form
+  function submitCounselForm(e) {
+    e.preventDefault();
+    var name = document.getElementById('counsel-name').value.trim();
+    var phone = document.getElementById('counsel-phone').value.trim();
+    var goal = document.getElementById('counsel-goal').value;
+    if (!name || !phone) { return; }
+
+    var btn = document.getElementById('counsel-btn');
+    if (btn) { btn.disabled = true; btn.textContent = 'Booking…'; }
+
+    // Save to Supabase leads table
+    try {
+      var sbUrl = (typeof CV_CONFIG !== 'undefined' && CV_CONFIG.SUPABASE_URL) || 'https://txyimbzkutnkaphyvifg.supabase.co';
+      var sbKey = (typeof CV_CONFIG !== 'undefined' && CV_CONFIG.SUPABASE_ANON_KEY) || '';
+      if (sbUrl && sbKey) {
+        fetch(sbUrl + '/rest/v1/leads', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'apikey': sbKey,
+            'Authorization': 'Bearer ' + sbKey,
+            'Prefer': 'return=minimal'
+          },
+          body: JSON.stringify({ name: name, phone: phone, goal: goal || 'Counselling', source: 'hero_counsel_form', created_at: new Date().toISOString() })
+        });
+      }
+    } catch(e2) {}
+
+    // Track
+    if (typeof cvTrack === 'function') {
+      cvTrack('generate_lead', { method: 'hero_counsel_form', goal: goal });
+    }
+
+    // Show success state
+    document.getElementById('hero-counsel-form').style.display = 'none';
+    document.getElementById('counsel-success').style.display = 'flex';
+  }
+
   // 4. Modal
   function openModal(group) {
     document.getElementById('modal').classList.add('active');
@@ -3925,13 +4041,6 @@ body.logged-in .page-wrap, .logged-in .page-wrap { margin-left: 68px !important;
   </div>
 
   <div class="exam-panel-list">
-    <div class="exam-item" onclick="this.classList.toggle('open')">
-      <div class="exam-item-top">
-        <div><p class="exam-item-name">NEET UG 2026</p><p class="exam-item-date"><span class="en">May 4, 2026</span><span class="ta">மே 4, 2026</span></p></div>
-        <span class="exam-badge upcoming"><span class="en">Upcoming</span><span class="ta">வரவிருக்கும்</span></span>
-      </div>
-      <div class="exam-item-detail"><p><span class="dl"><span class="en">For:</span><span class="ta">இதற்கு:</span></span> MBBS, BDS, AYUSH</p><a href="./CampusVazhi-NEET-Counselling.html"><span class="en">NEET Guide →</span><span class="ta">NEET வழிகாட்டி →</span></a></div>
-    </div>
 
     <div class="exam-item" onclick="this.classList.toggle('open')">
       <div class="exam-item-top">
