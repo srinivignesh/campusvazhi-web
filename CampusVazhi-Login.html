@@ -309,17 +309,42 @@ body.lang-ta .en{display:none}
     <div class="error-msg" id="errorMsg"></div>
     <div class="success-msg" id="successMsg"></div>
 
-    <!-- Auth Section — Email Magic Link (shown on initial load) -->
+    <!-- Auth Section -->
     <div class="auth-section" id="authSection">
-      <!-- Email Input Form -->
+
+      <!-- Quick Phone Sign-In (PRIMARY) -->
+      <div id="phoneSignIn">
+        <p style="font-size:13px;font-weight:600;color:#6B7280;text-align:center;margin-bottom:16px;background:#F0FDFA;padding:10px;border-radius:8px">
+          📦 Sign in to download your free resource pack
+        </p>
+        <div class="email-input-group">
+          <label><span class="en">Your Name</span><span class="ta">உங்கள் பெயர்</span></label>
+          <input type="text" id="quickName" placeholder="Your full name" style="margin-bottom:10px;padding:12px 14px;border-radius:8px;border:1px solid #E5E7EB;font-size:14px;width:100%;font-family:inherit;outline:none"/>
+        </div>
+        <div class="email-input-group">
+          <label><span class="en">WhatsApp Number</span><span class="ta">WhatsApp எண்</span></label>
+          <input type="tel" id="quickPhone" placeholder="9XXXXXXXXX" style="padding:12px 14px;border-radius:8px;border:1px solid #E5E7EB;font-size:14px;width:100%;font-family:inherit;outline:none"/>
+        </div>
+        <button class="magic-link-btn" onclick="quickSignIn()" style="margin-top:12px">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          <span><span class="en">Get Free Access →</span><span class="ta">இலவச அணுகல் பெறுங்கள் →</span></span>
+        </button>
+        <div style="display:flex;align-items:center;gap:10px;margin:16px 0">
+          <div style="flex:1;height:1px;background:#E5E7EB"></div>
+          <span style="font-size:12px;color:#9CA3AF">or sign in with email</span>
+          <div style="flex:1;height:1px;background:#E5E7EB"></div>
+        </div>
+      </div>
+
+      <!-- Email Magic Link (SECONDARY) -->
       <div id="emailForm">
         <div class="email-input-group">
           <label><span class="en">Email Address</span><span class="ta">மின்னஞ்சல் முகவரி</span></label>
-          <input type="email" id="emailInput" placeholder="you@example.com" autocomplete="email" required  aria-label="Email address"/>
+          <input type="email" id="emailInput" placeholder="you@example.com" autocomplete="email" required aria-label="Email address"/>
         </div>
-        <button class="magic-link-btn" onclick="sendMagicLink()" id="magicLinkBtn">
+        <button class="magic-link-btn" onclick="sendMagicLink()" id="magicLinkBtn" style="background:#6B7280">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          <span><span class="en">Send Login Link</span><span class="ta">உள்நுழைவு இணைப்பை அனுப்பு</span></span>
+          <span><span class="en">Send Email Login Link</span><span class="ta">மின்னஞ்சல் இணைப்பை அனுப்பு</span></span>
         </button>
       </div>
 
@@ -392,6 +417,33 @@ body.lang-ta .en{display:none}
 <script src="./js/supabase-client.js"></script>
 
 <script>
+// ============= QUICK PHONE SIGN-IN =============
+async function quickSignIn() {
+  var name = document.getElementById('quickName').value.trim();
+  var phone = document.getElementById('quickPhone').value.trim();
+  if (!name || !phone) { alert('Please enter your name and WhatsApp number'); return; }
+  if (phone.length < 10) { alert('Please enter a valid 10-digit mobile number'); return; }
+
+  // Save to Supabase cta_leads table
+  try {
+    if (window.cvSupabase) {
+      await window.cvSupabase.from('cta_leads').insert([{
+        name: name, phone: phone, cta_type: 'quick_signin',
+        source_page: window.location.pathname
+      }]);
+    }
+  } catch(e) { console.log('Lead save error:', e); }
+
+  // Set signed-in state
+  localStorage.setItem('cv_signed_in', '1');
+  localStorage.setItem('cv_user', JSON.stringify({ name: name, phone: phone, initial: name[0].toUpperCase() }));
+
+  // Redirect back to exam page or dashboard
+  var params = new URLSearchParams(window.location.search);
+  var redirectTo = params.get('redirect') || './CampusVazhi-Dashboard.html';
+  window.location.href = redirectTo;
+}
+
 // ============= LANGUAGE TOGGLE =============
 function toggleLang() {
   const body = document.body;
