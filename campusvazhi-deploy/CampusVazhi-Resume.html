@@ -1,0 +1,2060 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style id="cv-sidebar-auth">
+.sidebar { display: none !important; }
+.page-wrap { margin-left: 0 !important; }
+body.logged-in .sidebar, .logged-in .sidebar { display: flex !important; }
+body.logged-in .page-wrap, .logged-in .page-wrap { margin-left: 68px !important; }
+@media (max-width: 768px) {
+  body.logged-in .page-wrap, .logged-in .page-wrap { margin-left: 0 !important; }
+}
+</style>
+<script>(function(){var s=localStorage.getItem('cv_signed_in')==='1';if(s)document.documentElement.classList.add('logged-in');document.addEventListener('DOMContentLoaded',function(){var sb=document.querySelector('.sidebar');var pw=document.querySelector('.page-wrap');if(s){document.body.classList.add('logged-in');if(sb)sb.style.setProperty('display','flex','important');if(pw)pw.style.setProperty('margin-left','68px','important')}else{if(sb)sb.style.setProperty('display','none','important');if(pw)pw.style.setProperty('margin-left','0','important')}});})()</script>
+
+
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Build ATS-ready resumes in 5 minutes. 2 free premium templates, live preview, ATS score checker showing company acceptance rates, and PDF download. Trusted by 50,000+ Indian students.">
+  <link rel="canonical" href="https://campusvazhi.com/resume" />
+  <meta property="og:title" content="CampusVazhi Resume Builder — Free ATS-Ready Templates & Score Checker" />
+  <meta property="og:description" content="Build ATS-ready resumes in 5 minutes. 2 free premium templates, live preview, ATS score checker showing company acceptance rates, and PDF download. Trusted by 50,000+ Indian students." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://campusvazhi.com/resume" />
+  <meta property="og:image" content="https://campusvazhi.com/og-default.svg" />
+  <title>CampusVazhi Resume Builder — Free ATS-Ready Templates & Score Checker</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Tamil:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --navy: #0F1B2D;
+      --navy-2: #1E3A5F;
+      --teal: #0D9488;
+      --teal-light: #14B8A6;
+      --teal-bg: #F0FDFA;
+      --gold: #F59E0B;
+      --gold-bg: #FEF3C7;
+      --white: #FFFFFF;
+      --g50: #F9FAFB;
+      --g100: #F3F4F6;
+      --g200: #E5E7EB;
+      --g300: #D1D5DB;
+      --g500: #6B7280;
+      --g700: #374151;
+      --g900: #111827;
+      --red: #EF4444;
+      --green: #10B981;
+      --shadow-sm: 0 1px 2px rgba(15,27,45,0.05);
+      --shadow-md: 0 4px 16px rgba(15,27,45,0.08);
+      --shadow-lg: 0 12px 36px rgba(15,27,45,0.12);
+    }
+
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      color: var(--g900);
+      background: var(--white);
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+    }
+    body.lang-ta { font-family: 'Noto Sans Tamil', 'Inter', system-ui, sans-serif; }
+
+    /* Language toggling */
+    .ta { display: none; }
+    body.lang-ta .en { display: none; }
+    body.lang-ta .ta { display: inline; }
+
+    img, svg { display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    /* ============= PAGE WRAPPER ============= */
+    .page-wrap { margin-left: 68px; }
+
+    /* ============= FOOTER ============= */
+    .footer {
+      background: var(--navy);
+      color: rgba(255,255,255,.7);
+      text-align: center;
+      padding: 40px 24px 24px;
+      margin-top: 60px;
+    }
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+    .footer-brand span span { color: var(--teal-light); }
+    .footer p { margin: 0 0 4px; font-size: 13px; color: rgba(255,255,255,.5); }
+    .footer .copy { font-size: 12px; color: rgba(255,255,255,.35); margin-top: 12px; }
+    .footer a { transition: color .2s; }
+    .footer a:hover { color: var(--teal-light); }
+
+    /* ============= SIDEBAR ============= */
+    .sidebar {
+      display: flex;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 68px;
+      height: 100vh;
+      background: var(--navy);
+      z-index: 1000;
+      flex-direction: column;
+      overflow: hidden;
+      transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 2px 0 24px rgba(15,27,45,0.15);
+    }
+    .sidebar:hover { width: 260px; }
+
+    .sidebar .sb-label,
+    .sidebar .sidebar-section-label,
+    .sidebar .sidebar-user-info,
+    .sidebar .sidebar-badge,
+    .sidebar .sb-signout-text {
+      opacity: 0;
+      white-space: nowrap;
+      transition: opacity 0.2s ease 0s;
+    }
+    .sidebar:hover .sb-label,
+    .sidebar:hover .sidebar-section-label,
+    .sidebar:hover .sidebar-user-info,
+    .sidebar:hover .sidebar-badge,
+    .sidebar:hover .sb-signout-text {
+      opacity: 1;
+      transition: opacity 0.2s ease 0.12s;
+    }
+
+    .sidebar-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 20px 14px 16px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      flex-shrink: 0;
+      min-height: 72px;
+    }
+    .sidebar-avatar {
+      width: 40px;
+      height: 40px;
+      min-width: 40px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--teal), var(--teal-light));
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 17px;
+      font-weight: 800;
+      flex-shrink: 0;
+      box-shadow: 0 2px 8px rgba(13,148,136,0.35);
+    }
+    .sidebar-user-info { overflow: hidden; }
+    .sidebar-user-info h4 {
+      margin: 0;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--white);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .sidebar-user-info p {
+      margin: 2px 0 0;
+      font-size: 11px;
+      color: rgba(255,255,255,0.5);
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    .sidebar-nav {
+      flex: 1;
+      padding: 8px 0;
+      overflow-y: auto;
+      overflow-x: hidden;
+      scrollbar-width: none;
+    }
+    .sidebar-nav::-webkit-scrollbar { display: none; }
+
+    .sidebar-section-label {
+      font-size: 9px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: rgba(255,255,255,0.35);
+      padding: 14px 14px 4px 22px;
+      white-space: nowrap;
+    }
+
+    .sidebar-link {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 10px 14px 10px 20px;
+      font-size: 13px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+      transition: all 0.15s ease;
+      border-left: 3px solid transparent;
+      position: relative;
+      white-space: nowrap;
+    }
+    .sidebar-link:hover {
+      background: rgba(13,148,136,0.15);
+      color: var(--teal-light);
+      border-left-color: var(--teal-light);
+    }
+    .sidebar-link svg {
+      width: 20px;
+      height: 20px;
+      min-width: 20px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .sidebar-link .sidebar-badge {
+      margin-left: auto;
+      background: var(--teal);
+      color: var(--white);
+      font-size: 10px;
+      font-weight: 800;
+      padding: 2px 7px;
+      border-radius: 999px;
+    }
+
+    .sidebar:not(:hover) .sidebar-link[data-tip]:hover::after {
+      content: attr(data-tip);
+      position: absolute;
+      left: 64px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: var(--navy);
+      color: var(--white);
+      font-size: 12px;
+      font-weight: 600;
+      padding: 6px 12px;
+      border-radius: 6px;
+      white-space: nowrap;
+      z-index: 1001;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      pointer-events: none;
+    }
+
+    .sidebar-divider {
+      height: 1px;
+      background: rgba(255,255,255,0.06);
+      margin: 6px 14px;
+    }
+
+    .sidebar-footer {
+      padding: 12px 14px 16px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      flex-shrink: 0;
+    }
+    .sidebar-signout {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      width: 100%;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: transparent;
+      padding: 10px 10px;
+      border-radius: 10px;
+      font-size: 13px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.5);
+      cursor: pointer;
+      font-family: inherit;
+      transition: all 0.15s ease;
+      white-space: nowrap;
+    }
+    .sidebar-signout:hover {
+      border-color: rgba(239,68,68,0.5);
+      background: rgba(239,68,68,0.08);
+      color: #FCA5A5;
+    }
+    .sidebar-signout svg {
+      width: 18px;
+      height: 18px;
+      min-width: 18px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* ============= TOP NAV ============= */
+    .top-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 28px;
+      background: var(--white);
+      border-bottom: 1px solid var(--g200);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--navy);
+    }
+    .nav-logo > span { color: var(--navy); font-size: 18px; font-weight: 800; }
+    .nav-logo > span span { color: var(--teal); }
+    .nav-logo svg {
+      display: inline;
+    }
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .btn-lang {
+      background: var(--g100);
+      border: none;
+      border-radius: 6px;
+      padding: 8px 14px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      color: var(--g700);
+      font-family: inherit;
+      transition: all 0.2s;
+    }
+    .btn-lang:hover {
+      background: var(--g200);
+    }
+    .btn-signin {
+      background: var(--teal);
+      color: var(--white);
+      border: none;
+      border-radius: 8px;
+      padding: 10px 20px;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      font-family: inherit;
+      transition: all 0.2s;
+    }
+    .btn-signin:hover {
+      background: var(--teal-light);
+    }
+
+    /* ============= HERO ============= */
+    .hero {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-2) 100%);
+      padding: 60px 28px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -40px;
+      right: -40px;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background: var(--gold);
+      opacity: 0.08;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -60px;
+      left: -20px;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      background: var(--teal);
+      opacity: 0.06;
+    }
+    .hero-content {
+      max-width: 700px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+    .hero h1 {
+      font-size: clamp(28px, 5vw, 44px);
+      font-weight: 800;
+      color: var(--white);
+      margin: 0 0 16px;
+      line-height: 1.2;
+    }
+    .hero h1 span { color: var(--teal-light); }
+    .hero p {
+      font-size: 17px;
+      color: #CBD5E1;
+      margin: 0 0 32px;
+      line-height: 1.6;
+    }
+
+    /* ============= TEMPLATES SECTION ============= */
+    .templates-section {
+      padding: 56px 28px;
+      max-width: 1200px;
+      margin: 0 auto;
+      display: none;
+    }
+    .templates-section.active {
+      display: block;
+    }
+    .section-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .section-header h2 {
+      font-size: clamp(24px, 4vw, 32px);
+      font-weight: 800;
+      color: var(--g900);
+      margin: 0 0 8px;
+    }
+    .section-header p {
+      font-size: 15px;
+      color: var(--g500);
+      max-width: 600px;
+      margin: 8px auto 0;
+    }
+
+    .templates-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+      margin-bottom: 48px;
+    }
+
+    /* FREE TEMPLATE CARD */
+    .template-card {
+      background: var(--white);
+      border: 1.5px solid var(--g200);
+      border-radius: 16px;
+      padding: 24px;
+      transition: all 0.3s;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+    .template-card:hover {
+      border-color: var(--teal);
+      box-shadow: 0 12px 40px rgba(13,148,136,0.15);
+      transform: translateY(-4px);
+    }
+    .template-badge {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: linear-gradient(135deg, var(--teal), var(--teal-light));
+      color: var(--white);
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .template-preview {
+      background: linear-gradient(135deg, #F5F9FF 0%, #F0FDFA 100%);
+      border: 1.5px dashed var(--g300);
+      border-radius: 12px;
+      padding: 20px;
+      min-height: 200px;
+      margin-bottom: 20px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 11px;
+      line-height: 1.7;
+      color: var(--g700);
+      position: relative;
+      overflow: hidden;
+    }
+    .template-preview strong {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--g900);
+      font-weight: 700;
+      font-size: 12px;
+    }
+    .template-preview .divider {
+      height: 1px;
+      background: var(--g300);
+      margin: 8px 0;
+    }
+    .template-name {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--g900);
+      margin-bottom: 8px;
+    }
+    .template-desc {
+      font-size: 13px;
+      color: var(--g500);
+      margin-bottom: 20px;
+      line-height: 1.5;
+    }
+    .template-actions {
+      display: flex;
+      gap: 12px;
+      margin-top: auto;
+    }
+    .btn-use {
+      flex: 1;
+      background: var(--teal);
+      color: var(--white);
+      border: none;
+      border-radius: 10px;
+      padding: 12px 16px;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      font-family: inherit;
+      transition: all 0.2s;
+    }
+    .btn-use:hover {
+      background: var(--teal-light);
+      transform: translateY(-2px);
+    }
+
+    /* PREMIUM TEMPLATE CARD */
+    .template-card.premium {
+      opacity: 0.7;
+    }
+    .template-card.premium .template-preview {
+      filter: blur(3px);
+      position: relative;
+    }
+    .template-card.premium::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(15,27,45,0.03);
+      border-radius: 16px;
+      pointer-events: none;
+    }
+    .lock-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 12px;
+      background: rgba(15,27,45,0.8);
+      border-radius: 16px;
+      z-index: 10;
+    }
+    .lock-icon {
+      width: 48px;
+      height: 48px;
+      background: rgba(255,255,255,0.2);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      font-size: 24px;
+    }
+    .lock-text {
+      color: var(--white);
+      text-align: center;
+    }
+    .lock-text p {
+      margin: 0;
+      font-size: 13px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.9);
+    }
+    .lock-text small {
+      display: block;
+      font-size: 11px;
+      color: rgba(255,255,255,0.6);
+      margin-top: 4px;
+    }
+    .btn-unlock {
+      background: var(--gold);
+      color: var(--navy);
+      border: none;
+      border-radius: 8px;
+      padding: 10px 16px;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      font-family: inherit;
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .btn-unlock:hover {
+      background: #FBBF24;
+    }
+    .price-original {
+      text-decoration: line-through;
+      opacity: 0.6;
+      font-weight: 500;
+      font-size: 11px;
+    }
+    .price-offer {
+      font-weight: 800;
+      font-size: 13px;
+    }
+    .offer-badge {
+      background: #EF4444;
+      color: #fff;
+      font-size: 9px;
+      font-weight: 800;
+      padding: 2px 6px;
+      border-radius: 4px;
+      letter-spacing: 0.5px;
+      animation: pulse-badge 2s ease-in-out infinite;
+    }
+    @keyframes pulse-badge {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.08); }
+    }
+
+    /* ============= BUILDER FORM ============= */
+    .builder-section {
+      padding: 56px 28px;
+      max-width: 1100px;
+      margin: 0 auto;
+      display: none;
+    }
+    .builder-section.active {
+      display: block;
+    }
+    .form-container {
+      background: var(--white);
+      border: 1.5px solid var(--g200);
+      border-radius: 16px;
+      padding: 40px;
+    }
+    .form-header {
+      margin-bottom: 32px;
+    }
+    .form-header h2 {
+      font-size: 28px;
+      font-weight: 800;
+      color: var(--g900);
+      margin: 0 0 8px;
+    }
+    .form-header p {
+      font-size: 14px;
+      color: var(--g500);
+      margin: 0;
+    }
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin-bottom: 28px;
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+    }
+    .form-group label {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--g900);
+      margin-bottom: 8px;
+    }
+    .form-group input,
+    .form-group textarea {
+      background: var(--g50);
+      border: 1.5px solid var(--g200);
+      border-radius: 10px;
+      padding: 12px 14px;
+      font-size: 13px;
+      font-family: inherit;
+      color: var(--g900);
+      transition: all 0.2s;
+    }
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--teal);
+      background: var(--white);
+      box-shadow: 0 0 0 3px rgba(13,148,136,0.1);
+    }
+    .form-group textarea {
+      resize: vertical;
+      min-height: 80px;
+      font-family: inherit;
+    }
+
+    .section-title {
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--g900);
+      margin-top: 32px;
+      margin-bottom: 16px;
+      padding-top: 24px;
+      border-top: 1.5px solid var(--g200);
+    }
+    .add-button {
+      background: rgba(13,148,136,0.1);
+      color: var(--teal);
+      border: 1.5px dashed var(--teal);
+      border-radius: 10px;
+      padding: 12px 16px;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      font-family: inherit;
+      transition: all 0.2s;
+      margin-bottom: 16px;
+    }
+    .add-button:hover {
+      background: rgba(13,148,136,0.15);
+    }
+
+    .entry-card {
+      background: var(--g50);
+      border: 1.5px solid var(--g200);
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 12px;
+      position: relative;
+    }
+    .entry-card.highlighted {
+      border-color: var(--teal);
+      background: rgba(13,148,136,0.05);
+    }
+    .remove-entry {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: rgba(239,68,68,0.1);
+      color: var(--red);
+      border: none;
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: inherit;
+      font-weight: 600;
+    }
+    .remove-entry:hover {
+      background: rgba(239,68,68,0.2);
+    }
+
+    .form-actions {
+      display: flex;
+      gap: 12px;
+      margin-top: 32px;
+      flex-wrap: wrap;
+    }
+    .btn-preview {
+      flex: 1;
+      min-width: 160px;
+      background: var(--teal);
+      color: var(--white);
+      border: none;
+      border-radius: 10px;
+      padding: 14px 24px;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      font-family: inherit;
+      transition: all 0.2s;
+    }
+    .btn-preview:hover {
+      background: var(--teal-light);
+      transform: translateY(-2px);
+    }
+    .btn-back {
+      background: var(--g100);
+      color: var(--g700);
+      border: none;
+      border-radius: 10px;
+      padding: 14px 24px;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      font-family: inherit;
+      transition: all 0.2s;
+    }
+    .btn-back:hover {
+      background: var(--g200);
+    }
+
+    /* ============= PREVIEW & ATS SECTION ============= */
+    .preview-section {
+      padding: 56px 28px;
+      max-width: 1400px;
+      margin: 0 auto;
+      display: none;
+    }
+    .preview-section.active {
+      display: block;
+    }
+
+    .preview-container {
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 28px;
+      margin-bottom: 40px;
+    }
+
+    /* RESUME PREVIEW */
+    .resume-preview {
+      background: var(--white);
+      border: 1.5px solid var(--g200);
+      border-radius: 16px;
+      padding: 40px;
+      min-height: 600px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      color: var(--g900);
+    }
+
+    /* Template-specific styles */
+    .resume-clean .name {
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: 4px;
+    }
+    .resume-clean .contact {
+      font-size: 12px;
+      color: var(--g500);
+      margin-bottom: 20px;
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .resume-clean .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .resume-clean .section-head {
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--navy);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-top: 16px;
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--navy);
+    }
+    .resume-clean .entry {
+      margin-bottom: 14px;
+    }
+    .resume-clean .entry-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--g900);
+    }
+    .resume-clean .entry-subtitle {
+      font-size: 12px;
+      color: var(--g500);
+      font-style: italic;
+    }
+    .resume-clean .entry-desc {
+      font-size: 12px;
+      color: var(--g700);
+      margin-top: 4px;
+      line-height: 1.5;
+    }
+
+    .resume-modern {
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      gap: 24px;
+    }
+    .resume-modern .sidebar {
+      background: var(--teal);
+      color: var(--white);
+      padding: 20px;
+      border-radius: 12px;
+      height: fit-content;
+    }
+    .resume-modern .sidebar h3 {
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin: 16px 0 8px;
+      padding-top: 12px;
+      border-top: 1px solid rgba(255,255,255,0.3);
+    }
+    .resume-modern .sidebar h3:first-child {
+      margin-top: 0;
+      border-top: none;
+      padding-top: 0;
+    }
+    .resume-modern .sidebar-item {
+      font-size: 11px;
+      line-height: 1.6;
+      margin-bottom: 6px;
+    }
+    .resume-modern .main h2 {
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--navy);
+      margin: 0 0 4px;
+    }
+    .resume-modern .main .contact {
+      font-size: 11px;
+      color: rgba(15,27,45,0.6);
+      margin-bottom: 16px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .resume-modern .main .section-head {
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--teal);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-top: 16px;
+      margin-bottom: 8px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid var(--teal);
+    }
+    .resume-modern .main .entry {
+      margin-bottom: 12px;
+    }
+    .resume-modern .main .entry-title {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--g900);
+    }
+    .resume-modern .main .entry-subtitle {
+      font-size: 11px;
+      color: var(--g500);
+    }
+    .resume-modern .main .entry-desc {
+      font-size: 11px;
+      color: var(--g700);
+      margin-top: 2px;
+      line-height: 1.5;
+    }
+
+    /* ATS PANEL */
+    .ats-panel {
+      background: linear-gradient(135deg, #F8F4FF 0%, #FEF3C7 100%);
+      border: 1.5px solid var(--gold);
+      border-radius: 16px;
+      padding: 28px;
+      position: sticky;
+      top: 100px;
+      height: fit-content;
+    }
+    .ats-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    .ats-icon {
+      width: 48px;
+      height: 48px;
+      background: var(--gold);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--navy);
+      font-size: 24px;
+      font-weight: 800;
+    }
+    .ats-header h3 {
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--g900);
+      margin: 0;
+    }
+
+    .ats-score-circle {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      background: conic-gradient(var(--teal) var(--ats-score), var(--g200) 0);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      box-shadow: 0 4px 16px rgba(13,148,136,0.2);
+    }
+    .ats-score-inner {
+      width: 128px;
+      height: 128px;
+      border-radius: 50%;
+      background: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+    .ats-score-num {
+      font-size: 48px;
+      font-weight: 800;
+      color: var(--teal);
+      line-height: 1;
+    }
+    .ats-score-label {
+      font-size: 11px;
+      color: var(--g500);
+      font-weight: 600;
+      margin-top: 4px;
+    }
+
+    .ats-verdict {
+      background: var(--white);
+      border: 1.5px solid var(--g200);
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 16px;
+    }
+    .ats-verdict-title {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--g900);
+      margin-bottom: 6px;
+    }
+    .ats-verdict-text {
+      font-size: 12px;
+      color: var(--g700);
+      line-height: 1.5;
+    }
+
+    .ats-suggestions {
+      background: var(--white);
+      border: 1.5px solid var(--g200);
+      border-radius: 12px;
+      padding: 16px;
+    }
+    .ats-suggestions-title {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--g900);
+      margin-bottom: 12px;
+    }
+    .ats-suggestion {
+      background: rgba(13,148,136,0.05);
+      border-left: 3px solid var(--teal);
+      padding: 10px 12px;
+      border-radius: 6px;
+      margin-bottom: 8px;
+      font-size: 11px;
+      color: var(--g700);
+      line-height: 1.5;
+    }
+    .ats-suggestion:last-child {
+      margin-bottom: 0;
+    }
+    .ats-suggestion strong {
+      color: var(--g900);
+      font-weight: 700;
+    }
+
+    .download-section {
+      margin-top: 24px;
+      display: flex;
+      gap: 8px;
+    }
+    .btn-download {
+      flex: 1;
+      background: var(--teal);
+      color: var(--white);
+      border: none;
+      border-radius: 10px;
+      padding: 12px 16px;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      font-family: inherit;
+      transition: all 0.2s;
+    }
+    .btn-download:hover {
+      background: var(--teal-light);
+    }
+    .btn-edit {
+      background: var(--g100);
+      color: var(--g700);
+      border: none;
+      border-radius: 10px;
+      padding: 12px 16px;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      font-family: inherit;
+    }
+
+    @media (max-width: 768px) {
+      .sidebar { width: 0; }
+      .sidebar:hover { width: 260px; }
+      .page-wrap { margin-left: 0; }
+
+      .top-nav {
+        padding: 14px 16px;
+      }
+      .nav-logo {
+        font-size: 16px;
+      }
+      .hero {
+        padding: 40px 16px;
+      }
+      .templates-section,
+      .builder-section,
+      .preview-section {
+        padding: 40px 16px;
+      }
+      .form-container,
+      .resume-preview {
+        padding: 20px;
+      }
+      .preview-container {
+        grid-template-columns: 1fr;
+      }
+      .ats-panel {
+        position: static;
+        margin-top: 24px;
+      }
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+      .templates-grid {
+        grid-template-columns: 1fr;
+      }
+      .resume-modern {
+        grid-template-columns: 1fr;
+      }
+      .resume-modern .sidebar {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+        padding: 16px;
+      }
+      .resume-modern .sidebar h3 {
+        grid-column: 1 / -1;
+        margin: 12px 0 8px;
+      }
+    }
+
+    /* PRINT STYLES */
+    @media print {
+      body, html {
+        background: white;
+      }
+      .top-nav, .hero, .section-header, .ats-panel, .form-actions, .download-section, .btn-back {
+        display: none !important;
+      }
+      .page-wrap {
+        margin-left: 0 !important;
+      }
+      .preview-section {
+        padding: 0 !important;
+      }
+      .resume-preview {
+        border: none !important;
+        padding: 0 !important;
+        box-shadow: none !important;
+      }
+      .preview-container {
+        grid-template-columns: 1fr !important;
+        gap: 0 !important;
+      }
+    }
+  </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Free Resume Builder — CampusVazhi",
+  "url": "https://campusvazhi.com/resume",
+  "description": "Build a professional resume for free. Designed for college students and fresh graduates applying to internships and jobs.",
+  "applicationCategory": "EducationalApplication",
+  "operatingSystem": "Web",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" },
+  "provider": { "@type": "EducationalOrganization", "name": "CampusVazhi", "url": "https://campusvazhi.com" }
+}
+</script>
+</head>
+<body>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="sidebar">
+
+  <!-- Profile header -->
+  <div class="sidebar-header">
+    <div class="sidebar-avatar" id="sb-avatar"></div>
+    <div class="sidebar-user-info">
+      <h4 id="sb-name"></h4>
+      <p id="sb-exam">CAT 2026</p>
+    </div>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a href="./campusvazhi-home-v2.html" class="sidebar-link" data-tip="Home" style="margin-bottom:8px">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      <span class="sb-label"><span class="en">Home</span><span class="ta">முகப்பு</span></span>
+    </a>
+    <div class="sidebar-divider"></div>
+
+    <!-- Dashboard -->
+    <div class="sidebar-section-label"><span class="en">Dashboard</span><span class="ta">டாஷ்போர்டு</span></div>
+
+    <a href="./CampusVazhi-Dashboard.html" class="sidebar-link" data-tip="Dashboard">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+      <span class="sb-label"><span class="en">My Dashboard</span><span class="ta">என் டாஷ்போர்டு</span></span>
+    </a>
+    <a href="./CampusVazhi-College-Compare.html" class="sidebar-link" data-tip="Saved">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+      <span class="sb-label"><span class="en">Saved Resources</span><span class="ta">சேமித்த ஆதாரங்கள்</span></span>
+    </a>
+    <a href="./campusvazhi-home-v2.html#community" class="sidebar-link" data-tip="Groups">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      <span class="sb-label"><span class="en">My Groups</span><span class="ta">என் குழுக்கள்</span></span>
+      <span class="sidebar-badge">1</span>
+    </a>
+
+    <div class="sidebar-divider"></div>
+
+    <!-- Explore Pathways -->
+    <div class="sidebar-section-label"><span class="en">Explore Pathways</span><span class="ta">பாதைகளை ஆராயுங்கள்</span></div>
+
+    <a href="./CampusVazhi-CAT-2026.html" class="sidebar-link" data-tip="CAT 2026">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+      <span class="sb-label">CAT 2026</span>
+    </a>
+    <a href="./CampusVazhi-TANCET-Resource-Hub.html" class="sidebar-link" data-tip="TANCET Hub">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+      <span class="sb-label"><span class="en">TANCET Hub</span><span class="ta">TANCET மையம்</span></span>
+    </a>
+    <a href="./CampusVazhi-MS-USA.html" class="sidebar-link" data-tip="MS in USA">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+      <span class="sb-label"><span class="en">MS in USA</span><span class="ta">அமெரிக்காவில் MS</span></span>
+    </a>
+    <a href="./CampusVazhi-NEET-Counselling.html" class="sidebar-link" data-tip="NEET">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+      <span class="sb-label"><span class="en">NEET Counselling</span><span class="ta">NEET ஆலோசனை</span></span>
+    </a>
+    <a href="./CampusVazhi-After12th-Quiz.html" class="sidebar-link" data-tip="After 12th">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+      <span class="sb-label"><span class="en">After 12th Quiz</span><span class="ta">12ஆம் வகுப்புக்குப் பிறகு</span></span>
+    </a>
+    <a href="./CampusVazhi-TNEA-Calculator.html" class="sidebar-link" data-tip="TNEA Calc">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="10" y2="10"/><line x1="12" y1="10" x2="14" y2="10"/><line x1="8" y1="14" x2="10" y2="14"/><line x1="12" y1="14" x2="14" y2="14"/><line x1="8" y1="18" x2="16" y2="18"/></svg>
+      <span class="sb-label"><span class="en">TNEA Calculator</span><span class="ta">TNEA கால்குலேட்டர்</span></span>
+    </a>
+    <a href="./CampusVazhi-Resume.html" class="sidebar-link" data-tip="Resume">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+      <span class="sb-label"><span class="en">Resume Builder</span><span class="ta">ரெஸ்யூம் உருவாக்கி</span></span>
+    </a>
+
+    <div class="sidebar-divider"></div>
+
+    <!-- Support -->
+    <div class="sidebar-section-label"><span class="en">Support</span><span class="ta">ஆதரவு</span></div>
+
+    <a href="./CampusVazhi-Book-Counselling.html" class="sidebar-link" data-tip="Counselling">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      <span class="sb-label"><span class="en">Book a Free Call</span><span class="ta">ஆலோசனை முன்பதிவு</span></span>
+    </a>
+    <a href="https://wa.me/918939862211" target="_blank" class="sidebar-link" data-tip="WhatsApp">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      <span class="sb-label"><span class="en">WhatsApp Us</span><span class="ta">WhatsApp செய்யுங்கள்</span></span>
+    </a>
+
+    <div class="sidebar-divider"></div>
+
+    <!-- Profile & Settings -->
+    <div class="sidebar-section-label"><span class="en">Profile</span><span class="ta">சுயவிவரம்</span></div>
+
+    <a href="./CampusVazhi-Dashboard.html" class="sidebar-link" data-tip="Profile">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      <span class="sb-label"><span class="en">Edit Profile</span><span class="ta">சுயவிவரத்தை மாற்று</span></span>
+    </a>
+    <a href="./CampusVazhi-Dashboard.html" class="sidebar-link" data-tip="Settings">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+      <span class="sb-label"><span class="en">Settings</span><span class="ta">அமைப்புகள்</span></span>
+    </a>
+  </nav>
+
+  <div class="sidebar-footer">
+    <button class="sidebar-signout" onclick="signOut()">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+      <span class="sb-signout-text"><span class="en">Sign out</span><span class="ta">வெளியேறு</span></span>
+    </button>
+  </div>
+</aside>
+
+  <!-- MAIN CONTENT -->
+  <div class="page-wrap">
+    <!-- TOP NAV -->
+    <nav class="top-nav">
+      <a href="./campusvazhi-home-v2.html" class="nav-logo" style="text-decoration:none">
+        <div style="width:32px;height:32px;min-width:32px;background:linear-gradient(135deg,#0D9488,#14B8A6);border-radius:8px;display:flex;align-items:center;justify-content:center">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+        </div>
+        <span><span class="en">Campus</span><span class="ta">கேம்பஸ்</span><span>Vazhi</span></span>
+      </a>
+      <div class="nav-actions">
+        <button class="btn-lang" onclick="toggleLang()"><span class="en">தமிழ்</span><span class="ta">EN</span></button>
+        <button class="btn-signin" onclick="signIn()"><span class="en">Sign In</span><span class="ta">உள்நுழைக</span></button>
+      </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1><span class="en">Build Your</span> <span class="ta">உங்கள்</span> ATS-Ready <span class="en">Resume in</span> <span class="ta">ரெஸ்யூம் எடுக்கவும்</span> <span class="ta-text" style="color: var(--teal-light);">5</span> <span class="en">5 Minutes</span> <span class="ta">நிமிடங்களில்</span></h1>
+        <p><span class="en">Choose from 2 free premium templates, get instant ATS scoring (95% of companies accept 70+), and download as PDF.</span><span class="ta">2 இலவச சிறந்த வடிவங்களைத் தேர்ந்தெடுக்கவும், உடனடி ATS மதிப்பீட்டைப் பெறுங்கள் (70+ ஏற்றுக்கொள்கிறது 95% நிறுவனங்கள்), மற்றும் PDF என பதிவிறக்கவும்.</span></p>
+      </div>
+    </section>
+
+    <!-- TEMPLATES SECTION -->
+    <section class="templates-section active" id="templatesSection">
+      <div class="section-header">
+        <h2><span class="en">Choose Your Template</span><span class="ta">உங்கள் வடிவத்தைத் தேர்ந்தெடுக்கவும்</span></h2>
+        <p><span class="en">Start with a professionally designed template that recruiters love. Free forever.</span><span class="ta">நியமனங்கள் விரும்பும் ஒரு தொழிலளாณ முறையாக வடிவமைக்கப்பட்ட வடிவத்தில் தொடங்கவும். என்றென்றும் இலவசம்.</span></p>
+      </div>
+
+      <div class="templates-grid">
+        <!-- Template 1: Clean Professional -->
+        <div class="template-card">
+          <span class="template-badge"><span class="en">Free</span><span class="ta">இலவசம்</span></span>
+          <div class="template-preview">
+            <strong><span class="en">John Doe</span><span class="ta">ஜான் டோ</span></strong>
+            <div style="color: #9CA3AF; font-size: 10px; margin-bottom: 8px;">john@email.com | 9999888877 | Chennai</div>
+            <div class="divider"></div>
+            <strong><span class="en">Objective</span><span class="ta">குறிக்கோள்</span></strong>
+            <div style="font-size: 10px; margin-bottom: 8px;"><span class="en">Seeking product management role...</span><span class="ta">பொருள் மேலாண்மை பாத்திரத்தை தேடுகிறேன்...</span></div>
+            <strong><span class="en">Education</span><span class="ta">கல்வி</span></strong>
+            <div style="font-size: 10px;"><span class="en">B.Tech CS | IIT Chennai | 2024</span><span class="ta">B.Tech CS | IIT சென்னை | 2024</span></div>
+          </div>
+          <div class="template-name"><span class="en">Clean Professional</span><span class="ta">சுத்த வல்லுநர்</span></div>
+          <div class="template-desc"><span class="en">Classic single-column layout. Perfect for all roles. ATS-optimized.</span><span class="ta">கிளாசிக் ஒற்றை-நெடுவரிசை தளவமைப்பு. அனைத்து பாத்திரங்களுக்கும் சரியாக. ATS-உகந்த.</span></div>
+          <div class="template-actions">
+            <button class="btn-use" onclick="selectTemplate('clean')"><span class="en">Use This Template</span><span class="ta">இந்த வடிவத்தைப் பயன்படுத்தவும்</span></button>
+          </div>
+        </div>
+
+        <!-- Template 2: Modern Fresher -->
+        <div class="template-card">
+          <span class="template-badge"><span class="en">Free</span><span class="ta">இலவசம்</span></span>
+          <div class="template-preview" style="background: linear-gradient(135deg, #F0FDFA 0%, #E0F2FE 100%);">
+            <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 12px; height: 100%;">
+              <div style="border-right: 1px dashed #0D9488; padding-right: 8px;">
+                <strong style="color: #0D9488; font-size: 10px;"><span class="en">SKILLS</span><span class="ta">திறன்</span></strong>
+                <div style="font-size: 9px; margin-top: 4px; color: #047857;"><span class="en">Python, React</span><span class="ta">பைதான், எதிர்</span></div>
+              </div>
+              <div>
+                <strong style="color: #0F1B2D;">Alex Kumar</strong>
+                <div style="font-size: 10px; color: #6B7280; margin-bottom: 8px;"><span class="en">Product Manager • Chennai</span><span class="ta">பொருள் மேலாளர் • சென்னை</span></div>
+                <strong style="font-size: 10px;"><span class="en">PROJECTS</span><span class="ta">திட்டங்கள்</span></strong>
+              </div>
+            </div>
+          </div>
+          <div class="template-name"><span class="en">Modern Fresher</span><span class="ta">நவீன புதிய பட்டதாரி</span></div>
+          <div class="template-desc"><span class="en">Two-column design with side skills panel. Great for freshers & CS roles.</span><span class="ta">பக்க திறன் பலகம் கொண்ட இரண்டு-நெடுவரிசை வடிவமைப்பு. புதிய பட்டதாரிகள் மற்றும் CS பாத்திரங்களுக்கு சிறந்தது.</span></div>
+          <div class="template-actions">
+            <button class="btn-use" onclick="selectTemplate('modern')"><span class="en">Use This Template</span><span class="ta">இந்த வடிவத்தைப் பயன்படுத்தவும்</span></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Premium Templates -->
+      <div style="margin-top: 56px;">
+        <div class="section-header">
+          <h2><span class="en">Premium Templates</span><span class="ta">பிரீமியம் வடிவங்கள்</span></h2>
+          <p><span class="en">Unlock role-specific templates designed by hiring managers. <strong style="color:#EF4444">Launch offer: 80% off — ₹99 instead of ₹499!</strong></span><span class="ta">பணியமர்த்தல் மேலாளர்களால் வடிவமைக்கப்பட்ட பாத்திரம் குறிப்பிட்ட வடிவங்கள் திறக்கவும். <strong style="color:#EF4444">அறிமுக சலுகை: 80% தள்ளுபடி — ₹499 க்கு பதிலாக ₹99!</strong></span></p>
+        </div>
+
+        <div class="templates-grid">
+          <!-- Premium 1 -->
+          <div class="template-card premium">
+            <div class="template-preview" style="filter: blur(3px);"></div>
+            <div class="lock-overlay">
+              <div class="lock-icon">🔒</div>
+              <div class="lock-text">
+                <p><span class="en">Executive Management</span><span class="ta">நிர்வாக MBA</span></p>
+                <small><span class="en">Premium Template</span><span class="ta">பிரீமியம் வடிவம்</span></small>
+              </div>
+              <button class="btn-unlock" onclick="showPremiumMessage()"><span class="price-original">₹499</span><span class="price-offer">₹99</span><span class="offer-badge">80% OFF</span></button>
+            </div>
+          </div>
+
+          <!-- Premium 2 -->
+          <div class="template-card premium">
+            <div class="template-preview" style="filter: blur(3px);"></div>
+            <div class="lock-overlay">
+              <div class="lock-icon">🔒</div>
+              <div class="lock-text">
+                <p><span class="en">Tech Specialist</span><span class="ta">தொழில்நுட்ப நிபுணர்</span></p>
+                <small><span class="en">Premium Template</span><span class="ta">பிரீமியம் வடிவம்</span></small>
+              </div>
+              <button class="btn-unlock" onclick="showPremiumMessage()"><span class="price-original">₹499</span><span class="price-offer">₹99</span><span class="offer-badge">80% OFF</span></button>
+            </div>
+          </div>
+
+          <!-- Premium 3 -->
+          <div class="template-card premium">
+            <div class="template-preview" style="filter: blur(3px);"></div>
+            <div class="lock-overlay">
+              <div class="lock-icon">🔒</div>
+              <div class="lock-text">
+                <p><span class="en">Creative Portfolio</span><span class="ta">உதாரண போர்ட்ஃபோலியோ</span></p>
+                <small><span class="en">Premium Template</span><span class="ta">பிரீமியம் வடிவம்</span></small>
+              </div>
+              <button class="btn-unlock" onclick="showPremiumMessage()"><span class="price-original">₹499</span><span class="price-offer">₹99</span><span class="offer-badge">80% OFF</span></button>
+            </div>
+          </div>
+
+          <!-- Premium 4 -->
+          <div class="template-card premium">
+            <div class="template-preview" style="filter: blur(3px);"></div>
+            <div class="lock-overlay">
+              <div class="lock-icon">🔒</div>
+              <div class="lock-text">
+                <p><span class="en">Research Scholar</span><span class="ta">ஆராய்ச்சி அறிஞர்</span></p>
+                <small><span class="en">Premium Template</span><span class="ta">பிரீமியம் வடிவம்</span></small>
+              </div>
+              <button class="btn-unlock" onclick="showPremiumMessage()"><span class="price-original">₹499</span><span class="price-offer">₹99</span><span class="offer-badge">80% OFF</span></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BUILDER FORM SECTION -->
+    <section class="builder-section" id="builderSection">
+      <div class="form-container">
+        <div class="form-header">
+          <h2 id="formTitle"><span class="en">Build Your Resume</span><span class="ta">உங்கள் ரெஸ்யூம் உருவாக்கவும்</span></h2>
+          <p><span class="en">Fill in your details. We'll generate a PDF-ready resume with live preview.</span><span class="ta">உங்கள் விவரங்களை நிரப்பவும். நாங்கள் ஒரு PDF-தயாரான ரெஸ்யூம் உடன் நேரடி முன்னோட்டம் உருவாக்குவோம்.</span></p>
+        </div>
+
+        <!-- Personal Info -->
+        <div class="form-grid">
+          <div class="form-group">
+            <label><span class="en">Full Name</span><span class="ta">முழு பெயர்</span></label>
+            <input type="text" id="fullName" placeholder="" aria-label="Full name">
+          </div>
+          <div class="form-group">
+            <label><span class="en">Email</span><span class="ta">மின்னஞ்சல்</span></label>
+            <input type="email" id="email" placeholder="" aria-label="Email address">
+          </div>
+          <div class="form-group">
+            <label><span class="en">Phone</span><span class="ta">தொலைபேசி</span></label>
+            <input type="tel" id="phone" placeholder="" aria-label="Phone number">
+          </div>
+          <div class="form-group">
+            <label><span class="en">Location (City)</span><span class="ta">இருப்பிடம் (நகரம்)</span></label>
+            <input type="text" id="location" placeholder="" aria-label="Location">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label><span class="en">Professional Objective / Summary</span><span class="ta">தொழில்முறை நோக்கம் / சுருக்கம்</span></label>
+          <textarea id="objective" placeholder="" aria-label="Career objective"></textarea>
+        </div>
+
+        <!-- Education -->
+        <div class="section-title"><span class="en">Education</span><span class="ta">கல்வி</span></div>
+        <div id="educationList"></div>
+        <button class="add-button" onclick="addEducation()"><span class="en">+ Add Education</span><span class="ta">+ கல்வி சேர்க்க</span></button>
+
+        <!-- Experience -->
+        <div class="section-title"><span class="en">Work Experience</span><span class="ta">பணி அனுபவம்</span></div>
+        <div id="experienceList"></div>
+        <button class="add-button" onclick="addExperience()"><span class="en">+ Add Experience</span><span class="ta">+ அனுபவம் சேர்க்க</span></button>
+
+        <!-- Skills -->
+        <div class="form-group">
+          <label><span class="en">Skills (comma-separated)</span><span class="ta">திறன்கள் (கம்மாவால் பிரிந்தவை)</span></label>
+          <textarea id="skills" placeholder="Python, JavaScript, Data Analysis, Project Management" aria-label="Skills"></textarea>
+        </div>
+
+        <!-- Projects -->
+        <div class="section-title"><span class="en">Projects</span><span class="ta">திட்டங்கள்</span></div>
+        <div id="projectsList"></div>
+        <button class="add-button" onclick="addProject()"><span class="en">+ Add Project</span><span class="ta">+ திட்டம் சேர்க்க</span></button>
+
+        <!-- Achievements -->
+        <div class="section-title"><span class="en">Achievements & Certifications</span><span class="ta">சாதனைகள் மற்றும் சான்றிதழ்கள்</span></div>
+        <div id="achievementsList"></div>
+        <button class="add-button" onclick="addAchievement()"><span class="en">+ Add Achievement</span><span class="ta">+ சாதனை சேர்க்க</span></button>
+
+        <!-- Actions -->
+        <div class="form-actions">
+          <button class="btn-preview" onclick="previewResume()"><span class="en">Preview & ATS Score</span><span class="ta">முன்னோட்ட & ATS மதிப்பெண்</span></button>
+          <button class="btn-back" onclick="backToTemplates()"><span class="en">Back</span><span class="ta">பின்</span></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- PREVIEW & ATS SECTION -->
+    <section class="preview-section" id="previewSection">
+      <div style="margin-bottom: 32px;">
+        <h2 style="font-size: 28px; font-weight: 800; color: var(--g900); margin-bottom: 8px;"><span class="en">Your Resume Preview</span><span class="ta">உங்கள் ரெஸ்யூம் முன்னோட்ட</span></h2>
+        <p style="font-size: 14px; color: var(--g500);"><span class="en">See how your resume looks to recruiters. Review the ATS score and suggestions.</span><span class="ta">உங்கள் ரெஸ்யூம் நியமனங்களுக்கு எப்படி தோன்றுகிறது என்பதைப் பாருங்கள். ATS மதிப்பெண் மற்றும் சிபாரிசுகளை மறுபரிசீலனை செய்யவும்.</span></p>
+      </div>
+
+      <div class="preview-container">
+        <!-- Resume Preview -->
+        <div id="resumePreviewContainer" class="resume-preview"></div>
+
+        <!-- ATS Panel -->
+        <div class="ats-panel">
+          <div class="ats-header">
+            <div class="ats-icon">📊</div>
+            <h3><span class="en">ATS Score</span><span class="ta">ATS பதிவுசெய்தல்</span></h3>
+          </div>
+
+          <div class="ats-score-circle" style="--ats-score: 0deg;">
+            <div class="ats-score-inner">
+              <div class="ats-score-num" id="atsScoreNum">0</div>
+              <div class="ats-score-label">/100</div>
+            </div>
+          </div>
+
+          <div class="ats-verdict">
+            <div class="ats-verdict-title"><span class="en">Company Acceptance Rate</span><span class="ta">நிறுவன ஏற்றுக்கொள்ளும் விகிதம்</span></div>
+            <div class="ats-verdict-text" id="atsVerdictText"></div>
+          </div>
+
+          <div class="ats-suggestions">
+            <div class="ats-suggestions-title"><span class="en">How to Improve</span><span class="ta">எவ்வாறு மேம்பட வேண்டும்</span></div>
+            <div id="atsSuggestions"></div>
+          </div>
+
+          <div class="download-section">
+            <button class="btn-download" onclick="downloadPDF()"><span class="en">📥 Download PDF</span><span class="ta">📥 PDF பதிவிறக்கவும்</span></button>
+            <button class="btn-edit" onclick="backToForm()"><span class="en">✏️ Edit</span><span class="ta">✏️ திருத்து</span></button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    // STATE
+    let currentTemplate = null;
+    let resumeData = {
+      fullName: '',
+      email: '',
+      phone: '',
+      location: '',
+      objective: '',
+      education: [],
+      experience: [],
+      skills: [],
+      projects: [],
+      achievements: []
+    };
+
+    // LANGUAGE TOGGLE
+    function toggleLang() {
+      document.body.classList.toggle('lang-ta');
+    }
+
+    // SIDEBAR
+    function populateSidebar() {
+      try {
+        var u = JSON.parse(localStorage.getItem('cv_user'));
+        if (u && u.name) {
+          document.getElementById('sb-avatar').textContent = u.name.charAt(0).toUpperCase();
+          document.getElementById('sb-name').textContent = u.name;
+        }
+      } catch(e) {}
+    }
+    populateSidebar();
+
+    function signOut() {
+    document.body.classList.remove('logged-in');
+    localStorage.removeItem('cv_signed_in');
+    localStorage.removeItem('cv_user');
+    if (typeof cvAuth !== 'undefined' && typeof cvAuth.logout === 'function') {
+      cvAuth.logout();
+    } else {
+      window.location.href = './campusvazhi-home-v2.html';
+    }
+  }
+
+    function signIn() {
+      window.location.href = './CampusVazhi-Login.html';
+    }
+
+    // TEMPLATE SELECTION
+    function selectTemplate(template) {
+      // Track template selection in GA4
+      if (typeof cvTrack === 'function') {
+        cvTrack('resume_template_select', { template: template });
+      }
+      currentTemplate = template;
+      resumeData = {
+        fullName: '',
+        email: '',
+        phone: '',
+        location: '',
+        objective: '',
+        education: [{ degree: '', college: '', year: '' }],
+        experience: [{ company: '', role: '', duration: '', description: '' }],
+        skills: [],
+        projects: [{ name: '', description: '' }],
+        achievements: [{ title: '' }]
+      };
+      renderEducationList();
+      renderExperienceList();
+      renderProjectsList();
+      renderAchievementsList();
+      showSection('builderSection');
+    }
+
+    function showPremiumMessage() {
+      alert('Premium templates coming soon! Join our WhatsApp group for early access.\n\nWhatsApp: +91 89398 62211');
+    }
+
+    // FORM RENDERING
+    function renderEducationList() {
+      const list = document.getElementById('educationList');
+      list.innerHTML = '';
+      resumeData.education.forEach((edu, idx) => {
+        list.innerHTML += `
+          <div class="entry-card">
+            <button class="remove-entry" onclick="removeEducation(${idx})" aria-label="Remove education entry">✕</button>
+            <div class="form-grid">
+              <div class="form-group">
+                <label><span class="en">Degree / Program</span><span class="ta">டிகிரி / நிரல்</span></label>
+                <input type="text" value="${edu.degree || ''}" onchange="resumeData.education[${idx}].degree = this.value" placeholder="B.Tech CS" aria-label="Degree or program">
+              </div>
+              <div class="form-group">
+                <label><span class="en">College / University</span><span class="ta">கல்லூரி / பல்கலைக்கழகம்</span></label>
+                <input type="text" value="${edu.college || ''}" onchange="resumeData.education[${idx}].college = this.value" placeholder="IIT Madras" aria-label="College or university">
+              </div>
+              <div class="form-group">
+                <label><span class="en">Graduation Year</span><span class="ta">பட்டப்பெறும் ஆண்டு</span></label>
+                <input type="text" value="${edu.year || ''}" onchange="resumeData.education[${idx}].year = this.value" placeholder="2024" aria-label="Graduation year">
+              </div>
+            </div>
+          </div>
+        `;
+      });
+    }
+
+    function addEducation() {
+      resumeData.education.push({ degree: '', college: '', year: '' });
+      renderEducationList();
+    }
+
+    function removeEducation(idx) {
+      resumeData.education.splice(idx, 1);
+      renderEducationList();
+    }
+
+    function renderExperienceList() {
+      const list = document.getElementById('experienceList');
+      list.innerHTML = '';
+      resumeData.experience.forEach((exp, idx) => {
+        list.innerHTML += `
+          <div class="entry-card">
+            <button class="remove-entry" onclick="removeExperience(${idx})" aria-label="Remove experience entry">✕</button>
+            <div class="form-grid">
+              <div class="form-group">
+                <label><span class="en">Company</span><span class="ta">நிறுவனம்</span></label>
+                <input type="text" value="${exp.company || ''}" onchange="resumeData.experience[${idx}].company = this.value" placeholder="Google" aria-label="Company name">
+              </div>
+              <div class="form-group">
+                <label><span class="en">Role / Position</span><span class="ta">பாத்திரம் / பொருள்</span></label>
+                <input type="text" value="${exp.role || ''}" onchange="resumeData.experience[${idx}].role = this.value" placeholder="Product Manager" aria-label="Role or position">
+              </div>
+              <div class="form-group">
+                <label><span class="en">Duration</span><span class="ta">கால வधि</span></label>
+                <input type="text" value="${exp.duration || ''}" onchange="resumeData.experience[${idx}].duration = this.value" placeholder="Jan 2023 - Present" aria-label="Duration">
+              </div>
+            </div>
+            <div class="form-group">
+              <label><span class="en">Description / Achievements</span><span class="ta">விபரணை / சாதனைகள்</span></label>
+              <textarea onchange="resumeData.experience[${idx}].description = this.value" aria-label="Job description" placeholder="Led product launch, increased user retention by 40%">${exp.description || ''}</textarea>
+            </div>
+          </div>
+        `;
+      });
+    }
+
+    function addExperience() {
+      resumeData.experience.push({ company: '', role: '', duration: '', description: '' });
+      renderExperienceList();
+    }
+
+    function removeExperience(idx) {
+      resumeData.experience.splice(idx, 1);
+      renderExperienceList();
+    }
+
+    function renderProjectsList() {
+      const list = document.getElementById('projectsList');
+      list.innerHTML = '';
+      resumeData.projects.forEach((proj, idx) => {
+        list.innerHTML += `
+          <div class="entry-card">
+            <button class="remove-entry" onclick="removeProject(${idx})" aria-label="Remove project entry">✕</button>
+            <div class="form-group">
+              <label><span class="en">Project Name</span><span class="ta">திட்ட பெயர்</span></label>
+              <input type="text" value="${proj.name || ''}" onchange="resumeData.projects[${idx}].name = this.value" aria-label="Project name" placeholder="AI Resume Analyzer">
+            </div>
+            <div class="form-group">
+              <label><span class="en">Description</span><span class="ta">விபரம்</span></label>
+              <textarea onchange="resumeData.projects[${idx}].description = this.value" aria-label="Project description" placeholder="Built using Python, React, deployed on AWS">${proj.description || ''}</textarea>
+            </div>
+          </div>
+        `;
+      });
+    }
+
+    function addProject() {
+      resumeData.projects.push({ name: '', description: '' });
+      renderProjectsList();
+    }
+
+    function removeProject(idx) {
+      resumeData.projects.splice(idx, 1);
+      renderProjectsList();
+    }
+
+    function renderAchievementsList() {
+      const list = document.getElementById('achievementsList');
+      list.innerHTML = '';
+      resumeData.achievements.forEach((ach, idx) => {
+        list.innerHTML += `
+          <div class="entry-card">
+            <button class="remove-entry" onclick="removeAchievement(${idx})" aria-label="Remove achievement entry">✕</button>
+            <div class="form-group">
+              <label><span class="en">Achievement / Certification</span><span class="ta">சாதனை / சான்றிதழ்</span></label>
+              <input type="text" value="${ach.title || ''}" onchange="resumeData.achievements[${idx}].title = this.value" aria-label="Achievement" placeholder="AWS Solutions Architect Certification">
+            </div>
+          </div>
+        `;
+      });
+    }
+
+    function addAchievement() {
+      resumeData.achievements.push({ title: '' });
+      renderAchievementsList();
+    }
+
+    function removeAchievement(idx) {
+      resumeData.achievements.splice(idx, 1);
+      renderAchievementsList();
+    }
+
+    // DATA COLLECTION
+    function collectFormData() {
+      resumeData.fullName = document.getElementById('fullName').value;
+      resumeData.email = document.getElementById('email').value;
+      resumeData.phone = document.getElementById('phone').value;
+      resumeData.location = document.getElementById('location').value;
+      resumeData.objective = document.getElementById('objective').value;
+      const skillsText = document.getElementById('skills').value;
+      resumeData.skills = skillsText.split(',').map(s => s.trim()).filter(s => s);
+    }
+
+    // PREVIEW & ATS
+    function previewResume() {
+      collectFormData();
+      generatePreview();
+      calculateATS();
+      showSection('previewSection');
+    }
+
+    function generatePreview() {
+      const container = document.getElementById('resumePreviewContainer');
+
+      if (currentTemplate === 'clean') {
+        container.className = 'resume-preview resume-clean';
+        container.innerHTML = `
+          <div class="name">${resumeData.fullName || 'Your Name'}</div>
+          <div class="contact">
+            ${resumeData.email ? `<div class="contact-item">📧 ${resumeData.email}</div>` : ''}
+            ${resumeData.phone ? `<div class="contact-item">📱 ${resumeData.phone}</div>` : ''}
+            ${resumeData.location ? `<div class="contact-item">📍 ${resumeData.location}</div>` : ''}
+          </div>
+
+          ${resumeData.objective ? `
+            <div class="section-head">Objective</div>
+            <div class="entry-desc">${resumeData.objective}</div>
+          ` : ''}
+
+          ${resumeData.education.length > 0 && resumeData.education.some(e => e.degree || e.college) ? `
+            <div class="section-head">Education</div>
+            ${resumeData.education.map(edu => edu.degree || edu.college ? `
+              <div class="entry">
+                <div class="entry-title">${edu.degree || 'Degree'}</div>
+                <div class="entry-subtitle">${edu.college || 'College'} | ${edu.year || 'Year'}</div>
+              </div>
+            ` : '').join('')}
+          ` : ''}
+
+          ${resumeData.experience.length > 0 && resumeData.experience.some(e => e.company || e.role) ? `
+            <div class="section-head">Experience</div>
+            ${resumeData.experience.map(exp => exp.company || exp.role ? `
+              <div class="entry">
+                <div class="entry-title">${exp.role || 'Position'}</div>
+                <div class="entry-subtitle">${exp.company || 'Company'} | ${exp.duration || 'Duration'}</div>
+                ${exp.description ? `<div class="entry-desc">${exp.description}</div>` : ''}
+              </div>
+            ` : '').join('')}
+          ` : ''}
+
+          ${resumeData.skills.length > 0 ? `
+            <div class="section-head">Skills</div>
+            <div class="entry-desc">${resumeData.skills.join(' • ')}</div>
+          ` : ''}
+
+          ${resumeData.projects.length > 0 && resumeData.projects.some(p => p.name) ? `
+            <div class="section-head">Projects</div>
+            ${resumeData.projects.map(proj => proj.name ? `
+              <div class="entry">
+                <div class="entry-title">${proj.name}</div>
+                ${proj.description ? `<div class="entry-desc">${proj.description}</div>` : ''}
+              </div>
+            ` : '').join('')}
+          ` : ''}
+
+          ${resumeData.achievements.length > 0 && resumeData.achievements.some(a => a.title) ? `
+            <div class="section-head">Achievements</div>
+            ${resumeData.achievements.map(ach => ach.title ? `<div class="entry-desc">• ${ach.title}</div>` : '').join('')}
+          ` : ''}
+        `;
+      } else if (currentTemplate === 'modern') {
+        container.className = 'resume-preview resume-modern';
+        container.innerHTML = `
+          <div class="sidebar">
+            ${resumeData.skills.length > 0 ? `
+              <h3>Skills</h3>
+              ${resumeData.skills.map(s => `<div class="sidebar-item">• ${s}</div>`).join('')}
+            ` : ''}
+
+            ${resumeData.phone || resumeData.email ? `
+              <h3>Contact</h3>
+              ${resumeData.phone ? `<div class="sidebar-item">📱 ${resumeData.phone}</div>` : ''}
+              ${resumeData.email ? `<div class="sidebar-item">📧 ${resumeData.email}</div>` : ''}
+            ` : ''}
+
+            ${resumeData.location ? `
+              <h3>Location</h3>
+              <div class="sidebar-item">${resumeData.location}</div>
+            ` : ''}
+          </div>
+
+          <div class="main">
+            <h2>${resumeData.fullName || 'Your Name'}</h2>
+            <div class="contact">
+              ${resumeData.email ? `${resumeData.email}` : ''}
+              ${resumeData.phone ? `${resumeData.phone}` : ''}
+            </div>
+
+            ${resumeData.objective ? `
+              <div class="section-head">Summary</div>
+              <div class="entry-desc">${resumeData.objective}</div>
+            ` : ''}
+
+            ${resumeData.experience.length > 0 && resumeData.experience.some(e => e.company || e.role) ? `
+              <div class="section-head">Experience</div>
+              ${resumeData.experience.map(exp => exp.company || exp.role ? `
+                <div class="entry">
+                  <div class="entry-title">${exp.role || 'Position'} at ${exp.company || 'Company'}</div>
+                  <div class="entry-subtitle">${exp.duration || 'Duration'}</div>
+                  ${exp.description ? `<div class="entry-desc">${exp.description}</div>` : ''}
+                </div>
+              ` : '').join('')}
+            ` : ''}
+
+            ${resumeData.education.length > 0 && resumeData.education.some(e => e.degree || e.college) ? `
+              <div class="section-head">Education</div>
+              ${resumeData.education.map(edu => edu.degree || edu.college ? `
+                <div class="entry">
+                  <div class="entry-title">${edu.degree || 'Degree'}</div>
+                  <div class="entry-subtitle">${edu.college || 'College'} • ${edu.year || 'Year'}</div>
+                </div>
+              ` : '').join('')}
+            ` : ''}
+
+            ${resumeData.projects.length > 0 && resumeData.projects.some(p => p.name) ? `
+              <div class="section-head">Projects</div>
+              ${resumeData.projects.map(proj => proj.name ? `
+                <div class="entry">
+                  <div class="entry-title">${proj.name}</div>
+                  ${proj.description ? `<div class="entry-desc">${proj.description}</div>` : ''}
+                </div>
+              ` : '').join('')}
+            ` : ''}
+          </div>
+        `;
+      }
+    }
+
+    // ATS CALCULATION
+    function calculateATS() {
+      let score = 0;
+      const suggestions = [];
+
+      // Has objective/summary: +15
+      if (resumeData.objective && resumeData.objective.length > 20) {
+        score += 15;
+      } else {
+        suggestions.push('<strong>Add an objective statement</strong> (20+ words) to gain +15 points');
+      }
+
+      // Has email + phone: +10
+      if (resumeData.email && resumeData.phone) {
+        score += 10;
+      } else {
+        suggestions.push('<strong>Add both email and phone</strong> to gain +10 points');
+      }
+
+      // Has education with dates: +15
+      const validEducation = resumeData.education.filter(e => (e.degree || e.college) && e.year);
+      if (validEducation.length > 0) {
+        score += 15;
+      } else {
+        suggestions.push('<strong>Fill in education with graduation year</strong> to gain +15 points');
+      }
+
+      // Has at least 1 experience entry: +15
+      const validExperience = resumeData.experience.filter(e => e.company && e.role);
+      if (validExperience.length > 0) {
+        score += 15;
+      } else {
+        suggestions.push('<strong>Add work experience entries</strong> to gain +15 points');
+      }
+
+      // Has skills section with 3+ skills: +15
+      if (resumeData.skills.length >= 3) {
+        score += 15;
+      } else {
+        suggestions.push('<strong>Add 3+ skills</strong> (comma-separated) to gain +15 points');
+      }
+
+      // Has achievements: +10
+      const validAchievements = resumeData.achievements.filter(a => a.title);
+      if (validAchievements.length > 0) {
+        score += 10;
+      } else {
+        suggestions.push('<strong>Add achievements or certifications</strong> to gain +10 points');
+      }
+
+      // Resume length reasonable: +10
+      const totalContent = (resumeData.objective || '').length + resumeData.experience.reduce((sum, e) => sum + (e.description || '').length, 0);
+      if (totalContent > 200) {
+        score += 10;
+      } else {
+        suggestions.push('<strong>Add more details</strong> to experience/achievements to gain +10 points');
+      }
+
+      // Has projects section: +10
+      const validProjects = resumeData.projects.filter(p => p.name);
+      if (validProjects.length > 0) {
+        score += 10;
+      } else {
+        suggestions.push('<strong>Add project details</strong> to gain +10 points');
+      }
+
+      // Update UI
+      document.getElementById('atsScoreNum').textContent = score;
+      document.querySelector('.ats-score-circle').style.setProperty('--ats-score', `${(score / 100) * 360}deg`);
+
+      // Verdict
+      let verdictText = '';
+      if (score >= 90) {
+        verdictText = '<strong>Top MNCs</strong> (Google, Microsoft, Amazon) + <strong>500+ companies</strong>';
+      } else if (score >= 70) {
+        verdictText = '<strong>Major IT firms</strong> (TCS, Infosys, Wipro, Cognizant) + <strong>300+ companies</strong>';
+      } else if (score >= 50) {
+        verdictText = '<strong>Mid-tier firms & startups</strong> — <strong>150+ companies</strong>';
+      } else {
+        verdictText = '⚠️ <strong>Needs improvement</strong> — Follow suggestions to unlock more opportunities';
+      }
+      document.getElementById('atsVerdictText').innerHTML = verdictText;
+
+      // Suggestions
+      document.getElementById('atsSuggestions').innerHTML = suggestions.length > 0
+        ? suggestions.map(s => `<div class="ats-suggestion">${s}</div>`).join('')
+        : '<div class="ats-suggestion"><strong>Perfect!</strong> Your resume is ready for submission.</div>';
+    }
+
+    // NAVIGATION
+    function showSection(sectionId) {
+      document.getElementById('templatesSection').classList.remove('active');
+      document.getElementById('builderSection').classList.remove('active');
+      document.getElementById('previewSection').classList.remove('active');
+      document.getElementById(sectionId).classList.add('active');
+
+      // Show hero only on templates page
+      var hero = document.querySelector('.hero');
+      if (hero) {
+        hero.style.display = (sectionId === 'templatesSection') ? '' : 'none';
+      }
+      window.scrollTo(0, 0);
+    }
+
+    function backToTemplates() {
+      showSection('templatesSection');
+    }
+
+    function backToForm() {
+      showSection('builderSection');
+    }
+
+    // PDF DOWNLOAD
+    function downloadPDF() {
+      window.print();
+    }
+  </script>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-brand">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#14B8A6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+      <span>Campus<span>Vazhi</span></span>
+    </div>
+    <p>Your trusted guide for college admissions in Tamil Nadu & beyond</p>
+    <div class="footer-links" style="margin:12px 0;display:flex;gap:8px;justify-content:center;flex-wrap:wrap;font-size:13px">
+      <a href="./campusvazhi-home-v2.html" style="color:#94A3B8">Home</a>·
+      <a href="./CampusVazhi-CAT-2026.html" style="color:#94A3B8">CAT 2026</a>·
+      <a href="./CampusVazhi-MS-USA.html" style="color:#94A3B8">MS in USA</a>·
+      <a href="./CampusVazhi-NEET-Counselling.html" style="color:#94A3B8">NEET Counselling</a>·
+      <a href="./CampusVazhi-Resume.html" style="color:#94A3B8">Resume Builder</a>·
+      <a href="./CampusVazhi-Login.html" style="color:#94A3B8">Sign in</a>
+    </div>
+    <p class="copy">© 2026 CampusVazhi. All rights reserved.</p>
+  </footer>
+
+<script src="./js/config.js"></script>
+<script src="./js/analytics.js"></script>
+<script src="./js/cookie-consent.js"></script>
+<script src="./js/lead-popup.js"></script>
+<script src="./js/download-gate.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="./js/supabase-client.js"></script>
+</body>
+</html>

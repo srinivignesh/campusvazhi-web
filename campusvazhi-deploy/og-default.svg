@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <rect width="1200" height="630" fill="#0F1B2D"/>
+  <!-- Graduation cap icon -->
+  <g transform="translate(540, 160) scale(5)" fill="none" stroke="#14B8A6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M22 10v6"/>
+    <path d="M2 10l10-5 10 5-10 5z"/>
+    <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+  </g>
+  <!-- Brand name -->
+  <text x="600" y="400" text-anchor="middle" font-family="Arial, sans-serif" font-size="48" font-weight="bold" fill="#FFFFFF">CampusVazhi</text>
+  <!-- Tagline -->
+  <text x="600" y="445" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" fill="#94A3B8">Honest guidance for every college &amp; career move</text>
+  <!-- URL -->
+  <text x="600" y="580" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#14B8A6">campusvazhi.com</text>
+</svg>
