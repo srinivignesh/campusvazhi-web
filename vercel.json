@@ -1,4 +1,7 @@
 {
+  "redirects": [
+    { "source": "/admin", "destination": "/CampusVazhi-Admin", "permanent": false }
+  ],
   "rewrites": [
     { "source": "/", "destination": "/campusvazhi-home-v2.html" },
     { "source": "/home", "destination": "/campusvazhi-home-v2.html" },
@@ -34,23 +37,3 @@
     { "source": "/snap", "destination": "/CampusVazhi-SNAP.html" },
     { "source": "/ssc-cgl", "destination": "/CampusVazhi-SSC-CGL.html" },
     { "source": "/tancet-mca", "destination": "/CampusVazhi-TANCET-MCA.html" },
-    { "source": "/tnpsc-group-2a", "destination": "/CampusVazhi-TNPSC-Group-2A.html" },
-    { "source": "/tnpsc-group-4", "destination": "/CampusVazhi-TNPSC-Group-4.html" },
-    { "source": "/xat", "destination": "/CampusVazhi-XAT.html" },
-    { "source": "/about", "destination": "/CampusVazhi-About.html" },
-    { "source": "/tnpsc-group-1", "destination": "/CampusVazhi-TNPSC-Group-1.html" },
-    { "source": "/trb", "destination": "/CampusVazhi-TRB.html" },
-    { "source": "/tnusrb", "destination": "/CampusVazhi-TNUSRB.html" },
-    { "source": "/mrb", "destination": "/CampusVazhi-MRB.html" },
-    { "source": "/tnpsc-ces", "destination": "/CampusVazhi-TNPSC-CES.html" },
-    { "source": "/admin", "destination": "/CampusVazhi-Admin.html" }
-  ],
-  "headers": [
-    { "source": "/(.*)", "headers": [
-        { "key": "X-Frame-Options", "value": "DENY" },
-        { "key": "X-Content-Type-Options", "value": "nosniff" }
-    ]}
-  ],
-  "cleanUrls": true,
-  "trailingSlash": false
-}
