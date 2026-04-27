@@ -7,13 +7,10 @@
 <meta name="robots" content="noindex,nofollow">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Inter',system-ui,sans-serif;background:#f5f5f5;color:#333;display:flex;min-height:100vh}
+body{font-family:'Inter',system-ui,sans-serif;background:#f0f2f5;color:#333;min-height:100vh}
 
 /* ── LOGIN ─────────────────────────────── */
-#login-screen{
-  position:fixed;inset:0;background:linear-gradient(135deg,#0F1B2D 0%,#1a3a5c 100%);
-  display:flex;align-items:center;justify-content:center;z-index:1000
-}
+#login-screen{position:fixed;inset:0;background:linear-gradient(135deg,#0F1B2D,#1a3a5c);display:flex;align-items:center;justify-content:center;z-index:1000}
 .login-box{background:#fff;border-radius:12px;padding:40px;width:360px;box-shadow:0 20px 60px rgba(0,0,0,.3)}
 .login-logo{display:flex;align-items:center;gap:10px;margin-bottom:28px;justify-content:center}
 .login-logo .icon{width:40px;height:40px;background:linear-gradient(135deg,#0D9488,#14B8A6);border-radius:10px;display:flex;align-items:center;justify-content:center}
@@ -22,112 +19,110 @@ body{font-family:'Inter',system-ui,sans-serif;background:#f5f5f5;color:#333;disp
 .login-box h2{font-size:18px;font-weight:700;color:#0F1B2D;text-align:center;margin-bottom:6px}
 .login-box p{font-size:13px;color:#64748B;text-align:center;margin-bottom:24px}
 .field-label{font-size:12px;font-weight:600;color:#64748B;margin-bottom:6px;display:block}
-.field-input{width:100%;padding:11px 14px;border:1.5px solid #E2E8F0;border-radius:8px;font-size:14px;color:#1E293B;outline:none;transition:border-color .2s;margin-bottom:16px}
+.field-input{width:100%;padding:11px 14px;border:1.5px solid #E2E8F0;border-radius:8px;font-size:14px;color:#1E293B;outline:none;margin-bottom:16px;transition:border-color .2s}
 .field-input:focus{border-color:#0D9488}
-.login-btn{width:100%;padding:13px;background:#0D9488;color:#fff;border:none;border-radius:8px;font-size:15px;font-weight:700;cursor:pointer;transition:background .2s}
+.login-btn{width:100%;padding:13px;background:#0D9488;color:#fff;border:none;border-radius:8px;font-size:15px;font-weight:700;cursor:pointer}
 .login-btn:hover{background:#14B8A6}
 .login-err{background:#FEF2F2;color:#EF4444;padding:10px 14px;border-radius:8px;font-size:13px;margin-bottom:14px;display:none}
 
-/* ── LAYOUT ─────────────────────────────── */
-#app{display:none;width:100%}
-.app-shell{display:flex;min-height:100vh}
+/* ── APP SHELL ──────────────────────────── */
+#app{display:none}
+.app-wrap{display:flex;min-height:100vh}
 
 /* ── SIDEBAR ─────────────────────────────── */
-.sidebar{width:220px;background:#4a7fa5;flex-shrink:0;display:flex;flex-direction:column;min-height:100vh}
-.sidebar-brand{padding:16px 18px;display:flex;align-items:center;gap:10px;border-bottom:1px solid rgba(255,255,255,.15)}
-.sidebar-brand .icon{width:32px;height:32px;background:rgba(255,255,255,.2);border-radius:8px;display:flex;align-items:center;justify-content:center}
-.sidebar-brand .name{font-size:15px;font-weight:800;color:#fff}
+.sidebar{width:200px;min-width:200px;background:#4a7fa5;display:flex;flex-direction:column;position:fixed;top:0;left:0;height:100vh;overflow-y:auto;z-index:100}
+.sidebar-brand{padding:14px 16px;display:flex;align-items:center;gap:8px;border-bottom:1px solid rgba(255,255,255,.15)}
+.sidebar-brand .icon{width:30px;height:30px;background:rgba(255,255,255,.2);border-radius:7px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.sidebar-brand .name{font-size:14px;font-weight:800;color:#fff}
 .sidebar-brand .name span{color:#A7F3D0}
-.sidebar-section{padding:14px 18px 6px;font-size:10px;font-weight:700;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:1px}
-.sidebar-link{display:block;padding:9px 18px;font-size:13px;color:rgba(255,255,255,.85);cursor:pointer;border:none;background:none;width:100%;text-align:left;transition:background .15s}
-.sidebar-link:hover{background:rgba(255,255,255,.1);color:#fff}
-.sidebar-link.active{background:rgba(255,255,255,.2);color:#fff;font-weight:600}
-.sidebar-footer{margin-top:auto;padding:16px 18px;border-top:1px solid rgba(255,255,255,.15)}
-.signout-btn{width:100%;padding:8px;background:rgba(255,255,255,.1);color:rgba(255,255,255,.8);border:1px solid rgba(255,255,255,.2);border-radius:6px;font-size:12px;cursor:pointer}
-.signout-btn:hover{background:rgba(255,255,255,.2)}
+.nav-section{padding:12px 16px 4px;font-size:10px;font-weight:700;color:rgba(255,255,255,.45);text-transform:uppercase;letter-spacing:.8px}
+.nav-link{display:block;width:100%;padding:8px 16px;font-size:13px;color:rgba(255,255,255,.85);background:none;border:none;text-align:left;cursor:pointer;transition:background .15s}
+.nav-link:hover{background:rgba(255,255,255,.1);color:#fff}
+.nav-link.active{background:rgba(255,255,255,.2);color:#fff;font-weight:600}
+.sidebar-foot{margin-top:auto;padding:14px 16px;border-top:1px solid rgba(255,255,255,.15)}
+.btn-signout{width:100%;padding:7px;background:rgba(255,255,255,.1);color:rgba(255,255,255,.8);border:1px solid rgba(255,255,255,.2);border-radius:6px;font-size:12px;cursor:pointer}
+.btn-signout:hover{background:rgba(255,255,255,.2)}
 
-/* ── MAIN ─────────────────────────────────── */
-.main{flex:1;display:flex;flex-direction:column;overflow:hidden}
-.topbar{background:#fff;border-bottom:1px solid #E2E8F0;padding:12px 24px;display:flex;align-items:center;justify-content:space-between}
-.breadcrumb{font-size:13px;color:#64748B}
-.breadcrumb a{color:#4a7fa5;text-decoration:none;cursor:pointer}
-.breadcrumb span{margin:0 6px;color:#CBD5E1}
-.topbar-right{display:flex;align-items:center;gap:12px}
-.topbar-time{font-size:12px;color:#94A3B8}
+/* ── PAGE ────────────────────────────────── */
+.page{margin-left:200px;min-height:100vh;display:flex;flex-direction:column}
 
-/* ── CONTENT ─────────────────────────────── */
-.content{padding:24px;flex:1}
-.content-header{margin-bottom:20px}
-.content-title{font-size:22px;font-weight:700;color:#0F1B2D;margin-bottom:4px}
-.content-subtitle{font-size:13px;color:#64748B}
+/* section header (matches Mockat) */
+.page-head{background:#4a7fa5;padding:14px 28px}
+.page-head h1{font-size:22px;font-weight:700;color:#fff;margin-bottom:0}
+.breadcrumb{font-size:12px;color:rgba(255,255,255,.7);margin-top:2px}
+.breadcrumb a{color:rgba(255,255,255,.85);cursor:pointer;text-decoration:none}
+.breadcrumb a:hover{text-decoration:underline}
 
-/* ── STATS ROW ────────────────────────────── */
-.stats-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin-bottom:24px}
+/* ── BODY ─────────────────────────────────── */
+.page-body{padding:24px 28px;flex:1}
+
+/* ── STATS ────────────────────────────────── */
+.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin-bottom:22px}
 .stat-card{background:#fff;border:1px solid #E2E8F0;border-radius:8px;padding:16px;text-align:center}
-.stat-num{font-size:28px;font-weight:900;color:#4a7fa5;line-height:1}
-.stat-lbl{font-size:11px;color:#64748B;margin-top:4px;font-weight:600;text-transform:uppercase;letter-spacing:.3px}
+.stat-num{font-size:26px;font-weight:900;color:#4a7fa5}
+.stat-lbl{font-size:11px;color:#64748B;margin-top:3px;font-weight:600;text-transform:uppercase;letter-spacing:.3px}
+
+/* ── TOOLBAR ──────────────────────────────── */
+.toolbar{display:flex;align-items:center;gap:10px;margin-bottom:12px;flex-wrap:wrap}
+.search-group{display:flex}
+.search-group input{padding:8px 12px;border:1px solid #CBD5E1;border-right:none;border-radius:6px 0 0 6px;font-size:13px;width:240px;outline:none;background:#fff;color:#1E293B}
+.search-group input:focus{border-color:#4a7fa5;box-shadow:inset 0 0 0 2px rgba(74,127,165,.1)}
+.btn-search{padding:8px 16px;background:#4a7fa5;color:#fff;border:none;border-radius:0 6px 6px 0;font-size:13px;font-weight:600;cursor:pointer;white-space:nowrap}
+.btn-search:hover{background:#3d6f94}
+.filter-sel{padding:8px 10px;border:1px solid #CBD5E1;border-radius:6px;font-size:13px;background:#fff;color:#1E293B;outline:none}
+.filter-sel:focus{border-color:#4a7fa5}
+.ml-auto{margin-left:auto}
+.btn-dl{padding:8px 18px;background:#4a7fa5;color:#fff;border:none;border-radius:6px;font-size:13px;font-weight:600;cursor:pointer;white-space:nowrap}
+.btn-dl:hover{background:#3d6f94}
+.btn-reload{padding:8px 14px;background:#fff;color:#475569;border:1px solid #CBD5E1;border-radius:6px;font-size:13px;cursor:pointer;white-space:nowrap}
+.btn-reload:hover{background:#F1F5F9}
 
 /* ── TABLE CARD ───────────────────────────── */
-.table-card{background:#fff;border:1px solid #E2E8F0;border-radius:8px;overflow:hidden}
-.table-toolbar{display:flex;align-items:center;gap:10px;padding:14px 16px;border-bottom:1px solid #E2E8F0;flex-wrap:wrap}
-.search-wrap{display:flex;gap:0}
-.search-input{padding:8px 12px;border:1px solid #CBD5E1;border-right:none;border-radius:6px 0 0 6px;font-size:13px;width:260px;outline:none;color:#1E293B}
-.search-input:focus{border-color:#4a7fa5;box-shadow:0 0 0 2px rgba(74,127,165,.1)}
-.search-btn{padding:8px 16px;background:#4a7fa5;color:#fff;border:none;border-radius:0 6px 6px 0;font-size:13px;font-weight:600;cursor:pointer}
-.search-btn:hover{background:#3d6f94}
-.filter-select{padding:8px 12px;border:1px solid #CBD5E1;border-radius:6px;font-size:13px;background:#fff;color:#1E293B;outline:none}
-.filter-select:focus{border-color:#4a7fa5}
-.toolbar-right{margin-left:auto;display:flex;gap:8px}
-.btn-download{padding:8px 18px;background:#4a7fa5;color:#fff;border:none;border-radius:6px;font-size:13px;font-weight:600;cursor:pointer}
-.btn-download:hover{background:#3d6f94}
-.btn-refresh{padding:8px 14px;background:#F1F5F9;color:#475569;border:1px solid #E2E8F0;border-radius:6px;font-size:13px;cursor:pointer}
-.btn-refresh:hover{background:#E2E8F0}
-
-/* ── TABLE ────────────────────────────────── */
-.table-wrap{overflow-x:auto}
-table{width:100%;border-collapse:collapse;font-size:13px}
+.tcard{background:#fff;border:1px solid #E2E8F0;border-radius:8px;overflow:hidden}
+.tscroll{overflow-x:auto;width:100%}
+table{width:100%;border-collapse:collapse;font-size:13px;white-space:nowrap}
 thead{background:#F8FAFC}
-th{padding:10px 14px;text-align:left;font-weight:700;color:#64748B;font-size:11px;text-transform:uppercase;letter-spacing:.5px;border-bottom:1px solid #E2E8F0;white-space:nowrap}
-td{padding:11px 14px;border-bottom:1px solid #F1F5F9;color:#1E293B;max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+th{padding:10px 14px;text-align:left;font-size:11px;font-weight:700;color:#64748B;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid #E2E8F0}
+td{padding:10px 14px;border-bottom:1px solid #F1F5F9;color:#1E293B;vertical-align:middle}
+td.truncate{max-width:160px;overflow:hidden;text-overflow:ellipsis}
 tr:last-child td{border-bottom:none}
 tr:hover td{background:#F8FAFC}
-.cb{width:36px}
-input[type=checkbox]{width:14px;height:14px;cursor:pointer;accent-color:#4a7fa5}
+.cb-col{width:40px;text-align:center}
+input[type=checkbox]{width:15px;height:15px;accent-color:#4a7fa5;cursor:pointer}
 
 /* ── BADGES ───────────────────────────────── */
-.badge{display:inline-flex;align-items:center;justify-content:center;padding:3px 8px;border-radius:4px;font-size:11px;font-weight:700}
-.badge-green{background:#D1FAE5;color:#065F46}
-.badge-blue{background:#DBEAFE;color:#1E40AF}
-.badge-purple{background:#EDE9FE;color:#5B21B6}
-.badge-orange{background:#FEF3C7;color:#92400E}
-.badge-red{background:#FEE2E2;color:#991B1B}
-.badge-gray{background:#F1F5F9;color:#475569}
-.badge-teal{background:#CCFBF1;color:#0F766E}
-.tick{color:#10B981;font-size:16px}
-.cross{color:#EF4444;font-size:16px}
+.badge{display:inline-block;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:700}
+.b-blue{background:#DBEAFE;color:#1E40AF}
+.b-green{background:#D1FAE5;color:#065F46}
+.b-purple{background:#EDE9FE;color:#5B21B6}
+.b-orange{background:#FEF3C7;color:#92400E}
+.b-gray{background:#F1F5F9;color:#475569}
+.b-teal{background:#CCFBF1;color:#0F766E}
+.b-red{background:#FEE2E2;color:#991B1B}
 
 /* ── PAGINATION ───────────────────────────── */
-.pagination{display:flex;align-items:center;gap:6px;padding:12px 16px;border-top:1px solid #E2E8F0;font-size:12px;color:#64748B;flex-wrap:wrap}
-.pag-btn{padding:5px 12px;border:1px solid #CBD5E1;border-radius:4px;background:#fff;font-size:12px;cursor:pointer;color:#475569}
+.pag-bar{display:flex;align-items:center;gap:6px;padding:12px 16px;border-top:1px solid #E2E8F0;background:#fff;font-size:12px;flex-wrap:wrap}
+.pag-btn{padding:5px 12px;border:1px solid #CBD5E1;border-radius:4px;background:#fff;font-size:12px;color:#475569;cursor:pointer;white-space:nowrap}
 .pag-btn:hover:not(:disabled){background:#F1F5F9}
 .pag-btn:disabled{opacity:.4;cursor:not-allowed}
-.pag-info{margin:0 8px;color:#64748B}
-.pag-goto{display:flex;align-items:center;gap:6px;margin-left:auto}
-.pag-goto input{width:50px;padding:4px 8px;border:1px solid #CBD5E1;border-radius:4px;font-size:12px;text-align:center;outline:none}
+.pag-info{color:#64748B;white-space:nowrap}
+.pag-right{margin-left:auto;display:flex;align-items:center;gap:12px}
+.pag-goto{display:flex;align-items:center;gap:6px;color:#64748B}
+.pag-goto input{width:52px;padding:4px 8px;border:1px solid #CBD5E1;border-radius:4px;font-size:12px;text-align:center;outline:none}
 .pag-goto input:focus{border-color:#4a7fa5}
+.pag-show{display:flex;align-items:center;gap:6px;color:#64748B}
 .pag-show select{padding:4px 8px;border:1px solid #CBD5E1;border-radius:4px;font-size:12px;background:#fff;outline:none}
 
 /* ── STATES ───────────────────────────────── */
-.empty-state{text-align:center;padding:50px;color:#94A3B8}
-.empty-icon{font-size:32px;margin-bottom:10px}
-.loading-row td{text-align:center;padding:40px;color:#64748B}
+.empty-td{text-align:center;padding:50px!important;color:#94A3B8}
+.loading-td{text-align:center;padding:40px!important;color:#64748B}
 
-/* ── SECTION hidden/shown ─────────────────── */
+/* ── SECTION ──────────────────────────────── */
 .section{display:none}
 .section.active{display:block}
 
-/* ── BEHAVIOUR SUMMARY ────────────────────── */
-.beh-summary{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px;margin-bottom:20px}
+/* beh summary */
+.beh-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-bottom:18px}
 </style>
 </head>
 <body>
@@ -136,9 +131,7 @@ input[type=checkbox]{width:14px;height:14px;cursor:pointer;accent-color:#4a7fa5}
 <div id="login-screen">
   <div class="login-box">
     <div class="login-logo">
-      <div class="icon">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
-      </div>
+      <div class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
       <div class="name">Campus<span>Vazhi</span></div>
     </div>
     <h2>Admin Console</h2>
@@ -152,569 +145,487 @@ input[type=checkbox]{width:14px;height:14px;cursor:pointer;accent-color:#4a7fa5}
 
 <!-- APP -->
 <div id="app">
-<div class="app-shell">
+<div class="app-wrap">
 
   <!-- SIDEBAR -->
   <nav class="sidebar">
     <div class="sidebar-brand">
-      <div class="icon">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
-      </div>
+      <div class="icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
       <div class="name">Campus<span>Vazhi</span></div>
     </div>
-
-    <div class="sidebar-section">Overview</div>
-    <button class="sidebar-link active" onclick="showSection('dashboard')">📊 Dashboard</button>
-
-    <div class="sidebar-section">Users</div>
-    <button class="sidebar-link" onclick="showSection('students')">🎓 Registered Students</button>
-    <button class="sidebar-link" onclick="showSection('google-users')">🔐 Google Sign-Ins</button>
-
-    <div class="sidebar-section">Leads</div>
-    <button class="sidebar-link" onclick="showSection('counselling')">📞 Counselling Leads</button>
-    <button class="sidebar-link" onclick="showSection('cta')">🎯 CTA Leads</button>
-
-    <div class="sidebar-section">Analytics</div>
-    <button class="sidebar-link" onclick="showSection('behaviour')">📈 Behaviour Events</button>
-
-    <div class="sidebar-footer">
-      <button class="signout-btn" onclick="doLogout()">Sign Out</button>
+    <div class="nav-section">Overview</div>
+    <button class="nav-link active" onclick="nav('dashboard')">📊 Dashboard</button>
+    <div class="nav-section">Users</div>
+    <button class="nav-link" onclick="nav('students')">🎓 Registered Students</button>
+    <button class="nav-link" onclick="nav('google-users')">🔐 Google Sign-Ins</button>
+    <div class="nav-section">Leads</div>
+    <button class="nav-link" onclick="nav('counselling')">📞 Counselling Leads</button>
+    <button class="nav-link" onclick="nav('cta')">🎯 CTA Leads</button>
+    <div class="nav-section">Analytics</div>
+    <button class="nav-link" onclick="nav('behaviour')">📈 Behaviour Events</button>
+    <div class="sidebar-foot">
+      <button class="btn-signout" onclick="doLogout()">Sign Out</button>
     </div>
   </nav>
 
-  <!-- MAIN -->
-  <div class="main">
-    <div class="topbar">
-      <div class="breadcrumb">
-        <a onclick="showSection('dashboard')">Admin</a>
-        <span>/</span>
-        <span id="bc-current">Dashboard</span>
+  <!-- PAGE -->
+  <div class="page">
+
+    <!-- DASHBOARD -->
+    <div id="sec-dashboard" class="section active">
+      <div class="page-head">
+        <h1>Dashboard</h1>
+        <div class="breadcrumb"><a onclick="nav('dashboard')">Admin</a> / Dashboard</div>
       </div>
-      <div class="topbar-right">
-        <span class="topbar-time" id="topbar-time">—</span>
+      <div class="page-body">
+        <div class="stats-grid">
+          <div class="stat-card"><div class="stat-num" id="s-students">—</div><div class="stat-lbl">Registered Students</div></div>
+          <div class="stat-card"><div class="stat-num" id="s-counselling">—</div><div class="stat-lbl">Counselling Leads</div></div>
+          <div class="stat-card"><div class="stat-num" id="s-cta">—</div><div class="stat-lbl">CTA Leads</div></div>
+          <div class="stat-card"><div class="stat-num" id="s-google">—</div><div class="stat-lbl">Google Sign-Ins</div></div>
+          <div class="stat-card"><div class="stat-num" id="s-today">—</div><div class="stat-lbl">New Today</div></div>
+          <div class="stat-card"><div class="stat-num" id="s-events">—</div><div class="stat-lbl">Behaviour Events</div></div>
+        </div>
+        <div style="background:#fff;border:1px solid #E2E8F0;border-radius:8px;padding:20px;color:#64748B;font-size:13px;line-height:1.8">
+          <strong style="color:#0F1B2D;font-size:15px;display:block;margin-bottom:8px">Quick Navigation</strong>
+          Use the sidebar to access Students, Leads, Sign-Ins, and Behaviour Analytics. Each section supports search, filters, and CSV download.
+        </div>
       </div>
     </div>
 
-    <div class="content">
-
-      <!-- DASHBOARD -->
-      <div id="section-dashboard" class="section active">
-        <div class="content-header">
-          <div class="content-title">Dashboard</div>
-          <div class="content-subtitle">Overview of all CampusVazhi data</div>
-        </div>
-        <div class="stats-row">
-          <div class="stat-card"><div class="stat-num" id="stat-students">—</div><div class="stat-lbl">Registered Students</div></div>
-          <div class="stat-card"><div class="stat-num" id="stat-counselling">—</div><div class="stat-lbl">Counselling Leads</div></div>
-          <div class="stat-card"><div class="stat-num" id="stat-cta">—</div><div class="stat-lbl">CTA Leads</div></div>
-          <div class="stat-card"><div class="stat-num" id="stat-google">—</div><div class="stat-lbl">Google Sign-Ins</div></div>
-          <div class="stat-card"><div class="stat-num" id="stat-today">—</div><div class="stat-lbl">New Today</div></div>
-          <div class="stat-card"><div class="stat-num" id="stat-events">—</div><div class="stat-lbl">Behaviour Events</div></div>
-        </div>
-        <div style="background:#fff;border:1px solid #E2E8F0;border-radius:8px;padding:24px;color:#64748B;font-size:13px;line-height:2">
-          <strong style="color:#0F1B2D;font-size:15px">Quick Links</strong><br>
-          Use the sidebar to navigate between sections. Each section has search, filters, and CSV export.
-        </div>
+    <!-- STUDENTS -->
+    <div id="sec-students" class="section">
+      <div class="page-head">
+        <h1>Registered Students</h1>
+        <div class="breadcrumb"><a onclick="nav('dashboard')">Admin</a> / <a onclick="nav('students')">Registered Students</a></div>
       </div>
-
-      <!-- STUDENTS -->
-      <div id="section-students" class="section">
-        <div class="content-header">
-          <div class="content-title">Registered Students</div>
-          <div class="content-subtitle" id="sub-students">Loading...</div>
-        </div>
-        <div class="table-card">
-          <div class="table-toolbar">
-            <div class="search-wrap">
-              <input class="search-input" id="q-students" placeholder="Search by name, email, phone..." onkeydown="if(event.key==='Enter')doSearch('students')">
-              <button class="search-btn" onclick="doSearch('students')">Search</button>
-            </div>
-            <select class="filter-select" id="f-students-exam" onchange="doSearch('students')">
-              <option value="">All Exams</option>
-              <option>CAT</option><option>TANCET</option><option>NEET</option><option>TNEA</option><option>MS</option>
-            </select>
-            <div class="toolbar-right">
-              <button class="btn-refresh" onclick="loadStudents()">↻ Reload</button>
-              <button class="btn-download" onclick="exportCSV('students')">↓ Download</button>
-            </div>
+      <div class="page-body">
+        <div class="toolbar">
+          <div class="search-group">
+            <input id="q-students" placeholder="Search by email, name, phone..." onkeydown="if(event.key==='Enter')search('students')">
+            <button class="btn-search" onclick="search('students')">Search</button>
           </div>
-          <div class="table-wrap">
+          <select class="filter-sel" id="f-students-exam" onchange="search('students')">
+            <option value="">All Exams</option>
+            <option>CAT</option><option>TANCET</option><option>NEET</option><option>TNEA</option><option>MS</option>
+          </select>
+          <button class="btn-reload ml-auto" onclick="loadStudents()">↻ Reload</button>
+          <button class="btn-dl" onclick="exportCSV('students')">↓ Download</button>
+        </div>
+        <div class="tcard">
+          <div class="tscroll">
             <table>
               <thead><tr>
-                <th class="cb"><input type="checkbox" onchange="toggleAll('students',this)"></th>
+                <th class="cb-col"><input type="checkbox" onchange="toggleAll('students',this)"></th>
                 <th>Email</th><th>Name</th><th>Phone</th><th>Exam Target</th><th>City</th><th>Time Joined</th>
               </tr></thead>
-              <tbody id="tbody-students"><tr class="loading-row"><td colspan="7">⏳ Loading...</td></tr></tbody>
+              <tbody id="tb-students"><tr><td class="loading-td" colspan="7">⏳ Loading...</td></tr></tbody>
             </table>
           </div>
-          <div class="pagination" id="pag-students"></div>
+          <div class="pag-bar" id="pag-students"></div>
         </div>
       </div>
+    </div>
 
-      <!-- GOOGLE USERS -->
-      <div id="section-google-users" class="section">
-        <div class="content-header">
-          <div class="content-title">Google Sign-Ins</div>
-          <div class="content-subtitle" id="sub-google-users">Loading...</div>
-        </div>
-        <div class="table-card">
-          <div class="table-toolbar">
-            <div class="search-wrap">
-              <input class="search-input" id="q-google-users" placeholder="Search by email or name..." onkeydown="if(event.key==='Enter')doSearch('google-users')">
-              <button class="search-btn" onclick="doSearch('google-users')">Search</button>
-            </div>
-            <div class="toolbar-right">
-              <button class="btn-refresh" onclick="loadGoogleUsers()">↻ Reload</button>
-              <button class="btn-download" onclick="exportCSV('google-users')">↓ Download</button>
-            </div>
+    <!-- GOOGLE USERS -->
+    <div id="sec-google-users" class="section">
+      <div class="page-head">
+        <h1>Google Sign-Ins</h1>
+        <div class="breadcrumb"><a onclick="nav('dashboard')">Admin</a> / <a onclick="nav('google-users')">Google Sign-Ins</a></div>
+      </div>
+      <div class="page-body">
+        <div class="toolbar">
+          <div class="search-group">
+            <input id="q-google-users" placeholder="Search by email or name..." onkeydown="if(event.key==='Enter')search('google-users')">
+            <button class="btn-search" onclick="search('google-users')">Search</button>
           </div>
-          <div class="table-wrap">
+          <button class="btn-reload ml-auto" onclick="loadGoogleUsers()">↻ Reload</button>
+          <button class="btn-dl" onclick="exportCSV('google-users')">↓ Download</button>
+        </div>
+        <div class="tcard">
+          <div class="tscroll">
             <table>
               <thead><tr>
-                <th class="cb"><input type="checkbox" onchange="toggleAll('google-users',this)"></th>
+                <th class="cb-col"><input type="checkbox" onchange="toggleAll('google-users',this)"></th>
                 <th>Email</th><th>Name</th><th>Provider</th><th>Last Active</th><th>Time Joined</th>
               </tr></thead>
-              <tbody id="tbody-google-users"><tr class="loading-row"><td colspan="6">⏳ Loading...</td></tr></tbody>
+              <tbody id="tb-google-users"><tr><td class="loading-td" colspan="6">⏳ Loading...</td></tr></tbody>
             </table>
           </div>
-          <div class="pagination" id="pag-google-users"></div>
+          <div class="pag-bar" id="pag-google-users"></div>
         </div>
       </div>
+    </div>
 
-      <!-- COUNSELLING -->
-      <div id="section-counselling" class="section">
-        <div class="content-header">
-          <div class="content-title">Counselling Leads</div>
-          <div class="content-subtitle" id="sub-counselling">Loading...</div>
-        </div>
-        <div class="table-card">
-          <div class="table-toolbar">
-            <div class="search-wrap">
-              <input class="search-input" id="q-counselling" placeholder="Search by name, phone, email..." onkeydown="if(event.key==='Enter')doSearch('counselling')">
-              <button class="search-btn" onclick="doSearch('counselling')">Search</button>
-            </div>
-            <select class="filter-select" id="f-counselling-exam" onchange="doSearch('counselling')">
-              <option value="">All Exams</option>
-              <option>CAT</option><option>TANCET</option><option>NEET</option><option>TNEA</option>
-            </select>
-            <div class="toolbar-right">
-              <button class="btn-refresh" onclick="loadCounselling()">↻ Reload</button>
-              <button class="btn-download" onclick="exportCSV('counselling')">↓ Download</button>
-            </div>
+    <!-- COUNSELLING -->
+    <div id="sec-counselling" class="section">
+      <div class="page-head">
+        <h1>Counselling Leads</h1>
+        <div class="breadcrumb"><a onclick="nav('dashboard')">Admin</a> / <a onclick="nav('counselling')">Counselling Leads</a></div>
+      </div>
+      <div class="page-body">
+        <div class="toolbar">
+          <div class="search-group">
+            <input id="q-counselling" placeholder="Search by name, phone, email..." onkeydown="if(event.key==='Enter')search('counselling')">
+            <button class="btn-search" onclick="search('counselling')">Search</button>
           </div>
-          <div class="table-wrap">
+          <select class="filter-sel" id="f-counselling-exam" onchange="search('counselling')">
+            <option value="">All Exams</option>
+            <option>CAT</option><option>TANCET</option><option>NEET</option><option>TNEA</option>
+          </select>
+          <button class="btn-reload ml-auto" onclick="loadCounselling()">↻ Reload</button>
+          <button class="btn-dl" onclick="exportCSV('counselling')">↓ Download</button>
+        </div>
+        <div class="tcard">
+          <div class="tscroll">
             <table>
               <thead><tr>
-                <th class="cb"><input type="checkbox" onchange="toggleAll('counselling',this)"></th>
-                <th>Name</th><th>Phone</th><th>Email</th><th>Exam</th><th>Preferred Date</th><th>Message</th><th>Source</th><th>Submitted</th>
+                <th class="cb-col"><input type="checkbox" onchange="toggleAll('counselling',this)"></th>
+                <th>Name</th><th>Phone</th><th>Email</th><th>Exam</th><th>Preferred Date</th><th>Message</th><th>Source Page</th><th>Submitted</th>
               </tr></thead>
-              <tbody id="tbody-counselling"><tr class="loading-row"><td colspan="9">⏳ Loading...</td></tr></tbody>
+              <tbody id="tb-counselling"><tr><td class="loading-td" colspan="9">⏳ Loading...</td></tr></tbody>
             </table>
           </div>
-          <div class="pagination" id="pag-counselling"></div>
+          <div class="pag-bar" id="pag-counselling"></div>
         </div>
       </div>
+    </div>
 
-      <!-- CTA LEADS -->
-      <div id="section-cta" class="section">
-        <div class="content-header">
-          <div class="content-title">CTA Leads</div>
-          <div class="content-subtitle" id="sub-cta">Loading...</div>
-        </div>
-        <div class="table-card">
-          <div class="table-toolbar">
-            <div class="search-wrap">
-              <input class="search-input" id="q-cta" placeholder="Search by name, email, phone..." onkeydown="if(event.key==='Enter')doSearch('cta')">
-              <button class="search-btn" onclick="doSearch('cta')">Search</button>
-            </div>
-            <select class="filter-select" id="f-cta-type" onchange="doSearch('cta')">
-              <option value="">All Types</option>
-              <option value="free_guide">Free Guide</option>
-              <option value="free_kit">Free Kit</option>
-              <option value="free_roadmap">Free Roadmap</option>
-              <option value="free_mock">Free Mock</option>
-            </select>
-            <div class="toolbar-right">
-              <button class="btn-refresh" onclick="loadCTA()">↻ Reload</button>
-              <button class="btn-download" onclick="exportCSV('cta')">↓ Download</button>
-            </div>
+    <!-- CTA LEADS -->
+    <div id="sec-cta" class="section">
+      <div class="page-head">
+        <h1>CTA Leads</h1>
+        <div class="breadcrumb"><a onclick="nav('dashboard')">Admin</a> / <a onclick="nav('cta')">CTA Leads</a></div>
+      </div>
+      <div class="page-body">
+        <div class="toolbar">
+          <div class="search-group">
+            <input id="q-cta" placeholder="Search by name, email, phone..." onkeydown="if(event.key==='Enter')search('cta')">
+            <button class="btn-search" onclick="search('cta')">Search</button>
           </div>
-          <div class="table-wrap">
+          <select class="filter-sel" id="f-cta-type" onchange="search('cta')">
+            <option value="">All Types</option>
+            <option value="free_guide">Free Guide</option>
+            <option value="free_kit">Free Kit</option>
+            <option value="free_roadmap">Free Roadmap</option>
+            <option value="free_mock">Free Mock</option>
+          </select>
+          <button class="btn-reload ml-auto" onclick="loadCTA()">↻ Reload</button>
+          <button class="btn-dl" onclick="exportCSV('cta')">↓ Download</button>
+        </div>
+        <div class="tcard">
+          <div class="tscroll">
             <table>
               <thead><tr>
-                <th class="cb"><input type="checkbox" onchange="toggleAll('cta',this)"></th>
+                <th class="cb-col"><input type="checkbox" onchange="toggleAll('cta',this)"></th>
                 <th>Name</th><th>Email</th><th>Phone</th><th>Exam</th><th>CTA Type</th><th>Source Page</th><th>Submitted</th>
               </tr></thead>
-              <tbody id="tbody-cta"><tr class="loading-row"><td colspan="8">⏳ Loading...</td></tr></tbody>
+              <tbody id="tb-cta"><tr><td class="loading-td" colspan="8">⏳ Loading...</td></tr></tbody>
             </table>
           </div>
-          <div class="pagination" id="pag-cta"></div>
+          <div class="pag-bar" id="pag-cta"></div>
         </div>
       </div>
+    </div>
 
-      <!-- BEHAVIOUR -->
-      <div id="section-behaviour" class="section">
-        <div class="content-header">
-          <div class="content-title">Behaviour Events</div>
-          <div class="content-subtitle" id="sub-behaviour">Loading...</div>
-        </div>
-        <div class="stats-row beh-summary">
+    <!-- BEHAVIOUR -->
+    <div id="sec-behaviour" class="section">
+      <div class="page-head">
+        <h1>Behaviour Events</h1>
+        <div class="breadcrumb"><a onclick="nav('dashboard')">Admin</a> / <a onclick="nav('behaviour')">Behaviour Events</a></div>
+      </div>
+      <div class="page-body">
+        <div class="beh-stats">
           <div class="stat-card"><div class="stat-num" id="beh-today">—</div><div class="stat-lbl">Events Today</div></div>
           <div class="stat-card"><div class="stat-num" id="beh-sessions">—</div><div class="stat-lbl">Sessions Today</div></div>
-          <div class="stat-card"><div class="stat-num" style="font-size:14px" id="beh-top-page">—</div><div class="stat-lbl">Top Page (7d)</div></div>
-          <div class="stat-card"><div class="stat-num" style="font-size:14px" id="beh-top-cta">—</div><div class="stat-lbl">Top CTA Clicked</div></div>
+          <div class="stat-card"><div class="stat-num" style="font-size:14px;padding-top:4px" id="beh-top-page">—</div><div class="stat-lbl">Top Page (7d)</div></div>
+          <div class="stat-card"><div class="stat-num" style="font-size:14px;padding-top:4px" id="beh-top-cta">—</div><div class="stat-lbl">Top CTA Clicked</div></div>
         </div>
-        <div class="table-card">
-          <div class="table-toolbar">
-            <select class="filter-select" id="f-behaviour-evt" onchange="filterBehaviour()">
-              <option value="">All Events</option>
-              <option value="page_view">page_view</option>
-              <option value="cta_click">cta_click</option>
-              <option value="download_click">download_click</option>
-              <option value="form_submit">form_submit</option>
-              <option value="faq_expand">faq_expand</option>
-              <option value="outbound_click">outbound_click</option>
-              <option value="page_exit">page_exit</option>
-            </select>
-            <div class="toolbar-right">
-              <button class="btn-refresh" onclick="loadBehaviour()">↻ Reload</button>
-              <button class="btn-download" onclick="exportCSV('behaviour')">↓ Download</button>
-            </div>
-          </div>
-          <div class="table-wrap">
+        <div class="toolbar">
+          <select class="filter-sel" id="f-beh-evt" onchange="filterBeh()">
+            <option value="">All Events</option>
+            <option value="page_view">page_view</option>
+            <option value="cta_click">cta_click</option>
+            <option value="download_click">download_click</option>
+            <option value="form_submit">form_submit</option>
+            <option value="faq_expand">faq_expand</option>
+            <option value="outbound_click">outbound_click</option>
+            <option value="page_exit">page_exit</option>
+          </select>
+          <button class="btn-reload ml-auto" onclick="loadBehaviour()">↻ Reload</button>
+          <button class="btn-dl" onclick="exportCSV('behaviour')">↓ Download</button>
+        </div>
+        <div class="tcard">
+          <div class="tscroll">
             <table>
               <thead><tr>
-                <th>#</th><th>Event</th><th>Page</th><th>Device</th><th>Details</th><th>Session</th><th>Time</th>
+                <th>#</th><th>Event</th><th>Page</th><th>Device</th><th>Details</th><th>Session ID</th><th>Time</th>
               </tr></thead>
-              <tbody id="tbody-behaviour"><tr class="loading-row"><td colspan="7">⏳ Loading...</td></tr></tbody>
+              <tbody id="tb-behaviour"><tr><td class="loading-td" colspan="7">⏳ Loading...</td></tr></tbody>
             </table>
           </div>
-          <div class="pagination" id="pag-behaviour"></div>
+          <div class="pag-bar" id="pag-behaviour"></div>
         </div>
       </div>
+    </div>
 
-    </div><!-- /content -->
-  </div><!-- /main -->
-</div><!-- /app-shell -->
+  </div><!-- /page -->
+</div><!-- /app-wrap -->
 </div><!-- /app -->
 
 <script>
-// ── CONFIG ─────────────────────────────────────────────
 var SB_URL = 'https://txyimbzkutnkaphyvifg.supabase.co';
-var ADMIN_PASSWORD = 'CampusVazhi@Admin2026';
-var SERVICE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InR4eWltYnprdXRua2FwaHl2aWZnIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3NTgyNzQ5NCwiZXhwIjoyMDkxNDAzNDk0fQ.WgYFCZQcy1zpqDU-eH3k7NhTl52Nj6Jqb4DK0uz77x4';
-var PAGE_SIZE = 50;
+var ADMIN_PW = 'CampusVazhi@Admin2026';
+var SVC_KEY  = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InR4eWltYnprdXRua2FwaHl2aWZnIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3NTgyNzQ5NCwiZXhwIjoyMDkxNDAzNDk0fQ.WgYFCZQcy1zpqDU-eH3k7NhTl52Nj6Jqb4DK0uz77x4';
+var PS = 50;
 
-// ── STATE ───────────────────────────────────────────────
-var allData    = { students:[], counselling:[], cta:[], 'google-users':[], behaviour:[] };
-var filtered   = { students:[], counselling:[], cta:[], 'google-users':[], behaviour:[] };
-var curPage    = { students:1, counselling:1, cta:1, 'google-users':1, behaviour:1 };
-var showSize   = { students:50, counselling:50, cta:50, 'google-users':50, behaviour:50 };
+var all  = {students:[],counselling:[],cta:[],'google-users':[],behaviour:[]};
+var filt = {students:[],counselling:[],cta:[],'google-users':[],behaviour:[]};
+var cp   = {students:1,counselling:1,cta:1,'google-users':1,behaviour:1};
+var ss   = {students:50,counselling:50,cta:50,'google-users':50,behaviour:50};
 
-// ── LOGIN ───────────────────────────────────────────────
-function doLogin() {
-  var pass = document.getElementById('inp-pass').value;
-  var err  = document.getElementById('login-err');
-  if (pass !== ADMIN_PASSWORD) {
-    err.textContent = 'Incorrect password.';
-    err.style.display = 'block'; return;
-  }
-  document.getElementById('login-screen').style.display = 'none';
-  document.getElementById('app').style.display = 'block';
-  setInterval(function(){ document.getElementById('topbar-time').textContent = new Date().toLocaleTimeString('en-IN'); }, 1000);
+// ── LOGIN ──────────────────────────────────
+function doLogin(){
+  var p=document.getElementById('inp-pass').value;
+  var e=document.getElementById('login-err');
+  if(p!==ADMIN_PW){e.textContent='Incorrect password.';e.style.display='block';return;}
+  document.getElementById('login-screen').style.display='none';
+  document.getElementById('app').style.display='block';
   loadAll();
 }
-function doLogout() {
-  document.getElementById('login-screen').style.display = 'flex';
-  document.getElementById('app').style.display = 'none';
-  document.getElementById('inp-pass').value = '';
+function doLogout(){
+  document.getElementById('login-screen').style.display='flex';
+  document.getElementById('app').style.display='none';
+  document.getElementById('inp-pass').value='';
 }
-document.getElementById('inp-pass').addEventListener('keydown', function(e){ if(e.key==='Enter') doLogin(); });
+document.getElementById('inp-pass').addEventListener('keydown',function(e){if(e.key==='Enter')doLogin();});
 
-// ── API ─────────────────────────────────────────────────
-async function sbGet(path) {
-  var r = await fetch(SB_URL + path, {
-    headers: { 'apikey': SERVICE_KEY, 'Authorization': 'Bearer ' + SERVICE_KEY, 'Prefer': 'count=exact' }
+// ── NAV ────────────────────────────────────
+var SECTIONS=['dashboard','students','google-users','counselling','cta','behaviour'];
+var LABELS={dashboard:'Dashboard',students:'Registered Students','google-users':'Google Sign-Ins',counselling:'Counselling Leads',cta:'CTA Leads',behaviour:'Behaviour Events'};
+
+function nav(name){
+  SECTIONS.forEach(function(s){
+    document.getElementById('sec-'+s).classList.toggle('active',s===name);
   });
-  if (!r.ok) throw new Error('Error ' + r.status);
+  document.querySelectorAll('.nav-link').forEach(function(l){
+    l.classList.toggle('active',l.getAttribute('onclick')&&l.getAttribute('onclick').includes("'"+name+"'"));
+  });
+}
+
+// ── API ─────────────────────────────────────
+async function sbGet(path){
+  var r=await fetch(SB_URL+path,{headers:{'apikey':SVC_KEY,'Authorization':'Bearer '+SVC_KEY,'Prefer':'count=exact'}});
+  if(!r.ok)throw new Error('HTTP '+r.status);
   return r.json();
 }
 
-// ── NAVIGATION ──────────────────────────────────────────
-function showSection(name) {
-  document.querySelectorAll('.section').forEach(function(s){ s.classList.remove('active'); });
-  document.querySelectorAll('.sidebar-link').forEach(function(l){ l.classList.remove('active'); });
-  document.getElementById('section-' + name).classList.add('active');
-  var labels = { dashboard:'Dashboard', students:'Registered Students', 'google-users':'Google Sign-Ins',
-    counselling:'Counselling Leads', cta:'CTA Leads', behaviour:'Behaviour Events' };
-  document.getElementById('bc-current').textContent = labels[name] || name;
-  // activate sidebar link
-  document.querySelectorAll('.sidebar-link').forEach(function(l){
-    if (l.getAttribute('onclick') && l.getAttribute('onclick').includes("'" + name + "'")) l.classList.add('active');
-  });
+// ── LOAD ────────────────────────────────────
+function loadAll(){loadStudents();loadCounselling();loadCTA();loadGoogleUsers();loadBehaviour();}
+
+async function loadStudents(){
+  setLoad('students',7);
+  try{var d=await sbGet('/rest/v1/students?select=*&order=created_at.desc&limit=5000');all.students=d;applyFilt('students');updateStats();}
+  catch(e){setErr('students',7,e.message);}
+}
+async function loadCounselling(){
+  setLoad('counselling',9);
+  try{var d=await sbGet('/rest/v1/counselling_leads?select=*&order=created_at.desc&limit=5000');all.counselling=d;applyFilt('counselling');updateStats();}
+  catch(e){setErr('counselling',9,e.message);}
+}
+async function loadCTA(){
+  setLoad('cta',8);
+  try{var d=await sbGet('/rest/v1/cta_leads?select=*&order=created_at.desc&limit=5000');all.cta=d;applyFilt('cta');updateStats();}
+  catch(e){setErr('cta',8,e.message);}
+}
+async function loadGoogleUsers(){
+  setLoad('google-users',6);
+  try{var d=await sbGet('/auth/v1/admin/users?per_page=1000');all['google-users']=d.users||[];applyFilt('google-users');updateStats();}
+  catch(e){setErr('google-users',6,e.message);}
+}
+async function loadBehaviour(){
+  setLoad('behaviour',7);
+  try{
+    var r=await fetch(SB_URL+'/rest/v1/cv_events?order=created_at.desc&limit=5000',{headers:{'apikey':SVC_KEY,'Authorization':'Bearer '+SVC_KEY}});
+    var d=await r.json();
+    if(!Array.isArray(d))throw new Error('No data');
+    all.behaviour=d;filt.behaviour=d.slice();cp.behaviour=1;
+    renderTbl('behaviour');behSummary(d);updateStats();
+  }catch(e){setErr('behaviour',7,e.message);}
 }
 
-// ── LOAD ALL ────────────────────────────────────────────
-function loadAll() {
-  loadStudents(); loadCounselling(); loadCTA(); loadGoogleUsers(); loadBehaviour();
-}
-
-async function loadStudents() {
-  setLoading('students', 7);
-  try {
-    var d = await sbGet('/rest/v1/students?select=*&order=created_at.desc&limit=5000');
-    allData.students = d; applyFilter('students'); updateStats();
-  } catch(e) { setError('students', 7, e.message); }
-}
-async function loadCounselling() {
-  setLoading('counselling', 9);
-  try {
-    var d = await sbGet('/rest/v1/counselling_leads?select=*&order=created_at.desc&limit=5000');
-    allData.counselling = d; applyFilter('counselling'); updateStats();
-  } catch(e) { setError('counselling', 9, e.message); }
-}
-async function loadCTA() {
-  setLoading('cta', 8);
-  try {
-    var d = await sbGet('/rest/v1/cta_leads?select=*&order=created_at.desc&limit=5000');
-    allData.cta = d; applyFilter('cta'); updateStats();
-  } catch(e) { setError('cta', 8, e.message); }
-}
-async function loadGoogleUsers() {
-  setLoading('google-users', 6);
-  try {
-    var d = await sbGet('/auth/v1/admin/users?per_page=1000');
-    allData['google-users'] = d.users || []; applyFilter('google-users'); updateStats();
-  } catch(e) { setError('google-users', 6, e.message); }
-}
-async function loadBehaviour() {
-  setLoading('behaviour', 7);
-  try {
-    var d = await fetch(SB_URL + '/rest/v1/cv_events?order=created_at.desc&limit=5000', {
-      headers: { 'apikey': SERVICE_KEY, 'Authorization': 'Bearer ' + SERVICE_KEY }
-    }).then(function(r){ return r.json(); });
-    if (!Array.isArray(d)) throw new Error('No data');
-    allData.behaviour = d; filtered.behaviour = d.slice(); curPage.behaviour = 1;
-    renderTable('behaviour'); updateBehSummary(d); updateStats();
-    document.getElementById('sub-behaviour').textContent = d.length + ' total events';
-  } catch(e) { setError('behaviour', 7, e.message); }
-}
-
-// ── SEARCH / FILTER ──────────────────────────────────────
-function doSearch(tab) {
-  applyFilter(tab);
-}
-function applyFilter(tab) {
-  var q = (document.getElementById('q-' + tab) || {}).value;
-  q = (q||'').toLowerCase().trim();
-
-  if (tab === 'students') {
-    var exam = document.getElementById('f-students-exam').value.toLowerCase();
-    filtered.students = allData.students.filter(function(r){
-      return (!q || [(r.full_name||''),(r.email||''),(r.phone||'')].join(' ').toLowerCase().includes(q))
-          && (!exam || (r.exam_target||'').toLowerCase().includes(exam));
+// ── FILTER ──────────────────────────────────
+function search(tab){applyFilt(tab);}
+function applyFilt(tab){
+  var q=(document.getElementById('q-'+tab)||{}).value;
+  q=(q||'').toLowerCase().trim();
+  if(tab==='students'){
+    var ex=(document.getElementById('f-students-exam').value||'').toLowerCase();
+    filt.students=all.students.filter(function(r){
+      return(!q||[r.full_name||'',r.email||'',r.phone||''].join(' ').toLowerCase().includes(q))&&(!ex||(r.exam_target||'').toLowerCase().includes(ex));
     });
-    document.getElementById('sub-students').textContent = filtered.students.length + ' of ' + allData.students.length + ' students';
-  } else if (tab === 'counselling') {
-    var exam = document.getElementById('f-counselling-exam').value.toLowerCase();
-    filtered.counselling = allData.counselling.filter(function(r){
-      return (!q || [(r.name||''),(r.phone||''),(r.email||'')].join(' ').toLowerCase().includes(q))
-          && (!exam || (r.exam||'').toLowerCase().includes(exam));
+  }else if(tab==='counselling'){
+    var ex=(document.getElementById('f-counselling-exam').value||'').toLowerCase();
+    filt.counselling=all.counselling.filter(function(r){
+      return(!q||[r.name||'',r.phone||'',r.email||''].join(' ').toLowerCase().includes(q))&&(!ex||(r.exam||'').toLowerCase().includes(ex));
     });
-    document.getElementById('sub-counselling').textContent = filtered.counselling.length + ' of ' + allData.counselling.length + ' leads';
-  } else if (tab === 'cta') {
-    var type = document.getElementById('f-cta-type').value;
-    filtered.cta = allData.cta.filter(function(r){
-      return (!q || [(r.name||''),(r.email||''),(r.phone||'')].join(' ').toLowerCase().includes(q))
-          && (!type || r.cta_type === type);
+  }else if(tab==='cta'){
+    var tp=document.getElementById('f-cta-type').value||'';
+    filt.cta=all.cta.filter(function(r){
+      return(!q||[r.name||'',r.email||'',r.phone||''].join(' ').toLowerCase().includes(q))&&(!tp||r.cta_type===tp);
     });
-    document.getElementById('sub-cta').textContent = filtered.cta.length + ' of ' + allData.cta.length + ' leads';
-  } else if (tab === 'google-users') {
-    filtered['google-users'] = allData['google-users'].filter(function(r){
-      return !q || [(r.email||''),((r.user_metadata||{}).full_name||'')].join(' ').toLowerCase().includes(q);
+  }else if(tab==='google-users'){
+    filt['google-users']=all['google-users'].filter(function(r){
+      return!q||[r.email||'',(r.user_metadata||{}).full_name||''].join(' ').toLowerCase().includes(q);
     });
-    document.getElementById('sub-google-users').textContent = filtered['google-users'].length + ' of ' + allData['google-users'].length + ' users';
   }
-  curPage[tab] = 1;
-  renderTable(tab);
+  cp[tab]=1;renderTbl(tab);
+}
+function filterBeh(){
+  var ev=document.getElementById('f-beh-evt').value;
+  filt.behaviour=ev?all.behaviour.filter(function(r){return r.event_type===ev;}):all.behaviour.slice();
+  cp.behaviour=1;renderTbl('behaviour');
 }
 
-function filterBehaviour() {
-  var evt = document.getElementById('f-behaviour-evt').value;
-  filtered.behaviour = evt ? allData.behaviour.filter(function(r){ return r.event_type === evt; }) : allData.behaviour.slice();
-  curPage.behaviour = 1;
-  renderTable('behaviour');
-}
-
-// ── RENDER TABLE ─────────────────────────────────────────
-function renderTable(tab) {
-  var data  = filtered[tab];
-  var ps    = showSize[tab];
-  var page  = curPage[tab];
-  var total = data.length;
-  var start = (page - 1) * ps;
-  var end   = Math.min(start + ps, total);
-  var slice = data.slice(start, end);
-  var tbody = document.getElementById('tbody-' + tab);
-
-  var cols = { students:7, counselling:9, cta:8, 'google-users':6, behaviour:7 };
-
-  if (!total) {
-    tbody.innerHTML = '<tr><td colspan="' + cols[tab] + '" style="text-align:center;padding:40px;color:#94A3B8"><div style="font-size:28px;margin-bottom:8px">📭</div>No records found</td></tr>';
-  } else {
-    tbody.innerHTML = slice.map(function(r, i){ return renderRow(tab, r, start + i + 1); }).join('');
+// ── RENDER ──────────────────────────────────
+function renderTbl(tab){
+  var data=filt[tab],ps=ss[tab],page=cp[tab];
+  var total=data.length,start=(page-1)*ps,end=Math.min(start+ps,total);
+  var slice=data.slice(start,end);
+  var tbody=document.getElementById('tb-'+tab);
+  var cols={students:7,counselling:9,cta:8,'google-users':6,behaviour:7};
+  if(!total){
+    tbody.innerHTML='<tr><td class="empty-td" colspan="'+cols[tab]+'">📭 No records found</td></tr>';
+  }else{
+    tbody.innerHTML=slice.map(function(r,i){return row(tab,r,start+i+1);}).join('');
   }
-  renderPagination(tab, total, page, ps, start, end);
+  renderPag(tab,total,page,ps,start,end);
 }
 
-function renderRow(tab, r, n) {
-  var chk = '<td><input type="checkbox" class="row-cb" data-tab="' + tab + '"></td>';
-  if (tab === 'students') {
-    return '<tr>' + chk
-      + '<td title="' + esc(r.email||'') + '">' + esc(r.email||'—') + '</td>'
-      + '<td>' + esc(r.full_name||'—') + '</td>'
-      + '<td>' + esc(r.phone||'—') + '</td>'
-      + '<td>' + (r.exam_target ? '<span class="badge badge-blue">' + esc(r.exam_target) + '</span>' : '—') + '</td>'
-      + '<td>' + esc(r.city||'—') + '</td>'
-      + '<td>' + fmtDate(r.created_at) + '</td></tr>';
+function row(tab,r,n){
+  var chk='<td class="cb-col"><input type="checkbox" class="rcb" data-tab="'+tab+'"></td>';
+  if(tab==='students'){
+    return'<tr>'+chk
+      +'<td>'+esc(r.email||'—')+'</td>'
+      +'<td>'+esc(r.full_name||'—')+'</td>'
+      +'<td>'+esc(r.phone||'—')+'</td>'
+      +'<td>'+(r.exam_target?'<span class="badge b-blue">'+esc(r.exam_target)+'</span>':'—')+'</td>'
+      +'<td>'+esc(r.city||'—')+'</td>'
+      +'<td>'+fd(r.created_at)+'</td></tr>';
   }
-  if (tab === 'google-users') {
-    var meta = r.user_metadata || {};
-    var prov = (r.app_metadata||{}).provider || 'unknown';
-    return '<tr>' + chk
-      + '<td>' + esc(r.email||'—') + '</td>'
-      + '<td>' + esc(meta.full_name||meta.name||'—') + '</td>'
-      + '<td><span class="badge badge-green">' + esc(prov) + '</span></td>'
-      + '<td>' + fmtDate(r.last_sign_in_at) + '</td>'
-      + '<td>' + fmtDate(r.created_at) + '</td></tr>';
+  if(tab==='google-users'){
+    var m=r.user_metadata||{};
+    return'<tr>'+chk
+      +'<td>'+esc(r.email||'—')+'</td>'
+      +'<td>'+esc(m.full_name||m.name||'—')+'</td>'
+      +'<td><span class="badge b-green">'+esc((r.app_metadata||{}).provider||'?')+'</span></td>'
+      +'<td>'+fd(r.last_sign_in_at)+'</td>'
+      +'<td>'+fd(r.created_at)+'</td></tr>';
   }
-  if (tab === 'counselling') {
-    return '<tr>' + chk
-      + '<td>' + esc(r.name||'—') + '</td>'
-      + '<td><strong>' + esc(r.phone||'—') + '</strong></td>'
-      + '<td>' + esc(r.email||'—') + '</td>'
-      + '<td>' + (r.exam ? '<span class="badge badge-purple">' + esc(r.exam) + '</span>' : '—') + '</td>'
-      + '<td>' + esc(r.preferred_date||'—') + '</td>'
-      + '<td title="' + esc(r.message||'') + '">' + esc((r.message||'—').substring(0,40)) + (r.message&&r.message.length>40?'…':'') + '</td>'
-      + '<td>' + esc(r.source_page||'—') + '</td>'
-      + '<td>' + fmtDate(r.created_at) + '</td></tr>';
+  if(tab==='counselling'){
+    return'<tr>'+chk
+      +'<td>'+esc(r.name||'—')+'</td>'
+      +'<td><strong>'+esc(r.phone||'—')+'</strong></td>'
+      +'<td>'+esc(r.email||'—')+'</td>'
+      +'<td>'+(r.exam?'<span class="badge b-purple">'+esc(r.exam)+'</span>':'—')+'</td>'
+      +'<td>'+esc(r.preferred_date||'—')+'</td>'
+      +'<td title="'+esc(r.message||'')+'">'+esc((r.message||'—').substring(0,35))+((r.message||'').length>35?'…':'')+'</td>'
+      +'<td title="'+esc(r.source_page||'')+'">'+esc(r.source_page||'—')+'</td>'
+      +'<td>'+fd(r.created_at)+'</td></tr>';
   }
-  if (tab === 'cta') {
-    return '<tr>' + chk
-      + '<td>' + esc(r.name||'—') + '</td>'
-      + '<td>' + esc(r.email||'—') + '</td>'
-      + '<td>' + esc(r.phone||'—') + '</td>'
-      + '<td>' + esc(r.exam||'—') + '</td>'
-      + '<td>' + (r.cta_type ? '<span class="badge badge-orange">' + esc(r.cta_type.replace(/_/g,' ')) + '</span>' : '—') + '</td>'
-      + '<td>' + esc(r.source_page||'—') + '</td>'
-      + '<td>' + fmtDate(r.created_at) + '</td></tr>';
+  if(tab==='cta'){
+    return'<tr>'+chk
+      +'<td>'+esc(r.name||'—')+'</td>'
+      +'<td>'+esc(r.email||'—')+'</td>'
+      +'<td>'+esc(r.phone||'—')+'</td>'
+      +'<td>'+esc(r.exam||'—')+'</td>'
+      +'<td>'+(r.cta_type?'<span class="badge b-orange">'+esc(r.cta_type.replace(/_/g,' '))+'</span>':'—')+'</td>'
+      +'<td title="'+esc(r.source_page||'')+'">'+esc(r.source_page||'—')+'</td>'
+      +'<td>'+fd(r.created_at)+'</td></tr>';
   }
-  if (tab === 'behaviour') {
-    var evtColors = {page_view:'blue',cta_click:'orange',download_click:'green',form_submit:'purple',faq_expand:'gray',outbound_click:'teal',page_exit:'gray'};
-    var meta = r.metadata || {};
-    var details = meta.label||meta.url||meta.file||meta.question||(meta.time_spent_sec ? meta.time_spent_sec+'s · scroll '+meta.scroll_depth_pct+'%' : '')||'—';
-    return '<tr>'
-      + '<td style="color:#94A3B8;font-size:11px">' + n + '</td>'
-      + '<td><span class="badge badge-' + (evtColors[r.event_type]||'gray') + '">' + esc(r.event_type||'?') + '</span></td>'
-      + '<td title="' + esc(r.page||'') + '">' + esc((r.page||'—').substring(0,30)) + '</td>'
-      + '<td>' + (r.device==='mobile'?'📱':'🖥️') + ' ' + esc(r.device||'—') + '</td>'
-      + '<td title="' + esc(String(details)) + '">' + esc(String(details).substring(0,45)) + '</td>'
-      + '<td style="font-size:11px;color:#94A3B8" title="' + esc(r.session_id||'') + '">' + esc((r.session_id||'—').substring(0,12)) + '…</td>'
-      + '<td>' + fmtDate(r.created_at) + '</td></tr>';
+  if(tab==='behaviour'){
+    var ec={page_view:'b-blue',cta_click:'b-orange',download_click:'b-green',form_submit:'b-purple',faq_expand:'b-gray',outbound_click:'b-teal',page_exit:'b-gray'};
+    var m=r.metadata||{};
+    var det=m.label||m.url||m.file||m.question||(m.time_spent_sec?m.time_spent_sec+'s · scroll '+m.scroll_depth_pct+'%':'')||'—';
+    return'<tr>'
+      +'<td style="color:#94A3B8;font-size:11px">'+n+'</td>'
+      +'<td><span class="badge '+(ec[r.event_type]||'b-gray')+'">'+esc(r.event_type||'?')+'</span></td>'
+      +'<td title="'+esc(r.page||'')+'">'+esc(r.page||'—')+'</td>'
+      +'<td>'+(r.device==='mobile'?'📱':'🖥️')+' '+esc(r.device||'—')+'</td>'
+      +'<td title="'+esc(String(det))+'">'+esc(String(det).substring(0,50))+'</td>'
+      +'<td style="font-size:11px;color:#94A3B8" title="'+esc(r.session_id||'')+'">'+esc((r.session_id||'—').substring(0,14))+'</td>'
+      +'<td>'+fd(r.created_at)+'</td></tr>';
   }
-  return '';
+  return'';
 }
 
-// ── PAGINATION ───────────────────────────────────────────
-function renderPagination(tab, total, page, ps, start, end) {
-  var totalPages = Math.max(1, Math.ceil(total / ps));
-  var el = document.getElementById('pag-' + tab);
-  if (!el) return;
-  el.innerHTML =
-    '<button class="pag-btn" onclick="goFirst(\'' + tab + '\')" ' + (page<=1?'disabled':'') + '>Go to first page</button>' +
-    '<button class="pag-btn" onclick="goPage(\'' + tab + '\',-1)" ' + (page<=1?'disabled':'') + '>Prev</button>' +
-    '<button class="pag-btn" onclick="goPage(\'' + tab + '\',1)" ' + (end>=total?'disabled':'') + '>Next</button>' +
-    '<button class="pag-btn" onclick="goLast(\'' + tab + '\')" ' + (end>=total?'disabled':'') + '>Go to last page</button>' +
-    '<span class="pag-info">Page ' + page + ' of ' + totalPages + '</span>' +
-    '<div class="pag-goto">Go to page: <input type="number" min="1" max="' + totalPages + '" value="' + page + '" id="goto-' + tab + '" onkeydown="if(event.key===\'Enter\')jumpPage(\'' + tab + '\')"></div>' +
-    '<div class="pag-show">Show <select onchange="changeSize(\'' + tab + '\',this.value)">' +
-      [25,50,100,300].map(function(n){ return '<option value="' + n + '"' + (ps===n?' selected':'') + '>' + n + '</option>'; }).join('') +
-    '</select></div>';
+// ── PAGINATION ───────────────────────────────
+function renderPag(tab,total,page,ps,start,end){
+  var tp=Math.max(1,Math.ceil(total/ps));
+  var el=document.getElementById('pag-'+tab);if(!el)return;
+  el.innerHTML=
+    '<button class="pag-btn" onclick="gf(\''+tab+'\')" '+(page<=1?'disabled':'')+'>Go to first page</button>'+
+    '<button class="pag-btn" onclick="gp(\''+tab+'\',-1)" '+(page<=1?'disabled':'')+'>Prev</button>'+
+    '<button class="pag-btn" onclick="gp(\''+tab+'\',1)" '+(end>=total?'disabled':'')+'>Next</button>'+
+    '<button class="pag-btn" onclick="gl(\''+tab+'\')" '+(end>=total?'disabled':'')+'>Go to last page</button>'+
+    '<span class="pag-info">Page '+page+' of '+tp+'</span>'+
+    '<div class="pag-right">'+
+      '<div class="pag-goto">Go to page: <input type="number" min="1" max="'+tp+'" value="'+page+'" id="gt-'+tab+'" onkeydown="if(event.key===\'Enter\')jmp(\''+tab+'\')"></div>'+
+      '<div class="pag-show">Show <select onchange="csz(\''+tab+'\',this.value)">'+
+        [25,50,100,300].map(function(n){return'<option value="'+n+'"'+(ps===n?' selected':'')+'>'+n+'</option>';}).join('')+
+      '</select></div>'+
+    '</div>';
 }
-function goPage(tab, dir) { curPage[tab] += dir; renderTable(tab); window.scrollTo(0,0); }
-function goFirst(tab)      { curPage[tab] = 1; renderTable(tab); window.scrollTo(0,0); }
-function goLast(tab)       { curPage[tab] = Math.ceil(filtered[tab].length / showSize[tab]); renderTable(tab); window.scrollTo(0,0); }
-function jumpPage(tab) {
-  var v = parseInt(document.getElementById('goto-' + tab).value, 10);
-  var max = Math.ceil(filtered[tab].length / showSize[tab]);
-  if (v >= 1 && v <= max) { curPage[tab] = v; renderTable(tab); window.scrollTo(0,0); }
+function gp(t,d){cp[t]+=d;renderTbl(t);window.scrollTo(0,0);}
+function gf(t){cp[t]=1;renderTbl(t);window.scrollTo(0,0);}
+function gl(t){cp[t]=Math.ceil(filt[t].length/ss[t]);renderTbl(t);window.scrollTo(0,0);}
+function jmp(t){var v=parseInt(document.getElementById('gt-'+t).value,10),mx=Math.ceil(filt[t].length/ss[t]);if(v>=1&&v<=mx){cp[t]=v;renderTbl(t);window.scrollTo(0,0);}}
+function csz(t,v){ss[t]=parseInt(v,10);cp[t]=1;renderTbl(t);}
+function toggleAll(t,cb){document.querySelectorAll('.rcb[data-tab="'+t+'"]').forEach(function(c){c.checked=cb.checked;});}
+
+// ── STATS ─────────────────────────────────────
+function updateStats(){
+  var today=new Date().toISOString().slice(0,10);
+  document.getElementById('s-students').textContent=all.students.length||'—';
+  document.getElementById('s-counselling').textContent=all.counselling.length||'—';
+  document.getElementById('s-cta').textContent=all.cta.length||'—';
+  document.getElementById('s-google').textContent=all['google-users'].length||'—';
+  document.getElementById('s-events').textContent=all.behaviour.length||'—';
+  document.getElementById('s-today').textContent=[].concat(all.students,all.counselling,all.cta).filter(function(r){return(r.created_at||'').slice(0,10)===today;}).length;
 }
-function changeSize(tab, val) { showSize[tab] = parseInt(val,10); curPage[tab] = 1; renderTable(tab); }
-function toggleAll(tab, cb) {
-  document.querySelectorAll('.row-cb[data-tab="' + tab + '"]').forEach(function(c){ c.checked = cb.checked; });
+function behSummary(data){
+  var today=new Date().toISOString().slice(0,10);
+  var todayEvts=data.filter(function(r){return(r.created_at||'').slice(0,10)===today;});
+  document.getElementById('beh-today').textContent=todayEvts.length;
+  document.getElementById('beh-sessions').textContent=new Set(todayEvts.map(function(r){return r.session_id;})).size;
+  var ago7=new Date(Date.now()-7*24*3600000).toISOString();
+  var pgC={};data.filter(function(r){return r.event_type==='page_view'&&r.created_at>=ago7;}).forEach(function(r){pgC[r.page]=(pgC[r.page]||0)+1;});
+  var tp=Object.entries(pgC).sort(function(a,b){return b[1]-a[1];})[0];
+  document.getElementById('beh-top-page').textContent=tp?tp[0]+' ('+tp[1]+')':'—';
+  var ctaC={};data.filter(function(r){return r.event_type==='cta_click';}).forEach(function(r){var l=(r.metadata&&r.metadata.label)||'?';ctaC[l]=(ctaC[l]||0)+1;});
+  var tc=Object.entries(ctaC).sort(function(a,b){return b[1]-a[1];})[0];
+  document.getElementById('beh-top-cta').textContent=tc?tc[0].substring(0,25)+' ('+tc[1]+')':'—';
 }
 
-// ── STATS ────────────────────────────────────────────────
-function updateStats() {
-  document.getElementById('stat-students').textContent    = allData.students.length || '—';
-  document.getElementById('stat-counselling').textContent = allData.counselling.length || '—';
-  document.getElementById('stat-cta').textContent         = allData.cta.length || '—';
-  document.getElementById('stat-google').textContent      = allData['google-users'].length || '—';
-  document.getElementById('stat-events').textContent      = allData.behaviour.length || '—';
-  var today = new Date().toISOString().slice(0,10);
-  var todayCount = [].concat(allData.students, allData.counselling, allData.cta)
-    .filter(function(r){ return (r.created_at||'').slice(0,10) === today; }).length;
-  document.getElementById('stat-today').textContent = todayCount;
-}
-function updateBehSummary(data) {
-  var today = new Date().toISOString().slice(0,10);
-  var todayEvts = data.filter(function(r){ return (r.created_at||'').slice(0,10) === today; });
-  document.getElementById('beh-today').textContent = todayEvts.length;
-  var sessions = new Set(todayEvts.map(function(r){ return r.session_id; }));
-  document.getElementById('beh-sessions').textContent = sessions.size;
-  var sevenAgo = new Date(Date.now() - 7*24*60*60*1000).toISOString();
-  var pvs = data.filter(function(r){ return r.event_type==='page_view'&&r.created_at>=sevenAgo; });
-  var pgC = {}; pvs.forEach(function(r){ pgC[r.page]=(pgC[r.page]||0)+1; });
-  var tp = Object.entries(pgC).sort(function(a,b){ return b[1]-a[1]; })[0];
-  document.getElementById('beh-top-page').textContent = tp ? tp[0]+'('+tp[1]+')' : '—';
-  var ctaC = {}; data.filter(function(r){ return r.event_type==='cta_click'; }).forEach(function(r){ var l=(r.metadata&&r.metadata.label)||'?'; ctaC[l]=(ctaC[l]||0)+1; });
-  var tc = Object.entries(ctaC).sort(function(a,b){ return b[1]-a[1]; })[0];
-  document.getElementById('beh-top-cta').textContent = tc ? tc[0].substring(0,20)+'('+tc[1]+')' : '—';
+// ── EXPORT ───────────────────────────────────
+function exportCSV(tab){
+  var data=filt[tab];if(!data.length){alert('No data.');return;}
+  var h,rows;
+  if(tab==='students'){h=['Email','Name','Phone','Exam Target','City','Joined'];rows=data.map(function(r){return[r.email||'',r.full_name||'',r.phone||'',r.exam_target||'',r.city||'',r.created_at||''];});}
+  else if(tab==='google-users'){h=['Email','Name','Provider','Last Active','Joined'];rows=data.map(function(r){var m=r.user_metadata||{};return[r.email||'',m.full_name||m.name||'',(r.app_metadata||{}).provider||'',r.last_sign_in_at||'',r.created_at||''];});}
+  else if(tab==='counselling'){h=['Name','Phone','Email','Exam','Preferred Date','Message','Source Page','Submitted'];rows=data.map(function(r){return[r.name||'',r.phone||'',r.email||'',r.exam||'',r.preferred_date||'',r.message||'',r.source_page||'',r.created_at||''];});}
+  else if(tab==='cta'){h=['Name','Email','Phone','Exam','CTA Type','Source Page','Submitted'];rows=data.map(function(r){return[r.name||'',r.email||'',r.phone||'',r.exam||'',r.cta_type||'',r.source_page||'',r.created_at||''];});}
+  else{h=['Event','Page','Device','Details','Session','Time'];rows=data.map(function(r){var m=r.metadata||{};return[r.event_type||'',r.page||'',r.device||'',m.label||m.url||m.file||'',r.session_id||'',r.created_at||''];});}
+  var csv=[h].concat(rows).map(function(r){return r.map(function(v){return'"'+String(v).replace(/"/g,'""')+'"';}).join(',');}).join('\n');
+  var a=document.createElement('a');a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv'}));
+  a.download='cv-'+tab+'-'+new Date().toISOString().slice(0,10)+'.csv';a.click();
 }
 
-// ── EXPORT CSV ───────────────────────────────────────────
-function exportCSV(tab) {
-  var data = filtered[tab];
-  if (!data.length) { alert('No data to export.'); return; }
-  var headers, rows;
-  if (tab==='students') {
-    headers=['Email','Name','Phone','Exam Target','City','Joined'];
-    rows=data.map(function(r){ return [r.email||'',r.full_name||'',r.phone||'',r.exam_target||'',r.city||'',r.created_at||'']; });
-  } else if (tab==='google-users') {
-    headers=['Email','Name','Provider','Last Active','Joined'];
-    rows=data.map(function(r){ var m=r.user_metadata||{}; return [r.email||'',m.full_name||m.name||'',(r.app_metadata||{}).provider||'',r.last_sign_in_at||'',r.created_at||'']; });
-  } else if (tab==='counselling') {
-    headers=['Name','Phone','Email','Exam','Preferred Date','Message','Source','Submitted'];
-    rows=data.map(function(r){ return [r.name||'',r.phone||'',r.email||'',r.exam||'',r.preferred_date||'',r.message||'',r.source_page||'',r.created_at||'']; });
-  } else if (tab==='cta') {
-    headers=['Name','Email','Phone','Exam','CTA Type','Source Page','Submitted'];
-    rows=data.map(function(r){ return [r.name||'',r.email||'',r.phone||'',r.exam||'',r.cta_type||'',r.source_page||'',r.created_at||'']; });
-  } else {
-    headers=['Event Type','Page','Device','Details','Session ID','Time'];
-    rows=data.map(function(r){ var m=r.metadata||{}; return [r.event_type||'',r.page||'',r.device||'',m.label||m.url||m.file||'',r.session_id||'',r.created_at||'']; });
-  }
-  var csv=[headers].concat(rows).map(function(row){ return row.map(function(v){ return '"'+String(v).replace(/"/g,'""')+'"'; }).join(','); }).join('\n');
-  var a=document.createElement('a');
-  a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv'}));
-  a.download='campusvazhi-'+tab+'-'+new Date().toISOString().slice(0,10)+'.csv';
-  a.click();
-}
-
-// ── HELPERS ──────────────────────────────────────────────
-function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
-function fmtDate(s){ if(!s) return '—'; var d=new Date(s); return d.toLocaleDateString('en-IN',{day:'2-digit',month:'short',year:'numeric'})+' '+d.toLocaleTimeString('en-IN',{hour:'2-digit',minute:'2-digit'}); }
-function setLoading(tab,cols){ document.getElementById('tbody-'+tab).innerHTML='<tr class="loading-row"><td colspan="'+cols+'">⏳ Loading...</td></tr>'; }
-function setError(tab,cols,msg){ document.getElementById('tbody-'+tab).innerHTML='<tr class="loading-row"><td colspan="'+cols+'">⚠️ '+esc(msg)+'</td></tr>'; }
+// ── HELPERS ──────────────────────────────────
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function fd(s){if(!s)return'—';var d=new Date(s);return d.toLocaleDateString('en-IN',{day:'2-digit',month:'short',year:'numeric'})+' '+d.toLocaleTimeString('en-IN',{hour:'2-digit',minute:'2-digit'});}
+function setLoad(t,c){document.getElementById('tb-'+t).innerHTML='<tr><td class="loading-td" colspan="'+c+'">⏳ Loading...</td></tr>';}
+function setErr(t,c,m){document.getElementById('tb-'+t).innerHTML='<tr><td class="loading-td" colspan="'+c+'">⚠️ '+esc(m)+'</td></tr>';}
 </script>
 </body>
 </html>
