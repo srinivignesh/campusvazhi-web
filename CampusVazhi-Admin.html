@@ -74,7 +74,7 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--g50);color:var(--
 .refresh-btn:hover{background:var(--g200)}
 
 .table-wrap{overflow-x:auto;border-radius:12px;border:1px solid var(--g200);background:#fff}
-table{width:100%;border-collapse:collapse;font-size:13px}
+table{width:100%;border-collapse:collapse;font-size:13py}
 thead{background:var(--g50);position:sticky;top:56px}
 th{padding:11px 14px;text-align:left;font-weight:700;color:var(--g600);font-size:11px;text-transform:uppercase;letter-spacing:.5px;border-bottom:1px solid var(--g200);white-space:nowrap}
 td{padding:11px 14px;border-bottom:1px solid var(--g100);color:var(--g800);vertical-align:top;max-width:220px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
@@ -493,7 +493,7 @@ function renderPage(tab) {
   var info = document.getElementById('pag-' + tab + '-info');
   var prev = document.getElementById('pag-' + tab + '-prev');
   var next = document.getElementById('pag-' + tab + '-next');
-  info.textContent = 'Showing ' + (total === 0 ? 0 : start+1) + '–' + end + ' of ' + total;
+  info.textContent = 'Showing ' + (total === 0 ? 0 : start+1) + '–' + end ++' of ' + total;
   prev.disabled = page <= 1;
   next.disabled = end >= total;
 }
@@ -677,6 +677,5 @@ function examColor(e){ var m = {CAT:'blue',TANCET:'purple',NEET:'green',TNEA:'or
 // badge-teal fix
 document.querySelectorAll('.badge-teal').forEach(function(el){el.style.background='#CCFBF1';el.style.color='#0F766E';});
 </script>
-<script src="/js/cv-track.js"></script>
 </body>
 </html>
