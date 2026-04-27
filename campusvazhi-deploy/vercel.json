@@ -171,6 +171,10 @@
     {
       "source": "/tnpsc-ces",
       "destination": "/CampusVazhi-TNPSC-CES.html"
+    },
+    {
+      "source": "/admin",
+      "destination": "/CampusVazhi-Admin.html"
     }
   ],
   "headers": [
