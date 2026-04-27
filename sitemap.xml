@@ -41,6 +41,14 @@
     <priority>0.88</priority>
   </url>
 
+  <!-- ===== MOCK TESTS ===== -->
+  <url>
+    <loc>https://campusvazhi.com/CampusVazhi-TANCET-Mock.html</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+
   <!-- ===== MANAGEMENT EXAMS ===== -->
   <url>
     <loc>https://campusvazhi.com/CampusVazhi-XAT.html</loc>

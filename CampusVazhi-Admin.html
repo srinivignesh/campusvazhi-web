@@ -74,7 +74,7 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--g50);color:var(--
 .refresh-btn:hover{background:var(--g200)}
 
 .table-wrap{overflow-x:auto;border-radius:12px;border:1px solid var(--g200);background:#fff}
-table{width:100%;border-collapse:collapse;font-size:13py}
+table{width:100%;border-collapse:collapse;font-size:13px}
 thead{background:var(--g50);position:sticky;top:56px}
 th{padding:11px 14px;text-align:left;font-weight:700;color:var(--g600);font-size:11px;text-transform:uppercase;letter-spacing:.5px;border-bottom:1px solid var(--g200);white-space:nowrap}
 td{padding:11px 14px;border-bottom:1px solid var(--g100);color:var(--g800);vertical-align:top;max-width:220px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
@@ -151,6 +151,7 @@ tr:hover td{background:var(--g50)}
     <button class="tab" onclick="switchTab('counselling')">📞 Counselling Leads <span class="count" id="tc-counselling">0</span></button>
     <button class="tab" onclick="switchTab('cta')">🎯 CTA Leads <span class="count" id="tc-cta">0</span></button>
     <button class="tab" onclick="switchTab('google-users')">🔐 Google Sign-Ins <span class="count" id="tc-google-users">0</span></button>
+    <button class="tab" onclick="switchTab('behaviour')">📊 Behaviour <span class="count" id="tc-behaviour">0</span></button>
   </div>
 
   <!-- STUDENTS TABLE -->
@@ -270,6 +271,45 @@ tr:hover td{background:var(--g50)}
       </div>
     </div>
   </div>
+  <!-- BEHAVIOUR TAB -->
+  <div id="tab-behaviour" class="table-section">
+    <!-- Summary cards -->
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin-bottom:20px">
+      <div class="stat-card"><div class="stat-label">Events Today</div><div class="stat-val" id="beh-today">—</div></div>
+      <div class="stat-card"><div class="stat-label">Unique Sessions Today</div><div class="stat-val" id="beh-sessions">—</div></div>
+      <div class="stat-card"><div class="stat-label">Top Page (7d)</div><div class="stat-val" id="beh-top-page" style="font-size:13px">—</div></div>
+      <div class="stat-card"><div class="stat-label">Top CTA Clicked</div><div class="stat-val" id="beh-top-cta" style="font-size:13px">—</div></div>
+    </div>
+    <div class="table-toolbar">
+      <select class="filter-select" onchange="filterBehaviourByEvent(this.value)">
+        <option value="">All Events</option>
+        <option value="page_view">page_view</option>
+        <option value="cta_click">cta_click</option>
+        <option value="download_click">download_click</option>
+        <option value="form_submit">form_submit</option>
+        <option value="faq_expand">faq_expand</option>
+        <option value="outbound_click">outbound_click</option>
+        <option value="page_exit">page_exit</option>
+      </select>
+      <button class="refresh-btn" onclick="loadBehaviour()">↻ Reload</button>
+      <button class="export-btn" onclick="exportCSV('behaviour')">↓ Export CSV</button>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr>
+          <th>#</th><th>Event</th><th>Page</th><th>Device</th><th>Details</th><th>Session</th><th>Time</th>
+        </tr></thead>
+        <tbody id="tbody-behaviour"><tr><td colspan="7" class="loading-state">Loading events...</td></tr></tbody>
+      </table>
+      <div class="pagination">
+        <span id="pag-behaviour-info"></span>
+        <div class="pag-btns">
+          <button class="pag-btn" id="pag-behaviour-prev" onclick="pagNav('behaviour',-1)" disabled>← Prev</button>
+          <button class="pag-btn" id="pag-behaviour-next" onclick="pagNav('behaviour',1)" disabled>Next →</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
 <script>
@@ -280,11 +320,11 @@ var PAGE_SIZE = 50;
 
 // ── STATE ─────────────────────────────────────────────────────────────────────
 var serviceKey = '';
-var allData = { students:[], counselling:[], cta:[], 'google-users':[] };
-var filteredData = { students:[], counselling:[], cta:[], 'google-users':[] };
-var currentPage = { students:1, counselling:1, cta:1, 'google-users':1 };
+var allData = { students:[], counselling:[], cta:[], 'google-users':[], behaviour:[] };
+var filteredData = { students:[], counselling:[], cta:[], 'google-users':[], behaviour:[] };
+var currentPage = { students:1, counselling:1, cta:1, 'google-users':1, behaviour:1 };
 var activeTab = 'students';
-var examFilters = { students:'', counselling:'', cta:'', 'google-users':'' };
+var examFilters = { students:'', counselling:'', cta:'', 'google-users':'', behaviour:'' };
 var ctaTypeFilter = '';
 
 // ── LOGIN / LOGOUT ────────────────────────────────────────────────────────────
@@ -443,7 +483,7 @@ function renderPage(tab) {
   var tbody = document.getElementById('tbody-' + tab);
 
   if (total === 0) {
-    var cols = {students:7, counselling:9, cta:8, 'google-users':6};
+    var cols = {students:7, counselling:9, cta:8, 'google-users':6, behaviour:7};
     tbody.innerHTML = '<tr><td colspan="' + cols[tab] + '" class="empty-state"><div class="icon">📭</div>No records found</td></tr>';
   } else {
     tbody.innerHTML = slice.map(function(r, i){ return renderRow(tab, r, start + i + 1); }).join('');
@@ -501,7 +541,69 @@ function renderRow(tab, r, n) {
       + '<td>' + fmtDate(r.last_sign_in_at) + '</td>'
       + '<td>' + fmtDate(r.created_at) + '</td></tr>';
   }
+  if (tab === 'behaviour') {
+    var evtColor = {page_view:'blue',cta_click:'orange',download_click:'green',form_submit:'purple',faq_expand:'gray',outbound_click:'teal',page_exit:'gray'};
+    var meta = r.metadata || {};
+    var details = meta.label || meta.url || meta.file || meta.question || (meta.time_spent_sec ? meta.time_spent_sec+'s, scroll '+meta.scroll_depth_pct+'%' : '') || '—';
+    return '<tr><td>' + n + '</td>'
+      + '<td><span class="badge badge-' + (evtColor[r.event_type]||'gray') + '">' + esc(r.event_type||'?') + '</span></td>'
+      + '<td title="' + esc(r.page||'') + '">' + esc((r.page||'—').substring(0,30)) + '</td>'
+      + '<td>' + (r.device==='mobile'?'📱':'🖥️') + ' ' + esc(r.device||'—') + '</td>'
+      + '<td title="' + esc(details) + '">' + esc(String(details).substring(0,50)) + '</td>'
+      + '<td style="font-size:11px;color:var(--g400)" title="' + esc(r.session_id||'') + '">' + esc((r.session_id||'—').substring(0,12)) + '…</td>'
+      + '<td>' + fmtDate(r.created_at) + '</td></tr>';
+  }
   return '';
+}
+
+// ── BEHAVIOUR ─────────────────────────────────────────────────────────────────
+function loadBehaviour() {
+  var tbody = document.getElementById('tbody-behaviour');
+  tbody.innerHTML = '<tr><td colspan="7" class="loading-state">Loading events…</td></tr>';
+  fetch(SUPABASE_URL + '/rest/v1/cv_events?order=created_at.desc&limit=2000', {
+    headers: { 'apikey': serviceKey, 'Authorization': 'Bearer ' + serviceKey }
+  }).then(function(r){ return r.json(); }).then(function(data) {
+    if (!Array.isArray(data)) { tbody.innerHTML = '<tr><td colspan="7" class="loading-state">Error loading events</td></tr>'; return; }
+    allData.behaviour = data;
+    filteredData.behaviour = data.slice();
+    currentPage.behaviour = 1;
+    renderPage('behaviour');
+    document.getElementById('tc-behaviour').textContent = data.length;
+    updateBehaviourSummary(data);
+  }).catch(function(e){ tbody.innerHTML = '<tr><td colspan="7" class="loading-state">Failed: ' + e.message + '</td></tr>'; });
+}
+
+function updateBehaviourSummary(data) {
+  var today = new Date().toISOString().slice(0,10);
+  var todayEvents = data.filter(function(r){ return (r.created_at||'').slice(0,10) === today; });
+  document.getElementById('beh-today').textContent = todayEvents.length;
+  var sessions = new Set(todayEvents.map(function(r){ return r.session_id; }));
+  document.getElementById('beh-sessions').textContent = sessions.size;
+
+  // Top page (7 days, page_view events)
+  var sevenDaysAgo = new Date(Date.now() - 7*24*60*60*1000).toISOString();
+  var pageViews = data.filter(function(r){ return r.event_type === 'page_view' && r.created_at >= sevenDaysAgo; });
+  var pageCounts = {};
+  pageViews.forEach(function(r){ pageCounts[r.page] = (pageCounts[r.page]||0) + 1; });
+  var topPage = Object.entries(pageCounts).sort(function(a,b){ return b[1]-a[1]; })[0];
+  document.getElementById('beh-top-page').textContent = topPage ? topPage[0] + ' (' + topPage[1] + ')' : '—';
+
+  // Top CTA
+  var ctaClicks = data.filter(function(r){ return r.event_type === 'cta_click'; });
+  var ctaCounts = {};
+  ctaClicks.forEach(function(r){ var lbl = (r.metadata&&r.metadata.label)||'?'; ctaCounts[lbl] = (ctaCounts[lbl]||0) + 1; });
+  var topCta = Object.entries(ctaCounts).sort(function(a,b){ return b[1]-a[1]; })[0];
+  document.getElementById('beh-top-cta').textContent = topCta ? topCta[0].substring(0,30) + ' (' + topCta[1] + ')' : '—';
+}
+
+function filterBehaviourByEvent(evtType) {
+  if (!evtType) {
+    filteredData.behaviour = allData.behaviour.slice();
+  } else {
+    filteredData.behaviour = allData.behaviour.filter(function(r){ return r.event_type === evtType; });
+  }
+  currentPage.behaviour = 1;
+  renderPage('behaviour');
 }
 
 // ── STATS ─────────────────────────────────────────────────────────────────────
@@ -520,7 +622,7 @@ function updateStats() {
 function switchTab(tab) {
   activeTab = tab;
   document.querySelectorAll('.tab').forEach(function(el,i){
-    var tabs = ['students','counselling','cta','google-users'];
+    var tabs = ['students','counselling','cta','google-users','behaviour'];
     el.classList.toggle('active', tabs[i] === tab);
   });
   document.querySelectorAll('.table-section').forEach(function(el){
@@ -543,6 +645,13 @@ function exportCSV(tab) {
   } else if (tab === 'cta') {
     headers = ['#','Name','Email','Phone','Exam','CTA Type','Source Page','Created At'];
     rows = data.map(function(r,i){ return [i+1, r.name||'', r.email||'', r.phone||'', r.exam||'', r.cta_type||'', r.source_page||'', r.created_at||'']; });
+  } else if (tab === 'behaviour') {
+    headers = ['#','Event Type','Page','Device','Details','Session ID','Time'];
+    rows = data.map(function(r,i){
+      var meta = r.metadata || {};
+      var details = meta.label || meta.url || meta.file || meta.question || '';
+      return [i+1, r.event_type||'', r.page||'', r.device||'', details, r.session_id||'', r.created_at||''];
+    });
   } else {
     headers = ['#','Email','Name','Provider','Last Sign In','Created At'];
     rows = data.map(function(r,i){
@@ -568,5 +677,6 @@ function examColor(e){ var m = {CAT:'blue',TANCET:'purple',NEET:'green',TNEA:'or
 // badge-teal fix
 document.querySelectorAll('.badge-teal').forEach(function(el){el.style.background='#CCFBF1';el.style.color='#0F766E';});
 </script>
+<script src="/js/cv-track.js"></script>
 </body>
 </html>

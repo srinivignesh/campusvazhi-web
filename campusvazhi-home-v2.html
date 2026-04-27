@@ -1154,6 +1154,13 @@ body.logged-in .page-wrap, .logged-in .page-wrap { margin-left: 68px !important;
 </aside>
 
 <div class="page-wrap">
+<!-- TANCET Countdown Banner -->
+<div id="tancet-top-bar" style="background:linear-gradient(90deg,#0D9488,#0F1B2D);color:#fff;padding:10px 24px;display:flex;align-items:center;justify-content:center;gap:16px;font-size:13px;font-weight:600;position:sticky;top:0;z-index:200;flex-wrap:wrap;text-align:center">
+  <span>⏰</span>
+  <span id="home-tancet-bar-text">TANCET 2026 — May 9</span>
+  <a href="./CampusVazhi-TANCET-Resource-Hub.html" style="background:#fff;color:#0D9488;padding:5px 14px;border-radius:6px;font-size:12px;font-weight:800;text-decoration:none;white-space:nowrap">Start Prep →</a>
+  <button onclick="document.getElementById('tancet-top-bar').style.display='none'" style="background:none;border:none;color:rgba(255,255,255,0.6);cursor:pointer;font-size:18px;line-height:1;margin-left:8px">×</button>
+</div>
 <!-- ================= TOP BAR ================= -->
 <div class="top-bar">
   <span class="pulse"></span>
@@ -1611,9 +1618,9 @@ body.logged-in .page-wrap, .logged-in .page-wrap { margin-left: 68px !important;
       <span class="en">Where are you headed?</span>
       <span class="ta">எங்கே போகிறீர்கள்?</span>
     </h2>
-    <a href="#where-headed" class="headed-link" onclick="document.getElementById('where-headed').scrollIntoView({behavior:'smooth'});return false;">
-      <span class="en">See all guides →</span>
-      <span class="ta">அனைத்து வழிகாட்டிகளைப் பார்க்கவும் →</span>
+    <a href="./CampusVazhi-After12th-Quiz.html" class="headed-link">
+      <span class="en">Find my path →</span>
+      <span class="ta">என் பாதையை கண்டுபிடி →</span>
     </a>
   </div>
 
@@ -3906,5 +3913,24 @@ body.logged-in .page-wrap, .logged-in .page-wrap { margin-left: 68px !important;
 <script src="./js/download-gate.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="./js/supabase-client.js"></script>
+
+<script>
+(function(){
+  var tancet = new Date('2026-05-09T08:00:00+05:30');
+  function updateHomeBanner(){
+    var now = new Date();
+    var diff = tancet - now;
+    if(diff <= 0){ document.getElementById('tancet-top-bar') && (document.getElementById('tancet-top-bar').style.display='none'); return; }
+    var d = Math.floor(diff/86400000);
+    var h = Math.floor((diff%86400000)/3600000);
+    var m = Math.floor((diff%3600000)/60000);
+    var el = document.getElementById('home-tancet-bar-text');
+    if(el) el.textContent = 'TANCET 2026 · May 9 · ' + d + 'd ' + h + 'h ' + m + 'm left';
+  }
+  updateHomeBanner();
+  setInterval(updateHomeBanner, 30000);
+})();
+</script>
+<script src="/js/cv-track.js"></script>
 </body>
 </html>
