@@ -14,7 +14,7 @@
 }
 body{font-family:'Inter',system-ui,sans-serif;background:var(--g50);color:var(--g800)}
 
-/* ââ LOGIN SCREEN âââââââââââââââââââââââââââââââ */
+/* ── LOGIN SCREEN ─────────────────────────────── */
 #login-screen{
   position:fixed;inset:0;background:linear-gradient(135deg,var(--navy) 0%,#1a3a5c 100%);
   display:flex;align-items:center;justify-content:center;z-index:1000
@@ -34,7 +34,7 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--g50);color:var(--
 .login-err{background:#FEF2F2;color:var(--red);padding:10px 14px;border-radius:8px;font-size:13px;margin-bottom:14px;display:none}
 .service-key-hint{font-size:11px;color:var(--g400);margin-top:8px;line-height:1.5}
 
-/* ââ MAIN SHELL ââââââââââââââââââââââââââââââââââ */
+/* ── MAIN SHELL ────────────────────────────────── */
 #app{display:none}
 .top-bar{background:var(--navy);padding:0 24px;height:56px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
 .top-logo{display:flex;align-items:center;gap:10px}
@@ -47,13 +47,13 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--g50);color:var(--
 .top-right button{background:none;border:1px solid rgba(255,255,255,.3);color:rgba(255,255,255,.7);padding:6px 14px;border-radius:8px;font-size:12px;cursor:pointer}
 .top-right button:hover{background:rgba(255,255,255,.1)}
 
-/* ââ STATS BAR âââââââââââââââââââââââââââââââââââ */
+/* ── STATS BAR ─────────────────────────────────── */
 .stats-bar{background:#fff;border-bottom:1px solid var(--g200);padding:16px 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:16px}
 .stat-item{text-align:center;padding:12px;background:var(--g50);border-radius:10px;border:1px solid var(--g200)}
 .stat-num{font-size:26px;font-weight:900;color:var(--teal);line-height:1}
 .stat-label{font-size:11px;color:var(--g600);margin-top:4px;font-weight:600}
 
-/* ââ TABS ââââââââââââââââââââââââââââââââââââââââ */
+/* ── TABS ──────────────────────────────────────── */
 .tab-bar{background:#fff;border-bottom:1px solid var(--g200);padding:0 24px;display:flex;gap:4px}
 .tab{padding:14px 18px;font-size:13px;font-weight:600;color:var(--g600);border:none;background:none;cursor:pointer;border-bottom:3px solid transparent;transition:all .2s}
 .tab:hover{color:var(--teal)}
@@ -61,7 +61,7 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--g50);color:var(--
 .tab .count{background:var(--g100);color:var(--g600);font-size:10px;font-weight:700;padding:2px 7px;border-radius:10px;margin-left:6px}
 .tab.active .count{background:var(--teal);color:#fff}
 
-/* ââ TABLE SECTION âââââââââââââââââââââââââââââââ */
+/* ── TABLE SECTION ─────────────────────────────── */
 .table-section{padding:20px 24px;display:none}
 .table-section.active{display:block}
 .table-toolbar{display:flex;gap:12px;margin-bottom:16px;align-items:center;flex-wrap:wrap}
@@ -74,7 +74,7 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--g50);color:var(--
 .refresh-btn:hover{background:var(--g200)}
 
 .table-wrap{overflow-x:auto;border-radius:12px;border:1px solid var(--g200);background:#fff}
-table{width:100%;border-collapse:collapse;font-size:13px}
+table{width:100%;border-collapse:collapse;font-size:13py}
 thead{background:var(--g50);position:sticky;top:56px}
 th{padding:11px 14px;text-align:left;font-weight:700;color:var(--g600);font-size:11px;text-transform:uppercase;letter-spacing:.5px;border-bottom:1px solid var(--g200);white-space:nowrap}
 td{padding:11px 14px;border-bottom:1px solid var(--g100);color:var(--g800);vertical-align:top;max-width:220px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
@@ -98,7 +98,7 @@ tr:hover td{background:var(--g50)}
 </head>
 <body>
 
-<!-- ââ LOGIN âââââââââââââââââââââââââââââââââââââââ -->
+<!-- ── LOGIN ─────────────────────────────────────── -->
 <div id="login-screen">
   <div class="login-box">
     <div class="login-logo">
@@ -111,16 +111,16 @@ tr:hover td{background:var(--g50)}
     <p>Enter your credentials to access student data</p>
     <div id="login-err" class="login-err"></div>
     <label class="field-label">Admin Password</label>
-    <input id="inp-pass" type="password" class="field-input" placeholder="â¢â¢â¢â¢â¢â¢â¢â¢â¢â¢" autocomplete="off">
+    <input id="inp-pass" type="password" class="field-input" placeholder="••••••••••" autocomplete="off">
     <label class="field-label">Supabase Service Role Key</label>
     <input id="inp-key" type="password" class="field-input" placeholder="eyJhbGciOiJIUzI1NiIs..." autocomplete="off">
-    <p class="service-key-hint">Find this in Supabase â Project Settings â API â service_role key. It bypasses RLS to show all data. Never share it.</p>
+    <p class="service-key-hint">Find this in Supabase → Project Settings → API → service_role key. It bypasses RLS to show all data. Never share it.</p>
     <br>
     <button class="login-btn" onclick="doLogin()">Sign In to Admin</button>
   </div>
 </div>
 
-<!-- ââ MAIN APP ââââââââââââââââââââââââââââââââââââââ -->
+<!-- ── MAIN APP ────────────────────────────────────── -->
 <div id="app">
   <div class="top-bar">
     <div class="top-logo">
@@ -132,25 +132,25 @@ tr:hover td{background:var(--g50)}
     </div>
     <div class="top-right">
       <span class="last-refresh" id="last-refresh">Loading...</span>
-      <button onclick="refreshAll()">â» Refresh</button>
+      <button onclick="refreshAll()">↻ Refresh</button>
       <button onclick="doLogout()">Sign Out</button>
     </div>
   </div>
 
   <!-- STATS -->
   <div class="stats-bar">
-    <div class="stat-item"><div class="stat-num" id="stat-students">â</div><div class="stat-label">Registered Students</div></div>
-    <div class="stat-item"><div class="stat-num" id="stat-counselling">â</div><div class="stat-label">Counselling Leads</div></div>
-    <div class="stat-item"><div class="stat-num" id="stat-cta">â</div><div class="stat-label">CTA Leads</div></div>
-    <div class="stat-item"><div class="stat-num" id="stat-today">â</div><div class="stat-label">New Today</div></div>
+    <div class="stat-item"><div class="stat-num" id="stat-students">—</div><div class="stat-label">Registered Students</div></div>
+    <div class="stat-item"><div class="stat-num" id="stat-counselling">—</div><div class="stat-label">Counselling Leads</div></div>
+    <div class="stat-item"><div class="stat-num" id="stat-cta">—</div><div class="stat-label">CTA Leads</div></div>
+    <div class="stat-item"><div class="stat-num" id="stat-today">—</div><div class="stat-label">New Today</div></div>
   </div>
 
   <!-- TABS -->
   <div class="tab-bar">
-    <button class="tab active" onclick="switchTab('students')">ð¤ Students <span class="count" id="tc-students">0</span></button>
-    <button class="tab" onclick="switchTab('counselling')">ð Counselling Leads <span class="count" id="tc-counselling">0</span></button>
-    <button class="tab" onclick="switchTab('cta')">ð¯ CTA Leads <span class="count" id="tc-cta">0</span></button>
-    <button class="tab" onclick="switchTab('google-users')">ð Google Sign-Ins <span class="count" id="tc-google-users">0</span></button>
+    <button class="tab active" onclick="switchTab('students')">👤 Students <span class="count" id="tc-students">0</span></button>
+    <button class="tab" onclick="switchTab('counselling')">📞 Counselling Leads <span class="count" id="tc-counselling">0</span></button>
+    <button class="tab" onclick="switchTab('cta')">🎯 CTA Leads <span class="count" id="tc-cta">0</span></button>
+    <button class="tab" onclick="switchTab('google-users')">🔐 Google Sign-Ins <span class="count" id="tc-google-users">0</span></button>
   </div>
 
   <!-- STUDENTS TABLE -->
@@ -165,8 +165,8 @@ tr:hover td{background:var(--g50)}
         <option value="TNEA">TNEA</option>
         <option value="MS">MS USA</option>
       </select>
-      <button class="refresh-btn" onclick="loadStudents()">â» Reload</button>
-      <button class="export-btn" onclick="exportCSV('students')">â Export CSV</button>
+      <button class="refresh-btn" onclick="loadStudents()">↻ Reload</button>
+      <button class="export-btn" onclick="exportCSV('students')">↓ Export CSV</button>
     </div>
     <div class="table-wrap">
       <table>
@@ -178,8 +178,8 @@ tr:hover td{background:var(--g50)}
       <div class="pagination">
         <span id="pag-students-info"></span>
         <div class="pag-btns">
-          <button class="pag-btn" id="pag-students-prev" onclick="pagNav('students',-1)" disabled>â Prev</button>
-          <button class="pag-btn" id="pag-students-next" onclick="pagNav('students',1)" disabled>Next â</button>
+          <button class="pag-btn" id="pag-students-prev" onclick="pagNav('students',-1)" disabled>← Prev</button>
+          <button class="pag-btn" id="pag-students-next" onclick="pagNav('students',1)" disabled>Next →</button>
         </div>
       </div>
     </div>
@@ -196,8 +196,8 @@ tr:hover td{background:var(--g50)}
         <option value="NEET">NEET</option>
         <option value="TNEA">TNEA</option>
       </select>
-      <button class="refresh-btn" onclick="loadCounselling()">â» Reload</button>
-      <button class="export-btn" onclick="exportCSV('counselling')">â Export CSV</button>
+      <button class="refresh-btn" onclick="loadCounselling()">↻ Reload</button>
+      <button class="export-btn" onclick="exportCSV('counselling')">↓ Export CSV</button>
     </div>
     <div class="table-wrap">
       <table>
@@ -209,8 +209,8 @@ tr:hover td{background:var(--g50)}
       <div class="pagination">
         <span id="pag-counselling-info"></span>
         <div class="pag-btns">
-          <button class="pag-btn" id="pag-counselling-prev" onclick="pagNav('counselling',-1)" disabled>â Prev</button>
-          <button class="pag-btn" id="pag-counselling-next" onclick="pagNav('counselling',1)" disabled>Next â</button>
+          <button class="pag-btn" id="pag-counselling-prev" onclick="pagNav('counselling',-1)" disabled>← Prev</button>
+          <button class="pag-btn" id="pag-counselling-next" onclick="pagNav('counselling',1)" disabled>Next →</button>
         </div>
       </div>
     </div>
@@ -227,8 +227,8 @@ tr:hover td{background:var(--g50)}
         <option value="free_roadmap">Free Roadmap</option>
         <option value="free_mock">Free Mock</option>
       </select>
-      <button class="refresh-btn" onclick="loadCTA()">â» Reload</button>
-      <button class="export-btn" onclick="exportCSV('cta')">â Export CSV</button>
+      <button class="refresh-btn" onclick="loadCTA()">↻ Reload</button>
+      <button class="export-btn" onclick="exportCSV('cta')">↓ Export CSV</button>
     </div>
     <div class="table-wrap">
       <table>
@@ -240,8 +240,8 @@ tr:hover td{background:var(--g50)}
       <div class="pagination">
         <span id="pag-cta-info"></span>
         <div class="pag-btns">
-          <button class="pag-btn" id="pag-cta-prev" onclick="pagNav('cta',-1)" disabled>â Prev</button>
-          <button class="pag-btn" id="pag-cta-next" onclick="pagNav('cta',1)" disabled>Next â</button>
+          <button class="pag-btn" id="pag-cta-prev" onclick="pagNav('cta',-1)" disabled>← Prev</button>
+          <button class="pag-btn" id="pag-cta-next" onclick="pagNav('cta',1)" disabled>Next →</button>
         </div>
       </div>
     </div>
@@ -251,8 +251,8 @@ tr:hover td{background:var(--g50)}
   <div id="tab-google-users" class="table-section">
     <div class="table-toolbar">
       <input class="search-box" placeholder="Search by email, name..." oninput="filterTable('google-users',this.value)">
-      <button class="refresh-btn" onclick="loadGoogleUsers()">â» Reload</button>
-      <button class="export-btn" onclick="exportCSV('google-users')">â Export CSV</button>
+      <button class="refresh-btn" onclick="loadGoogleUsers()">↻ Reload</button>
+      <button class="export-btn" onclick="exportCSV('google-users')">↓ Export CSV</button>
     </div>
     <div class="table-wrap">
       <table>
@@ -264,8 +264,8 @@ tr:hover td{background:var(--g50)}
       <div class="pagination">
         <span id="pag-google-users-info"></span>
         <div class="pag-btns">
-          <button class="pag-btn" id="pag-google-users-prev" onclick="pagNav('google-users',-1)" disabled>â Prev</button>
-          <button class="pag-btn" id="pag-google-users-next" onclick="pagNav('google-users',1)" disabled>Next â</button>
+          <button class="pag-btn" id="pag-google-users-prev" onclick="pagNav('google-users',-1)" disabled>← Prev</button>
+          <button class="pag-btn" id="pag-google-users-next" onclick="pagNav('google-users',1)" disabled>Next →</button>
         </div>
       </div>
     </div>
@@ -273,12 +273,12 @@ tr:hover td{background:var(--g50)}
 </div>
 
 <script>
-// ââ CONFIG ââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+// ── CONFIG ────────────────────────────────────────────────────────────────────
 var SUPABASE_URL = 'https://txyimbzkutnkaphyvifg.supabase.co';
 var ADMIN_PASSWORD = 'CampusVazhi@Admin2026';
 var PAGE_SIZE = 50;
 
-// ââ STATE âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+// ── STATE ─────────────────────────────────────────────────────────────────────
 var serviceKey = '';
 var allData = { students:[], counselling:[], cta:[], 'google-users':[] };
 var filteredData = { students:[], counselling:[], cta:[], 'google-users':[] };
@@ -287,7 +287,7 @@ var activeTab = 'students';
 var examFilters = { students:'', counselling:'', cta:'', 'google-users':'' };
 var ctaTypeFilter = '';
 
-// ââ LOGIN / LOGOUT ââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+// ── LOGIN / LOGOUT ────────────────────────────────────────────────────────────
 function doLogin() {
   var pass = document.getElementById('inp-pass').value;
   var key = document.getElementById('inp-key').value.trim();
@@ -318,7 +318,7 @@ function doLogout() {
 document.getElementById('inp-key').addEventListener('keydown', function(e){ if(e.key==='Enter') doLogin(); });
 document.getElementById('inp-pass').addEventListener('keydown', function(e){ if(e.key==='Enter') document.getElementById('inp-key').focus(); });
 
-// ââ API HELPER ââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+// ── API HELPER ────────────────────────────────────────────────────────────────
 async function sbFetch(path) {
   var r = await fetch(SUPABASE_URL + path, {
     headers: {
@@ -335,45 +335,45 @@ async function sbFetch(path) {
   return r.json();
 }
 
-// ââ LOAD DATA âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+// ── LOAD DATA ─────────────────────────────────────────────────────────────────
 async function loadStudents() {
-  document.getElementById('tbody-students').innerHTML = '<tr><td colspan="7" class="loading-state">â³ Loading students...</td></tr>';
+  document.getElementById('tbody-students').innerHTML = '<tr><td colspan="7" class="loading-state">⏳ Loading students...</td></tr>';
   try {
     var data = await sbFetch('/rest/v1/students?select=*&order=created_at.desc&limit=2000');
     allData.students = data;
     applyFilter('students');
     updateStats();
   } catch(e) {
-    document.getElementById('tbody-students').innerHTML = '<tr><td colspan="7" class="empty-state"><div class="icon">â ï¸</div>' + e.message + '</td></tr>';
+    document.getElementById('tbody-students').innerHTML = '<tr><td colspan="7" class="empty-state"><div class="icon">⚠️</div>' + e.message + '</td></tr>';
   }
 }
 
 async function loadCounselling() {
-  document.getElementById('tbody-counselling').innerHTML = '<tr><td colspan="9" class="loading-state">â³ Loading leads...</td></tr>';
+  document.getElementById('tbody-counselling').innerHTML = '<tr><td colspan="9" class="loading-state">⏳ Loading leads...</td></tr>';
   try {
     var data = await sbFetch('/rest/v1/counselling_leads?select=*&order=created_at.desc&limit=2000');
     allData.counselling = data;
     applyFilter('counselling');
     updateStats();
   } catch(e) {
-    document.getElementById('tbody-counselling').innerHTML = '<tr><td colspan="9" class="empty-state"><div class="icon">â ï¸</div>' + e.message + '</td></tr>';
+    document.getElementById('tbody-counselling').innerHTML = '<tr><td colspan="9" class="empty-state"><div class="icon">⚠️</div>' + e.message + '</td></tr>';
   }
 }
 
 async function loadCTA() {
-  document.getElementById('tbody-cta').innerHTML = '<tr><td colspan="8" class="loading-state">â³ Loading leads...</td></tr>';
+  document.getElementById('tbody-cta').innerHTML = '<tr><td colspan="8" class="loading-state">⏳ Loading leads...</td></tr>';
   try {
     var data = await sbFetch('/rest/v1/cta_leads?select=*&order=created_at.desc&limit=2000');
     allData.cta = data;
     applyFilter('cta');
     updateStats();
   } catch(e) {
-    document.getElementById('tbody-cta').innerHTML = '<tr><td colspan="8" class="empty-state"><div class="icon">â ï¸</div>' + e.message + '</td></tr>';
+    document.getElementById('tbody-cta').innerHTML = '<tr><td colspan="8" class="empty-state"><div class="icon">⚠️</div>' + e.message + '</td></tr>';
   }
 }
 
 async function loadGoogleUsers() {
-  document.getElementById('tbody-google-users').innerHTML = '<tr><td colspan="6" class="loading-state">â³ Loading users...</td></tr>';
+  document.getElementById('tbody-google-users').innerHTML = '<tr><td colspan="6" class="loading-state">⏳ Loading users...</td></tr>';
   try {
     var data = await sbFetch('/auth/v1/admin/users?per_page=1000');
     var users = data.users || [];
@@ -381,7 +381,7 @@ async function loadGoogleUsers() {
     applyFilter('google-users');
     updateStats();
   } catch(e) {
-    document.getElementById('tbody-google-users').innerHTML = '<tr><td colspan="6" class="empty-state"><div class="icon">â ï¸</div>' + e.message + '</td></tr>';
+    document.getElementById('tbody-google-users').innerHTML = '<tr><td colspan="6" class="empty-state"><div class="icon">⚠️</div>' + e.message + '</td></tr>';
   }
 }
 
@@ -390,7 +390,7 @@ function refreshAll() {
   loadStudents(); loadCounselling(); loadCTA(); loadGoogleUsers();
 }
 
-// ââ FILTER & RENDER âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+// ── FILTER & RENDER ───────────────────────────────────────────────────────────
 function filterTable(tab, query) {
   var q = query.toLowerCase();
   if (tab === 'students') {
@@ -444,7 +444,7 @@ function renderPage(tab) {
 
   if (total === 0) {
     var cols = {students:7, counselling:9, cta:8, 'google-users':6};
-    tbody.innerHTML = '<tr><td colspan="' + cols[tab] + '" class="empty-state"><div class="icon">ð­</div>No records found</td></tr>';
+    tbody.innerHTML = '<tr><td colspan="' + cols[tab] + '" class="empty-state"><div class="icon">📭</div>No records found</td></tr>';
   } else {
     tbody.innerHTML = slice.map(function(r, i){ return renderRow(tab, r, start + i + 1); }).join('');
   }
@@ -453,7 +453,7 @@ function renderPage(tab) {
   var info = document.getElementById('pag-' + tab + '-info');
   var prev = document.getElementById('pag-' + tab + '-prev');
   var next = document.getElementById('pag-' + tab + '-next');
-  info.textContent = 'Showing ' + (total === 0 ? 0 : start+1) + 'â' + end + ' of ' + total;
+  info.textContent = 'Showing ' + (total === 0 ? 0 : start+1) + '–' + end + ' of ' + total;
   prev.disabled = page <= 1;
   next.disabled = end >= total;
 }
@@ -466,37 +466,37 @@ function pagNav(tab, dir) {
 
 function renderRow(tab, r, n) {
   if (tab === 'students') {
-    return '<tr><td>' + n + '</td><td title="' + esc(r.full_name||'') + '">' + esc(r.full_name||'â') + '</td>'
-      + '<td>' + esc(r.email||'â') + '</td>'
-      + '<td>' + esc(r.phone||'â') + '</td>'
-      + '<td>' + (r.exam_target ? '<span class="badge badge-teal badge-' + examColor(r.exam_target) + '">' + esc(r.exam_target) + '</span>' : 'â') + '</td>'
-      + '<td>' + esc(r.city||'â') + '</td>'
+    return '<tr><td>' + n + '</td><td title="' + esc(r.full_name||'') + '">' + esc(r.full_name||'—') + '</td>'
+      + '<td>' + esc(r.email||'—') + '</td>'
+      + '<td>' + esc(r.phone||'—') + '</td>'
+      + '<td>' + (r.exam_target ? '<span class="badge badge-teal badge-' + examColor(r.exam_target) + '">' + esc(r.exam_target) + '</span>' : '—') + '</td>'
+      + '<td>' + esc(r.city||'—') + '</td>'
       + '<td>' + fmtDate(r.created_at) + '</td></tr>';
   }
   if (tab === 'counselling') {
-    return '<tr><td>' + n + '</td><td>' + esc(r.name||'â') + '</td>'
-      + '<td><strong>' + esc(r.phone||'â') + '</strong></td>'
-      + '<td>' + esc(r.email||'â') + '</td>'
-      + '<td>' + (r.exam ? '<span class="badge badge-blue">' + esc(r.exam) + '</span>' : 'â') + '</td>'
-      + '<td>' + esc(r.preferred_date||'â') + '</td>'
-      + '<td title="' + esc(r.message||'') + '">' + esc((r.message||'â').substring(0,40)) + (r.message && r.message.length > 40 ? 'â¦' : '') + '</td>'
-      + '<td>' + esc(r.source_page||'â') + '</td>'
+    return '<tr><td>' + n + '</td><td>' + esc(r.name||'—') + '</td>'
+      + '<td><strong>' + esc(r.phone||'—') + '</strong></td>'
+      + '<td>' + esc(r.email||'—') + '</td>'
+      + '<td>' + (r.exam ? '<span class="badge badge-blue">' + esc(r.exam) + '</span>' : '—') + '</td>'
+      + '<td>' + esc(r.preferred_date||'—') + '</td>'
+      + '<td title="' + esc(r.message||'') + '">' + esc((r.message||'—').substring(0,40)) + (r.message && r.message.length > 40 ? '…' : '') + '</td>'
+      + '<td>' + esc(r.source_page||'—') + '</td>'
       + '<td>' + fmtDate(r.created_at) + '</td></tr>';
   }
   if (tab === 'cta') {
-    return '<tr><td>' + n + '</td><td>' + esc(r.name||'â') + '</td>'
-      + '<td>' + esc(r.email||'â') + '</td>'
-      + '<td>' + esc(r.phone||'â') + '</td>'
-      + '<td>' + esc(r.exam||'â') + '</td>'
-      + '<td>' + (r.cta_type ? '<span class="badge badge-orange">' + esc(r.cta_type.replace(/_/g,' ')) + '</span>' : 'â') + '</td>'
-      + '<td>' + esc(r.source_page||'â') + '</td>'
+    return '<tr><td>' + n + '</td><td>' + esc(r.name||'—') + '</td>'
+      + '<td>' + esc(r.email||'—') + '</td>'
+      + '<td>' + esc(r.phone||'—') + '</td>'
+      + '<td>' + esc(r.exam||'—') + '</td>'
+      + '<td>' + (r.cta_type ? '<span class="badge badge-orange">' + esc(r.cta_type.replace(/_/g,' ')) + '</span>' : '—') + '</td>'
+      + '<td>' + esc(r.source_page||'—') + '</td>'
       + '<td>' + fmtDate(r.created_at) + '</td></tr>';
   }
   if (tab === 'google-users') {
     var meta = r.user_metadata || {};
     var prov = (r.app_metadata||{}).provider || 'unknown';
-    return '<tr><td>' + n + '</td><td>' + esc(r.email||'â') + '</td>'
-      + '<td>' + esc(meta.full_name || meta.name || 'â') + '</td>'
+    return '<tr><td>' + n + '</td><td>' + esc(r.email||'—') + '</td>'
+      + '<td>' + esc(meta.full_name || meta.name || '—') + '</td>'
       + '<td><span class="badge badge-green">' + esc(prov) + '</span></td>'
       + '<td>' + fmtDate(r.last_sign_in_at) + '</td>'
       + '<td>' + fmtDate(r.created_at) + '</td></tr>';
@@ -504,11 +504,11 @@ function renderRow(tab, r, n) {
   return '';
 }
 
-// ââ STATS âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+// ── STATS ─────────────────────────────────────────────────────────────────────
 function updateStats() {
-  document.getElementById('stat-students').textContent = allData.students.length || 'â';
-  document.getElementById('stat-counselling').textContent = allData.counselling.length || 'â';
-  document.getElementById('stat-cta').textContent = allData.cta.length || 'â';
+  document.getElementById('stat-students').textContent = allData.students.length || '—';
+  document.getElementById('stat-counselling').textContent = allData.counselling.length || '—';
+  document.getElementById('stat-cta').textContent = allData.cta.length || '—';
 
   var today = new Date().toISOString().slice(0,10);
   var todayCount = [].concat(allData.students, allData.counselling, allData.cta)
@@ -516,7 +516,7 @@ function updateStats() {
   document.getElementById('stat-today').textContent = todayCount;
 }
 
-// ââ TABS âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+// ── TABS ───────────────────────────────────────────────────────────────────────
 function switchTab(tab) {
   activeTab = tab;
   document.querySelectorAll('.tab').forEach(function(el,i){
@@ -529,7 +529,7 @@ function switchTab(tab) {
   document.getElementById('tab-' + tab).classList.add('active');
 }
 
-// ââ EXPORT CSV ââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+// ── EXPORT CSV ────────────────────────────────────────────────────────────────
 function exportCSV(tab) {
   var data = filteredData[tab];
   if (!data.length) { alert('No data to export.'); return; }
@@ -560,9 +560,9 @@ function exportCSV(tab) {
   a.click();
 }
 
-// ââ HELPERS âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+// ── HELPERS ───────────────────────────────────────────────────────────────────
 function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
-function fmtDate(s){ if(!s) return 'â'; var d = new Date(s); return d.toLocaleDateString('en-IN',{day:'2-digit',month:'short',year:'numeric'}) + ' ' + d.toLocaleTimeString('en-IN',{hour:'2-digit',minute:'2-digit'}); }
+function fmtDate(s){ if(!s) return '—'; var d = new Date(s); return d.toLocaleDateString('en-IN',{day:'2-digit',month:'short',year:'numeric'}) + ' ' + d.toLocaleTimeString('en-IN',{hour:'2-digit',minute:'2-digit'}); }
 function examColor(e){ var m = {CAT:'blue',TANCET:'purple',NEET:'green',TNEA:'orange'}; return m[e] || 'gray'; }
 
 // badge-teal fix
