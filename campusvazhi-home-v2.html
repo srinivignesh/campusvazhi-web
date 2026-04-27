@@ -1961,9 +1961,15 @@ body.logged-in .page-wrap, .logged-in .page-wrap { margin-left: 68px !important;
 <section class="counselling-section">
   <div class="counselling-content">
     <div class="counselling-text">
-      <div class="counselling-badge">
-        <span class="en">1 : 1 · REAL HUMANS</span>
-        <span class="ta">1 : 1 · உண்மையான மানுஷ்யர்கள்</span>
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:4px;flex-wrap:wrap">
+        <div class="counselling-badge" style="margin-bottom:0">
+          <span class="en">1 : 1 · REAL HUMANS</span>
+          <span class="ta">1 : 1 · உண்மையான மானுஷ்யர்கள்</span>
+        </div>
+        <div style="display:flex;align-items:center;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.2);border-radius:8px;padding:3px;gap:2px">
+          <button id="counsel-btn-en" onclick="setCounselLang('en')" style="padding:4px 11px;font-size:12px;font-weight:700;border:none;cursor:pointer;font-family:inherit;transition:all .15s;background:#fff;color:#0F1B2D;border-radius:5px">EN</button>
+          <button id="counsel-btn-ta" onclick="setCounselLang('ta')" style="padding:4px 11px;font-size:12px;font-weight:700;border:none;cursor:pointer;font-family:inherit;transition:all .15s;background:transparent;color:rgba(255,255,255,0.75)">தமிழ்</button>
+        </div>
       </div>
       <h2>
         <span class="en">Not sure where to start? Talk to a mentor — free, in Tamil or English.</span>
@@ -3653,16 +3659,30 @@ body.logged-in .page-wrap, .logged-in .page-wrap { margin-left: 68px !important;
     document.getElementById('modal').classList.add('active');
     document.getElementById('modalForm').style.display = '';
     document.getElementById('modalSuccess').style.display = 'none';
-    if (group) {
-      var sel = document.getElementById('jn-goal');
-      for (var i = 0; i < sel.options.length; i++) {
-        if (sel.options[i].text === group) { sel.selectedIndex = i; break; }
-      }
-    }
   }
 
   function closeModal() {
     document.getElementById('modal').classList.remove('active');
+  }
+
+  // Counselling section language toggle (Tamil / English)
+  function setCounselLang(lang) {
+    if (lang === 'ta') {
+      document.body.classList.add('lang-ta');
+    } else {
+      document.body.classList.remove('lang-ta');
+    }
+    var btnEn = document.getElementById('counsel-btn-en');
+    var btnTa = document.getElementById('counsel-btn-ta');
+    if (btnEn && btnTa) {
+      if (lang === 'ta') {
+        btnTa.style.background = '#fff'; btnTa.style.color = '#0F1B2D';
+        btnEn.style.background = 'transparent'; btnEn.style.color = 'rgba(255,255,255,0.75)';
+      } else {
+        btnEn.style.background = '#fff'; btnEn.style.color = '#0F1B2D';
+        btnTa.style.background = 'transparent'; btnTa.style.color = 'rgba(255,255,255,0.75)';
+      }
+    }
   }
 
   function googleSignIn() {
