@@ -98,7 +98,12 @@ a{text-decoration:none}
 .hero h1{font-size:clamp(28px,5vw,40px);font-weight:800;color:var(--white);margin:20px 0 8px;line-height:1.2}
 .hero h1 span{color:var(--teal-light)}
 .hero p{font-size:17px;color:#94A3B8;max-width:560px;margin:16px auto 28px;line-height:1.7}
-.hero-buttons{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.hero-buttons{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:14px}
+.hero-community-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:0}
+.hero-comm-btn{display:inline-flex;align-items:center;gap:8px;padding:11px 20px;border-radius:10px;font-size:13px;font-weight:700;text-decoration:none;transition:opacity .2s,transform .15s;color:#fff}
+.hero-comm-btn:hover{opacity:.88;transform:translateY(-1px)}
+.hero-wa-btn{background:#25D366}
+.hero-tg-btn{background:#0088CC}
 .trust-bar{display:flex;gap:24px;justify-content:center;margin-top:32px;flex-wrap:wrap}
 .trust-item{text-align:center}
 .trust-num{font-size:22px;font-weight:800;color:var(--teal-light)}
@@ -550,6 +555,7 @@ svg.icon{vertical-align:middle}
 
         body.cv-signed-in .nav-sign-in { display: none; }
     body.cv-signed-in .user-pill { display: inline-flex; }
+    body.cv-signed-in #downloadNote { display: none; }
 
 
     /* Accordion Styles */
@@ -647,20 +653,18 @@ svg.icon{vertical-align:middle}
     <div class="sidebar-avatar" id="sb-avatar"></div>
     <div class="sidebar-user-info">
       <h4 id="sb-name"></h4>
-      <p id="sb-exam">CAT 2026</p>
+      <p id="sb-exam">CampusVazhi</p>
     </div>
   </div>
 
   <nav class="sidebar-nav">
-    <a href="./campusvazhi-home-v2.html" class="sidebar-link" data-tip="Home" style="margin-bottom:8px">
+    <a href="./index.html" class="sidebar-link" data-tip="Home" style="margin-bottom:8px">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
       <span class="sb-label"><span class="en">Home</span><span class="ta">முகப்பு</span></span>
     </a>
     <div class="sidebar-divider"></div>
 
-    <!-- Dashboard -->
     <div class="sidebar-section-label"><span class="en">Dashboard</span><span class="ta">டாஷ்போர்டு</span></div>
-
     <a href="./CampusVazhi-Dashboard.html" class="sidebar-link" data-tip="Dashboard">
       <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
       <span class="sb-label"><span class="en">My Dashboard</span><span class="ta">என் டாஷ்போர்டு</span></span>
@@ -669,7 +673,7 @@ svg.icon{vertical-align:middle}
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
       <span class="sb-label"><span class="en">Saved Resources</span><span class="ta">சேமித்த ஆதாரங்கள்</span></span>
     </a>
-    <a href="./campusvazhi-home-v2.html#community" class="sidebar-link" data-tip="Groups">
+    <a href="./index.html#community-groups" class="sidebar-link" data-tip="Groups">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
       <span class="sb-label"><span class="en">My Groups</span><span class="ta">என் குழுக்கள்</span></span>
       <span class="sidebar-badge">1</span>
@@ -677,9 +681,7 @@ svg.icon{vertical-align:middle}
 
     <div class="sidebar-divider"></div>
 
-    <!-- Explore Pathways -->
     <div class="sidebar-section-label"><span class="en">Explore Pathways</span><span class="ta">பாதைகளை ஆராயுங்கள்</span></div>
-
     <a href="./CampusVazhi-CAT-2026.html" class="sidebar-link" data-tip="CAT 2026">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
       <span class="sb-label">CAT 2026</span>
@@ -687,6 +689,10 @@ svg.icon{vertical-align:middle}
     <a href="./CampusVazhi-TANCET-Resource-Hub.html" class="sidebar-link" data-tip="TANCET Hub">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
       <span class="sb-label"><span class="en">TANCET Hub</span><span class="ta">TANCET மையம்</span></span>
+    </a>
+    <a href="./CampusVazhi-TN-Govt-Exams.html" class="sidebar-link" data-tip="TN Govt Exams">
+      <svg viewBox="0 0 24 24"><path d="M4 4h16v4H4z"/><path d="M4 10h16v4H4z"/><path d="M4 16h16v4H4z"/></svg>
+      <span class="sb-label"><span class="en">TN Govt Exams</span><span class="ta">TN அரசு தேர்வுகள்</span></span>
     </a>
     <a href="./CampusVazhi-MS-USA.html" class="sidebar-link" data-tip="MS in USA">
       <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
@@ -711,23 +717,19 @@ svg.icon{vertical-align:middle}
 
     <div class="sidebar-divider"></div>
 
-    <!-- Support -->
     <div class="sidebar-section-label"><span class="en">Support</span><span class="ta">ஆதரவு</span></div>
-
     <a href="./CampusVazhi-Book-Counselling.html" class="sidebar-link" data-tip="Counselling">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-      <span class="sb-label"><span class="en">Book a Free Call</span><span class="ta">ஆலோசனை முன்பதிவு</span></span>
+      <span class="sb-label"><span class="en">Book a Free Call</span><span class="ta">இலவச அழைப்பு முன்பதிவு</span></span>
     </a>
-    <a href="https://wa.me/91919677213139" target="_blank" class="sidebar-link" data-tip="WhatsApp">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    <a href="https://wa.me/919677213139" target="_blank" class="sidebar-link" data-tip="WhatsApp">
+      <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.297-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
       <span class="sb-label"><span class="en">WhatsApp Us</span><span class="ta">WhatsApp செய்யுங்கள்</span></span>
     </a>
 
     <div class="sidebar-divider"></div>
 
-    <!-- Profile & Settings -->
     <div class="sidebar-section-label"><span class="en">Profile</span><span class="ta">சுயவிவரம்</span></div>
-
     <a href="./CampusVazhi-Dashboard.html" class="sidebar-link" data-tip="Profile">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
       <span class="sb-label"><span class="en">Edit Profile</span><span class="ta">சுயவிவரத்தை மாற்று</span></span>
@@ -745,6 +747,15 @@ svg.icon{vertical-align:middle}
     </button>
   </div>
 </aside>
+<script>
+(function(){
+  var page = window.location.pathname.split('/').pop() || 'index.html';
+  document.querySelectorAll('.sidebar-link').forEach(function(a){
+    var href = (a.getAttribute('href') || '').split('/').pop().split('#')[0];
+    if (href && href === page) a.classList.add('active');
+  });
+})();
+</script>
 <div class="page-wrap">
 <!-- Top Bar -->
 <div class="top-bar" id="topBar">
@@ -780,9 +791,20 @@ svg.icon{vertical-align:middle}
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
         <span id="heroCta1">Download Free Resources</span>
       </button>
-      <a href="https://chat.whatsapp.com/KElR6tKAq38EjpMnvMCzWE" target="_blank" rel="noopener" class="btn-secondary" style="text-decoration:none;display:inline-flex;align-items:center;gap:8px;">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+      <a href="./CampusVazhi-TANCET-Mock.html" style="display:inline-flex;align-items:center;gap:8px;background:#F97316;color:#fff;font-size:16px;font-weight:800;padding:16px 28px;border-radius:10px;text-decoration:none;transition:all 0.15s;" onmouseover="this.style.background='#EA6C0E'" onmouseout="this.style.background='#F97316'">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        Take Free Mock Test
+      </a>
+      <p style="margin:8px 0 0;font-size:12px;color:rgba(255,255,255,0.45)" id="downloadNote">Sign in once — download everything, forever free.</p>
+    </div>
+    <div class="hero-community-btns">
+      <a href="#" onclick="event.preventDefault();joinCommunity('https://chat.whatsapp.com/KElR6tKAq38EjpMnvMCzWE')" class="hero-comm-btn hero-wa-btn">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.297-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
         <span id="heroCta2">Join WhatsApp Group</span>
+      </a>
+      <a href="#" onclick="event.preventDefault();joinCommunity('https://t.me/campusvazhi')" class="hero-comm-btn hero-tg-btn">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+        <span>Join Telegram Channel</span>
       </a>
     </div>
   <!-- PYQ shortcut card below hero buttons -->
@@ -911,6 +933,23 @@ svg.icon{vertical-align:middle}
     <p id="resDesc">Everything you need to score 80+ percentile — no coaching needed</p>
   </div>
 
+  <!-- ── Mock Test CTA ── -->
+  <div style="background:linear-gradient(135deg,#0F1B2D,#0D2137);border:2px solid #F97316;border-radius:16px;padding:28px 32px;margin-bottom:28px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;box-shadow:0 0 28px rgba(249,115,22,0.12)">
+    <div>
+      <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(249,115,22,0.15);border:1px solid rgba(249,115,22,0.35);border-radius:6px;padding:4px 12px;margin-bottom:12px">
+        <span style="width:8px;height:8px;background:#F97316;border-radius:50%;display:inline-block;animation:pulse .9s ease-in-out infinite"></span>
+        <span style="font-size:11px;font-weight:800;color:#FB923C;text-transform:uppercase;letter-spacing:0.06em">New — Free Mock Test</span>
+      </div>
+      <h3 style="color:#fff;font-size:20px;font-weight:800;margin:0 0 6px">TANCET MBA Full Mock Test — 100 Questions</h3>
+      <p style="color:rgba(255,255,255,0.7);font-size:13px;margin:0">All 4 sections · 2-hour timer · Instant results · Section-wise score · Percentile estimate</p>
+    </div>
+    <a href="./CampusVazhi-TANCET-Mock.html" style="text-decoration:none;flex-shrink:0">
+      <button style="background:#F97316;color:#fff;border:none;border-radius:10px;padding:14px 28px;font-size:15px;font-weight:800;cursor:pointer;white-space:nowrap;font-family:inherit">
+        Start Mock Test →
+      </button>
+    </a>
+  </div>
+
 <!-- ── PYQ Download Card ── -->
 <div class="pyq-card" id="pyqSection">
   <div class="pyq-card-header">
@@ -932,43 +971,43 @@ svg.icon{vertical-align:middle}
   <div class="pyq-years-grid">
     <div class="pyq-year-row">
       <div class="pyq-year-info"><span class="pyq-year-num">TANCET 2025</span><span class="pyq-year-tag">Latest · With Solutions</span></div>
-      <a class="pyq-dl-btn" href="./TANCET-MBA-2025-Solutions-CampusVazhi.pdf"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Download</a>
+      <button class="pyq-dl-btn" onclick="dlPaper('./TANCET-MBA-2025-Solutions-CampusVazhi.pdf')"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Download</button>
     </div>
     <div class="pyq-year-row">
       <div class="pyq-year-info"><span class="pyq-year-num">TANCET 2024</span><span class="pyq-year-tag">Analytical Reasoning · DS</span></div>
-      <a class="pyq-dl-btn" href="./TANCET-MBA-2024-Solutions-CampusVazhi.pdf"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Download</a>
+      <button class="pyq-dl-btn" onclick="dlPaper('./TANCET-MBA-2024-Solutions-CampusVazhi.pdf')"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Download</button>
     </div>
     <div class="pyq-year-row">
       <div class="pyq-year-info"><span class="pyq-year-num">TANCET 2023</span><span class="pyq-year-tag">Quant · DS · English</span></div>
-      <a class="pyq-dl-btn" href="./TANCET-MBA-2023-Solutions-CampusVazhi.pdf"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Download</a>
+      <button class="pyq-dl-btn" onclick="dlPaper('./TANCET-MBA-2023-Solutions-CampusVazhi.pdf')"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Download</button>
     </div>
     <div class="pyq-year-row">
       <div class="pyq-year-info"><span class="pyq-year-num">TANCET 2022</span><span class="pyq-year-tag">Reasoning · Seating</span></div>
-      <a class="pyq-dl-btn" href="./TANCET-MBA-2022-Solutions-CampusVazhi.pdf"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Download</a>
+      <button class="pyq-dl-btn" onclick="dlPaper('./TANCET-MBA-2022-Solutions-CampusVazhi.pdf')"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Download</button>
     </div>
     <div class="pyq-year-row">
       <div class="pyq-year-info"><span class="pyq-year-num">TANCET 2021</span><span class="pyq-year-tag">Maths · Probability · DS</span></div>
-      <a class="pyq-dl-btn" href="./TANCET-MBA-2021-Solutions-CampusVazhi.pdf"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Download</a>
+      <button class="pyq-dl-btn" onclick="dlPaper('./TANCET-MBA-2021-Solutions-CampusVazhi.pdf')"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Download</button>
     </div>
     <div class="pyq-year-row">
       <div class="pyq-year-info"><span class="pyq-year-num">TANCET 2020</span><span class="pyq-year-tag">RC · Reasoning · English</span></div>
-      <a class="pyq-dl-btn" href="./TANCET-MBA-2020-Solutions-CampusVazhi.pdf"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Download</a>
+      <button class="pyq-dl-btn" onclick="dlPaper('./TANCET-MBA-2020-Solutions-CampusVazhi.pdf')"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Download</button>
     </div>
     <div class="pyq-year-row">
       <div class="pyq-year-info"><span class="pyq-year-num">TANCET 2018</span><span class="pyq-year-tag">Language · DS</span></div>
-      <a class="pyq-dl-btn" href="./TANCET-MBA-2018-Solutions-CampusVazhi.pdf"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Download</a>
+      <button class="pyq-dl-btn" onclick="dlPaper('./TANCET-MBA-2018-Solutions-CampusVazhi.pdf')"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Download</button>
     </div>
     <div class="pyq-year-row">
       <div class="pyq-year-info"><span class="pyq-year-num">TANCET 2017</span><span class="pyq-year-tag">Arithmetic · Number Theory</span></div>
-      <a class="pyq-dl-btn" href="./TANCET-MBA-2017-Solutions-CampusVazhi.pdf"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Download</a>
+      <button class="pyq-dl-btn" onclick="dlPaper('./TANCET-MBA-2017-Solutions-CampusVazhi.pdf')"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Download</button>
     </div>
     <div class="pyq-year-row">
       <div class="pyq-year-info"><span class="pyq-year-num">TANCET 2016</span><span class="pyq-year-tag">Profit/Loss · Ratios</span></div>
-      <a class="pyq-dl-btn" href="./TANCET-MBA-2016-Solutions-CampusVazhi.pdf"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Download</a>
+      <button class="pyq-dl-btn" onclick="dlPaper('./TANCET-MBA-2016-Solutions-CampusVazhi.pdf')"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Download</button>
     </div>
     <div class="pyq-year-row">
       <div class="pyq-year-info"><span class="pyq-year-num">TANCET 2015</span><span class="pyq-year-tag">Number Systems · Algebra</span></div>
-      <a class="pyq-dl-btn" href="./TANCET-MBA-2015-Solutions-CampusVazhi.pdf"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Download</a>
+      <button class="pyq-dl-btn" onclick="dlPaper('./TANCET-MBA-2015-Solutions-CampusVazhi.pdf')"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Download</button>
     </div>
   </div>
   <div class="pyq-footer">
@@ -976,10 +1015,10 @@ svg.icon{vertical-align:middle}
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
       Free PDF · Step-by-step solutions · Prepared by CampusVazhi
     </span>
-    <a class="pyq-dl-all" href="./TANCET-MBA-2025-Solutions-CampusVazhi.pdf">
+    <button class="pyq-dl-all" onclick="dlPaper('./TANCET-MBA-2025-Solutions-CampusVazhi.pdf')">
       <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
       Download PYQs (Latest 2025)
-    </a>
+    </button>
   </div>
 </div>
 
@@ -2125,6 +2164,111 @@ svg.icon{vertical-align:middle}
 </section>
 
 <!-- Footer -->
+
+<!-- ========== COUNSELLING BANNER ========== -->
+<section class="cvcs-section">
+  <div class="cvcs-inner">
+    <div class="cvcs-left">
+      <div class="cvcs-eyebrow">Free · 15 min · Alumni mentor</div>
+      <h2 class="cvcs-heading">
+        <span class="en">Still confused? Let&rsquo;s get it all cleared.</span>
+        <span class="ta">குழப்பமா? வாருங்கள், தெளிவாக பேசலாம்.</span>
+      </h2>
+      <p class="cvcs-sub">
+        <span class="en">Book a free 15-minute call with a CampusVazhi mentor — IIM &amp; university alumni who give you honest, zero-spin guidance. Tamil or English. No charge, ever.</span>
+        <span class="ta">CampusVazhi வழிகாட்டியுடன் 15 நிமிட இலவச அழைப்பு பதிவு செய்யுங்கள் — தமிழ் அல்லது ஆங்கிலம், எந்த கட்டணமும் இல்லை.</span>
+      </p>
+      <ul class="cvcs-bullets">
+        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0D9488" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span class="en">What course / college suits you best</span><span class="ta">உங்களுக்கு ஏற்ற பாடம் / கல்லூரி</span></li>
+        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0D9488" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span class="en">Realistic timeline to crack the exam</span><span class="ta">தேர்வில் வெற்றி பெற உண்மையான காலக்கெடு</span></li>
+        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0D9488" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span class="en">Your next 3 action steps — crystal clear</span><span class="ta">அடுத்த 3 செயல் படிகள் — தெளிவாக</span></li>
+      </ul>
+    </div>
+    <div class="cvcs-right">
+      <div class="cvcs-form-card">
+        <form id="cvcs-form" class="cvcs-form" onsubmit="submitCVCounsel(event)">
+          <input type="text" id="cvcs-name" class="cvcs-input" placeholder="Your name" required>
+          <input type="tel" id="cvcs-phone" class="cvcs-input" placeholder="WhatsApp number (+91...)" required>
+          <select id="cvcs-goal" class="cvcs-input cvcs-select">
+            <option value="">What do you need guidance on?</option>
+            <option value="TANCET MBA">TANCET 2026 — MBA prep</option>
+            <option value="CAT MBA">CAT 2026 — MBA prep</option>
+            <option value="MS USA">MS in USA / UK / Canada</option>
+            <option value="TNEA">TNEA / B.E. admissions</option>
+            <option value="Career">Career planning / job search</option>
+            <option value="Other">Other</option>
+          </select>
+          <button type="submit" id="cvcs-btn" class="cvcs-submit">
+            <span class="en">Book Free Session →</span>
+            <span class="ta">இலவச அமர்வு பதிவு செய்யவும் →</span>
+          </button>
+        </form>
+        <div id="cvcs-success" class="cvcs-success" style="display:none;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/></svg>
+          <div>
+            <strong><span class="en">Booked! Expect a WhatsApp message within 2 hours.</span><span class="ta">பதிவாகிவிட்டது! 2 மணி நேரத்தில் WhatsApp செய்தி வரும்.</span></strong>
+          </div>
+        </div>
+        <p class="cvcs-trust">
+          <span class="en">⚡ We reply within 2 hrs · 4,000+ students guided · Zero sales pitch</span>
+          <span class="ta">⚡ 2 மணி நேரத்தில் பதில் · 4,000+ மாணவர்கள் · விற்பனை இல்லை</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.cvcs-section{background:linear-gradient(135deg,#0F1B2D 0%,#0D2137 60%,#0A1628 100%);padding:56px 24px;border-top:1px solid rgba(13,148,136,0.2)}
+.cvcs-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 420px;gap:56px;align-items:center}
+.cvcs-eyebrow{display:inline-block;background:rgba(13,148,136,0.15);color:#5EEAD4;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;padding:5px 12px;border-radius:20px;margin-bottom:16px;border:1px solid rgba(13,148,136,0.3)}
+.cvcs-heading{font-size:30px;font-weight:800;color:#FFFFFF;line-height:1.2;margin:0 0 14px}
+.cvcs-sub{font-size:14px;color:rgba(255,255,255,0.7);line-height:1.7;margin:0 0 20px}
+.cvcs-bullets{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px}
+.cvcs-bullets li{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:rgba(255,255,255,0.85);font-weight:500}
+.cvcs-bullets svg{flex-shrink:0;margin-top:2px}
+.cvcs-form-card{background:#FFFFFF;border-radius:16px;padding:24px;box-shadow:0 8px 40px rgba(0,0,0,0.3)}
+.cvcs-form{display:flex;flex-direction:column;gap:10px}
+.cvcs-input{width:100%;padding:11px 14px;border:1.5px solid #E2E8F0;border-radius:8px;font-size:14px;font-family:inherit;background:#F8FAFC;color:#1E293B;outline:none;transition:border-color .15s;box-sizing:border-box}
+.cvcs-input:focus{border-color:#0D9488;background:#fff}
+.cvcs-input::placeholder{color:#94A3B8}
+.cvcs-select{cursor:pointer;color:#1E293B}
+.cvcs-submit{background:#0D9488;color:#fff;border:none;border-radius:8px;padding:13px 20px;font-size:14px;font-weight:700;font-family:inherit;cursor:pointer;transition:background .15s,transform .1s;margin-top:2px}
+.cvcs-submit:hover{background:#0F766E;transform:translateY(-1px)}
+.cvcs-success{display:flex;align-items:flex-start;gap:10px;background:#F0FDF4;border:1px solid #BBF7D0;border-radius:10px;padding:14px;color:#15803D;font-size:14px}
+.cvcs-trust{font-size:11px;color:#94A3B8;margin:10px 0 0;text-align:center}
+@media(max-width:900px){.cvcs-inner{grid-template-columns:1fr;gap:32px}.cvcs-heading{font-size:24px}}
+@media(max-width:640px){.cvcs-section{padding:40px 16px}.cvcs-heading{font-size:22px}}
+</style>
+
+<script>
+function submitCVCounsel(e) {
+  e.preventDefault();
+  var name = document.getElementById('cvcs-name').value.trim();
+  var phone = document.getElementById('cvcs-phone').value.trim();
+  var goal = document.getElementById('cvcs-goal').value;
+  if (!name || !phone) return;
+  var btn = document.getElementById('cvcs-btn');
+  if (btn) { btn.disabled = true; btn.textContent = 'Booking…'; }
+  try {
+    var sbUrl = (typeof CV_CONFIG !== 'undefined' && CV_CONFIG.SUPABASE_URL) || 'https://txyimbzkutnkaphyvifg.supabase.co';
+    var sbKey = (typeof CV_CONFIG !== 'undefined' && CV_CONFIG.SUPABASE_ANON_KEY) || '';
+    var src = (window.location.pathname.split('/').pop() || 'subpage').replace('.html','');
+    if (sbUrl && sbKey) {
+      fetch(sbUrl + '/rest/v1/leads', {
+        method: 'POST',
+        headers: {'Content-Type':'application/json','apikey':sbKey,'Authorization':'Bearer '+sbKey,'Prefer':'return=minimal'},
+        body: JSON.stringify({name:name,phone:phone,goal:goal||'Counselling',source:'counsel_banner_'+src,created_at:new Date().toISOString()})
+      });
+    }
+  } catch(e2){}
+  if (typeof cvTrack === 'function') cvTrack('generate_lead', {method:'counsel_banner',goal:goal});
+  document.getElementById('cvcs-form').style.display = 'none';
+  document.getElementById('cvcs-success').style.display = 'flex';
+}
+</script>
+<!-- ========== END COUNSELLING BANNER ========== -->
+
 <footer class="footer">
   <div class="footer-brand">
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#14B8A6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
@@ -2453,6 +2597,59 @@ function toggleLang() {
   renderResources();
   renderExamRows();
 }
+
+// ── Auth-gated PDF download ─────────────────────────────
+var _cvPendingDl = null;
+function dlPaper(url) {
+  if (localStorage.getItem('cv_signed_in') === '1') {
+    window.open(url, '_blank');
+    return;
+  }
+  // Store URL so we can open it after sign-in redirect
+  try { localStorage.setItem('cv_pending_dl', url); } catch(e) {}
+  // Show the sign-in modal
+  document.getElementById('modal').classList.add('active');
+  document.getElementById('modalSignIn').style.display = 'block';
+  document.getElementById('modalSignInLoading').style.display = 'none';
+  document.getElementById('phoneError').style.display = 'none';
+  document.getElementById('modalPhone').value = '';
+  cvResetGoogleBtn();
+}
+// After OAuth redirect: if there's a pending download and user is now signed in, open it
+(function cvCheckPendingDl() {
+  var signed = localStorage.getItem('cv_signed_in') === '1';
+  var pending = localStorage.getItem('cv_pending_dl');
+  if (signed && pending) {
+    localStorage.removeItem('cv_pending_dl');
+    window.open(pending, '_blank');
+  }
+})();
+
+// ── Auth-gated community join ────────────────────────────
+function joinCommunity(url) {
+  if (localStorage.getItem('cv_signed_in') === '1') {
+    window.open(url, '_blank');
+    return;
+  }
+  // Store community URL to open after sign-in
+  try { localStorage.setItem('cv_pending_community', url); } catch(e) {}
+  // Show the sign-in modal
+  document.getElementById('modal').classList.add('active');
+  document.getElementById('modalSignIn').style.display = 'block';
+  document.getElementById('modalSignInLoading').style.display = 'none';
+  document.getElementById('phoneError').style.display = 'none';
+  document.getElementById('modalPhone').value = '';
+  cvResetGoogleBtn();
+}
+// After OAuth redirect: open pending community link
+(function cvCheckPendingCommunity() {
+  var signed = localStorage.getItem('cv_signed_in') === '1';
+  var pending = localStorage.getItem('cv_pending_community');
+  if (signed && pending) {
+    localStorage.removeItem('cv_pending_community');
+    window.open(pending, '_blank');
+  }
+})();
 
 // ── Modal / Auth ──
 function openModal() {
