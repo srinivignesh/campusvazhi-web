@@ -28,6 +28,7 @@
     { "source": "/mat", "destination": "/CampusVazhi-MAT.html" },
     { "source": "/nimcet", "destination": "/CampusVazhi-NIMCET.html" },
     { "source": "/rrb-ntpc", "destination": "/CampusVazhi-RRB-NTPC.html" },
+    { "source": "/rrb-ntpc/pyq", "destination": "/CampusVazhi-RRB-NTPC-PYQ.html" },
     { "source": "/sbi-clerk", "destination": "/CampusVazhi-SBI-Clerk.html" },
     { "source": "/sbi-po", "destination": "/CampusVazhi-SBI-PO.html" },
     { "source": "/snap", "destination": "/CampusVazhi-SNAP.html" },
@@ -35,7 +36,8 @@
     { "source": "/tancet-mca", "destination": "/CampusVazhi-TANCET-MCA.html" },
     { "source": "/tnpsc-group-2a", "destination": "/CampusVazhi-TNPSC-Group-2A.html" },
     { "source": "/tnpsc-group-4", "destination": "/CampusVazhi-TNPSC-Group-4.html" },
-    { "source": "/xat", "destination": "/CampusVazhi-XAT.html" }
+    { "source": "/xat", "destination": "/CampusVazhi-XAT.html" },
+    { "source": "/about", "destination": "/CampusVazhi-About.html" }
   ],
   "headers": [
     {
