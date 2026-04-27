@@ -74,7 +74,7 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--g50);color:var(--
 .refresh-btn:hover{background:var(--g200)}
 
 .table-wrap{overflow-x:auto;border-radius:12px;border:1px solid var(--g200);background:#fff}
-table{width:100%;border-collapse:collapse;font-size:13py}
+table{width:100%;border-collapse:collapse;font-size:13px}
 thead{background:var(--g50);position:sticky;top:56px}
 th{padding:11px 14px;text-align:left;font-weight:700;color:var(--g600);font-size:11px;text-transform:uppercase;letter-spacing:.5px;border-bottom:1px solid var(--g200);white-space:nowrap}
 td{padding:11px 14px;border-bottom:1px solid var(--g100);color:var(--g800);vertical-align:top;max-width:220px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
@@ -108,13 +108,10 @@ tr:hover td{background:var(--g50)}
       <div class="name">Campus<span>Vazhi</span></div>
     </div>
     <h2>Admin Console</h2>
-    <p>Enter your credentials to access student data</p>
+    <p>Enter your password to access student data</p>
     <div id="login-err" class="login-err"></div>
     <label class="field-label">Admin Password</label>
     <input id="inp-pass" type="password" class="field-input" placeholder="••••••••••" autocomplete="off">
-    <label class="field-label">Supabase Service Role Key</label>
-    <input id="inp-key" type="password" class="field-input" placeholder="eyJhbGciOiJIUzI1NiIs..." autocomplete="off">
-    <p class="service-key-hint">Find this in Supabase → Project Settings → API → service_role key. It bypasses RLS to show all data. Never share it.</p>
     <br>
     <button class="login-btn" onclick="doLogin()">Sign In to Admin</button>
   </div>
@@ -316,10 +313,11 @@ tr:hover td{background:var(--g50)}
 // ── CONFIG ────────────────────────────────────────────────────────────────────
 var SUPABASE_URL = 'https://txyimbzkutnkaphyvifg.supabase.co';
 var ADMIN_PASSWORD = 'CampusVazhi@Admin2026';
+var SERVICE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InR4eWltYnprdXRua2FwaHl2aWZnIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3NTgyNzQ5NCwiZXhwIjoyMDkxNDAzNDk0fQ.WgYFCZQcy1zpqDU-eH3k7NhTl52Nj6Jqb4DK0uz77x4';
 var PAGE_SIZE = 50;
 
 // ── STATE ─────────────────────────────────────────────────────────────────────
-var serviceKey = '';
+var serviceKey = SERVICE_KEY;
 var allData = { students:[], counselling:[], cta:[], 'google-users':[], behaviour:[] };
 var filteredData = { students:[], counselling:[], cta:[], 'google-users':[], behaviour:[] };
 var currentPage = { students:1, counselling:1, cta:1, 'google-users':1, behaviour:1 };
@@ -330,33 +328,24 @@ var ctaTypeFilter = '';
 // ── LOGIN / LOGOUT ────────────────────────────────────────────────────────────
 function doLogin() {
   var pass = document.getElementById('inp-pass').value;
-  var key = document.getElementById('inp-key').value.trim();
   var err = document.getElementById('login-err');
 
   if (pass !== ADMIN_PASSWORD) {
     err.textContent = 'Incorrect password. Please try again.';
     err.style.display = 'block'; return;
   }
-  if (!key || !key.startsWith('eyJ')) {
-    err.textContent = 'Please enter a valid Supabase service role key (starts with eyJ...).';
-    err.style.display = 'block'; return;
-  }
-  serviceKey = key;
   document.getElementById('login-screen').style.display = 'none';
   document.getElementById('app').style.display = 'block';
   refreshAll();
 }
 
 function doLogout() {
-  serviceKey = '';
   document.getElementById('login-screen').style.display = 'flex';
   document.getElementById('app').style.display = 'none';
   document.getElementById('inp-pass').value = '';
-  document.getElementById('inp-key').value = '';
 }
 
-document.getElementById('inp-key').addEventListener('keydown', function(e){ if(e.key==='Enter') doLogin(); });
-document.getElementById('inp-pass').addEventListener('keydown', function(e){ if(e.key==='Enter') document.getElementById('inp-key').focus(); });
+document.getElementById('inp-pass').addEventListener('keydown', function(e){ if(e.key==='Enter') doLogin(); });
 
 // ── API HELPER ────────────────────────────────────────────────────────────────
 async function sbFetch(path) {
@@ -493,7 +482,7 @@ function renderPage(tab) {
   var info = document.getElementById('pag-' + tab + '-info');
   var prev = document.getElementById('pag-' + tab + '-prev');
   var next = document.getElementById('pag-' + tab + '-next');
-  info.textContent = 'Showing ' + (total === 0 ? 0 : start+1) + '–' + end ++' of ' + total;
+  info.textContent = 'Showing ' + (total === 0 ? 0 : start+1) + '–' + end + ' of ' + total;
   prev.disabled = page <= 1;
   next.disabled = end >= total;
 }
@@ -677,5 +666,6 @@ function examColor(e){ var m = {CAT:'blue',TANCET:'purple',NEET:'green',TNEA:'or
 // badge-teal fix
 document.querySelectorAll('.badge-teal').forEach(function(el){el.style.background='#CCFBF1';el.style.color='#0F766E';});
 </script>
+<script src="/js/cv-track.js"></script>
 </body>
 </html>
